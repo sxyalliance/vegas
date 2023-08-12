@@ -1,11 +1,15 @@
+<script>
+import {_} from "svelte-i18n";
+</script>
+
 <!-- Team section -->
 <div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="bg-[#e7e0ce] text-black rounded-md relative">
             <div class="lg:grid lg:grid-cols-5">
                 <div class="left lg:col-span-3 pt-8 px-6 md:pr-0 lg:pl-12">
-                    <div class="text-2xl font-bold">Meet The Team</div>
-                    <p class="mb-6 text-[#603d25]">Learn about the people who make Origin Realms amazing!</p>
+                    <div class="text-2xl font-bold">{$_('home.team.title')}</div>
+                    <p class="mb-6 text-[#603d25]">{$_('home.team.text')}</p>
                     <div class="relative md:h-[220px]">
                         <!-- Profile candidates -->
                         <div class="">

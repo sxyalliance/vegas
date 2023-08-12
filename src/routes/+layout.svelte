@@ -1,14 +1,14 @@
 <script>
   import {Dialog, DialogOverlay} from "@rgossiaux/svelte-headlessui";
+  import {_} from "svelte-i18n";
 
   let mobileMenuOpen = true;
 
 
   const navigation = [
-    {name: 'Product', href: '#'},
-    {name: 'Features', href: '#'},
-    {name: 'Marketplace', href: '#'},
-    {name: 'Company', href: '#'},
+    {name: 'navigation.home', href: '#'},
+    {name: 'navigation.blog', href: '#'},
+    {name: 'navigation.guide', href: '#'},
   ];
 </script>
 
@@ -17,26 +17,29 @@
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
+                <span class="sr-only">{$_('brand.name')}</span>
                 <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt=""/>
             </a>
         </div>
         <div class="flex lg:hidden">
             <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
                     on:click={() => (mobileMenuOpen = true)}>
-                <span class="sr-only">Open main menu</span>
+                <span class="sr-only">{$_('navigation.open')}</span>
                 <i class="i-tabler-baseline-density-medium h-6 w-6" aria-hidden="true"/>
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
             {#each navigation as item (item.name)}
                 <a href={item.href} class="text-sm font-semibold leading-6 text-white">
-                    {item.name}
+                    {$_(item.name)}
                 </a>
             {/each}
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+            <a href="#" class="text-sm font-semibold leading-6 text-white">
+                {$_('navigation.action')}
+                <span aria-hidden="true">&rarr;</span>
+            </a>
         </div>
     </nav>
     <Dialog as="div" class="lg:hidden" open={mobileMenuOpen} on:close={() => (mobileMenuOpen = false)}>
@@ -46,13 +49,13 @@
                 class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
+                    <span class="sr-only">{$_('brand.name')}</span>
                     <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                          alt=""/>
                 </a>
                 <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700"
                         on:click={() => (mobileMenuOpen = false)}>
-                    <span class="sr-only">Close menu</span>
+                    <span class="sr-only">{$_('navigation.close')}</span>
                     <i class="i-tabler-x h-6 w-6" aria-hidden="true"/>
                 </button>
             </div>
@@ -62,14 +65,15 @@
                         {#each navigation as item (item.name)}
                             <a href={item.href}
                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                {item.name}
+                                {$_(item.name)}
                             </a>
                         {/each}
                     </div>
                     <div class="py-6">
                         <a href="#"
-                           class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                            in</a>
+                           class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                            {$_('navigation.action')}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -83,7 +87,7 @@
 <footer>
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <p aria-label="Footer" class="flex justify-center text-sm leading-6 text-gray-600">
-            Making the world a better place through constructing elegant hierarchies.
+            {$_('footer.slogan')}
         </p>
         <div class="mt-10 flex justify-center space-x-10">
             <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -125,7 +129,8 @@
                 </svg>
             </a>
         </div>
-        <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights
-            reserved.</p>
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500">
+            {$_('footer.legal')}
+        </p>
     </div>
 </footer>
