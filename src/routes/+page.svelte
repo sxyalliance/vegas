@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import TeamSection from "./TeamSection.svelte";
+  import CallToActionSection from "./CallToActionSection.svelte";
+  import BlogSection from "./BlogSection.svelte";
+  import HeroSection from "./HeroSection.svelte";
+</script>
+
+<main>
+    <HeroSection/>
+
+    <BlogSection/>
+
+    <TeamSection/>
+
+    <CallToActionSection/>
+</main>
