@@ -1,11 +1,12 @@
 import type {Handle} from '@sveltejs/kit';
 import {locale} from 'svelte-i18n';
+import {resolveFirstAvailableLocale} from "$lib/i18n";
 
 export const handle: Handle = async ({event, resolve}) => {
 
-  const lang = event.request.headers.get('accept-language')?.split(',')[0]
-  if (lang) {
-    locale.set(lang)
+  const langs = event.request.headers.get('accept-language')?.split(',')
+  if (langs) {
+    locale.set(resolveFirstAvailableLocale(langs))
   }
 
   const response = await resolve(event, {
