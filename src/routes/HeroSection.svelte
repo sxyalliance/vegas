@@ -15,7 +15,7 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-white/10 hover:ring-white/20">
                     {$_('home.hero.promotion')}
                     <a href="#" class="font-semibold text-white">
                         {$_('home.hero.promotion_action')}
@@ -32,7 +32,7 @@
                 </p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a href="#"
-                       class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400">
+                       class="btn-primary btn-xl">
                         {$_('home.hero.primary_action')}
                     </a>
                     <a href="#" class="text-sm font-semibold leading-6 text-white">
@@ -46,20 +46,15 @@
         <!-- Logo cloud -->
         <div class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                 src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg" alt="Transistor"
-                 width="158" height="48"/>
+                 src="https://placehold.co/158x48" alt="Transistor" width="158" height="48"/>
             <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                 src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg" alt="Reform" width="158"
-                 height="48"/>
+                 src="https://placehold.co/158x48" alt="Reform" width="158" height="48"/>
             <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                 src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg" alt="Tuple" width="158"
-                 height="48"/>
+                 src="https://placehold.co/158x48?text=Partners Logo" alt="Tuple" width="158" height="48"/>
             <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                 src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg" alt="SavvyCal" width="158"
-                 height="48"/>
+                 src="https://placehold.co/158x48" alt="SavvyCal" width="158" height="48"/>
             <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                 src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg" alt="Statamic" width="158"
-                 height="48"/>
+                 src="https://placehold.co/158x48" alt="Statamic" width="158" height="48"/>
         </div>
     </div>
     <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"

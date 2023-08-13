@@ -2,6 +2,8 @@
   import {Dialog, DialogOverlay} from "@rgossiaux/svelte-headlessui";
   import {_} from "svelte-i18n";
 
+  import logo from '$lib/assets/logo.png';
+
   let mobileMenuOpen = true;
 
 
@@ -18,7 +20,7 @@
         <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">{$_('brand.name')}</span>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt=""/>
+                <img class="h-8 w-auto" src={logo} alt=""/>
             </a>
         </div>
         <div class="flex lg:hidden">
