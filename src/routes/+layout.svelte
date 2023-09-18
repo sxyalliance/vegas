@@ -5,6 +5,7 @@
   import {page} from "$app/stores";
   import {webVitals} from "$lib/vitals";
   import BottomCenterFloatingNotice from "./BottomCenterFloatingNotice.svelte";
+  import {title} from "$lib/stores/title";
 
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
@@ -16,6 +17,10 @@
     })
   }
 </script>
+
+<svelte:head>
+    <title>{$title}</title>
+</svelte:head>
 
 <Header/>
 
