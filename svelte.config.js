@@ -21,6 +21,7 @@ const config = {
 					'vitals.vercel-insights.com',
 					'vitals.vercel-analytics.com',
 				],
+				'require-trusted-types-for': ['script'],
 			}
 		}
 	},

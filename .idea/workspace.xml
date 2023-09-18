@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +66,8 @@
       <workItem from="1694966973495" duration="1247000" />
       <workItem from="1695017189301" duration="13825000" />
       <workItem from="1695033696988" duration="1473000" />
+      <workItem from="1695053785756" duration="62000" />
+      <workItem from="1695053870857" duration="328000" />
     </task>
     <servers />
   </component>
