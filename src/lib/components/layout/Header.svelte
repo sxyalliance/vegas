@@ -110,32 +110,59 @@
                         {#if item.flyout.rich}
                             <Popover class="relative" let:open>
                                 <PopoverButton
-                                        class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                                    {$_(item.name)}
+                                        class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                                    <span>{$_(item.name)}</span>
                                     <Icon icon="tabler:chevron-down" class="text-gray-400" aria-hidden="true"/>
                                 </PopoverButton>
 
                                 {#if open}
                                     <div in:fade={{duration: 200}} out:fade={{duration: 150}}>
                                         <PopoverPanel static
-                                                      class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                                            <div class="p-4">
-                                                {#each item.flyout.items as sub_item (sub_item.name)}
-                                                    <div class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                                                        <div class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                            <Icon icon={sub_item.icon}
-                                                                  class="h-6 w-6 text-gray-600 group-hover:text-indigo-600"/>
+                                                      class="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4">
+                                            <div class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+                                                <div class="p-4">
+                                                    {#each item.flyout.items as sub_item (sub_item.name)}
+                                                        <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                                                            <div class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                                                <Icon icon={sub_item.icon}
+                                                                      class="h-6 w-6 text-gray-600 group-hover:text-indigo-600"/>
+                                                            </div>
+                                                            <div>
+                                                                <a href={sub_item.href}
+                                                                   class="font-semibold text-gray-900">
+                                                                    {$_(sub_item.name)}
+                                                                    <span class="absolute inset-0"/>
+                                                                </a>
+                                                                <p class="mt-1 text-gray-600">{$_(item.description)}</p>
+                                                            </div>
                                                         </div>
-                                                        <div class="flex-auto">
-                                                            <a href={sub_item.href}
-                                                               class="block font-semibold text-gray-900">
-                                                                {$_(sub_item.name)}
+                                                    {/each}
+                                                </div>
+                                                <div class="bg-gray-50 p-8">
+                                                    <div class="flex justify-between">
+                                                        <h3 class="text-sm font-semibold leading-6 text-gray-500">
+                                                            Some posts (TODO)
+                                                        </h3>
+                                                        <a href="#"
+                                                           class="text-sm font-semibold leading-6 text-indigo-600">
+                                                            View all events
+                                                            <span aria-hidden="true">&rarr;</span>
+                                                        </a>
+                                                    </div>
+                                                    <ul role="list" class="mt-6 space-y-6">
+                                                        <li class="relative">
+                                                            <time datetime="2020-12-09T11:43"
+                                                                  class="block text-xs leading-6 text-gray-600">
+                                                                2020-12-09 11:43
+                                                            </time>
+                                                            <a href="post.href"
+                                                               class="block truncate text-sm font-semibold leading-6 text-gray-900">
+                                                                title here
                                                                 <span class="absolute inset-0"/>
                                                             </a>
-                                                            <p class="mt-1 text-gray-600 whitespace-nowrap">{$_(sub_item.description)}</p>
-                                                        </div>
-                                                    </div>
-                                                {/each}
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </PopoverPanel>
                                     </div>
