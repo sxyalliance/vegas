@@ -1,41 +1,83 @@
 {
-  "brand": {
-    "name": "Brand Name"
-  },
-  "navigation": {
-    "home": "Home",
-    "blog": "Blog",
-    "guide": "Guide",
-    "open": "Open main menu",
-    "action": "Action",
-    "close": "Close main menu"
-  },
-  "footer": {
-    "slogan": "Slogan here",
-    "legal": "Legal notice"
-  },
-  "home": {
-    "hero": {
-      "promotion": "Some important promotion or news here.",
-      "promotion_action": "Read more",
-      "title": "Some hero title here with strong word",
-      "text": "Some even more little longer text here with some more information about the hero title clearly.",
-      "primary_action": "Primary action",
-      "secondary_action": "Secondary action"
+    "brand": {
+      "name": "SXYA Community"
     },
-    "blog": {
-      "title": "Blog section title",
-      "text": "Blog section text."
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "members": "Members",
+      "chronicle": "Chronicle",
+      "resources": "Resources",
+      "dictionary": "Dictionary",
+      "events": "Events",
+      "other": "Other",
+      "universal_rules": "SXYA Community Universal Rules",
+      "universal_rules_desc": "Universal rules applicable to all speech and behavior within the server",
+      "meeting_planning_white_paper": "Group Meeting Planning White Paper",
+      "meeting_planning_white_paper_desc": "Regulations and procedures for planning and holding activities and gatherings",
+      "late_handling_reference": "Late/Absence/Obstruction Handling Reference",
+      "late_handling_reference_desc": "Provides a reference for handling individuals who arrive late, are absent, or obstruct activities",
+      "talk_shit_definition_white_paper": "Talk Shit Definition White Paper",
+      "talk_shit_definition_white_paper_desc": "Provides a definition of the \"Talk Shit\" action",
+      "open": "Open main menu",
+      "close": "Close main menu"
     },
-    "team": {
-      "title": "Team section title",
-      "text": "Team section text."
+    "footer": {
+      "slogan": "The truth of the sea, and let not found to lie down in front of my eyes, all things for me to explore.",
+      "legal": "Copyright © 2023 SXYA Community. All rights reserved."
     },
-    "cta": {
-      "title": "Call to action title",
-      "text": "Call to action text.",
-      "hint": "Call to action hint.",
-      "action": "Call to action"
+    "home": {
+      "hero": {
+        "promotion": "Some important promotion or news here.",
+        "promotion_action": "Read more",
+        "title": "SXYA Community Worldwide",
+        "text": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?",
+        "primary_action": "Get started",
+        "secondary_action": "Learn more"
+      },
+      "member": {
+        "title": "Our Members",
+        "text": "As a close-knit team of friends with diverse talents and a shared passion for event planning, we collaborate to design and organize private parties that are truly one-of-a-kind and unforgettable.",
+        "note": "The list will be updated periodically. Sorting is based on name, role and role count."
+      },
+      "procedure": {
+        "subtitle": "How We Works",
+        "title": "Event Planning Procedure",
+        "text": "We have built various standardized processes to build events that are more reliable and suited for the majority of people in order to make events function more smoothly and efficiently.",
+        "steps": {
+          "1": {
+            "name": "Preliminary Planning",
+            "description": "Develop initial event details, including location, number of participants, date, and time."
+          },
+          "2": {
+            "name": "Feedback-based Adjustments",
+            "description": "Ask all members if they choose to participate and make adjustments to satisfy the majority."
+          },
+          "3": {
+            "name": "Follow-up and Confirmation",
+            "description": "Follow-up with non-responsive members to ask if they choose to participate and adjust to satisfy the majority"
+          },
+          "4": {
+            "name": "Event Execution",
+            "description": "Carry out the details that have been agreed upon, such as reservations and confirmation."
+          },
+          "5": {
+            "name": "Post-execution Inquiry",
+            "description": "Follow-up with non-responsive members to ask if they choose to participate (without adjusting event details)."
+          },
+          "6": {
+            "name": "Detail Notification",
+            "description": "Notify all members of the event details and any changes that have been made."
+          }
+        }
+      },
+      "dictionary": {
+        "note": "The following phrases are randomly selected from SXYA dictionary.",
+        "view_more": "View More"
+      },
+      "team": {
+        "title": "Team section title",
+        "text": "Team section text."
+      }
     }
   }
-}
