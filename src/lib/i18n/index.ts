@@ -18,6 +18,7 @@ export const resolveFirstAvailableLocale = (locales: readonly string[]): string 
 
 register('en', () => import('./locales/en.json'))
 register('zh-CN', () => import('./locales/zh-CN.json'))
+register('zh-HK', () => import('./locales/zh-HK.json'))
 
 init({
   fallbackLocale: defaultLocale,

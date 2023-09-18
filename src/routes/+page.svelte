@@ -1,16 +1,16 @@
 <script>
-  import TeamSection from "./TeamSection.svelte";
-  import CallToActionSection from "./CallToActionSection.svelte";
-  import BlogSection from "./BlogSection.svelte";
   import HeroSection from "./HeroSection.svelte";
+  import DictionarySection from "./DictionarySection.svelte";
+  import ProcedureSection from "./ProcedureSection.svelte";
+  import MemberSection from "./MemberSection.svelte";
 </script>
 
 <main>
     <HeroSection/>
 
-    <BlogSection/>
+    <MemberSection/>
 
-    <TeamSection/>
+    <ProcedureSection/>
 
-    <CallToActionSection/>
+    <DictionarySection/>
 </main>
