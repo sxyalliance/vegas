@@ -20,8 +20,8 @@ const config = {
 					'self',
 					'vitals.vercel-insights.com',
 					'vitals.vercel-analytics.com',
+					'api.iconify.design',
 				],
-				'require-trusted-types-for': ['script'],
 			}
 		}
 	},

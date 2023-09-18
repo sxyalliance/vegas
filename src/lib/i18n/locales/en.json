@@ -28,8 +28,8 @@
     },
     "home": {
       "hero": {
-        "promotion": "Some important promotion or news here.",
-        "promotion_action": "Read more",
+        "tagline": "Some important promotion or news here.",
+        "tagline_link": "Read more",
         "title": "SXYA Community Worldwide",
         "text": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?",
         "primary_action": "Get started",
