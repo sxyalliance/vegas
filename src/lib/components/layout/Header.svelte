@@ -66,25 +66,25 @@
           {
             name: 'navigation.universal_rules',
             href: '#',
-            icon: 'tabler:activity',
+            icon: 'tabler:ruler',
             description: 'navigation.universal_rules_desc',
           },
           {
             name: 'navigation.meeting_planning_white_paper',
             href: '#',
-            icon: 'tabler:activity',
+            icon: 'tabler:school',
             description: 'navigation.meeting_planning_white_paper_desc',
           },
           {
             name: 'navigation.late_handling_reference',
             href: '#',
-            icon: 'tabler:activity',
+            icon: 'tabler:flag',
             description: 'navigation.late_handling_reference_desc',
           },
           {
             name: 'navigation.talk_shit_definition_white_paper',
             href: '#',
-            icon: 'tabler:activity',
+            icon: 'tabler:message-report',
             description: 'navigation.talk_shit_definition_white_paper_desc',
           },
         ]
