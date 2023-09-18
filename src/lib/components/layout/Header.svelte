@@ -133,7 +133,7 @@
                                                                     {$_(sub_item.name)}
                                                                     <span class="absolute inset-0"/>
                                                                 </a>
-                                                                <p class="mt-1 text-gray-600">{$_(item.description)}</p>
+                                                                <p class="mt-1 text-gray-600">{$_(sub_item.description)}</p>
                                                             </div>
                                                         </div>
                                                     {/each}
