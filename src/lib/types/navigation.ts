@@ -34,5 +34,6 @@ interface RichFlyoutItem {
   name: string
   href: string
   icon: string
+  highlight: string
   description: string
 }

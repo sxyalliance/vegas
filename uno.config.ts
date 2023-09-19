@@ -6,10 +6,18 @@ import {
   presetWebFonts,
 } from 'unocss'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
+import {presetRadix} from "unocss-preset-radix";
 
 export default defineConfig({
   presets: [
     presetUno(),
+    presetRadix({
+      palette: ['indigo', 'slate', 'green'],
+      aliases: {
+        primary: 'indigo',
+        natural: 'slate',
+      }
+    }),
     presetIcons({
       prefix: 'i-',
       extraProperties: {
