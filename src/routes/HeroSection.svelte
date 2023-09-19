@@ -24,7 +24,9 @@
                     </div>
                 </div>
                 <h1 class="mt-24 text-4xl font-bold tracking-tight text-hue12 sm:mt-10 sm:text-6xl">
-                    {$_('home.hero.title')}
+                    <span class="bg-clip-text text-transparent rainbow">
+                        {$_('home.hero.title')}
+                    </span>
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-hue11">
                     {$_('home.hero.text')}
@@ -46,3 +48,343 @@
         </div>
     </div>
 </div>
+
+<style>
+    .rainbow {
+        background-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
+        animation: rainbow 20s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .rainbow {
+            animation: none !important;
+        }
+    }
+
+    @keyframes rainbow {
+        0% {
+            --vg-rainbow-1: #00a98e;
+            --vg-rainbow-2: #009ff7;
+        }
+        1.25% {
+            --vg-rainbow-1: #00a996;
+            --vg-rainbow-2: #009dfa;
+        }
+        2.5% {
+            --vg-rainbow-1: #00a99f;
+            --vg-rainbow-2: #009bfc;
+        }
+        3.75% {
+            --vg-rainbow-1: #00a9a7;
+            --vg-rainbow-2: #0098fd;
+        }
+        5% {
+            --vg-rainbow-1: #00a9b0;
+            --vg-rainbow-2: #0096fd;
+        }
+        6.25% {
+            --vg-rainbow-1: #00a9b8;
+            --vg-rainbow-2: #0093fd;
+        }
+        7.5% {
+            --vg-rainbow-1: #00a9c0;
+            --vg-rainbow-2: #2e90fc;
+        }
+        8.75% {
+            --vg-rainbow-1: #00a8c7;
+            --vg-rainbow-2: #4d8dfa;
+        }
+        10% {
+            --vg-rainbow-1: #00a8cf;
+            --vg-rainbow-2: #638af8;
+        }
+        11.25% {
+            --vg-rainbow-1: #00a7d5;
+            --vg-rainbow-2: #7587f5;
+        }
+        12.5% {
+            --vg-rainbow-1: #00a6dc;
+            --vg-rainbow-2: #8583f1;
+        }
+        13.75% {
+            --vg-rainbow-1: #00a6e2;
+            --vg-rainbow-2: #9280ed;
+        }
+        15% {
+            --vg-rainbow-1: #00a4e7;
+            --vg-rainbow-2: #9f7ce9;
+        }
+        16.25% {
+            --vg-rainbow-1: #00a3ec;
+            --vg-rainbow-2: #aa78e3;
+        }
+        17.5% {
+            --vg-rainbow-1: #00a2f1;
+            --vg-rainbow-2: #b574dd;
+        }
+        18.75% {
+            --vg-rainbow-1: #00a0f4;
+            --vg-rainbow-2: #be71d7;
+        }
+        20% {
+            --vg-rainbow-1: #009ff7;
+            --vg-rainbow-2: #c76dd1;
+        }
+        21.25% {
+            --vg-rainbow-1: #009dfa;
+            --vg-rainbow-2: #cf69c9;
+        }
+        22.5% {
+            --vg-rainbow-1: #009bfc;
+            --vg-rainbow-2: #d566c2;
+        }
+        23.75% {
+            --vg-rainbow-1: #0098fd;
+            --vg-rainbow-2: #dc63ba;
+        }
+        25% {
+            --vg-rainbow-1: #0096fd;
+            --vg-rainbow-2: #e160b3;
+        }
+        26.25% {
+            --vg-rainbow-1: #0093fd;
+            --vg-rainbow-2: #e65eab;
+        }
+        27.5% {
+            --vg-rainbow-1: #2e90fc;
+            --vg-rainbow-2: #e95ca2;
+        }
+        28.75% {
+            --vg-rainbow-1: #4d8dfa;
+            --vg-rainbow-2: #ed5a9a;
+        }
+        30% {
+            --vg-rainbow-1: #638af8;
+            --vg-rainbow-2: #ef5992;
+        }
+        31.25% {
+            --vg-rainbow-1: #7587f5;
+            --vg-rainbow-2: #f15989;
+        }
+        32.5% {
+            --vg-rainbow-1: #8583f1;
+            --vg-rainbow-2: #f25981;
+        }
+        33.75% {
+            --vg-rainbow-1: #9280ed;
+            --vg-rainbow-2: #f25a79;
+        }
+        35% {
+            --vg-rainbow-1: #9f7ce9;
+            --vg-rainbow-2: #f25c71;
+        }
+        36.25% {
+            --vg-rainbow-1: #aa78e3;
+            --vg-rainbow-2: #f15e69;
+        }
+        37.5% {
+            --vg-rainbow-1: #b574dd;
+            --vg-rainbow-2: #ef6061;
+        }
+        38.75% {
+            --vg-rainbow-1: #be71d7;
+            --vg-rainbow-2: #ed635a;
+        }
+        40% {
+            --vg-rainbow-1: #c76dd1;
+            --vg-rainbow-2: #eb6552;
+        }
+        41.25% {
+            --vg-rainbow-1: #cf69c9;
+            --vg-rainbow-2: #e8694b;
+        }
+        42.5% {
+            --vg-rainbow-1: #d566c2;
+            --vg-rainbow-2: #e46c44;
+        }
+        43.75% {
+            --vg-rainbow-1: #dc63ba;
+            --vg-rainbow-2: #e06f3d;
+        }
+        45% {
+            --vg-rainbow-1: #e160b3;
+            --vg-rainbow-2: #db7336;
+        }
+        46.25% {
+            --vg-rainbow-1: #e65eab;
+            --vg-rainbow-2: #d77630;
+        }
+        47.5% {
+            --vg-rainbow-1: #e95ca2;
+            --vg-rainbow-2: #d17a2a;
+        }
+        48.75% {
+            --vg-rainbow-1: #ed5a9a;
+            --vg-rainbow-2: #cc7d24;
+        }
+        50% {
+            --vg-rainbow-1: #ef5992;
+            --vg-rainbow-2: #c6811e;
+        }
+        51.25% {
+            --vg-rainbow-1: #f15989;
+            --vg-rainbow-2: #bf8418;
+        }
+        52.5% {
+            --vg-rainbow-1: #f25981;
+            --vg-rainbow-2: #b98713;
+        }
+        53.75% {
+            --vg-rainbow-1: #f25a79;
+            --vg-rainbow-2: #b28a0f;
+        }
+        55% {
+            --vg-rainbow-1: #f25c71;
+            --vg-rainbow-2: #ab8d0c;
+        }
+        56.25% {
+            --vg-rainbow-1: #f15e69;
+            --vg-rainbow-2: #a3900b;
+        }
+        57.5% {
+            --vg-rainbow-1: #ef6061;
+            --vg-rainbow-2: #9c920d;
+        }
+        58.75% {
+            --vg-rainbow-1: #ed635a;
+            --vg-rainbow-2: #949510;
+        }
+        60% {
+            --vg-rainbow-1: #eb6552;
+            --vg-rainbow-2: #8b9715;
+        }
+        61.25% {
+            --vg-rainbow-1: #e8694b;
+            --vg-rainbow-2: #83991b;
+        }
+        62.5% {
+            --vg-rainbow-1: #e46c44;
+            --vg-rainbow-2: #7a9b21;
+        }
+        63.75% {
+            --vg-rainbow-1: #e06f3d;
+            --vg-rainbow-2: #719d27;
+        }
+        65% {
+            --vg-rainbow-1: #db7336;
+            --vg-rainbow-2: #679e2e;
+        }
+        66.25% {
+            --vg-rainbow-1: #d77630;
+            --vg-rainbow-2: #5da035;
+        }
+        67.5% {
+            --vg-rainbow-1: #d17a2a;
+            --vg-rainbow-2: #51a13c;
+        }
+        68.75% {
+            --vg-rainbow-1: #cc7d24;
+            --vg-rainbow-2: #44a244;
+        }
+        70% {
+            --vg-rainbow-1: #c6811e;
+            --vg-rainbow-2: #34a44b;
+        }
+        71.25% {
+            --vg-rainbow-1: #bf8418;
+            --vg-rainbow-2: #1ba553;
+        }
+        72.5% {
+            --vg-rainbow-1: #b98713;
+            --vg-rainbow-2: #00a65b;
+        }
+        73.75% {
+            --vg-rainbow-1: #b28a0f;
+            --vg-rainbow-2: #00a663;
+        }
+        75% {
+            --vg-rainbow-1: #ab8d0c;
+            --vg-rainbow-2: #00a76c;
+        }
+        76.25% {
+            --vg-rainbow-1: #a3900b;
+            --vg-rainbow-2: #00a874;
+        }
+        77.5% {
+            --vg-rainbow-1: #9c920d;
+            --vg-rainbow-2: #00a87d;
+        }
+        78.75% {
+            --vg-rainbow-1: #949510;
+            --vg-rainbow-2: #00a985;
+        }
+        80% {
+            --vg-rainbow-1: #8b9715;
+            --vg-rainbow-2: #00a98e;
+        }
+        81.25% {
+            --vg-rainbow-1: #83991b;
+            --vg-rainbow-2: #00a996;
+        }
+        82.5% {
+            --vg-rainbow-1: #7a9b21;
+            --vg-rainbow-2: #00a99f;
+        }
+        83.75% {
+            --vg-rainbow-1: #719d27;
+            --vg-rainbow-2: #00a9a7;
+        }
+        85% {
+            --vg-rainbow-1: #679e2e;
+            --vg-rainbow-2: #00a9b0;
+        }
+        86.25% {
+            --vg-rainbow-1: #5da035;
+            --vg-rainbow-2: #00a9b8;
+        }
+        87.5% {
+            --vg-rainbow-1: #51a13c;
+            --vg-rainbow-2: #00a9c0;
+        }
+        88.75% {
+            --vg-rainbow-1: #44a244;
+            --vg-rainbow-2: #00a8c7;
+        }
+        90% {
+            --vg-rainbow-1: #34a44b;
+            --vg-rainbow-2: #00a8cf;
+        }
+        91.25% {
+            --vg-rainbow-1: #1ba553;
+            --vg-rainbow-2: #00a7d5;
+        }
+        92.5% {
+            --vg-rainbow-1: #00a65b;
+            --vg-rainbow-2: #00a6dc;
+        }
+        93.75% {
+            --vg-rainbow-1: #00a663;
+            --vg-rainbow-2: #00a6e2;
+        }
+        95% {
+            --vg-rainbow-1: #00a76c;
+            --vg-rainbow-2: #00a4e7;
+        }
+        96.25% {
+            --vg-rainbow-1: #00a874;
+            --vg-rainbow-2: #00a3ec;
+        }
+        97.5% {
+            --vg-rainbow-1: #00a87d;
+            --vg-rainbow-2: #00a2f1;
+        }
+        98.75% {
+            --vg-rainbow-1: #00a985;
+            --vg-rainbow-2: #00a0f4;
+        }
+        100% {
+            --vg-rainbow-1: #00a98e;
+            --vg-rainbow-2: #009ff7;
+        }
+    }
+</style>
