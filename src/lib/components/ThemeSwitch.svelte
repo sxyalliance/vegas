@@ -4,6 +4,7 @@
   import Icon from "@iconify/svelte";
   import {browser} from "$app/environment";
   import va from "@vercel/analytics";
+  import {_} from "svelte-i18n";
 
   const themeIcons: Record<typeof AvailablePreferences[number], string> = {
     'system': 'tabler:contrast',
@@ -36,13 +37,13 @@
   })
 </script>
 
-<Listbox bind:value={$themePreference}>
+<Listbox bind:value={$themePreference} aria-label={$_('theme_switch.sr_label')}>
     <div class="absolute w-36 top-0">
         <ListboxButton
                 class="relative w-full cursor-pointer rounded-b-md bg-hue1 py-1.5 pl-3 pr-10 text-left text-hue12 sm:text-sm sm:leading-6">
             <span class="flex items-center">
                 <Icon icon={themeIcons[$themePreference]} class="h-5 w-5 flex-shrink-0"/>
-                <span class="ml-3 block truncate capitalize">{$themePreference}</span>
+                <span class="ml-3 block truncate capitalize">{$_(`theme_switch.${$themePreference}`)}</span>
             </span>
             <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                 <Icon icon="tabler:selector" class="h-5 w-5 text-hue10"/>
@@ -57,7 +58,7 @@
                         <div class="flex items-center">
                             <Icon icon={themeIcons[option]} class="h-5 w-5 flex-shrink-0"/>
                             <span class="ml-3 block truncate capitalize {selected ? 'font-semibold' : 'font-normal'}">
-                                {option}
+                                {$_(`theme_switch.${option}`)}
                             </span>
                         </div>
 

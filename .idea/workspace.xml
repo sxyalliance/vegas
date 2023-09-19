@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/BottomCenterFloatingNotice.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/BottomCenterFloatingNotice.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/ThemeSwitch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ThemeSwitch.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/i18n/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
       <workItem from="1695033696988" duration="1473000" />
       <workItem from="1695053785756" duration="62000" />
       <workItem from="1695053870857" duration="6280000" />
-      <workItem from="1695116896043" duration="7828000" />
+      <workItem from="1695116896043" duration="12484000" />
     </task>
     <servers />
   </component>
