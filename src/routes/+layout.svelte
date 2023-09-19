@@ -28,4 +28,4 @@
 
 <Footer/>
 
-<BottomCenterFloatingNotice/>
+<!--<BottomCenterFloatingNotice/>-->

@@ -69,14 +69,14 @@
   const people = getMembers()
 </script>
 
-<section class="bg-white">
+<section class="bg-hue1">
     <div class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
         <div class="space-y-8 sm:space-y-12">
             <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-hue12">
                     {$_('home.member.title')}
                 </h2>
-                <p class="text-xl text-gray-500">
+                <p class="text-xl text-hue11">
                     {$_('home.member.text')}
                 </p>
             </div>
@@ -90,9 +90,9 @@
                             <img src={person.imageUrl} alt={'Avatar of ' + person.name} width={128} height={128}
                                  class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"/>
                             <div class="space-y-2">
-                                <div class="text-xs font-medium lg:text-sm">
+                                <div class="text-xs font-medium lg:text-sm text-hue12">
                                     <h3>{person.name}</h3>
-                                    <p class="text-indigo-600">{person.role}</p>
+                                    <p class="text-primary10">{person.role}</p>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                 {/each}
             </ul>
 
-            <div class="text-xs text-gray-500">
+            <div class="text-xs text-hue10">
                 <p>{$_('home.member.note')}</p>
             </div>
         </div>

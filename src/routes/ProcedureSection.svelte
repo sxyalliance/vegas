@@ -2,16 +2,16 @@
   import {_} from "svelte-i18n";
 </script>
 
-<section class="bg-white">
+<section class="bg-hue1">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
         <div>
-            <h2 class="text-base font-semibold text-indigo-600 uppercase tracking-wide">
+            <h2 class="text-base font-semibold text-primary10 uppercase tracking-wide">
                 {$_('home.procedure.subtitle')}
             </h2>
-            <p class="mt-2 text-3xl font-extrabold text-gray-900">
+            <p class="mt-2 text-3xl font-extrabold text-hue12">
                 {$_('home.procedure.title')}
             </p>
-            <p class="mt-4 text-lg text-gray-500">
+            <p class="mt-4 text-lg text-hue11">
                 {$_('home.procedure.text')}
             </p>
         </div>
@@ -20,12 +20,12 @@
                 {#each {length: 6} as x, i (i)}
                     <div class="relative">
                         <dt>
-                            <span class="absolute text-2xl text-indigo-600">{i + 1}</span>
-                            <p class="ml-9 text-lg leading-6 font-medium text-gray-900">
+                            <span class="absolute text-2xl text-primary10">{i + 1}</span>
+                            <p class="ml-9 text-lg leading-6 font-medium text-hue12">
                                 {$_(`home.procedure.steps.${i + 1}.name`)}
                             </p>
                         </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">
+                        <dd class="mt-2 ml-9 text-base text-hue11">
                             {$_(`home.procedure.steps.${i + 1}.description`)}
                         </dd>
                     </div>

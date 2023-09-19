@@ -97,7 +97,7 @@
   ];
 </script>
 
-<header class="absolute inset-x-0 top-0 z-50 hue-natural">
+<header class="absolute inset-x-0 top-0 z-50">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex items-center gap-x-12">
             <a href="#" class="-m-1.5 p-1.5">
@@ -220,7 +220,7 @@
     <Dialog as="div" class="lg:hidden" open={mobileMenuOpen} on:close={() => (mobileMenuOpen = false)}>
         <div class="fixed inset-0 z-10"/>
         <DialogOverlay/>
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm hue-natural">
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                     <span class="sr-only">SXYA Community</span>

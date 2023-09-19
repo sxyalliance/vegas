@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/types/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types/navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HeroSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/MemberSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MemberSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ProcedureSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ProcedureSection.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
