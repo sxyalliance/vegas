@@ -1,25 +1,42 @@
 import {storable} from "./storable";
-import {createMediaStore} from "svelte-media-queries/components/MediaQuery.svelte";
-import {onDestroy} from "svelte";
-import {get} from "svelte/store";
+import {derived} from "svelte/store";
+import {browser} from "$app/environment";
 
-const availableThemes = ['light', 'dark'] as const
-const defaultTheme = 'system' as const
+export const AvailableThemes = ['light', 'dark'] as const
+export const AvailablePreferences = ['system', ...AvailableThemes] as const
+export const DefaultPreference = 'system' as const
+export const FallbackTheme = 'light' as const
 
-export const AllowedOptions = ['system', ...availableThemes] as const
+type ThemePreference = typeof AvailablePreferences[number]
 
-export type ThemeOptions = typeof AllowedOptions[number]
-
-function createTheme() {
-  const {subscribe, set} = storable<ThemeOptions>(defaultTheme)
+function createThemePreference() {
+  const {subscribe, set} = storable<ThemePreference>(DefaultPreference)
 
   return {
     subscribe,
-    set: (theme: ThemeOptions) => {
-      if (AllowedOptions.includes(theme)) {
-        set(theme)
+    set: (n: ThemePreference) => {
+      if (AvailablePreferences.includes(n)) {
+        set(n)
       }
-    },
+    }
+  }
+}
+
+export const themePreference = createThemePreference()
+
+function createTheme() {
+  const {subscribe} = derived(themePreference, ($themePreference) => {
+    if ($themePreference === 'system') {
+      if (browser) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
+      return FallbackTheme
+    }
+    return $themePreference
+  })
+
+  return {
+    subscribe,
   }
 }
 

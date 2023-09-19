@@ -1,5 +1,7 @@
 <script lang="ts">
-  import logo from "$lib/assets/logo.png";
+  import logoLight from "$lib/assets/logo-light.png";
+  import logoDark from "$lib/assets/logo-dark.png";
+
   import {_} from "svelte-i18n";
   import Icon from "@iconify/svelte";
   import {
@@ -15,6 +17,9 @@
 
   import {fade} from "svelte/transition";
   import ThemeSwitch from "$lib/components/ThemeSwitch.svelte";
+  import {theme} from "$lib/stores/theme";
+
+  $: logo = $theme === 'dark' ? logoDark : logoLight;
 
   let mobileMenuOpen = false;
 
