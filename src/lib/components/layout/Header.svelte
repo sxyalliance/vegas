@@ -14,6 +14,7 @@
   import type {NavigationDefinition} from "$lib/types/navigation.js";
 
   import {fade} from "svelte/transition";
+  import ThemeSwitch from "$lib/components/ThemeSwitch.svelte";
 
   let mobileMenuOpen = false;
 
@@ -207,6 +208,7 @@
                 {/each}
             </PopoverGroup>
         </div>
+        <ThemeSwitch/>
         {#if !mobileMenuOpen}
             <div class="flex lg:hidden">
                 <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-hue11"
