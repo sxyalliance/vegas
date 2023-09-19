@@ -3,6 +3,7 @@
   import {Listbox, ListboxButton, ListboxOption, ListboxOptions} from "@rgossiaux/svelte-headlessui";
   import Icon from "@iconify/svelte";
   import {browser} from "$app/environment";
+  import va from "@vercel/analytics";
 
   const themeIcons: Record<typeof AvailablePreferences[number], string> = {
     'system': 'tabler:contrast',
@@ -28,6 +29,10 @@
     } else if (value === 'light') {
       deactivateDarkMode()
     }
+
+    va.track('ChangeTheme', {
+      theme: value
+    })
   })
 </script>
 
