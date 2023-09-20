@@ -20,11 +20,11 @@ const config = {
 					'self',
 					'vitals.vercel-insights.com',
 					'vitals.vercel-analytics.com',
-					'api.iconify.design',
-				],
+					'api.iconify.design'
+				]
 			}
 		}
-	},
+	}
 };
 
 export default config;

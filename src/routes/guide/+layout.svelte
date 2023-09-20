@@ -1,7 +1,7 @@
 <script>
-  import CenteredHeading from "$lib/CenteredHeading.svelte";
+	import CenteredHeading from '$lib/CenteredHeading.svelte';
 </script>
 
-<CenteredHeading/>
+<CenteredHeading />
 
-<slot/>
+<slot />

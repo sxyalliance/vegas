@@ -1,20 +1,26 @@
 <script>
-  import {_, locales, locale} from "svelte-i18n";
-  import SelectMenu from "$lib/components/SelectMenu.svelte";
+	import { _, locales, locale } from 'svelte-i18n';
+	import SelectMenu from '$lib/components/SelectMenu.svelte';
 
-  let clazz = '';
-  export {clazz as class};
+	let clazz = '';
+	export { clazz as class };
 
-  const labels = {
-    'en': 'English',
-    'zh-HK': '繁體中文 (香港)',
-  }
+	const labels = {
+		en: 'English',
+		'zh-HK': '繁體中文 (香港)'
+	};
 
-  $: options = $locales.map((locale) => ({
-    value: locale,
-    label: locale,
-    icon: 'tabler:language',
-  }));
+	$: options = $locales.map((locale) => ({
+		value: locale,
+		label: locale,
+		icon: 'tabler:language'
+	}));
 </script>
 
-<SelectMenu class={clazz} bind:value={$locale} label={$_('locale_switch.sr_label')} {options} alternativeLabelMap={labels}/>
+<SelectMenu
+	class={clazz}
+	bind:value={$locale}
+	label={$_('locale_switch.sr_label')}
+	{options}
+	alternativeLabelMap={labels}
+/>
