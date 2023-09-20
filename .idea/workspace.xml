@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/assets/home_hero_cover.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/assets/home_hero_cover.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HeroSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "settings.editor.selected.configurable": "inlay.hints",
     "ts.external.directory.path": "\\\\wsl$\\Ubuntu\\home\\sunxyw\\dev\\sxya\\vegas\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -70,11 +74,17 @@
       <workItem from="1695033696988" duration="1473000" />
       <workItem from="1695053785756" duration="62000" />
       <workItem from="1695053870857" duration="6280000" />
-      <workItem from="1695116896043" duration="16881000" />
+      <workItem from="1695116896043" duration="18650000" />
+      <workItem from="1695182991083" duration="93000" />
+      <workItem from="1695183095782" duration="362000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

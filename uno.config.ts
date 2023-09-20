@@ -7,6 +7,7 @@ import {
 } from 'unocss'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 import {presetRadix} from "unocss-preset-radix";
+import {presetHeroPatterns} from "@julr/unocss-preset-heropatterns";
 
 export default defineConfig({
   presets: [
@@ -25,6 +26,7 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
+    presetHeroPatterns(),
     presetTypography(),
     presetWebFonts({
       fonts: {
