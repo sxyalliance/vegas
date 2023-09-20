@@ -38,9 +38,9 @@
 </script>
 
 <Listbox bind:value={$themePreference} aria-label={$_('theme_switch.sr_label')}>
-    <div class="absolute w-36 top-0">
+    <div class="w-36">
         <ListboxButton
-                class="relative w-full cursor-pointer rounded-b-md shadow bg-hue1 py-1.5 pl-3 pr-10 text-left text-hue12 sm:text-sm sm:leading-6">
+                class="relative w-full cursor-pointer rounded-md bg-hue1 py-1.5 pl-3 pr-10 text-left text-hue12 shadow-sm ring-1 ring-inset ring-hue10 sm:text-sm sm:leading-6">
             <span class="flex items-center">
                 <Icon icon={themeIcons[$themePreference]} class="h-5 w-5 flex-shrink-0"/>
                 <span class="ml-3 block truncate capitalize">{$_(`theme_switch.${$themePreference}`)}</span>
@@ -51,7 +51,7 @@
         </ListboxButton>
 
         <ListboxOptions
-                class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-hue1 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                class="absolute z-10 mt-1 max-h-56 w-36 overflow-auto rounded-md bg-hue1 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
             {#each AvailablePreferences as option (option)}
                 <ListboxOption value={option} let:selected let:active>
                     <li class="relative cursor-pointer select-none py-2 pl-3 pr-9 {active ? 'bg-primary10 text-primary-fg' : 'text-hue12'}">

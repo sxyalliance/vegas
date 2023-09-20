@@ -103,7 +103,7 @@
   ];
 </script>
 
-<header class="absolute inset-x-0 top-0 z-50">
+<header class="absolute inset-x-0 top-0 z-50 bg-hue1 border-b-2 border-rainbow">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex items-center gap-x-12">
             <a href="#" class="-m-1.5 p-1.5">
@@ -213,7 +213,6 @@
                 {/each}
             </PopoverGroup>
         </div>
-        <ThemeSwitch/>
         {#if !mobileMenuOpen}
             <div class="flex lg:hidden">
                 <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-hue11"
@@ -223,6 +222,9 @@
                 </button>
             </div>
         {/if}
+        <div class="hidden lg:flex">
+            <ThemeSwitch/>
+        </div>
     </nav>
     <Dialog as="div" class="lg:hidden" open={mobileMenuOpen} on:close={() => (mobileMenuOpen = false)}>
         <div class="fixed inset-0 z-10"/>
