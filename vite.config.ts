@@ -3,6 +3,7 @@ import UnoCSS from '@unocss/svelte-scoped/vite'
 import {defineConfig} from 'vitest/config';
 import {exec} from 'child_process'
 import {promisify} from 'util'
+import {imagetools} from "@zerodevx/svelte-img/vite";
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec)
@@ -24,7 +25,8 @@ export default defineConfig({
       injectReset: '@unocss/reset/tailwind.css',
       // ...other Svelte Scoped options
     }),
-    sveltekit()
+    sveltekit(),
+    imagetools(),
   ],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}']

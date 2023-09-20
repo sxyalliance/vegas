@@ -3,6 +3,7 @@
   import {theme} from "$lib/stores/theme";
   import logoDark from "$lib/assets/logo-dark.png";
   import logoLight from "$lib/assets/logo-light.png";
+  import BrandLogo from "$lib/components/BrandLogo.svelte";
 
   $: logo = $theme === 'dark' ? logoDark : logoLight;
 </script>
@@ -13,8 +14,8 @@
     </h2>
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div class="space-y-8">
-                <img class="h-7" src={logo} alt={$_('brand.sr_logo')}/>
+            <div class="space-y-4">
+                <BrandLogo class="h-24 w-auto"/>
                 <p class="text-sm leading-6 text-hue11">
                     {$_('footer.slogan')}
                 </p>

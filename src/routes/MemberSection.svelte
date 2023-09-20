@@ -2,6 +2,7 @@
   // member data export by dSaver
   import discordMembers from "$lib/api/discord_members.json"
   import {_} from "svelte-i18n";
+  import Img from '@zerodevx/svelte-img';
 
   function getMembers() {
     // preprocess roles
@@ -43,12 +44,43 @@
       if (!member.avatar.startsWith('https://cdn.discordapp.com/avatars/')) {
         // https://cdn.discordapp.com/embed/avatars/{0..4}.png
         member.avatar = 'https://cdn.discordapp.com/embed/avatars/' + Math.floor(Math.random() * 5) + '.png'
+      } else {
+        // remove the trailing .png if exists
+        member.avatar = member.avatar.replace(/\.png$/, '')
+      }
+
+      let avatar;
+
+      if (member.avatar.endsWith('.png')) {
+        avatar = {
+          img: {
+            src: member.avatar,
+            w: 128,
+            h: 128,
+          },
+        }
+      } else {
+        avatar = {
+          img: {
+            src: member.avatar + '.png',
+            w: 128,
+            h: 128,
+          },
+          sources: {
+            webp: [
+              {src: member.avatar + '.webp', w: 128},
+            ],
+            jpeg: [
+              {src: member.avatar + '.jpeg', w: 128},
+            ],
+          }
+        }
       }
 
       return {
         name: member.nickname || member.username,
         role: roles[member.roles.find((role: string) => roles[role])],
-        imageUrl: member.avatar,
+        avatar,
         extra: {
           roleCount: member.roles.length,
         }
@@ -87,7 +119,7 @@
                 {#each people as person (person.name)}
                     <li>
                         <div class="space-y-4">
-                            <img src={person.imageUrl} alt={'Avatar of ' + person.name} width={128} height={128}
+                            <Img src={person.avatar} alt={'Avatar of ' + person.name}
                                  class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"/>
                             <div class="space-y-2">
                                 <div class="text-xs font-medium lg:text-sm text-hue12">

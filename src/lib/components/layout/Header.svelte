@@ -1,7 +1,4 @@
 <script lang="ts">
-  import logoLight from "$lib/assets/logo-light.png";
-  import logoDark from "$lib/assets/logo-dark.png";
-
   import {_} from "svelte-i18n";
   import Icon from "@iconify/svelte";
   import {
@@ -17,9 +14,7 @@
 
   import {fade} from "svelte/transition";
   import ThemeSwitch from "$lib/components/ThemeSwitch.svelte";
-  import {theme} from "$lib/stores/theme";
-
-  $: logo = $theme === 'dark' ? logoDark : logoLight;
+  import BrandLogo from "$lib/components/BrandLogo.svelte";
 
   let mobileMenuOpen = false;
 
@@ -108,7 +103,7 @@
         <div class="flex items-center gap-x-12">
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">SXYA Community</span>
-                <img class="h-8 w-auto" src={logo} alt=""/>
+                <BrandLogo class="h-8 w-auto"/>
             </a>
             <PopoverGroup class="hidden lg:flex lg:gap-x-12">
                 {#each navigation as item (item.name)}
@@ -233,7 +228,7 @@
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                     <span class="sr-only">SXYA Community</span>
-                    <img class="h-8 w-auto" src={logo} alt=""/>
+                    <BrandLogo class="h-8 w-auto"/>
                 </a>
                 {#if mobileMenuOpen}
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-hue11"

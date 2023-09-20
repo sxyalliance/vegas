@@ -1,7 +1,8 @@
 <script>
   import {_} from 'svelte-i18n'
+  import {FxParallax as Img} from "@zerodevx/svelte-img";
 
-  import cover from '$lib/assets/home_hero_cover-e.png'
+  import cover from '$lib/assets/home_hero_cover-e.png?as=run:48'
 </script>
 
 <!-- Hero section -->
@@ -42,9 +43,9 @@
                 </div>
             </div>
         </div>
-        <div class="relative lg:col-span-6 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-            <img class="aspect-[3/2] w-full bg-hue1 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
-                 src={cover} alt="Group of SXYA Members"/>
+        <div class="relative lg:col-span-6 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0 lg:pt-20">
+            <Img class="aspect-[3/2] w-full bg-hue1 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+                 src={cover} alt="Group of SXYA Members" factor="0.95"/>
         </div>
     </div>
 </div>
