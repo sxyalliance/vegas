@@ -40,7 +40,7 @@
 <Listbox bind:value={$themePreference} aria-label={$_('theme_switch.sr_label')}>
     <div class="absolute w-36 top-0">
         <ListboxButton
-                class="relative w-full cursor-pointer rounded-b-md bg-hue1 py-1.5 pl-3 pr-10 text-left text-hue12 sm:text-sm sm:leading-6">
+                class="relative w-full cursor-pointer rounded-b-md shadow bg-hue1 py-1.5 pl-3 pr-10 text-left text-hue12 sm:text-sm sm:leading-6">
             <span class="flex items-center">
                 <Icon icon={themeIcons[$themePreference]} class="h-5 w-5 flex-shrink-0"/>
                 <span class="ml-3 block truncate capitalize">{$_(`theme_switch.${$themePreference}`)}</span>
