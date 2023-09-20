@@ -219,8 +219,8 @@
             </div>
         {/if}
         <div class="hidden lg:flex gap-x-4">
-            <LocaleSwitch/>
-            <ThemeSwitch/>
+            <LocaleSwitch class="w-46"/>
+            <ThemeSwitch class="w-34"/>
         </div>
     </nav>
     <Dialog as="div" class="lg:hidden" open={mobileMenuOpen} on:close={() => (mobileMenuOpen = false)}>
@@ -240,7 +240,7 @@
                     </button>
                 {/if}
             </div>
-            <div class="mt-6 flow-root">
+            <div class="mt-8 flow-root">
                 <div class="-my-6">
                     <div class="space-y-2 py-6">
                         {#each navigation as item (item.name)}
@@ -268,6 +268,11 @@
                                 </Disclosure>
                             {/if}
                         {/each}
+                    </div>
+
+                    <div class="space-y-4">
+                        <LocaleSwitch class="w-full"/>
+                        <ThemeSwitch class="w-full"/>
                     </div>
                 </div>
             </div>

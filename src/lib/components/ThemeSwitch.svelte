@@ -5,6 +5,9 @@
   import {_} from "svelte-i18n";
   import SelectMenu from "$lib/components/SelectMenu.svelte";
 
+  let clazz = '';
+  export {clazz as class};
+
   const themeIcons: Record<typeof AvailablePreferences[number], string> = {
     'system': 'tabler:contrast',
     'light': 'tabler:sun',
@@ -44,4 +47,4 @@
   })
 </script>
 
-<SelectMenu class="w-34" bind:value={$themePreference} label={$_('theme_switch.sr_label')} {options}/>
+<SelectMenu class={clazz} bind:value={$themePreference} label={$_('theme_switch.sr_label')} {options}/>
