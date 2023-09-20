@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/ThemeSwitch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ThemeSwitch.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/i18n/locales/en.json" afterDir="false" />
-    </list>
+    <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +94,7 @@
       <workItem from="1695116896043" duration="18650000" />
       <workItem from="1695182991083" duration="93000" />
       <workItem from="1695183095782" duration="739000" />
-      <workItem from="1695193592831" duration="7106000" />
+      <workItem from="1695193592831" duration="7211000" />
     </task>
     <servers />
   </component>
