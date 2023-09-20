@@ -15,6 +15,7 @@
   import {fade} from "svelte/transition";
   import ThemeSwitch from "$lib/components/ThemeSwitch.svelte";
   import BrandLogo from "$lib/components/BrandLogo.svelte";
+  import LocaleSwitch from "$lib/components/LocaleSwitch.svelte";
 
   let mobileMenuOpen = false;
 
@@ -217,7 +218,8 @@
                 </button>
             </div>
         {/if}
-        <div class="hidden lg:flex">
+        <div class="hidden lg:flex gap-x-4">
+            <LocaleSwitch/>
             <ThemeSwitch/>
         </div>
     </nav>

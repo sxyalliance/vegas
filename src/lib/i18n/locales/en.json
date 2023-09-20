@@ -54,6 +54,9 @@
     "light": "Light",
     "dark": "Dark"
   },
+  "locale_switch": {
+    "sr_label": "Change Language"
+  },
   "home": {
     "hero": {
       "tagline": "Some important promotion or news here.",
