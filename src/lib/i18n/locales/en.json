@@ -110,5 +110,35 @@
 			"title": "Team section title",
 			"text": "Team section text."
 		}
+	},
+	"event": {
+		"category": {
+			"dining": {
+				"name": "Dining",
+				"description": "Social meal event, casual or formal."
+			},
+			"entertainment": {
+				"name": "Music Party",
+				"description": "Performance featuring talented singers."
+			},
+			"academic": {
+				"name": "Academic Gathering",
+				"description": "Gathering for intellectual activities."
+			},
+			"sport": {
+				"name": "Sport",
+				"description": "Physical activity and competition."
+			},
+			"giveaway": {
+				"name": "Giveaway",
+				"description": "Exchanging presents to show appreciation or celebrate."
+			}
+		},
+		"list": {
+			"hero": {
+				"title": "Check out the latest events and have fun together",
+				"text": "We regularly hold various types of events, such as barbecues, sports, etc. To ensure that all members can enjoy comfortable and happy times."
+			}
+		}
 	}
 }

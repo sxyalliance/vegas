@@ -3,14 +3,20 @@ import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { presetRadix } from 'unocss-preset-radix';
 import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns';
 
+const colorPalette = ['indigo', 'slate', 'ruby', 'teal', 'amber', 'sky', 'pink'];
+
 export default defineConfig({
 	presets: [
 		presetUno(),
 		presetRadix({
-			palette: ['indigo', 'slate', 'green'],
+			palette: colorPalette,
 			aliases: {
 				primary: 'indigo',
-				natural: 'slate'
+				natural: 'slate',
+				error: 'ruby',
+				success: 'teal',
+				warning: 'amber',
+				info: 'sky'
 			}
 		}),
 		presetIcons({
@@ -62,12 +68,13 @@ export default defineConfig({
 	],
 	safelist: [
 		'h-full',
-		'bg-white',
 		'text-base',
 		'antialiased',
 		'flex',
 		'min-h-full',
 		'flex-col',
-		'hue-natural'
+		'hue-natural',
+		'absolute',
+		...colorPalette.map((c) => `text-${c}10`)
 	]
 });
