@@ -2,7 +2,7 @@
   import HeroSection from "./HeroSection.svelte";
   import { title } from "$lib/stores/title";
   import { events } from "$lib/api/event";
-  import { getCategoryInfo } from "$lib/api/event_category.js";
+  import { getCategoryInfo } from "$lib/api/event_category";
 
   title.set("Events");
 
