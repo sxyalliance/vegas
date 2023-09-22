@@ -1,8 +1,7 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
   import { _ } from "svelte-i18n";
-  import { getCategoryInfo } from "$lib/api/event_category";
-  import type { CategoryKey } from "$lib/api/event_category";
+  import { getCategoryInfo, CategoryKey } from "$lib/api/event_category";
 
   function gridConfigOf(categoryKey: CategoryKey, code: string) {
     const category = getCategoryInfo(categoryKey);

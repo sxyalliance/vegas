@@ -1,11 +1,6 @@
 <script>
 	import { _ } from 'svelte-i18n';
-	import { theme } from '$lib/stores/theme';
-	import logoDark from '$lib/assets/logo-dark.png';
-	import logoLight from '$lib/assets/logo-light.png';
 	import BrandLogo from '$lib/components/BrandLogo.svelte';
-
-	$: logo = $theme === 'dark' ? logoDark : logoLight;
 </script>
 
 <footer class="bg-hue1" aria-labelledby="footer-heading">
@@ -69,6 +64,9 @@
 						</svg>
 					</a>
 				</div>
+				<p class="text-xs text-hue10">
+					rev {__LASTMOD__}.{__VERSION__}
+				</p>
 			</div>
 			<div class="mt-16 hidden lg:grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
 				<div class="md:grid md:grid-cols-2 md:gap-8">

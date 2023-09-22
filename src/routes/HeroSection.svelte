@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { FxParallax as Img } from "@zerodevx/svelte-img";
 
-  import cover from "$lib/assets/home_hero_cover-e.png?as=run:48";
+  import cover from "$lib/assets/home_hero_cover-e.png?as=run:48&blur=30";
 </script>
 
 <!-- Hero section -->
@@ -57,7 +57,7 @@
         class="aspect-[3/2] w-full bg-hue1 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
         src={cover}
         alt="Group of SXYA Members"
-        factor="0.95"
+        factor={0.95}
       />
     </div>
   </div>
