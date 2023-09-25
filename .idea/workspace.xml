@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/notion/PostList.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HeroSection.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/rainbow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/rainbow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
-    </list>
+    <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +114,7 @@
       <workItem from="1695365448756" duration="41000" />
       <workItem from="1695365499433" duration="196000" />
       <workItem from="1695365707172" duration="12117000" />
-      <workItem from="1695631539869" duration="26040000" />
+      <workItem from="1695631539869" duration="26388000" />
     </task>
     <servers />
   </component>

@@ -16,8 +16,7 @@ export async function getEvents() {
 		}
 	}
 	events = events.sort(
-		(first, second) =>
-			second.meetingTime.getTime() - first.meetingTime.getTime()
+		(first, second) => second.meetingTime.getTime() - first.meetingTime.getTime()
 	);
 	return events;
 }

@@ -1,10 +1,18 @@
-import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts } from "unocss";
+import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { presetRadix } from 'unocss-preset-radix';
 import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns';
-import type { RadixColors } from "unocss-preset-radix/dist/radix";
+import type { RadixColors } from 'unocss-preset-radix/dist/radix';
 
-const colorPalette: readonly RadixColors[] = ['indigo', 'slate', 'ruby', 'teal', 'amber', 'sky', 'pink'];
+const colorPalette: readonly RadixColors[] = [
+	'indigo',
+	'slate',
+	'ruby',
+	'teal',
+	'amber',
+	'sky',
+	'pink'
+];
 
 export default defineConfig({
 	presets: [

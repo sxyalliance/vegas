@@ -4,6 +4,6 @@ import { getAllPosts } from '$lib/notion';
 export const load: PageServerLoad = async () => {
 	const events = await getAllPosts('events');
 	return {
-		events,
+		events
 	};
 };

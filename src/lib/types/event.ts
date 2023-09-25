@@ -1,35 +1,35 @@
 export enum CategoryKey {
-  DINING = 'dining',
-  ENTERTAINMENT = 'entertainment',
-  ACADEMIC = 'academic',
-  SPORT = 'sport',
-  GIVEAWAY = 'giveaway'
+	DINING = 'dining',
+	ENTERTAINMENT = 'entertainment',
+	ACADEMIC = 'academic',
+	SPORT = 'sport',
+	GIVEAWAY = 'giveaway'
 }
 
 export type Event = {
-  published: boolean;
+	published: boolean;
 
-  name: string;
-  slug: string;
-  description: string;
-  category: CategoryKey;
-  relatedPersonnel: number;
+	name: string;
+	slug: string;
+	description: string;
+	category: CategoryKey;
+	relatedPersonnel: number;
 
-  meetingTime: Date;
-  meetingPoint: string;
+	meetingTime: Date;
+	meetingPoint: string;
 
-  eventPoint: string;
+	eventPoint: string;
 
-  outboundTransport?: string;
-  outboundTime?: string;
-  inboundTransport?: string;
-  inboundTime?: string;
+	outboundTransport?: string;
+	outboundTime?: string;
+	inboundTransport?: string;
+	inboundTime?: string;
 
-  proposer: string;
+	proposer: string;
 };
 
 export interface Category {
-  key: CategoryKey;
-  icon: string;
-  color: string;
+	key: CategoryKey;
+	icon: string;
+	color: string;
 }
