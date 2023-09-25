@@ -1,346 +1,427 @@
 .bg-rainbow {
-	background-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
-	animation: rainbow 20s linear infinite;
+    background-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
+    animation: rainbow 20s linear infinite;
 }
 
 .border-rainbow {
-	border-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2)) 1;
-	animation: rainbow 20s linear infinite;
+    border-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2)) 1;
+    animation: rainbow 20s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.bg-rainbow {
-		animation: none !important;
-	}
+    .bg-rainbow {
+        animation: none !important;
+    }
 
-	.border-rainbow {
-		animation: none !important;
-	}
+    .border-rainbow {
+        animation: none !important;
+    }
 }
 
 @keyframes rainbow {
-	0% {
-		--vg-rainbow-1: #00a98e;
-		--vg-rainbow-2: #009ff7;
-	}
-	1.25% {
-		--vg-rainbow-1: #00a996;
-		--vg-rainbow-2: #009dfa;
-	}
-	2.5% {
-		--vg-rainbow-1: #00a99f;
-		--vg-rainbow-2: #009bfc;
-	}
-	3.75% {
-		--vg-rainbow-1: #00a9a7;
-		--vg-rainbow-2: #0098fd;
-	}
-	5% {
-		--vg-rainbow-1: #00a9b0;
-		--vg-rainbow-2: #0096fd;
-	}
-	6.25% {
-		--vg-rainbow-1: #00a9b8;
-		--vg-rainbow-2: #0093fd;
-	}
-	7.5% {
-		--vg-rainbow-1: #00a9c0;
-		--vg-rainbow-2: #2e90fc;
-	}
-	8.75% {
-		--vg-rainbow-1: #00a8c7;
-		--vg-rainbow-2: #4d8dfa;
-	}
-	10% {
-		--vg-rainbow-1: #00a8cf;
-		--vg-rainbow-2: #638af8;
-	}
-	11.25% {
-		--vg-rainbow-1: #00a7d5;
-		--vg-rainbow-2: #7587f5;
-	}
-	12.5% {
-		--vg-rainbow-1: #00a6dc;
-		--vg-rainbow-2: #8583f1;
-	}
-	13.75% {
-		--vg-rainbow-1: #00a6e2;
-		--vg-rainbow-2: #9280ed;
-	}
-	15% {
-		--vg-rainbow-1: #00a4e7;
-		--vg-rainbow-2: #9f7ce9;
-	}
-	16.25% {
-		--vg-rainbow-1: #00a3ec;
-		--vg-rainbow-2: #aa78e3;
-	}
-	17.5% {
-		--vg-rainbow-1: #00a2f1;
-		--vg-rainbow-2: #b574dd;
-	}
-	18.75% {
-		--vg-rainbow-1: #00a0f4;
-		--vg-rainbow-2: #be71d7;
-	}
-	20% {
-		--vg-rainbow-1: #009ff7;
-		--vg-rainbow-2: #c76dd1;
-	}
-	21.25% {
-		--vg-rainbow-1: #009dfa;
-		--vg-rainbow-2: #cf69c9;
-	}
-	22.5% {
-		--vg-rainbow-1: #009bfc;
-		--vg-rainbow-2: #d566c2;
-	}
-	23.75% {
-		--vg-rainbow-1: #0098fd;
-		--vg-rainbow-2: #dc63ba;
-	}
-	25% {
-		--vg-rainbow-1: #0096fd;
-		--vg-rainbow-2: #e160b3;
-	}
-	26.25% {
-		--vg-rainbow-1: #0093fd;
-		--vg-rainbow-2: #e65eab;
-	}
-	27.5% {
-		--vg-rainbow-1: #2e90fc;
-		--vg-rainbow-2: #e95ca2;
-	}
-	28.75% {
-		--vg-rainbow-1: #4d8dfa;
-		--vg-rainbow-2: #ed5a9a;
-	}
-	30% {
-		--vg-rainbow-1: #638af8;
-		--vg-rainbow-2: #ef5992;
-	}
-	31.25% {
-		--vg-rainbow-1: #7587f5;
-		--vg-rainbow-2: #f15989;
-	}
-	32.5% {
-		--vg-rainbow-1: #8583f1;
-		--vg-rainbow-2: #f25981;
-	}
-	33.75% {
-		--vg-rainbow-1: #9280ed;
-		--vg-rainbow-2: #f25a79;
-	}
-	35% {
-		--vg-rainbow-1: #9f7ce9;
-		--vg-rainbow-2: #f25c71;
-	}
-	36.25% {
-		--vg-rainbow-1: #aa78e3;
-		--vg-rainbow-2: #f15e69;
-	}
-	37.5% {
-		--vg-rainbow-1: #b574dd;
-		--vg-rainbow-2: #ef6061;
-	}
-	38.75% {
-		--vg-rainbow-1: #be71d7;
-		--vg-rainbow-2: #ed635a;
-	}
-	40% {
-		--vg-rainbow-1: #c76dd1;
-		--vg-rainbow-2: #eb6552;
-	}
-	41.25% {
-		--vg-rainbow-1: #cf69c9;
-		--vg-rainbow-2: #e8694b;
-	}
-	42.5% {
-		--vg-rainbow-1: #d566c2;
-		--vg-rainbow-2: #e46c44;
-	}
-	43.75% {
-		--vg-rainbow-1: #dc63ba;
-		--vg-rainbow-2: #e06f3d;
-	}
-	45% {
-		--vg-rainbow-1: #e160b3;
-		--vg-rainbow-2: #db7336;
-	}
-	46.25% {
-		--vg-rainbow-1: #e65eab;
-		--vg-rainbow-2: #d77630;
-	}
-	47.5% {
-		--vg-rainbow-1: #e95ca2;
-		--vg-rainbow-2: #d17a2a;
-	}
-	48.75% {
-		--vg-rainbow-1: #ed5a9a;
-		--vg-rainbow-2: #cc7d24;
-	}
-	50% {
-		--vg-rainbow-1: #ef5992;
-		--vg-rainbow-2: #c6811e;
-	}
-	51.25% {
-		--vg-rainbow-1: #f15989;
-		--vg-rainbow-2: #bf8418;
-	}
-	52.5% {
-		--vg-rainbow-1: #f25981;
-		--vg-rainbow-2: #b98713;
-	}
-	53.75% {
-		--vg-rainbow-1: #f25a79;
-		--vg-rainbow-2: #b28a0f;
-	}
-	55% {
-		--vg-rainbow-1: #f25c71;
-		--vg-rainbow-2: #ab8d0c;
-	}
-	56.25% {
-		--vg-rainbow-1: #f15e69;
-		--vg-rainbow-2: #a3900b;
-	}
-	57.5% {
-		--vg-rainbow-1: #ef6061;
-		--vg-rainbow-2: #9c920d;
-	}
-	58.75% {
-		--vg-rainbow-1: #ed635a;
-		--vg-rainbow-2: #949510;
-	}
-	60% {
-		--vg-rainbow-1: #eb6552;
-		--vg-rainbow-2: #8b9715;
-	}
-	61.25% {
-		--vg-rainbow-1: #e8694b;
-		--vg-rainbow-2: #83991b;
-	}
-	62.5% {
-		--vg-rainbow-1: #e46c44;
-		--vg-rainbow-2: #7a9b21;
-	}
-	63.75% {
-		--vg-rainbow-1: #e06f3d;
-		--vg-rainbow-2: #719d27;
-	}
-	65% {
-		--vg-rainbow-1: #db7336;
-		--vg-rainbow-2: #679e2e;
-	}
-	66.25% {
-		--vg-rainbow-1: #d77630;
-		--vg-rainbow-2: #5da035;
-	}
-	67.5% {
-		--vg-rainbow-1: #d17a2a;
-		--vg-rainbow-2: #51a13c;
-	}
-	68.75% {
-		--vg-rainbow-1: #cc7d24;
-		--vg-rainbow-2: #44a244;
-	}
-	70% {
-		--vg-rainbow-1: #c6811e;
-		--vg-rainbow-2: #34a44b;
-	}
-	71.25% {
-		--vg-rainbow-1: #bf8418;
-		--vg-rainbow-2: #1ba553;
-	}
-	72.5% {
-		--vg-rainbow-1: #b98713;
-		--vg-rainbow-2: #00a65b;
-	}
-	73.75% {
-		--vg-rainbow-1: #b28a0f;
-		--vg-rainbow-2: #00a663;
-	}
-	75% {
-		--vg-rainbow-1: #ab8d0c;
-		--vg-rainbow-2: #00a76c;
-	}
-	76.25% {
-		--vg-rainbow-1: #a3900b;
-		--vg-rainbow-2: #00a874;
-	}
-	77.5% {
-		--vg-rainbow-1: #9c920d;
-		--vg-rainbow-2: #00a87d;
-	}
-	78.75% {
-		--vg-rainbow-1: #949510;
-		--vg-rainbow-2: #00a985;
-	}
-	80% {
-		--vg-rainbow-1: #8b9715;
-		--vg-rainbow-2: #00a98e;
-	}
-	81.25% {
-		--vg-rainbow-1: #83991b;
-		--vg-rainbow-2: #00a996;
-	}
-	82.5% {
-		--vg-rainbow-1: #7a9b21;
-		--vg-rainbow-2: #00a99f;
-	}
-	83.75% {
-		--vg-rainbow-1: #719d27;
-		--vg-rainbow-2: #00a9a7;
-	}
-	85% {
-		--vg-rainbow-1: #679e2e;
-		--vg-rainbow-2: #00a9b0;
-	}
-	86.25% {
-		--vg-rainbow-1: #5da035;
-		--vg-rainbow-2: #00a9b8;
-	}
-	87.5% {
-		--vg-rainbow-1: #51a13c;
-		--vg-rainbow-2: #00a9c0;
-	}
-	88.75% {
-		--vg-rainbow-1: #44a244;
-		--vg-rainbow-2: #00a8c7;
-	}
-	90% {
-		--vg-rainbow-1: #34a44b;
-		--vg-rainbow-2: #00a8cf;
-	}
-	91.25% {
-		--vg-rainbow-1: #1ba553;
-		--vg-rainbow-2: #00a7d5;
-	}
-	92.5% {
-		--vg-rainbow-1: #00a65b;
-		--vg-rainbow-2: #00a6dc;
-	}
-	93.75% {
-		--vg-rainbow-1: #00a663;
-		--vg-rainbow-2: #00a6e2;
-	}
-	95% {
-		--vg-rainbow-1: #00a76c;
-		--vg-rainbow-2: #00a4e7;
-	}
-	96.25% {
-		--vg-rainbow-1: #00a874;
-		--vg-rainbow-2: #00a3ec;
-	}
-	97.5% {
-		--vg-rainbow-1: #00a87d;
-		--vg-rainbow-2: #00a2f1;
-	}
-	98.75% {
-		--vg-rainbow-1: #00a985;
-		--vg-rainbow-2: #00a0f4;
-	}
-	100% {
-		--vg-rainbow-1: #00a98e;
-		--vg-rainbow-2: #009ff7;
-	}
+    0% {
+        --vg-rainbow-1: #00a98e;
+        --vg-rainbow-a: #00a98e7f;
+        --vg-rainbow-2: #009ff7;
+    }
+    1.25% {
+        --vg-rainbow-1: #00a996;
+        --vg-rainbow-a: #00a9967f;
+        --vg-rainbow-2: #009dfa;
+    }
+    2.5% {
+        --vg-rainbow-1: #00a99f;
+        --vg-rainbow-a: #00a99f7f;
+        --vg-rainbow-2: #009bfc;
+    }
+    3.75% {
+        --vg-rainbow-1: #00a9a7;
+        --vg-rainbow-a: #00a9a77f;
+        --vg-rainbow-2: #0098fd;
+    }
+    5% {
+        --vg-rainbow-1: #00a9b0;
+        --vg-rainbow-a: #00a9b07f;
+        --vg-rainbow-2: #0096fd;
+    }
+    6.25% {
+        --vg-rainbow-1: #00a9b8;
+        --vg-rainbow-a: #00a9b87f;
+        --vg-rainbow-2: #0093fd;
+    }
+    7.5% {
+        --vg-rainbow-1: #00a9c0;
+        --vg-rainbow-a: #00a9c07f;
+        --vg-rainbow-2: #2e90fc;
+    }
+    8.75% {
+        --vg-rainbow-1: #00a8c7;
+        --vg-rainbow-a: #00a8c77f;
+        --vg-rainbow-2: #4d8dfa;
+    }
+    10% {
+        --vg-rainbow-1: #00a8cf;
+        --vg-rainbow-a: #00a8cf7f;
+        --vg-rainbow-2: #638af8;
+    }
+    11.25% {
+        --vg-rainbow-1: #00a7d5;
+        --vg-rainbow-a: #00a7d57f;
+        --vg-rainbow-2: #7587f5;
+    }
+    12.5% {
+        --vg-rainbow-1: #00a6dc;
+        --vg-rainbow-a: #00a6dc7f;
+        --vg-rainbow-2: #8583f1;
+    }
+    13.75% {
+        --vg-rainbow-1: #00a6e2;
+        --vg-rainbow-a: #00a6e27f;
+        --vg-rainbow-2: #9280ed;
+    }
+    15% {
+        --vg-rainbow-1: #00a4e7;
+        --vg-rainbow-a: #00a4e77f;
+        --vg-rainbow-2: #9f7ce9;
+    }
+    16.25% {
+        --vg-rainbow-1: #00a3ec;
+        --vg-rainbow-a: #00a3ec7f;
+        --vg-rainbow-2: #aa78e3;
+    }
+    17.5% {
+        --vg-rainbow-1: #00a2f1;
+        --vg-rainbow-a: #00a2f17f;
+        --vg-rainbow-2: #b574dd;
+    }
+    18.75% {
+        --vg-rainbow-1: #00a0f4;
+        --vg-rainbow-a: #00a0f47f;
+        --vg-rainbow-2: #be71d7;
+    }
+    20% {
+        --vg-rainbow-1: #009ff7;
+        --vg-rainbow-a: #009ff77f;
+        --vg-rainbow-2: #c76dd1;
+    }
+    21.25% {
+        --vg-rainbow-1: #009dfa;
+        --vg-rainbow-a: #009dfa7f;
+        --vg-rainbow-2: #cf69c9;
+    }
+    22.5% {
+        --vg-rainbow-1: #009bfc;
+        --vg-rainbow-a: #009bfc7f;
+        --vg-rainbow-2: #d566c2;
+    }
+    23.75% {
+        --vg-rainbow-1: #0098fd;
+        --vg-rainbow-a: #0098fd7f;
+        --vg-rainbow-2: #dc63ba;
+    }
+    25% {
+        --vg-rainbow-1: #0096fd;
+        --vg-rainbow-a: #0096fd7f;
+        --vg-rainbow-2: #e160b3;
+    }
+    26.25% {
+        --vg-rainbow-1: #0093fd;
+        --vg-rainbow-a: #0093fd7f;
+        --vg-rainbow-2: #e65eab;
+    }
+    27.5% {
+        --vg-rainbow-1: #2e90fc;
+        --vg-rainbow-a: #2e90fc7f;
+        --vg-rainbow-2: #e95ca2;
+    }
+    28.75% {
+        --vg-rainbow-1: #4d8dfa;
+        --vg-rainbow-a: #4d8dfa7f;
+        --vg-rainbow-2: #ed5a9a;
+    }
+    30% {
+        --vg-rainbow-1: #638af8;
+        --vg-rainbow-a: #638af87f;
+        --vg-rainbow-2: #ef5992;
+    }
+    31.25% {
+        --vg-rainbow-1: #7587f5;
+        --vg-rainbow-a: #7587f57f;
+        --vg-rainbow-2: #f15989;
+    }
+    32.5% {
+        --vg-rainbow-1: #8583f1;
+        --vg-rainbow-a: #8583f17f;
+        --vg-rainbow-2: #f25981;
+    }
+    33.75% {
+        --vg-rainbow-1: #9280ed;
+        --vg-rainbow-a: #9280ed7f;
+        --vg-rainbow-2: #f25a79;
+    }
+    35% {
+        --vg-rainbow-1: #9f7ce9;
+        --vg-rainbow-a: #9f7ce97f;
+        --vg-rainbow-2: #f25c71;
+    }
+    36.25% {
+        --vg-rainbow-1: #aa78e3;
+        --vg-rainbow-a: #aa78e37f;
+        --vg-rainbow-2: #f15e69;
+    }
+    37.5% {
+        --vg-rainbow-1: #b574dd;
+        --vg-rainbow-a: #b574dd7f;
+        --vg-rainbow-2: #ef6061;
+    }
+    38.75% {
+        --vg-rainbow-1: #be71d7;
+        --vg-rainbow-a: #be71d77f;
+        --vg-rainbow-2: #ed635a;
+    }
+    40% {
+        --vg-rainbow-1: #c76dd1;
+        --vg-rainbow-a: #c76dd17f;
+        --vg-rainbow-2: #eb6552;
+    }
+    41.25% {
+        --vg-rainbow-1: #cf69c9;
+        --vg-rainbow-a: #cf69c97f;
+        --vg-rainbow-2: #e8694b;
+    }
+    42.5% {
+        --vg-rainbow-1: #d566c2;
+        --vg-rainbow-a: #d566c27f;
+        --vg-rainbow-2: #e46c44;
+    }
+    43.75% {
+        --vg-rainbow-1: #dc63ba;
+        --vg-rainbow-a: #dc63ba7f;
+        --vg-rainbow-2: #e06f3d;
+    }
+    45% {
+        --vg-rainbow-1: #e160b3;
+        --vg-rainbow-a: #e160b37f;
+        --vg-rainbow-2: #db7336;
+    }
+    46.25% {
+        --vg-rainbow-1: #e65eab;
+        --vg-rainbow-a: #e65eab7f;
+        --vg-rainbow-2: #d77630;
+    }
+    47.5% {
+        --vg-rainbow-1: #e95ca2;
+        --vg-rainbow-a: #e95ca27f;
+        --vg-rainbow-2: #d17a2a;
+    }
+    48.75% {
+        --vg-rainbow-1: #ed5a9a;
+        --vg-rainbow-a: #ed5a9a7f;
+        --vg-rainbow-2: #cc7d24;
+    }
+    50% {
+        --vg-rainbow-1: #ef5992;
+        --vg-rainbow-a: #ef59927f;
+        --vg-rainbow-2: #c6811e;
+    }
+    51.25% {
+        --vg-rainbow-1: #f15989;
+        --vg-rainbow-a: #f159897f;
+        --vg-rainbow-2: #bf8418;
+    }
+    52.5% {
+        --vg-rainbow-1: #f25981;
+        --vg-rainbow-a: #f259817f;
+        --vg-rainbow-2: #b98713;
+    }
+    53.75% {
+        --vg-rainbow-1: #f25a79;
+        --vg-rainbow-a: #f25a797f;
+        --vg-rainbow-2: #b28a0f;
+    }
+    55% {
+        --vg-rainbow-1: #f25c71;
+        --vg-rainbow-a: #f25c717f;
+        --vg-rainbow-2: #ab8d0c;
+    }
+    56.25% {
+        --vg-rainbow-1: #f15e69;
+        --vg-rainbow-a: #f15e697f;
+        --vg-rainbow-2: #a3900b;
+    }
+    57.5% {
+        --vg-rainbow-1: #ef6061;
+        --vg-rainbow-a: #ef60617f;
+        --vg-rainbow-2: #9c920d;
+    }
+    58.75% {
+        --vg-rainbow-1: #ed635a;
+        --vg-rainbow-a: #ed635a7f;
+        --vg-rainbow-2: #949510;
+    }
+    60% {
+        --vg-rainbow-1: #eb6552;
+        --vg-rainbow-a: #eb65527f;
+        --vg-rainbow-2: #8b9715;
+    }
+    61.25% {
+        --vg-rainbow-1: #e8694b;
+        --vg-rainbow-a: #e8694b7f;
+        --vg-rainbow-2: #83991b;
+    }
+    62.5% {
+        --vg-rainbow-1: #e46c44;
+        --vg-rainbow-a: #e46c447f;
+        --vg-rainbow-2: #7a9b21;
+    }
+    63.75% {
+        --vg-rainbow-1: #e06f3d;
+        --vg-rainbow-a: #e06f3d7f;
+        --vg-rainbow-2: #719d27;
+    }
+    65% {
+        --vg-rainbow-1: #db7336;
+        --vg-rainbow-a: #db73367f;
+        --vg-rainbow-2: #679e2e;
+    }
+    66.25% {
+        --vg-rainbow-1: #d77630;
+        --vg-rainbow-a: #d776307f;
+        --vg-rainbow-2: #5da035;
+    }
+    67.5% {
+        --vg-rainbow-1: #d17a2a;
+        --vg-rainbow-a: #d17a2a7f;
+        --vg-rainbow-2: #51a13c;
+    }
+    68.75% {
+        --vg-rainbow-1: #cc7d24;
+        --vg-rainbow-a: #cc7d247f;
+        --vg-rainbow-2: #44a244;
+    }
+    70% {
+        --vg-rainbow-1: #c6811e;
+        --vg-rainbow-a: #c6811e7f;
+        --vg-rainbow-2: #34a44b;
+    }
+    71.25% {
+        --vg-rainbow-1: #bf8418;
+        --vg-rainbow-a: #bf84187f;
+        --vg-rainbow-2: #1ba553;
+    }
+    72.5% {
+        --vg-rainbow-1: #b98713;
+        --vg-rainbow-a: #b987137f;
+        --vg-rainbow-2: #00a65b;
+    }
+    73.75% {
+        --vg-rainbow-1: #b28a0f;
+        --vg-rainbow-a: #b28a0f7f;
+        --vg-rainbow-2: #00a663;
+    }
+    75% {
+        --vg-rainbow-1: #ab8d0c;
+        --vg-rainbow-a: #ab8d0c7f;
+        --vg-rainbow-2: #00a76c;
+    }
+    76.25% {
+        --vg-rainbow-1: #a3900b;
+        --vg-rainbow-a: #a3900b7f;
+        --vg-rainbow-2: #00a874;
+    }
+    77.5% {
+        --vg-rainbow-1: #9c920d;
+        --vg-rainbow-a: #9c920d7f;
+        --vg-rainbow-2: #00a87d;
+    }
+    78.75% {
+        --vg-rainbow-1: #949510;
+        --vg-rainbow-a: #9495107f;
+        --vg-rainbow-2: #00a985;
+    }
+    80% {
+        --vg-rainbow-1: #8b9715;
+        --vg-rainbow-a: #8b97157f;
+        --vg-rainbow-2: #00a98e;
+    }
+    81.25% {
+        --vg-rainbow-1: #83991b;
+        --vg-rainbow-a: #83991b7f;
+        --vg-rainbow-2: #00a996;
+    }
+    82.5% {
+        --vg-rainbow-1: #7a9b21;
+        --vg-rainbow-a: #7a9b217f;
+        --vg-rainbow-2: #00a99f;
+    }
+    83.75% {
+        --vg-rainbow-1: #719d27;
+        --vg-rainbow-a: #719d277f;
+        --vg-rainbow-2: #00a9a7;
+    }
+    85% {
+        --vg-rainbow-1: #679e2e;
+        --vg-rainbow-a: #679e2e7f;
+        --vg-rainbow-2: #00a9b0;
+    }
+    86.25% {
+        --vg-rainbow-1: #5da035;
+        --vg-rainbow-a: #5da0357f;
+        --vg-rainbow-2: #00a9b8;
+    }
+    87.5% {
+        --vg-rainbow-1: #51a13c;
+        --vg-rainbow-a: #51a13c7f;
+        --vg-rainbow-2: #00a9c0;
+    }
+    88.75% {
+        --vg-rainbow-1: #44a244;
+        --vg-rainbow-a: #44a2447f;
+        --vg-rainbow-2: #00a8c7;
+    }
+    90% {
+        --vg-rainbow-1: #34a44b;
+        --vg-rainbow-a: #34a44b7f;
+        --vg-rainbow-2: #00a8cf;
+    }
+    91.25% {
+        --vg-rainbow-1: #1ba553;
+        --vg-rainbow-a: #1ba5537f;
+        --vg-rainbow-2: #00a7d5;
+    }
+    92.5% {
+        --vg-rainbow-1: #00a65b;
+        --vg-rainbow-a: #00a65b7f;
+        --vg-rainbow-2: #00a6dc;
+    }
+    93.75% {
+        --vg-rainbow-1: #00a663;
+        --vg-rainbow-a: #00a6637f;
+        --vg-rainbow-2: #00a6e2;
+    }
+    95% {
+        --vg-rainbow-1: #00a76c;
+        --vg-rainbow-a: #00a76c7f;
+        --vg-rainbow-2: #00a4e7;
+    }
+    96.25% {
+        --vg-rainbow-1: #00a874;
+        --vg-rainbow-a: #00a8747f;
+        --vg-rainbow-2: #00a3ec;
+    }
+    97.5% {
+        --vg-rainbow-1: #00a87d;
+        --vg-rainbow-a: #00a87d7f;
+        --vg-rainbow-2: #00a2f1;
+    }
+    98.75% {
+        --vg-rainbow-1: #00a985;
+        --vg-rainbow-a: #00a9857f;
+        --vg-rainbow-2: #00a0f4;
+    }
+    100% {
+        --vg-rainbow-1: #00a98e;
+        --vg-rainbow-a: #00a98e7f;
+        --vg-rainbow-2: #009ff7;
+    }
 }
