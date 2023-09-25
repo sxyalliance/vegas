@@ -39,6 +39,7 @@
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
 		"svelte-i18n": "^3.7.0",
+		"sveltekit-notion-blog": "^0.1.7",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"unocss": "^0.55.0",
@@ -61,7 +62,8 @@
 			}
 		},
 		"patchedDependencies": {
-			"@unocss/preset-typography@0.55.0": "patches/@unocss__preset-typography@0.55.0.patch"
+			"@unocss/preset-typography@0.55.0": "patches/@unocss__preset-typography@0.55.0.patch",
+			"sveltekit-notion-blog@0.1.7": "patches/sveltekit-notion-blog@0.1.7.patch"
 		}
 	}
 }

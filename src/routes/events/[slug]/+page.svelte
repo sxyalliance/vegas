@@ -1,26 +1,58 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import HeroSection from "../HeroSection.svelte";
+  import type { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+  import TableOfContent from "$lib/notion/components/TableOfContent.svelte";
+  import BlockRenderer from "$lib/notion/components/blocks/BlockRenderer.svelte";
 
   export let data: PageData;
+
+  $: toc = data.event.blocks.map((block: BlockObjectResponse) => {
+    if (block.type === "heading_1") {
+      return {
+        type: block.type,
+        text: block.heading_1?.rich_text?.map((t) => t.plain_text)?.join(" "),
+        id: block.id
+      };
+    } else if (block.type === "heading_2") {
+      return {
+        type: block.type,
+        text: block.heading_2?.rich_text?.map((t) => t.plain_text)?.join(" "),
+        id: block.id
+      };
+    } else if (block.type === "heading_3") {
+      return {
+        type: block.type,
+        text: block.heading_3?.rich_text?.map((t) => t.plain_text)?.join(" "),
+        id: block.id
+      };
+    } else {
+      return undefined;
+    }
+  });
 </script>
 
 <section class="bg-hue1 px-6 py-32 lg:px-8">
-  <article class="mx-auto max-w-3xl text-base leading-7">
-    <p class="text-base font-semibold leading-7 text-primary11">
-      {data.meta.category}
-    </p>
-    <h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
-      {data.meta.name}
-    </h1>
-    <p class="mt-6 text-xl leading-8 text-hue11">
-      {data.meta.description}
-    </p>
+  {#if data.event.blocks && data.event.blocks.length > 0}
+    <article class="mx-auto max-w-3xl text-base leading-7">
+      <p class="text-base font-semibold leading-7 text-primary11">
+        {data.event.properties.title}
+      </p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
+        {data.event.properties.title}
+      </h1>
+      <p class="mt-6 text-xl leading-8 text-hue11">
+        {data.event.properties.description}
+      </p>
 
-    <div class="mt-10 max-w-2xl prose prose-here">、
-      <svelte:component this={data.content} />
-    </div>
-  </article>
+      <TableOfContent tableOfContent={toc} />
+
+      <div class="mt-10 max-w-2xl prose prose-here">
+        {#each data.event.blocks as block}
+          <BlockRenderer {block} />
+        {/each}
+      </div>
+    </article>
+  {/if}
 </section>
 
 <style>

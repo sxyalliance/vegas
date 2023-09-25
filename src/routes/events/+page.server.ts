@@ -1,9 +1,9 @@
-import type {Event} from "$lib/types/event";
-import { getEvents } from "$lib/data/event";
+import type { PageServerLoad } from './$types';
+import { getAllPosts } from '$lib/notion';
 
-export async function load(): Promise<{events: Event[]}> {
-	const events = await getEvents();
+export const load: PageServerLoad = async () => {
+	const events = await getAllPosts('events');
 	return {
 		events,
-	}
-}
+	};
+};

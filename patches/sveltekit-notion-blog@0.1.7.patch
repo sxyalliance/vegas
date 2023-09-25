@@ -1,0 +1,67 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 290cdb7297dc4355e84ba0300e36ba38a3a13caf..af391acdbd80c1de9bdb9381d6ef6e9e2e712d68 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -11,7 +11,7 @@ type BlogSettings = {
+     blogTitle: string;
+     blogDescription: string;
+ };
+-type InitConfig = {
++export type InitConfig = {
+     tokens: Tokens;
+     settings: BlogSettings;
+ };
+@@ -20,8 +20,7 @@ export type BlogClient = {
+     config: Tokens;
+     settings: BlogSettings;
+ };
+-export declare const initNotionBlog: (config: InitConfig) => BlogClient | null;
+-export declare const getAllPosts: () => Promise<{
++export declare const getAllPosts: (notionCLient: BlogClient | null) => Promise<{
+     error: {
+         code: number;
+         message: string;
+@@ -33,7 +32,7 @@ export declare const getAllPosts: () => Promise<{
+     settings: BlogSettings;
+     error?: undefined;
+ } | undefined>;
+-export declare const getBlogPageBySlug: (event: ServerLoadEvent) => Promise<{
++export declare const getBlogPageBySlug: (notionCLient: BlogClient | null, event: ServerLoadEvent) => Promise<{
+     error: {
+         code: number;
+         message: string;
+diff --git a/dist/index.js b/dist/index.js
+index f6be2f7439afe4ff19ee2349ec63d5ef36529bae..02637f6400b55ff15f66d76bd7a871511dc4c384 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -2,20 +2,7 @@ import { Client, isFullUser } from "@notionhq/client";
+ import { getBlocks, getDatabaseById, getFAQs, getPageBySlug } from "./notion/api";
+ import BlogPost from "./components/BlogPost.svelte";
+ import PostsList from "./components/PostsList.svelte";
+-let notionCLient;
+-export const initNotionBlog = (config) => {
+-    if (config?.tokens?.notionToken && config?.tokens?.notionToken) {
+-        const client = new Client({
+-            auth: config.tokens.notionToken,
+-        });
+-        notionCLient = { client, config: config.tokens, settings: config.settings };
+-        return notionCLient;
+-    }
+-    else {
+-        return null;
+-    }
+-};
+-export const getAllPosts = async () => {
++export const getAllPosts = async (notionCLient) => {
+     try {
+         if (!notionCLient) {
+             return {
+@@ -60,7 +47,7 @@ export const getAllPosts = async () => {
+         };
+     }
+ };
+-export const getBlogPageBySlug = async (event) => {
++export const getBlogPageBySlug = async (notionCLient, event) => {
+     const { slug } = event.params;
+     if (!notionCLient) {
+         return {
