@@ -76,6 +76,7 @@ export default defineConfig({
 		'flex-col',
 		'hue-natural',
 		'absolute',
+		'prose',
 		...colorPalette.map((c) => `text-${c}10`)
 	]
 });

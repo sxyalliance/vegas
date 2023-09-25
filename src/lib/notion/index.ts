@@ -52,7 +52,7 @@ export const getAllPosts = async (alias: string): Promise<PostProperties[]> => {
 	}
 
 	if (res.isErr()) {
-		throw error(res.error.code, res.error.message);
+		throw error(res.error.code, res.error.message || 'Cannot reach Notion API');
 	}
 
 	throw error(500, 'Some error occurred');
@@ -105,24 +105,74 @@ export const getPostBySlug = async (
 const extractPropertiesFromPost = (post: PageObjectResponse): PostProperties => {
 	const properties = post.properties;
 
-	const slug = mapPropertyToPrimitive(properties['Slug']);
-	const title = mapPropertyToPrimitive(properties['活動名稱']);
-	const description = mapPropertyToPrimitive(properties['活動簡介']);
+	const slug = makeNotNullable(mapPropertyToPrimitive(properties['Slug']));
+	const title = makeNotNullable(mapPropertyToPrimitive(properties['活動名稱']));
+	const description = makeNotNullable(mapPropertyToPrimitive(properties['活動簡介']));
+	const category = makeNotNullable(mapPropertyToPrimitive(properties['活動性質']));
+	const relatedPersonnel = makeNotNullable(mapPropertyToPrimitive(properties['參與人數']));
+
+	const meetingTime = makeNotNullable(mapPropertyToDate(properties['會合時間']));
+	const meetingPoint = makeNotNullable(mapPropertyToPrimitive(properties['會合地點']));
+
+	const eventPoint = makeNotNullable(mapPropertyToPrimitive(properties['活動地點']));
+
+	const outboundTransport = mapPropertyToPrimitive(properties['去程載具']);
+	const outboundTime = mapPropertyToDate(properties['去程時間']);
+
+	const inboundTransport = mapPropertyToPrimitive(properties['回程載具']);
+	const inboundTime = mapPropertyToDate(properties['回程時間']);
+
+	const proposer = makeNotNullable(mapPropertyToPrimitive(properties['發起人']));
 
 	return {
-		slug,
 		title,
-		description
+		slug,
+		description,
+		category,
+		relatedPersonnel: parseInt(relatedPersonnel),
+		meetingTime,
+		meetingPoint,
+		eventPoint,
+		outboundTransport,
+		outboundTime,
+		inboundTransport,
+		inboundTime,
+		proposer
 	};
 };
 
-const mapPropertyToPrimitive = (property: PageObjectResponse['properties'][string]): string => {
+const mapPropertyToPrimitive = (
+	property: PageObjectResponse['properties'][string]
+): string | null => {
 	switch (property.type) {
 		case 'title':
 			return property.title.map((t) => t.plain_text).join('');
 		case 'rich_text':
 			return property.rich_text.map((t) => t.plain_text).join('');
+		case 'select':
+			return property.select?.name ?? null;
+		case 'number':
+			return property.number?.toString() ?? null;
+		case 'relation':
+			return property.relation?.map((r) => r.id).join(',') ?? null;
 		default:
 			throw new Error(`Unknown property type ${property.type}`);
 	}
+};
+
+const mapPropertyToDate = (property: PageObjectResponse['properties'][string]): Date | null => {
+	switch (property.type) {
+		case 'date':
+			return property.date ? new Date(property.date.start) : null;
+		default:
+			throw new Error(`Unknown property type ${property.type}`);
+	}
+};
+
+const makeNotNullable = <T>(value: T | null): T => {
+	if (value === null) {
+		throw new Error('Value is null');
+	}
+
+	return value;
 };
