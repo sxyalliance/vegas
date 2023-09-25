@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api/event.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api/event_category.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/types/event.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types/event.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/events/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +67,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2VX0AC1F1hLNXTvy2iGyC4W0K9q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,6 +94,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\data\event" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -104,7 +121,8 @@
       <workItem from="1695363993680" duration="1420000" />
       <workItem from="1695365448756" duration="41000" />
       <workItem from="1695365499433" duration="196000" />
-      <workItem from="1695365707172" duration="1773000" />
+      <workItem from="1695365707172" duration="12117000" />
+      <workItem from="1695631539869" duration="267000" />
     </task>
     <servers />
   </component>

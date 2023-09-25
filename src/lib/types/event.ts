@@ -1,39 +1,35 @@
-import type { CategoryKey } from "$lib/api/event_category";
-
-export interface CategoryInfo {
-	key: CategoryKey;
-	icon: string;
-	color: string;
+export enum CategoryKey {
+  DINING = 'dining',
+  ENTERTAINMENT = 'entertainment',
+  ACADEMIC = 'academic',
+  SPORT = 'sport',
+  GIVEAWAY = 'giveaway'
 }
 
-export interface Event {
-	id: string;
-	name: string;
-	category: CategoryKey;
-	relatedPersonnel: number;
+export type Event = {
+  published: boolean;
 
-	meetingTime: EventDateTime;
-	meetingPoint: string;
+  name: string;
+  slug: string;
+  description: string;
+  category: CategoryKey;
+  relatedPersonnel: number;
 
-	eventPoint: string;
-	description: string;
+  meetingTime: Date;
+  meetingPoint: string;
 
-	outboundTransport?: string;
-	outboundTime: EventDateTime;
-	inboundTransport?: string;
-	inboundTime: EventDateTime;
+  eventPoint: string;
 
-	proposer: string;
-}
+  outboundTransport?: string;
+  outboundTime?: string;
+  inboundTransport?: string;
+  inboundTime?: string;
 
-type EventDateTime = ExactEventDateTime | ApproximateEventDateTime;
+  proposer: string;
+};
 
-interface ExactEventDateTime {
-	exact: true;
-	date: Date;
-}
-
-interface ApproximateEventDateTime {
-	exact: false;
-	date: string;
+export interface Category {
+  key: CategoryKey;
+  icon: string;
+  color: string;
 }

@@ -1,14 +1,7 @@
-import type { CategoryInfo } from '../types/event';
+import type { Category } from '$lib/types/event';
+import { CategoryKey } from '$lib/types/event';
 
-export enum CategoryKey {
-	DINING = 'dining',
-	ENTERTAINMENT = 'entertainment',
-	ACADEMIC = 'academic',
-	SPORT = 'sport',
-	GIVEAWAY = 'giveaway'
-}
-
-const categories = new Map<CategoryKey, CategoryInfo>([
+const categories = new Map<CategoryKey, Category>([
 	[
 		CategoryKey.DINING,
 		{
@@ -51,6 +44,6 @@ const categories = new Map<CategoryKey, CategoryInfo>([
 	]
 ]);
 
-export function getCategoryInfo(key: CategoryKey): CategoryInfo {
-	return <CategoryInfo>categories.get(key);
+export function getCategoryByKey(key: CategoryKey): Category {
+	return <Category>categories.get(key);
 }
