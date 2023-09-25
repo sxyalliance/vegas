@@ -2,13 +2,10 @@
 	import HeroSection from './HeroSection.svelte';
 	import { title } from '$lib/stores/title';
 	import type { PageData } from './$types';
-	import PostListItem from '$lib/notion/components/PostListItem.svelte';
 
 	export let data: PageData;
 
 	title.set('Events');
-
-	$: console.log(data.events);
 </script>
 
 <HeroSection />

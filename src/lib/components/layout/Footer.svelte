@@ -1,6 +1,31 @@
-<script>
+<script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import BrandLogo from '$lib/components/BrandLogo.svelte';
+	import { onMount } from 'svelte';
+
+	let statistics = {
+		online_members: -1,
+		total_members: -1,
+		ongoing_events: -1,
+		total_events: -1,
+		founded_days: -1
+	};
+
+	const fetchStatistics = async () => {
+		const res = await fetch('https://discord.com/api/guilds/567268233263185922/widget.json');
+		const data = await res.json();
+		return {
+			online_members: data.presence_count,
+			total_members: -1,
+			ongoing_events: -1,
+			total_events: -1,
+			founded_days: Math.floor((Date.now() - new Date('2019-04-15').getTime()) / 86400000)
+		};
+	};
+
+	onMount(async () => {
+		statistics = await fetchStatistics();
+	});
 </script>
 
 <footer class="bg-hue1" aria-labelledby="footer-heading">
@@ -95,38 +120,52 @@
 							<li>
 								<div class="relative bg-hue3 border border-b-4 rounded-md p-1 px-2">
 									{$_('footer.statistics.online_members')}
-									<span class="float-right inline text-gray-700 pl-2">-1</span>
-									<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
-										<span
-											class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
-										/>
-										<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+									<span class="float-right inline text-gray-700 pl-2">
+										{statistics.online_members}
 									</span>
+									{#if statistics.online_members === -1}
+										<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+											<span
+												class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
+											/>
+											<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+										</span>
+									{/if}
 								</div>
 							</li>
 							<li>
 								{$_('footer.statistics.total_members')}
-								<span class="float-right inline text-hue10">-1</span>
+								<span class="float-right inline text-hue10">
+									{statistics.total_members}
+								</span>
 							</li>
 							<li>
 								<div class="relative bg-hue3 border border-b-4 rounded-md p-1 px-2">
 									{$_('footer.statistics.ongoing_events')}
-									<span class="float-right inline text-gray-700 pl-2">-1</span>
-									<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
-										<span
-											class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
-										/>
-										<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+									<span class="float-right inline text-gray-700 pl-2">
+										{statistics.ongoing_events}
 									</span>
+									{#if statistics.ongoing_events === -1}
+										<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+											<span
+												class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
+											/>
+											<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+										</span>
+									{/if}
 								</div>
 							</li>
 							<li>
 								{$_('footer.statistics.total_events')}
-								<span class="float-right inline text-hue10">-1</span>
+								<span class="float-right inline text-hue10">
+									{statistics.total_events}
+								</span>
 							</li>
 							<li>
 								{$_('footer.statistics.founded_days')}
-								<span class="float-right inline text-hue10">-1</span>
+								<span class="float-right inline text-hue10">
+									{statistics.founded_days}
+								</span>
 							</li>
 						</ul>
 					</div>
