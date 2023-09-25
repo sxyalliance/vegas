@@ -31,7 +31,7 @@
 </script>
 
 <main
-	class="h-[100vh] mx-auto flex w-full max-w-7xl flex-auto flex-col justify-center px-6 py-24 sm:py-64 lg:px-8"
+	class="h-[100vh] bg-hue1 mx-auto flex w-full max-w-7xl flex-auto flex-col justify-center px-6 py-24 sm:py-64 lg:px-8"
 >
 	<p class="text-base font-semibold leading-8 text-primary10">
 		{statusCode}

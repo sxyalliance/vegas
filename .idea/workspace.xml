@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/SelectMenu.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/SelectMenu.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/i18n/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/i18n/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/storable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/storable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +122,7 @@
       <workItem from="1695365448756" duration="41000" />
       <workItem from="1695365499433" duration="196000" />
       <workItem from="1695365707172" duration="12117000" />
-      <workItem from="1695631539869" duration="28059000" />
+      <workItem from="1695631539869" duration="31189000" />
     </task>
     <servers />
   </component>

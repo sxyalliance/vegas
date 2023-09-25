@@ -10,7 +10,7 @@ export const FallbackTheme = 'light' as const;
 type ThemePreference = (typeof AvailablePreferences)[number];
 
 function createThemePreference() {
-	const { subscribe, set } = storable<ThemePreference>(DefaultPreference);
+	const { subscribe, set } = storable<ThemePreference>(DefaultPreference, 'theme');
 
 	return {
 		subscribe,

@@ -14,7 +14,7 @@
 		icon: string;
 	}
 
-	export let label;
+	export let label: string;
 	export let options: SelectOption[] = [];
 	export let value: string;
 	export let alternativeLabelMap: Record<string, string> = {};
@@ -22,7 +22,7 @@
 	let clazz = '';
 	export { clazz as class };
 
-	$: matchedValue = options.find((option) => option.value === value);
+	$: matchedValue = options.find((option) => option.value === value) || options[0];
 
 	const getLabel = (label: string) => {
 		if (alternativeLabelMap[label]) {

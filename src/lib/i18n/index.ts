@@ -1,11 +1,17 @@
 import { browser } from '$app/environment';
-import { init, register, locales as localesStore } from 'svelte-i18n';
+import { init, register, locales as localesStore, locale } from 'svelte-i18n';
 import { get } from 'svelte/store';
-
-const defaultLocale = 'en';
+import { persistedLocale } from '$lib/i18n/persist';
+import { i18nConfig } from '$lib/i18n/config';
 
 export const resolveFirstAvailableLocale = (locales: readonly string[]): string => {
 	const availableLocales = get(localesStore);
+
+	const persisted = get(persistedLocale);
+	if (persisted && availableLocales.includes(persisted)) {
+		return persisted;
+	}
+
 	for (const locale of locales) {
 		// remove part of priority string after ';'
 		const localeWithoutPriority = locale.split(';')[0];
@@ -13,14 +19,21 @@ export const resolveFirstAvailableLocale = (locales: readonly string[]): string 
 			return localeWithoutPriority;
 		}
 	}
-	return defaultLocale;
+	return i18nConfig.defaultLocale;
 };
 
-register('en', () => import('./locales/en.json'));
-//register('zh-Hans-CN', () => import('./locales/zh-Hans-CN.json'))
-register('zh-HK', () => import('./locales/zh-HK.json'));
+i18nConfig.enabledLocales.forEach((locale) => {
+	register(locale, () => import(`./locales/${locale}.json`));
+});
 
 init({
-	fallbackLocale: defaultLocale,
-	initialLocale: browser ? resolveFirstAvailableLocale(window.navigator.languages) : defaultLocale
+	fallbackLocale: i18nConfig.defaultLocale,
+	initialLocale: browser
+		? resolveFirstAvailableLocale(window.navigator.languages)
+		: i18nConfig.defaultLocale
+});
+
+locale.subscribe((value) => {
+	persistedLocale.set(value);
+	console.log('locale changed pers to', value);
 });

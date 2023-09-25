@@ -9,6 +9,7 @@
 
 	import './rainbow.css';
 	import LoadingOverlay from '$lib/components/LoadingOverlay.svelte';
+	import { isLoading } from 'svelte-i18n';
 
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
@@ -19,13 +20,15 @@
 			analyticsId
 		});
 	}
+
+	$: loading = $navigating || $isLoading;
 </script>
 
 <svelte:head>
 	<title>{$title}</title>
 </svelte:head>
 
-{#if $navigating}
+{#if loading}
 	<LoadingOverlay />
 {:else}
 	<Header />
