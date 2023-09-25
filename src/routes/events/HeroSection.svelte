@@ -31,7 +31,7 @@
   ];
 </script>
 
-<div class="relative isolate overflow-hidden bg-hue2 h-[100vh]">
+<div class="relative isolate overflow-hidden bg-hue2 h-screen">
   <div class="pt-16 pb-12 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
       <div class="sm:max-w-lg">

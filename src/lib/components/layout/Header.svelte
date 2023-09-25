@@ -25,7 +25,7 @@
     {
       name: "navigation.home",
       type: "pure",
-      href: "#"
+      href: "/"
     },
     {
       name: "navigation.about",
@@ -35,11 +35,11 @@
         items: [
           {
             name: "navigation.members",
-            href: "#"
+            href: "/members"
           },
           {
             name: "navigation.chronicle",
-            href: "#"
+            href: "/about/chronicle"
           }
         ]
       }
@@ -52,11 +52,11 @@
         items: [
           {
             name: "navigation.dictionary",
-            href: "#"
+            href: "/dictionary"
           },
           {
             name: "navigation.events",
-            href: "#"
+            href: "/events"
           }
         ]
       }
@@ -101,7 +101,7 @@
   ];
 </script>
 
-<header class="absolute inset-x-0 top-0 z-50 bg-hue1 border-b-2 border-rainbow">
+<header class="absolute inset-x-0 top-0 z-30 bg-hue1 border-b-2 border-rainbow">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex items-center gap-x-12">
       <a href="#" class="-m-1.5 p-1.5">

@@ -41,10 +41,10 @@ export default defineConfig({
 	shortcuts: [
 		// === Buttons ===
 		// Size
-		[/^btn-(xs|sm)$/, ([, c]) => `rounded px-2 py-1 text-${c}`],
-		[/^btn-(md)$/, () => `rounded-md px-2.5 py-1.5 text-sm`],
-		[/^btn-(lg)$/, () => `rounded-md px-3 py-2 text-sm`],
-		[/^btn-(xl)$/, () => `rounded-md px-3.5 py-2.5 text-sm`],
+		[/^btn-(xs|sm)$/, ([, c]) => `inline-flex rounded px-2 py-1 text-${c}`],
+		[/^btn-(md)$/, () => `inline-flex rounded-md px-2.5 py-1.5 text-sm`],
+		[/^btn-(lg)$/, () => `inline-flex rounded-md px-3 py-2 text-sm`],
+		[/^btn-(xl)$/, () => `inline-flex rounded-md px-3.5 py-2.5 text-sm`],
 
 		// Variant
 		[
@@ -58,6 +58,9 @@ export default defineConfig({
 				`bg-white font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50`
 		],
 		[/^btn-(soft)$/, () => `hue-primary bg-hue5 font-semibold text-hue11 shadow-sm hover:bg-hue6`],
+
+		// Icon
+		[/^btn-icon$/, () => `-ml-1 mr-1 h-5 w-5`],
 
 		// === Badges ===
 		// Variant

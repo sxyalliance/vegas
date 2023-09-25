@@ -6,7 +6,7 @@
 </script>
 
 <!-- Hero section -->
-<div class="relative isolate overflow-hidden bg-hue1 h-[100vh]">
+<div class="relative isolate overflow-hidden bg-hue1 h-screen">
   <div
     class="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
     aria-hidden="true"
