@@ -20,6 +20,7 @@
 		"@iconify-json/tabler": "^1.1.87",
 		"@iconify/svelte": "^3.1.4",
 		"@julr/unocss-preset-heropatterns": "^1.0.2",
+		"@macfja/svelte-persistent-store": "^2.4.0",
 		"@playwright/test": "^1.28.1",
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
 		"@sveltejs/adapter-auto": "^2.0.0",

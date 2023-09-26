@@ -1,6 +1,6 @@
-import { storable } from './storable';
-import { derived } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 import { browser } from '$app/environment';
+import { persistBrowserLocal } from '@macfja/svelte-persistent-store';
 
 export const AvailableThemes = ['light', 'dark'] as const;
 export const AvailablePreferences = ['system', ...AvailableThemes] as const;
@@ -10,7 +10,10 @@ export const FallbackTheme = 'light' as const;
 type ThemePreference = (typeof AvailablePreferences)[number];
 
 function createThemePreference() {
-	const { subscribe, set } = storable<ThemePreference>(DefaultPreference, 'theme');
+	const { subscribe, set } = persistBrowserLocal(
+		writable<ThemePreference>(DefaultPreference),
+		'theme'
+	);
 
 	return {
 		subscribe,

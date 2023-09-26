@@ -34,6 +34,8 @@ init({
 });
 
 locale.subscribe((value) => {
+	if (!value) {
+		return;
+	}
 	persistedLocale.set(value);
-	console.log('locale changed pers to', value);
 });
