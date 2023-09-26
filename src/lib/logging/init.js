@@ -11,10 +11,13 @@ if (browser) {
 	}
 }
 
-SuperLogger.info({
-	application: __APPNAME__,
-	version: __VERSION__,
-	lastmod: __LASTMOD__,
-	environment: dev ? 'development' : 'production',
-	browser: browser ? 'browser' : 'node'
-}, 'Application started');
+SuperLogger.info(
+	{
+		application: __APPNAME__,
+		version: __VERSION__,
+		lastmod: __LASTMOD__,
+		environment: dev ? 'development' : 'production',
+		browser: browser ? 'browser' : 'node'
+	},
+	'Application started'
+);

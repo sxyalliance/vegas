@@ -38,6 +38,6 @@ export default defineConfig({
 		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
 		__VERSION__: version,
 		__LASTMOD__: lastmod,
-		__APPNAME__: JSON.stringify(name),
+		__APPNAME__: JSON.stringify(name)
 	}
 });
