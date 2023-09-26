@@ -7,7 +7,7 @@
 		.slice(0, 4);
 </script>
 
-<section class="py-24 bg-hue2">
+<section class="py-24 bg-hue1">
 	<div class="max-w-4xl mx-auto">
 		<div class="text-center text-xs text-hue10 mb-4">
 			<p>{$_('home.dictionary.note')}</p>
@@ -16,7 +16,7 @@
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 			{#each spotted as spot (spot.phrase)}
 				<div
-					class="relative rounded-lg bg-hue1 px-6 py-5 shadow-sm flex items-center space-x-3 ring-0.3 ring-hue6"
+					class="relative rounded-lg bg-hue2 px-6 py-5 shadow-sm flex items-center space-x-3 ring-0.3 ring-hue6"
 				>
 					<div class="flex-1 min-w-0">
 						<span class="absolute inset-0" aria-hidden="true" />

@@ -28,7 +28,7 @@
 	});
 </script>
 
-<footer class="bg-hue1" aria-labelledby="footer-heading">
+<footer class="bg-hue3" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">
 		{$_('footer.sr_title')}
 	</h2>
@@ -118,7 +118,7 @@
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-hue11">
 							<li>
-								<div class="relative bg-hue3 border border-b-4 border-hue5 rounded-md p-1 px-2">
+								<div class="relative rounded-md bg-hue1 shadow hover:shadow-md p-1 px-2 -m-1 -mx-2">
 									{$_('footer.statistics.online_members')}
 									<span class="float-right inline text-hue10 pl-2">
 										{statistics.online_members}
@@ -140,7 +140,7 @@
 								</span>
 							</li>
 							<li>
-								<div class="relative bg-hue3 border border-b-4 border-hue5 rounded-md p-1 px-2">
+								<div class="relative rounded-md bg-hue1 shadow hover:shadow-md p-1 px-2 -m-1 -mx-2">
 									{$_('footer.statistics.ongoing_events')}
 									<span class="float-right inline text-hue10 pl-2">
 										{statistics.ongoing_events}
