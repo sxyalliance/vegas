@@ -8,10 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/CenteredHeading.svelte" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/i18n/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/i18n/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/i18n/persist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/i18n/persist.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/stores/storable.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stores/header.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/stores/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stores/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/vitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/vitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,7 @@
       <workItem from="1695365499433" duration="196000" />
       <workItem from="1695365707172" duration="12117000" />
       <workItem from="1695631539869" duration="31189000" />
-      <workItem from="1695711432604" duration="814000" />
+      <workItem from="1695711432604" duration="6054000" />
     </task>
     <servers />
   </component>

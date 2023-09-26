@@ -1,5 +1,8 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
+
+import type { Logger } from 'roarr';
+
 declare global {
 	namespace App {
 		interface Error {
@@ -18,3 +21,5 @@ export {};
 declare const __VERSION__: string;
 // Last commit date
 declare const __LASTMOD__: string;
+// App name
+declare const __APPNAME__: string;

@@ -1,6 +1,9 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
+import { getLogger, normalizeForLog } from '$lib/logging/logger';
 
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
+
+const logger = getLogger('analytics', 'vercel', 'vitals');
 
 function getConnectionSpeed() {
 	return 'connection' in navigator &&
@@ -31,7 +34,7 @@ function sendToAnalytics(metric, options) {
 	};
 
 	if (options.debug) {
-		console.log('[Web Vitals]', metric.name, JSON.stringify(body, null, 2));
+		logger.debug(normalizeForLog(body), 'Metric has been reported');
 	}
 
 	const blob = new Blob([new URLSearchParams(body).toString()], {
@@ -60,6 +63,6 @@ export function webVitals(options) {
 		getCLS((metric) => sendToAnalytics(metric, options));
 		getFCP((metric) => sendToAnalytics(metric, options));
 	} catch (err) {
-		console.error('[Web Vitals]', err);
+		logger.error(normalizeForLog(err), 'Error while reporting web vitals');
 	}
 }

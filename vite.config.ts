@@ -5,6 +5,9 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import { imagetools } from '@zerodevx/svelte-img/vite';
 
+// get project name from package.json
+import { name } from './package.json';
+
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
 const [version, lastmod] = (
@@ -34,6 +37,7 @@ export default defineConfig({
 	define: {
 		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
 		__VERSION__: version,
-		__LASTMOD__: lastmod
+		__LASTMOD__: lastmod,
+		__APPNAME__: JSON.stringify(name),
 	}
 });

@@ -8,8 +8,13 @@ import { inject } from '@vercel/analytics';
 import { initAndRegisterClient } from '$lib/notion';
 import type { LayoutLoad } from '../../.svelte-kit/types/src/routes/$types';
 
+// logger for debugging
+import '$lib/logging/init';
+
+// vercel analytics
 inject({ mode: dev ? 'development' : 'production' });
 
+// notion integration
 initAndRegisterClient(
 	{
 		integrationSecret: 'secret_SSIPpymveUd3gSYyFQarQFzNVWNfoHq56cN9AfDyKXe',
@@ -19,6 +24,7 @@ initAndRegisterClient(
 );
 
 export const load: LayoutLoad = async () => {
+	// locale detection
 	if (browser) {
 		locale.set(resolveFirstAvailableLocale(window.navigator.languages));
 	}
