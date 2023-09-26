@@ -100,7 +100,7 @@
 				</div>
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">
+						<h3 class="text-sm font-semibold leading-6 text-hue12">
 							{$_('footer.useful_links.heading')}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-hue11">
@@ -118,9 +118,9 @@
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-hue11">
 							<li>
-								<div class="relative bg-hue3 border border-b-4 rounded-md p-1 px-2">
+								<div class="relative bg-hue3 border border-b-4 border-hue5 rounded-md p-1 px-2">
 									{$_('footer.statistics.online_members')}
-									<span class="float-right inline text-gray-700 pl-2">
+									<span class="float-right inline text-hue10 pl-2">
 										{statistics.online_members}
 									</span>
 									{#if statistics.online_members === -1}
@@ -140,9 +140,9 @@
 								</span>
 							</li>
 							<li>
-								<div class="relative bg-hue3 border border-b-4 rounded-md p-1 px-2">
+								<div class="relative bg-hue3 border border-b-4 border-hue5 rounded-md p-1 px-2">
 									{$_('footer.statistics.ongoing_events')}
-									<span class="float-right inline text-gray-700 pl-2">
+									<span class="float-right inline text-hue10 pl-2">
 										{statistics.ongoing_events}
 									</span>
 									{#if statistics.ongoing_events === -1}
