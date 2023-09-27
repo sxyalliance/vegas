@@ -6,7 +6,7 @@ import { resolveFirstAvailableLocale } from '$lib/i18n';
 import { dev } from '$app/environment';
 import { inject } from '@vercel/analytics';
 import { initAndRegisterClient } from '$lib/notion';
-import type { LayoutLoad } from '../../.svelte-kit/types/src/routes/$types';
+import type { LayoutLoad } from './$types';
 
 // logger for debugging
 import '$lib/logging/init';

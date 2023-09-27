@@ -1,7 +1,6 @@
-import { defineConfig, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss';
+import { defineConfig, presetTypography, presetUno, presetWebFonts } from 'unocss';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { presetRadix } from 'unocss-preset-radix';
-import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns';
 import type { RadixColors } from 'unocss-preset-radix/dist/radix';
 
 const colorPalette: readonly RadixColors[] = [
@@ -28,14 +27,6 @@ export default defineConfig({
 				info: 'sky'
 			}
 		}),
-		presetIcons({
-			prefix: 'i-',
-			extraProperties: {
-				display: 'inline-block',
-				'vertical-align': 'middle'
-			}
-		}),
-		presetHeroPatterns(),
 		presetTypography(),
 		presetWebFonts({
 			fonts: {
