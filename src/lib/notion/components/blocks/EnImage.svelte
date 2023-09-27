@@ -11,20 +11,20 @@
 			src={block.image.file.url}
 			layout="fullWidth"
 			aspectRatio={16 / 9}
-			class="aspect-video object-cover rounded-md"
+			class="aspect-video rounded-md object-cover"
 		/>
 		{#if block.image.caption?.length > 0}
-			<p class="w-full text-xs text-gray-400 text-center">{block.image.caption?.[0].plain_text}</p>
+			<p class="text-gray-400 w-full text-center text-xs">{block.image.caption?.[0].plain_text}</p>
 		{/if}
 	{:else if block.image.type === 'external'}
 		<Image
 			src={block.image.external.url}
 			layout="fullWidth"
 			aspectRatio={16 / 9}
-			class="aspect-video object-cover rounded-md"
+			class="aspect-video rounded-md object-cover"
 		/>
 		{#if block.image.caption?.length > 0}
-			<p class="w-full text-xs text-gray-400 text-center">{block.image.caption?.[0].plain_text}</p>
+			<p class="text-gray-400 w-full text-center text-xs">{block.image.caption?.[0].plain_text}</p>
 		{/if}
 	{/if}
 {/if}

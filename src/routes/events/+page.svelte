@@ -11,13 +11,13 @@
 
 <HeroSection />
 
-<section class="bg-hue1 py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-	<div class="max-w-7xl mx-auto text-center">
+<section class="bg-hue1 px-4 py-12 lg:px-8 lg:py-24 sm:px-6">
+	<div class="mx-auto max-w-7xl text-center">
 		<div
-			class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+			class="grid grid-cols-1 mx-auto max-w-2xl gap-x-8 gap-y-16 lg:grid-cols-3 lg:mx-0 lg:max-w-none"
 		>
 			{#each data.events as event (event.slug)}
-				<article class="flex max-w-xl flex-col items-start justify-between text-left">
+				<article class="max-w-xl flex flex-col items-start justify-between text-left">
 					<div class="flex items-center gap-x-4 text-xs">
 						<time datetime={event.meetingTime} class="text-hue10">
 							{event.meetingTime.toLocaleDateString()}
@@ -36,7 +36,7 @@
 								{event.title}
 							</a>
 						</h3>
-						<p class="mt-5 line-clamp-3 text-sm leading-6 text-hue11">
+						<p class="line-clamp-3 mt-5 text-sm leading-6 text-hue11">
 							{event.description}
 						</p>
 					</div>

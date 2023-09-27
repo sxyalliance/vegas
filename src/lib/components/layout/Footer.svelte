@@ -32,7 +32,7 @@
 	<h2 id="footer-heading" class="sr-only">
 		{$_('footer.sr_title')}
 	</h2>
-	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-32 sm:pt-24">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-4">
 				<BrandLogo class="h-24 w-auto" />
@@ -93,7 +93,7 @@
 					rev {__LASTMOD__}.{__VERSION__}
 				</p>
 			</div>
-			<div class="mt-16 hidden lg:grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+			<div class="grid-cols-2 mt-16 hidden gap-8 lg:grid xl:col-span-2 xl:mt-0">
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div />
 					<div class="mt-10 md:mt-0" />
@@ -103,7 +103,7 @@
 						<h3 class="text-sm font-semibold leading-6 text-hue12">
 							{$_('footer.useful_links.heading')}
 						</h3>
-						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-hue11">
+						<ul role="list" class="mt-6 text-sm leading-6 text-hue11 space-y-4">
 							<li>
 								<a href="#" class="hover:text-hue12">{$_('footer.useful_links.join_discord')}</a>
 							</li>
@@ -116,19 +116,19 @@
 						<h3 class="text-sm font-semibold leading-6 text-hue12">
 							{$_('footer.statistics.heading')}
 						</h3>
-						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-hue11">
+						<ul role="list" class="mt-6 text-sm leading-6 text-hue11 space-y-4">
 							<li>
-								<div class="relative rounded-md bg-hue1 shadow hover:shadow-md p-1 px-2 -m-1 -mx-2">
+								<div class="relative rounded-md bg-hue1 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md">
 									{$_('footer.statistics.online_members')}
-									<span class="float-right inline text-hue10 pl-2">
+									<span class="float-right inline pl-2 text-hue10">
 										{statistics.online_members}
 									</span>
 									{#if statistics.online_members === -1}
-										<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
 											<span
-												class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
+												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-primary10 opacity-75"
 											/>
-											<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+											<span class="relative h-3 w-3 inline-flex rounded-full bg-primary10" />
 										</span>
 									{/if}
 								</div>
@@ -140,17 +140,17 @@
 								</span>
 							</li>
 							<li>
-								<div class="relative rounded-md bg-hue1 shadow hover:shadow-md p-1 px-2 -m-1 -mx-2">
+								<div class="relative rounded-md bg-hue1 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md">
 									{$_('footer.statistics.ongoing_events')}
-									<span class="float-right inline text-hue10 pl-2">
+									<span class="float-right inline pl-2 text-hue10">
 										{statistics.ongoing_events}
 									</span>
 									{#if statistics.ongoing_events === -1}
-										<span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
 											<span
-												class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary10 opacity-75"
+												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-primary10 opacity-75"
 											/>
-											<span class="relative inline-flex rounded-full h-3 w-3 bg-primary10" />
+											<span class="relative h-3 w-3 inline-flex rounded-full bg-primary10" />
 										</span>
 									{/if}
 								</div>
@@ -172,7 +172,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 border-t border-hue5 pt-8 sm:mt-20 lg:mt-24">
+		<div class="mt-16 border-t border-hue5 pt-8 lg:mt-24 sm:mt-20">
 			<p class="text-xs leading-5 text-hue10">
 				{$_('footer.legal')}
 			</p>

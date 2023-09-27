@@ -99,10 +99,10 @@
 </script>
 
 <section class="bg-hue1">
-	<div class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+	<div class="mx-auto max-w-7xl px-4 py-12 text-center lg:px-8 lg:py-24 sm:px-6">
 		<div class="space-y-8 sm:space-y-12">
-			<div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-				<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl text-hue12">
+			<div class="sm:mx-auto lg:max-w-5xl sm:max-w-xl space-y-5 sm:space-y-4">
+				<h2 class="text-3xl font-extrabold tracking-tight text-hue12 sm:text-4xl">
 					{$_('home.member.title')}
 				</h2>
 				<p class="text-xl text-hue11">
@@ -111,7 +111,7 @@
 			</div>
 			<ul
 				role="list"
-				class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6"
+				class="grid grid-cols-2 mx-auto gap-x-4 gap-y-8 sm:grid-cols-4 xl:grid-cols-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 md:gap-x-6"
 			>
 				{#each people as person (person.name)}
 					<li>
@@ -119,10 +119,10 @@
 							<Img
 								src={person.avatar}
 								alt={'Avatar of ' + person.name}
-								class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
+								class="mx-auto h-20 w-20 rounded-full lg:h-24 lg:w-24"
 							/>
 							<div class="space-y-2">
-								<div class="text-xs font-medium lg:text-sm text-hue12">
+								<div class="text-xs font-medium text-hue12 lg:text-sm">
 									<h3>{person.name}</h3>
 									<p class="text-primary10">{person.role}</p>
 								</div>

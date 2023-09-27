@@ -101,10 +101,10 @@
 	];
 </script>
 
-<header class="absolute inset-x-0 top-0 z-30 bg-hue1 border-b-2 border-rainbow">
-	<nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+<header class="border-rainbow absolute inset-x-0 top-0 z-30 border-b-2 bg-hue1">
+	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
-			<a href="#" class="-m-1.5 p-1.5">
+			<a href="#" class="p-1.5 -m-1.5">
 				<span class="sr-only">SXYA Community</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>
@@ -128,16 +128,16 @@
 									<div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
 										<PopoverPanel
 											static
-											class="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4"
+											class="absolute left-1/2 z-10 mt-5 max-w-max w-screen flex px-4 -translate-x-1/2"
 										>
 											<div
-												class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-hue1 text-sm leading-6 shadow-lg"
+												class="max-w-md w-screen flex-auto overflow-hidden rounded-3xl bg-hue1 text-sm leading-6 shadow-lg"
 											>
 												<div class="p-4">
 													{#each item.flyout.items as sub_item (sub_item.name)}
 														<div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-hue3">
 															<div
-																class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-hue2 group-hover:bg-hue1"
+																class="mt-1 h-11 w-11 flex flex-none items-center justify-center rounded-lg bg-hue2 group-hover:bg-hue1"
 															>
 																<Icon
 																	icon={sub_item.icon}
@@ -200,7 +200,7 @@
 									<div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
 										<PopoverPanel
 											static
-											class="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-hue1 p-4 shadow-lg"
+											class="absolute top-full z-10 mt-3 w-96 rounded-3xl bg-hue1 p-4 shadow-lg -left-8"
 										>
 											{#each item.flyout.items as sub_item (sub_item.name)}
 												<div class="relative rounded-lg p-4 hover:bg-hue2">
@@ -231,7 +231,7 @@
 			<div class="flex lg:hidden">
 				<button
 					type="button"
-					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-hue11"
+					class="inline-flex items-center justify-center rounded-md p-2.5 text-hue11 -m-2.5"
 					on:click={() => (mobileMenuOpen = true)}
 				>
 					<span class="sr-only">{$_('navigation.open')}</span>
@@ -239,7 +239,7 @@
 				</button>
 			</div>
 		{/if}
-		<div class="hidden lg:flex gap-x-4">
+		<div class="hidden gap-x-4 lg:flex">
 			<LocaleSwitch class="w-46" />
 			<ThemeSwitch class="w-34" />
 		</div>
@@ -254,14 +254,14 @@
 		<DialogOverlay />
 		<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
 			<div class="flex items-center justify-between">
-				<a href="#" class="-m-1.5 p-1.5">
+				<a href="#" class="p-1.5 -m-1.5">
 					<span class="sr-only">SXYA Community</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
 				{#if mobileMenuOpen}
 					<button
 						type="button"
-						class="-m-2.5 rounded-md p-2.5 text-hue11"
+						class="rounded-md p-2.5 text-hue11 -m-2.5"
 						on:click={() => (mobileMenuOpen = false)}
 					>
 						<span class="sr-only">{$_('navigation.close')}</span>
@@ -271,25 +271,25 @@
 			</div>
 			<div class="mt-8 flow-root">
 				<div class="-my-6">
-					<div class="space-y-2 py-6">
+					<div class="py-6 space-y-2">
 						{#each navigation as item (item.name)}
 							{#if item.type === 'pure'}
 								<a
 									href={item.href}
-									class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-hue12 hover:bg-hue2"
+									class="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-hue12 -mx-3 hover:bg-hue2"
 								>
 									{$_(item.name)}
 								</a>
 							{:else if item.type === 'flyout'}
 								<Disclosure as="div" class="-mx-3" let:open>
 									<DisclosureButton
-										class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-hue12 hover:bg-hue2"
+										class="w-full flex items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-hue12 hover:bg-hue2"
 									>
 										{$_(item.name)}
 										<Icon
 											icon="tabler:chevron-down"
 											aria-hidden="true"
-											class="h-5 w-5 flex-none text-hue11 {open ? 'rotate-180' : ''}"
+											class="h-5 w-5 flex-none text-hue11{open ? 'rotate-180' : ''}"
 										/>
 									</DisclosureButton>
 									<DisclosurePanel class="mt-2 space-y-2">

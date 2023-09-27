@@ -1,5 +1,5 @@
 <div
-	class="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8"
+	class="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center lg:px-8 sm:px-6 sm:pb-5"
 >
 	<div
 		class="pointer-events-auto flex items-center justify-between gap-x-6 bg-slate12 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5"

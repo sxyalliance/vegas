@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buttons.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/LoadingOverlay.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/LoadingOverlay.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/SelectMenu.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/SelectMenu.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/layout/Header.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notion/components/PostListItem.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/components/PostListItem.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notion/components/TableOfContent.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/components/TableOfContent.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notion/components/blocks/EnImage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/components/blocks/EnImage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notion/components/blocks/Heading.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/components/blocks/Heading.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/BottomCenterFloatingNotice.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/BottomCenterFloatingNotice.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HeroSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/MemberSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MemberSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ProcedureSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ProcedureSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/TeamSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/TeamSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/events/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/HeroSection.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/events/[slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/[slug]/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +142,7 @@
       <workItem from="1695711432604" duration="9008000" />
       <workItem from="1695803992552" duration="611000" />
       <workItem from="1695804850542" duration="171000" />
-      <workItem from="1695805032452" duration="827000" />
+      <workItem from="1695805032452" duration="1517000" />
     </task>
     <servers />
   </component>

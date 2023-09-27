@@ -6,18 +6,18 @@
 </script>
 
 <!-- Hero section -->
-<div class="relative isolate overflow-hidden bg-hue1 h-screen">
+<div class="relative isolate h-screen overflow-hidden bg-hue1">
 	<div
-		class="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
+		class="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl -z-10 sm:-top-40"
 		aria-hidden="true"
 	>
 		<div
-			class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+			class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] rotate-[30deg] from-[#ff80b5] to-[#9089fc] bg-gradient-to-tr opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] -translate-x-1/2"
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 		/>
 	</div>
 	<div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-		<div class="px-6 pb-12 pt-10 sm:pb-32 lg:col-span-6 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-5">
+		<div class="px-6 pb-12 pt-10 lg:col-span-6 xl:col-span-5 lg:px-0 lg:pb-56 lg:pt-48 sm:pb-32">
 			<div class="mx-auto max-w-2xl lg:mx-0">
 				<div class="hidden sm:flex">
 					<div
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<h1 class="mt-24 text-4xl font-bold tracking-tight text-hue12 sm:mt-10 sm:text-6xl">
-					<span class="bg-clip-text text-transparent bg-rainbow">
+					<span class="bg-rainbow bg-clip-text text-transparent">
 						{$_('home.hero.title')}
 					</span>
 				</h1>
@@ -40,7 +40,7 @@
 					{$_('home.hero.text')}
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
-					<a href="#" class="btn-primary btn-xl">
+					<a href="#" class="btn-xl btn-primary">
 						{$_('home.hero.primary_action')}
 					</a>
 					<a href="#" class="text-sm font-semibold leading-6 text-hue12">
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div
-			class="relative lg:col-span-6 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0 lg:pt-20"
+			class="relative xl:absolute xl:inset-0 xl:left-1/2 lg:col-span-6 xl:mr-0 lg:pt-20 lg:-mr-8"
 		>
 			<Img
 				class="aspect-[3/2] w-full bg-hue1 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"

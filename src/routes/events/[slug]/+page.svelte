@@ -46,7 +46,7 @@
 
 			<TableOfContent tableOfContent={toc} />
 
-			<div class="mt-10 max-w-2xl prose prose-here">
+			<div class="prose-here mt-10 max-w-2xl prose">
 				<h1 id="0713140d-b39a-4348-bbce-684b1edaeaf6">Heading 12</h1>
 				{#each data.event.blocks as block}
 					<BlockRenderer {block} />

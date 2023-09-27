@@ -5,10 +5,10 @@
 <section
 	in:fade={{ duration: 400 }}
 	out:fade={{ duration: 300 }}
-	class="fixed top-0 left-0 right-0 bottom-0 h-screen z-50 overflow-hidden bg-hue2"
+	class="fixed bottom-0 left-0 right-0 top-0 z-50 h-screen overflow-hidden bg-hue2"
 >
-	<div class="flex items-center justify-center w-full h-full">
-		<div class="flex justify-center items-center">
+	<div class="h-full w-full flex items-center justify-center">
+		<div class="flex items-center justify-center">
 			<div class="loader-wrapper" style="">
 				<div class="spinner-inner">
 					<div id="top" class="mask">

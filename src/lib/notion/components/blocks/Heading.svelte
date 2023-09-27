@@ -17,7 +17,7 @@
 	{:else if heading.type === 'heading_2'}
 		<h2 id={heading.id}>{heading.heading_2.rich_text?.map((t) => t.plain_text)?.join(' ')}</h2>
 	{:else if heading.type === 'heading_3'}
-		<h3 id={heading.id} class="">
+		<h3 id={heading.id}>
 			{heading.heading_3.rich_text?.map((t) => t.plain_text)?.join(' ')}
 		</h3>
 	{/if}

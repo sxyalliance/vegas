@@ -15,8 +15,8 @@
 		<!--    />-->
 
 		<div>
-			<h1 class="font-bold text-2xl text-gray-800 mt-4">{properties.title}</h1>
-			<p class="line-clamp-2 text-gray-700">{properties.description}</p>
+			<h1 class="text-gray-800 mt-4 text-2xl font-bold">{properties.title}</h1>
+			<p class="text-gray-700 line-clamp-2">{properties.description}</p>
 		</div>
 	</a>
 </article>
