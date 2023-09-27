@@ -62,7 +62,7 @@
 																</div>
 															</div>
 
-															<Icon icon={category.icon} class="mb-4 h-12 w-12{category.color}" />
+															<Icon icon={category.icon} class="mb-4 h-12 w-12 {category.color}" />
 
 															<h2 class="text-lg font-medium leading-6 text-hue12">
 																{$_(`event.category.${category.key}.name`)}

@@ -3,6 +3,7 @@
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import TableOfContent from '$lib/notion/components/TableOfContent.svelte';
 	import BlockRenderer from '$lib/notion/components/blocks/BlockRenderer.svelte';
+	import EventProperties from "./EventProperties.svelte";
 
 	export let data: PageData;
 
@@ -35,18 +36,27 @@
 	{#if data.event.blocks && data.event.blocks.length > 0}
 		<article class="mx-auto max-w-3xl text-base leading-7">
 			<p class="text-base font-semibold leading-7 text-primary11">
-				{data.event.properties.title}
+				{data.event.properties.category}
+				#{data.event.properties.id}
 			</p>
 			<h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
 				{data.event.properties.title}
 			</h1>
-			<p class="mt-6 text-xl leading-8 text-hue11">
+			<p class="my-4 text-xl leading-8 text-hue11">
 				{data.event.properties.description}
 			</p>
 
-			<TableOfContent tableOfContent={toc} />
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+				<div class="col-span-2 lg:order-last">
+						<EventProperties properties={data.event.properties} />
+				</div>
 
-			<div class="prose-here mt-10 max-w-2xl prose">
+				<div class="col-span-1">
+					<TableOfContent tableOfContent={toc} />
+				</div>
+			</div>
+
+			<div class="prose-here mt-6 max-w-full prose">
 				<h1 id="0713140d-b39a-4348-bbce-684b1edaeaf6">Heading 12</h1>
 				{#each data.event.blocks as block}
 					<BlockRenderer {block} />

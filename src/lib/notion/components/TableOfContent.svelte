@@ -1,33 +1,29 @@
 <script lang="ts">
-	interface TableOfContentItems {
-		type: string;
-		text: string;
-		id: string;
-	}
+  interface TableOfContentItems {
+    type: string;
+    text: string;
+    id: string;
+  }
 
-	export let tableOfContent: (TableOfContentItems | undefined)[] | undefined;
+  export let tableOfContent: (TableOfContentItems | undefined)[] | undefined;
 </script>
 
-<h3>Table of Contents</h3>
-
 {#if tableOfContent && tableOfContent?.length > 0}
-	<ul>
-		{#each tableOfContent as content}
-			{#if content}
-				{#if content.type === 'heading_1'}
-					<li class="my-3 text-base font-semibold">
-						<a class="no-underline" href={'#' + content.id}>{content.text}</a>
-					</li>
-				{:else if content.type === 'heading_2'}
-					<li class="my-2.5 indent-4 text-sm font-semibold">
-						<a class="no-underline" href={'#' + content.id}>{content.text}</a>
-					</li>
-				{:else if content.type === 'heading_3'}
-					<li class="my-1 indent text-xs font-semibold">
-						<a class="no-underline" href={'#' + content.id}>{content.text}</a>
-					</li>
-				{/if}
-			{/if}
-		{/each}
-	</ul>
+  <nav class="flex flex-1 flex-col border rounded-md p-2" aria-label="Table of Content">
+    <ul role="list" class="space-y-1">
+      {#each tableOfContent as content}
+        {#if content}
+          <li>
+            <a href="#{content.id}"
+               class="group flex gap-x-3 rounded-md p-2 px-4 text-sm leading-6 font-semibold text-hue11 hover:text-primary10 hover:bg-hue3"
+               class:indent-4={content.type === 'heading_2'}
+               class:indent={content.type === 'heading_3'}
+            >
+              {content.text}
+            </a>
+          </li>
+        {/if}
+      {/each}
+    </ul>
+  </nav>
 {/if}
