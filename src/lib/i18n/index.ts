@@ -4,6 +4,7 @@ import { get } from 'svelte/store';
 import { persistedLocale } from '$lib/i18n/persist';
 import { i18nConfig } from '$lib/i18n/config';
 import { getLogger } from '$lib/logging/logger';
+import { preferredLanguages } from 'svelte-legos';
 
 const logger = getLogger('i18n');
 
@@ -27,6 +28,14 @@ export const resolveFirstAvailableLocale = (locales: readonly string[]): string 
 
 	logger.debug({ default: i18nConfig.defaultLocale }, 'Locale has been fallback to default');
 	return i18nConfig.defaultLocale;
+};
+
+export const detectAndApplyLocale = () => {
+	if (!browser) {
+		return;
+	}
+
+	locale.set(resolveFirstAvailableLocale(get(preferredLanguages())));
 };
 
 i18nConfig.enabledLocales.forEach((locale) => {

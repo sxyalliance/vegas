@@ -42,6 +42,7 @@
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
 		"svelte-i18n": "^3.7.0",
+		"svelte-legos": "^0.2.2",
 		"svelte-meta-tags": "^3.0.4",
 		"sveltekit-embed": "^0.0.12",
 		"tslib": "^2.4.1",

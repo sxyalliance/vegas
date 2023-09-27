@@ -104,7 +104,7 @@
 <header class="border-rainbow absolute inset-x-0 top-0 z-30 border-b-2 bg-hue1">
 	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
-			<a href="#" class="p-1.5 -m-1.5">
+			<a href="/" class="p-1.5 -m-1.5">
 				<span class="sr-only">SXYA Community</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>
@@ -154,34 +154,34 @@
 														</div>
 													{/each}
 												</div>
-												<div class="bg-hue2 p-8">
-													<div class="flex justify-between">
-														<h3 class="text-sm font-semibold leading-6 text-hue10">
-															Some posts (TODO)
-														</h3>
-														<a href="#" class="text-sm font-semibold leading-6 text-primary10">
-															View all events
-															<span aria-hidden="true">&rarr;</span>
-														</a>
-													</div>
-													<ul role="list" class="mt-6 space-y-6">
-														<li class="relative">
-															<time
-																datetime="2020-12-09T11:43"
-																class="block text-xs leading-6 text-hue11"
-															>
-																2020-12-09 11:43
-															</time>
-															<a
-																href="post.href"
-																class="block truncate text-sm font-semibold leading-6 text-hue12"
-															>
-																title here
-																<span class="absolute inset-0" />
-															</a>
-														</li>
-													</ul>
-												</div>
+<!--												<div class="bg-hue2 p-8">-->
+<!--													<div class="flex justify-between">-->
+<!--														<h3 class="text-sm font-semibold leading-6 text-hue10">-->
+<!--															Some posts (TODO)-->
+<!--														</h3>-->
+<!--														<a href="#" class="text-sm font-semibold leading-6 text-primary10">-->
+<!--															View all events-->
+<!--															<span aria-hidden="true">&rarr;</span>-->
+<!--														</a>-->
+<!--													</div>-->
+<!--													<ul role="list" class="mt-6 space-y-6">-->
+<!--														<li class="relative">-->
+<!--															<time-->
+<!--																datetime="2020-12-09T11:43"-->
+<!--																class="block text-xs leading-6 text-hue11"-->
+<!--															>-->
+<!--																2020-12-09 11:43-->
+<!--															</time>-->
+<!--															<a-->
+<!--																href="post.href"-->
+<!--																class="block truncate text-sm font-semibold leading-6 text-hue12"-->
+<!--															>-->
+<!--																title here-->
+<!--																<span class="absolute inset-0" />-->
+<!--															</a>-->
+<!--														</li>-->
+<!--													</ul>-->
+<!--												</div>-->
 											</div>
 										</PopoverPanel>
 									</div>
@@ -241,7 +241,7 @@
 		{/if}
 		<div class="hidden gap-x-4 lg:flex">
 			<LocaleSwitch class="w-46" />
-			<ThemeSwitch class="w-34" />
+			<ThemeSwitch class="w-36" />
 		</div>
 	</nav>
 	<Dialog
@@ -250,11 +250,9 @@
 		open={mobileMenuOpen}
 		on:close={() => (mobileMenuOpen = false)}
 	>
-		<div class="fixed inset-0 z-10" />
-		<DialogOverlay />
 		<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
 			<div class="flex items-center justify-between">
-				<a href="#" class="p-1.5 -m-1.5">
+				<a href="/" class="p-1.5 -m-1.5">
 					<span class="sr-only">SXYA Community</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
@@ -289,7 +287,7 @@
 										<Icon
 											icon="tabler:chevron-down"
 											aria-hidden="true"
-											class="h-5 w-5 flex-none text-hue11{open ? 'rotate-180' : ''}"
+											class="h-5 w-5 flex-none text-hue11 {open ? 'rotate-180' : ''}"
 										/>
 									</DisclosureButton>
 									<DisclosurePanel class="mt-2 space-y-2">

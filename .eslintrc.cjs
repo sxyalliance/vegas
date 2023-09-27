@@ -7,6 +7,9 @@ module.exports = {
 		'@unocss',
 		'prettier'
 	],
+	rules: {
+		'@unocss/order': 'off' // disable until issue unocss#3179 solved
+	},
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	parserOptions: {

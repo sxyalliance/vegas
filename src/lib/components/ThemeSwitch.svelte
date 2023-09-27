@@ -30,7 +30,7 @@
 		document.documentElement.classList.remove('dark-theme');
 	}
 
-	theme.subscribe((value) => {
+	theme.subscribe((value: string) => {
 		if (!browser) {
 			return;
 		}

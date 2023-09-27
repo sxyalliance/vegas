@@ -1,7 +1,8 @@
-import { derived, writable } from 'svelte/store';
+import { derived, get, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import { persistBrowserLocal } from '@macfja/svelte-persistent-store';
 import { getLogger } from '$lib/logging/logger';
+import { preferredDark } from 'svelte-legos';
 
 export const AvailableThemes = ['light', 'dark'] as const;
 export const AvailablePreferences = ['system', ...AvailableThemes] as const;
@@ -35,7 +36,7 @@ function createTheme() {
 		if ($themePreference === 'system') {
 			if (browser) {
 				logger.debug('Detecting color scheme because theme preference is "system".');
-				return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				return get(preferredDark()) ? 'dark' : 'light';
 			}
 			logger.debug(
 				{ fallback: FallbackTheme },

@@ -52,14 +52,14 @@
 			{#each options as option (option.value)}
 				<ListboxOption value={option.value} let:selected let:active>
 					<li
-						class="relative cursor-pointer select-none py-2 pl-3 pr-9{active
+						class="relative cursor-pointer select-none py-2 pl-3 pr-9 {active
 							? 'bg-primary10 text-primary-fg'
 							: 'text-hue12'}"
 					>
 						<div class="mr-2 flex items-center">
 							<Icon icon={option.icon} class="h-5 w-5 flex-shrink-0" />
 							<span
-								class="ml-3 block truncate capitalize{selected ? 'font-semibold' : 'font-normal'}"
+								class="ml-3 block truncate capitalize {selected ? 'font-semibold' : 'font-normal'}"
 							>
 								{getLabel(option.label)}
 							</span>
@@ -67,9 +67,9 @@
 
 						{#if selected}
 							<span
-								class="absolute inset-y-0 right-0 flex items-center pr-4{active
-									? 'text-hue1'
-									: 'text-primary10'}"
+								class="absolute inset-y-0 right-0 flex items-center pr-4 {active
+									? ' text-hue1'
+									: ' text-primary10'}"
 							>
 								<Icon icon="tabler:check" class="h-5 w-5" />
 							</span>
