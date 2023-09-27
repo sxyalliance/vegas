@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { PostProperties } from '../types';
-	import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-
-	export let properties: PostProperties;
+	
+export let properties: PostProperties;
 </script>
 
 <article class="mb-16">

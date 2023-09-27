@@ -1,7 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 
-import type { Logger } from 'roarr';
 
 declare global {
 	namespace App {

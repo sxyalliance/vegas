@@ -3,7 +3,6 @@
 	import Icon from '@iconify/svelte';
 	import {
 		Dialog,
-		DialogOverlay,
 		Disclosure,
 		DisclosureButton,
 		DisclosurePanel,
@@ -154,34 +153,34 @@
 														</div>
 													{/each}
 												</div>
-<!--												<div class="bg-hue2 p-8">-->
-<!--													<div class="flex justify-between">-->
-<!--														<h3 class="text-sm font-semibold leading-6 text-hue10">-->
-<!--															Some posts (TODO)-->
-<!--														</h3>-->
-<!--														<a href="#" class="text-sm font-semibold leading-6 text-primary10">-->
-<!--															View all events-->
-<!--															<span aria-hidden="true">&rarr;</span>-->
-<!--														</a>-->
-<!--													</div>-->
-<!--													<ul role="list" class="mt-6 space-y-6">-->
-<!--														<li class="relative">-->
-<!--															<time-->
-<!--																datetime="2020-12-09T11:43"-->
-<!--																class="block text-xs leading-6 text-hue11"-->
-<!--															>-->
-<!--																2020-12-09 11:43-->
-<!--															</time>-->
-<!--															<a-->
-<!--																href="post.href"-->
-<!--																class="block truncate text-sm font-semibold leading-6 text-hue12"-->
-<!--															>-->
-<!--																title here-->
-<!--																<span class="absolute inset-0" />-->
-<!--															</a>-->
-<!--														</li>-->
-<!--													</ul>-->
-<!--												</div>-->
+												<!--												<div class="bg-hue2 p-8">-->
+												<!--													<div class="flex justify-between">-->
+												<!--														<h3 class="text-sm font-semibold leading-6 text-hue10">-->
+												<!--															Some posts (TODO)-->
+												<!--														</h3>-->
+												<!--														<a href="#" class="text-sm font-semibold leading-6 text-primary10">-->
+												<!--															View all events-->
+												<!--															<span aria-hidden="true">&rarr;</span>-->
+												<!--														</a>-->
+												<!--													</div>-->
+												<!--													<ul role="list" class="mt-6 space-y-6">-->
+												<!--														<li class="relative">-->
+												<!--															<time-->
+												<!--																datetime="2020-12-09T11:43"-->
+												<!--																class="block text-xs leading-6 text-hue11"-->
+												<!--															>-->
+												<!--																2020-12-09 11:43-->
+												<!--															</time>-->
+												<!--															<a-->
+												<!--																href="post.href"-->
+												<!--																class="block truncate text-sm font-semibold leading-6 text-hue12"-->
+												<!--															>-->
+												<!--																title here-->
+												<!--																<span class="absolute inset-0" />-->
+												<!--															</a>-->
+												<!--														</li>-->
+												<!--													</ul>-->
+												<!--												</div>-->
 											</div>
 										</PopoverPanel>
 									</div>

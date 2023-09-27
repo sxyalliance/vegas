@@ -2,7 +2,6 @@
 	import HeroSection from './HeroSection.svelte';
 	import { title } from '$lib/stores/title';
 	import type { PageData } from './$types';
-	import ProcedureSection from '../ProcedureSection.svelte';
 
 	export let data: PageData;
 

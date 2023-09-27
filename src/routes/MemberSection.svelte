@@ -5,22 +5,13 @@
 	import Img from '@zerodevx/svelte-img';
 
 	function getMembers() {
-		// preprocess roles
-		// e.g. 學霸; 紳士; 正式成員; 學-勿李
-		// split by ;
-		discordMembers.forEach((member: any) => {
-			if (typeof member.roles === 'string') {
-				member.roles = member.roles.split('; ');
-			}
-		});
-
 		const roles: Record<string, string> = {
 			認證成員: 'Verified Member',
 			正式成員: 'Official Member'
 		};
 
 		// filter members with avatar and role
-		const members = discordMembers.filter((member: any) => {
+		const members = discordMembers.filter((member) => {
 			// no temporary members
 			if (member.avatar === null) {
 				return false;
@@ -39,7 +30,7 @@
 			}
 		});
 		// map members to people
-		const people = members.map((member: any) => {
+		const people = members.map((member) => {
 			// replace unrecognized avatar
 			if (!member.avatar.startsWith('https://cdn.discordapp.com/avatars/')) {
 				// https://cdn.discordapp.com/embed/avatars/{0..4}.png
@@ -76,7 +67,7 @@
 
 			return {
 				name: member.nickname || member.username,
-				role: roles[member.roles.find((role: string) => roles[role])],
+				role: roles[(member.roles as unknown as string[]).find((role) => roles[role]) as string],
 				avatar,
 				extra: {
 					roleCount: member.roles.length
@@ -84,9 +75,9 @@
 			};
 		});
 		// sort by name
-		people.sort((a: any, b: any) => a.name.localeCompare(b.name));
+		people.sort((a, b) => a.name.localeCompare(b.name));
 		// sort with role and role count
-		people.sort((a: any, b: any) => {
+		people.sort((a, b) => {
 			if (a.role === b.role) {
 				return b.extra.roleCount - a.extra.roleCount;
 			}

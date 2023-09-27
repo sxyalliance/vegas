@@ -1,7 +1,6 @@
-import { browser } from '$app/environment';
 import '$lib/i18n'; // Import to initialize. Important :)
-import { locale, waitLocale } from 'svelte-i18n';
-import { detectAndApplyLocale, resolveFirstAvailableLocale } from '$lib/i18n';
+import { waitLocale } from 'svelte-i18n';
+import { detectAndApplyLocale } from '$lib/i18n';
 
 import { dev } from '$app/environment';
 import { inject } from '@vercel/analytics';
