@@ -15,9 +15,7 @@
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 			{#each spotted as spot (spot.phrase)}
-				<div
-					class="relative flex items-center bg-hue2 panel space-x-3"
-				>
+				<div class="relative flex items-center bg-hue2 panel space-x-3">
 					<div class="min-w-0 flex-1">
 						<span class="absolute inset-0" aria-hidden="true" />
 						<p class="badge-flat-primary text-sm">

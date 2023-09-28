@@ -4,7 +4,8 @@
 	import TableOfContent from '$lib/notion/components/TableOfContent.svelte';
 	import BlockRenderer from '$lib/notion/components/blocks/BlockRenderer.svelte';
 	import EventProperties from './EventProperties.svelte';
-	import { _ } from "svelte-i18n";
+	import { _ } from 'svelte-i18n';
+	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 
@@ -57,7 +58,18 @@
 				</div>
 			</div>
 
-			<div class="prose-here mt-6 max-w-full prose">
+			<div class="relative my-6">
+				<div class="absolute inset-0 flex items-center" aria-hidden="true">
+					<div class="w-full border-t border-hue6" />
+				</div>
+				<div class="relative flex justify-center">
+					<span class="px-2 text-hue10 bg-hue1">
+						<Icon icon="tabler:lego" class="h-5 w-5" />
+					</span>
+				</div>
+			</div>
+
+			<div class="prose-here max-w-full prose">
 				{#each data.event.blocks as block}
 					<BlockRenderer {block} />
 				{/each}

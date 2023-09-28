@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import { CategoryKey } from '$lib/types/event';
-	import { getCategoryByKey } from "$lib/event";
+	import { getCategoryByKey } from '$lib/event';
 
 	function gridConfigOf(categoryKey: CategoryKey, code: string) {
 		const category = getCategoryByKey(categoryKey);
@@ -21,7 +21,7 @@
 	];
 </script>
 
-<div class="relative isolate h-screen overflow-hidden bg-hue2">
+<div class="isolate lg:h-screen overflow-hidden bg-hue2 relative mt-20 lg:mt-0">
 	<div class="pb-12 pt-16 lg:pb-48 lg:pt-40 sm:pb-40 sm:pt-24">
 		<div class="relative mx-auto max-w-7xl px-4 sm:static lg:px-8 sm:px-6">
 			<div class="sm:max-w-lg">

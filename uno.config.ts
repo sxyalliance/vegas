@@ -70,7 +70,7 @@ export default defineConfig({
 		],
 
 		// === Panels ===
-		[/^panel$/, () => `shadow-sm rounded-lg border p-6`]
+		[/^panel$/, () => `shadow-sm rounded-lg border border-hue6 p-6`]
 	],
 	safelist: [
 		'h-full',
