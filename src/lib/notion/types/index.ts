@@ -1,4 +1,12 @@
-import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type {
+	BlockObjectResponse,
+	PageObjectResponse
+} from '@notionhq/client/build/src/api-endpoints';
+
+export type Post = {
+	blocks: BlockObjectResponse[];
+	properties: PostProperties<unknown>;
+};
 
 export type PostProperties<T> = {
 	title: string;
@@ -9,8 +17,8 @@ export type PostProperties<T> = {
 	extra: T;
 };
 
-export interface PostExtraPropertiesExtractor<T> {
-	(post: PageObjectResponse): T;
+export interface PostPropertiesExtractor<T> {
+	extract: (page: PageObjectResponse) => PostProperties<T>;
 }
 
 export const placeholderDoNotUse = 1;

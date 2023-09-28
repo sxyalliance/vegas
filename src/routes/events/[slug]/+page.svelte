@@ -37,7 +37,7 @@
 		<article class="mx-auto max-w-3xl text-base leading-7">
 			<p class="text-base font-semibold leading-7 text-primary11">
 				{data.event.properties.category}
-				#{data.event.properties.id}
+				#{data.event.properties.extra.id}
 			</p>
 			<h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
 				{data.event.properties.title}

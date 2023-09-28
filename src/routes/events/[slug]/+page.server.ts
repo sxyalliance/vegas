@@ -1,9 +1,15 @@
 import type { ServerLoadEvent } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getPostBySlug } from '$lib/notion';
+import { getEventBySlug } from '$lib/event';
+import { error } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async (slEvent: ServerLoadEvent) => {
-	const event = await getPostBySlug('events', slEvent);
+	const slug = slEvent.params.slug;
+	if (!slug) {
+		return error(404, 'Not found');
+	}
+
+	const event = await getEventBySlug(slug);
 	return {
 		event
 	};

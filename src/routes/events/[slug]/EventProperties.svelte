@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { PostProperties } from '$lib/notion/types';
 	import Icon from '@iconify/svelte';
+	import type { EventExtraProperties } from '$lib/event';
 
-	export let properties: PostProperties;
+	export let properties: PostProperties<EventExtraProperties>;
 </script>
 
 <div class="lg:col-start-3 lg:row-end-1">
@@ -12,7 +13,7 @@
 			<div class="flex-auto pl-6 pt-6">
 				<dt class="text-sm font-semibold leading-6 text-hue12">Related Personnel</dt>
 				<dd class="mt-1 text-base font-semibold leading-6 text-hue12">
-					{properties.relatedPersonnel}
+					{properties.extra.relatedPersonnel}
 				</dd>
 			</div>
 			<div class="flex-none self-end px-6 pt-4">
@@ -25,7 +26,7 @@
 					<Icon icon="tabler:user-edit" class="h-6 w-5 text-hue10" />
 				</dt>
 				<dd class="text-sm font-medium leading-6 text-hue12">
-					{properties.proposer}
+					{properties.extra.proposer}
 				</dd>
 			</div>
 			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
@@ -34,8 +35,8 @@
 					<Icon icon="tabler:calendar-time" class="h-6 w-5 text-hue10" />
 				</dt>
 				<dd class="text-sm leading-6 text-hue11">
-					<time datetime={properties.meetingTime}>
-						{properties.meetingTime.toLocaleDateString()}
+					<time datetime={properties.extra.meetingTime}>
+						{properties.extra.meetingTime.toLocaleDateString()}
 					</time>
 				</dd>
 			</div>

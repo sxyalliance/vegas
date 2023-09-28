@@ -1,146 +1,74 @@
-import { Client } from '@notionhq/client';
-import { getBlocks, getDatabaseById, getPageBySlug } from '$lib/notion/api';
-import type { ServerLoadEvent } from '@sveltejs/kit';
+import { getBlocks, getDatabaseById, getPageByCriteria } from '$lib/notion/api';
+import type { PageQueryCriteria } from '$lib/notion/api';
 import type {
 	BlockObjectResponse,
 	PageObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
-import type { PostProperties } from '$lib/notion/types';
-import { error } from '@sveltejs/kit';
-import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
+import type { PostProperties, PostPropertiesExtractor } from '$lib/notion/types';
+import { getClient } from '$lib/notion/client';
+import { err, ok } from 'neverthrow';
+import type { StandardResult } from '$lib/shared/types/error';
 
-type ClientConfig = {
-	integrationSecret: string;
-	databaseId: string;
-};
+export const getAllPosts = async <T>(
+	alias: string
+): Promise<StandardResult<PostProperties<T>[]>> => {
+	const client = getClient(alias);
 
-export type NotionClient = {
-	client: Client;
-	config: ClientConfig;
-};
-
-const clients: Record<string, NotionClient> = {};
-
-export const initAndRegisterClient = (config: ClientConfig, alias: string): NotionClient => {
-	const client = new Client({
-		auth: config.integrationSecret
-	});
-	const clientObj: NotionClient = { client, config };
-	clients[alias] = clientObj;
-	return clientObj;
-};
-
-export const getClient = (alias: string): NotionClient => {
-	if (clients[alias]) {
-		return clients[alias];
-	} else {
-		throw new Error(`No client registered with alias ${alias}`);
-	}
-};
-
-export const getAllPosts = async (alias: string): Promise<PostProperties[]> => {
-	const notionClient = getClient(alias);
-
-	const res = await getDatabaseById(notionClient);
-
-	if (res.isOk()) {
-		if (res.value?.length > 0) {
-			const pages = res.value;
-			return pages.map((page) => extractPropertiesFromPost(page));
-		}
-
-		throw error(400, 'Please add rows in the database');
-	}
+	const res = await getDatabaseById(client);
 
 	if (res.isErr()) {
-		throw error(res.error.code, res.error.message || 'Cannot reach Notion API');
+		return err({ code: res.error.code, message: res.error.message || 'Cannot reach Notion API' });
 	}
 
-	throw error(500, 'Some error occurred');
+	if (res.value.length === 0) {
+		return err({ code: 400, message: 'Please add rows in the database' });
+	}
+
+	const pages = res.value;
+	return ok(
+		pages.map((page) =>
+			extractPropertiesFromPage<T>(page, client.config.extractor as PostPropertiesExtractor<T>)
+		)
+	);
 };
 
-export const getPostBySlug = async (
+export const getPostByCriteria = async <T>(
 	alias: string,
-	event: ServerLoadEvent
-): Promise<{ blocks: BlockObjectResponse[]; slug: string; properties: PostProperties }> => {
-	const notionClient = getClient(alias);
-	const { slug } = event.params;
+	criteria: PageQueryCriteria
+): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: PostProperties<T> }>> => {
+	const client = getClient(alias);
 
-	if (!slug) {
-		throw error(400, 'Invalid or missing post slug');
-	}
-
-	const response = await getPageBySlug(notionClient, slug);
-
-	if (response.isOk() && response.value?.length > 0) {
-		const page = response.value?.[0];
-		if (!page?.id) {
-			throw error(500, 'Invalid or missing page!');
-		}
-
-		const blockResponse = await getBlocks(notionClient, page.id);
-
-		if (blockResponse.isOk()) {
-			//console.log("result", JSON.stringify(blockResponse.value));
-			const blocks: BlockObjectResponse[] = blockResponse.value;
-
-			return {
-				blocks,
-				slug,
-				properties: extractPropertiesFromPost(page)
-			};
-		}
-
-		if (blockResponse.isErr()) {
-			throw error(blockResponse.error.code, blockResponse.error.message);
-		}
-	}
+	const response = await getPageByCriteria(client, criteria);
 
 	if (response.isErr()) {
-		throw error(response.error.code, response.error.message);
+		return err({ code: response.error.code, message: response.error.message });
+	}
+	if (response.value.length === 0) {
+		return err({ code: 404, message: 'Not found' });
 	}
 
-	throw error(500, 'Some error occurred');
+	const page = response.value[0];
+	if (!page?.id) {
+		return err({ code: 500, message: 'Invalid or missing page!' });
+	}
+
+	const blockResponse = await getBlocks(client, page.id);
+	if (blockResponse.isErr()) {
+		return err({ code: blockResponse.error.code, message: blockResponse.error.message });
+	}
+
+	return ok({
+		blocks: blockResponse.value,
+		properties: extractPropertiesFromPage<T>(
+			page,
+			client.config.extractor as PostPropertiesExtractor<T>
+		)
+	});
 };
 
-const extractPropertiesFromPost = (post: PageObjectResponse): PostProperties => {
-	const properties = post.properties;
-
-	const id = makeNotNullable(mapPropertyToPrimitive(properties['活動編號']));
-
-	const slug = makeNotNullable(mapPropertyToPrimitive(properties['Slug']));
-	const title = makeNotNullable(mapPropertyToPrimitive(properties['活動名稱']));
-	const description = makeNotNullable(mapPropertyToPrimitive(properties['活動簡介']));
-	const category = makeNotNullable(mapPropertyToPrimitive(properties['活動性質']));
-	const relatedPersonnel = makeNotNullable(mapPropertyToPrimitive(properties['參與人數']));
-
-	const meetingTime = makeNotNullable(mapPropertyToDate(properties['會合時間']));
-	const meetingPoint = makeNotNullable(mapPropertyToPrimitive(properties['會合地點']));
-
-	const eventPoint = makeNotNullable(mapPropertyToPrimitive(properties['活動地點']));
-
-	const outboundTransport = mapPropertyToPrimitive(properties['去程載具']);
-	const outboundTime = mapPropertyToDate(properties['去程時間']);
-
-	const inboundTransport = mapPropertyToPrimitive(properties['回程載具']);
-	const inboundTime = mapPropertyToDate(properties['回程時間']);
-
-	const proposer = makeNotNullable(mapPropertyToPrimitive(properties['發起人']));
-
-	return {
-		id,
-		title,
-		slug,
-		description,
-		category,
-		relatedPersonnel: parseInt(relatedPersonnel),
-		meetingTime,
-		meetingPoint,
-		eventPoint,
-		outboundTransport,
-		outboundTime,
-		inboundTransport,
-		inboundTime,
-		proposer
-	};
+const extractPropertiesFromPage = <T>(
+	page: PageObjectResponse,
+	extractor: PostPropertiesExtractor<T>
+): PostProperties<T> => {
+	return extractor.extract(page);
 };

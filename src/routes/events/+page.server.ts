@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { getAllPosts } from '$lib/notion';
+import { getAllEvents } from '$lib/event';
 
 export const load: PageServerLoad = async () => {
-	const events = await getAllPosts('events');
+	const events = await getAllEvents();
 	return {
 		events
 	};

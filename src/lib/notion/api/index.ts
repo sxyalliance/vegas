@@ -1,6 +1,9 @@
-import type { NotionClient } from '../';
-import { err, ok, Result } from 'neverthrow';
-import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { Client } from '../client';
+import { Err, err, ok, Result } from 'neverthrow';
+import type {
+	PageObjectResponse,
+	QueryDatabaseParameters
+} from '@notionhq/client/build/src/api-endpoints';
 import {
 	APIErrorCode,
 	ClientErrorCode,
@@ -9,21 +12,25 @@ import {
 	isNotionClientError
 } from '@notionhq/client';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { ErrorResult } from '$lib/shared/types/error';
 
-type ErrorResult = { code: number; message: string };
+export type PageQueryCriteria = Pick<
+	QueryDatabaseParameters,
+	'filter' | 'sorts' | 'start_cursor' | 'page_size'
+>;
 
 export const getDatabaseById = async (
-	notionClient: NotionClient
+	client: Client
 ): Promise<Result<PageObjectResponse[], ErrorResult>> => {
 	try {
-		const notion = notionClient.client;
+		const notion = client.sdk;
 
 		if (!notion) {
 			return err({ code: 400, message: 'Invalid or missing notion secret' });
 		}
 
 		const database = await notion.databases.query({
-			database_id: notionClient.config.databaseId
+			database_id: client.config.databaseId
 		});
 
 		const results = database.results;
@@ -38,26 +45,20 @@ export const getDatabaseById = async (
 	}
 };
 
-export const getPageBySlug = async (
-	notionClient: NotionClient,
-	slug: string
+export const getPageByCriteria = async (
+	client: Client,
+	criteria: PageQueryCriteria
 ): Promise<Result<PageObjectResponse[], ErrorResult>> => {
 	try {
-		const notion = notionClient.client;
+		const notion = client.sdk;
 
 		if (!notion) {
 			return err({ code: 400, message: 'Invalid or missing notion secret' });
 		}
 
 		const res = await notion.databases.query({
-			database_id: notionClient.config.databaseId,
-
-			filter: {
-				property: 'Slug',
-				rich_text: {
-					equals: slug
-				}
-			}
+			database_id: client.config.databaseId,
+			...criteria
 		});
 
 		const pages: PageObjectResponse[] = [];
@@ -81,10 +82,10 @@ export const getPageBySlug = async (
 };
 
 export const getBlocks = async (
-	notionClient: NotionClient,
+	client: Client,
 	blockId: string
 ): Promise<Result<BlockObjectResponse[], ErrorResult>> => {
-	const notion = notionClient.client;
+	const notion = client.sdk;
 
 	if (!notion) {
 		return err({ code: 400, message: 'Invalid or missing notion secret' });
@@ -111,7 +112,7 @@ export const getBlocks = async (
 	}
 };
 
-const handleNotionError = (error: unknown) => {
+const handleNotionError = (error: unknown): Err<never, ErrorResult> => {
 	if (isNotionClientError(error)) {
 		// error is now strongly typed to NotionClientError
 		switch (error.code) {
@@ -132,7 +133,7 @@ const handleNotionError = (error: unknown) => {
 	}
 };
 
-function isPageObjectResponse(response: any): response is PageObjectResponse[] {
+function isPageObjectResponse(response: unknown): response is PageObjectResponse[] {
 	return (
 		(response as PageObjectResponse[])?.[0]?.properties !== null &&
 		(response as PageObjectResponse[])?.[0]?.properties !== undefined

@@ -18,8 +18,8 @@
 			{#each data.events as event (event.slug)}
 				<article class="max-w-xl flex flex-col items-start justify-between text-left">
 					<div class="flex items-center gap-x-4 text-xs">
-						<time datetime={event.meetingTime} class="text-hue10">
-							{event.meetingTime.toLocaleDateString()}
+						<time datetime={event.extra.meetingTime} class="text-hue10">
+							{event.extra.meetingTime.toLocaleDateString()}
 						</time>
 						<a
 							href="#"
@@ -44,7 +44,7 @@
 							<p class="font-semibold text-hue12">
 								<a href="#">
 									<span class="absolute inset-0" />
-									{event.proposer}
+									{event.extra.proposer}
 								</a>
 							</p>
 							<p class="text-hue11">Proposer</p>
