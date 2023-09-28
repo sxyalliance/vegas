@@ -7,7 +7,6 @@
 	import BottomCenterFloatingNotice from './BottomCenterFloatingNotice.svelte';
 	import { title } from '$lib/layout/title';
 
-	import '$lib/assets/font.css';
 	import '$lib/assets/rainbow.css';
 	import LoadingOverlay from '$lib/layout/LoadingOverlay.svelte';
 	import { isLoading } from 'svelte-i18n';
