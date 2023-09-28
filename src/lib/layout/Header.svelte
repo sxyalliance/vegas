@@ -11,12 +11,12 @@
 		PopoverGroup,
 		PopoverPanel
 	} from '@rgossiaux/svelte-headlessui';
-	import type { NavigationDefinition } from '$lib/types/navigation.js';
+	import type { NavigationDefinition } from '$lib/layout/navigation.js';
 
 	import { fade } from 'svelte/transition';
-	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
-	import BrandLogo from '$lib/components/BrandLogo.svelte';
-	import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
+	import ThemeSwitch from '$lib/theme/ThemeSwitch.svelte';
+	import BrandLogo from '$lib/layout/BrandLogo.svelte';
+	import LocaleSwitch from '$lib/i18n/LocaleSwitch.svelte';
 
 	let mobileMenuOpen = false;
 
@@ -103,7 +103,7 @@
 <header class="border-rainbow absolute inset-x-0 top-0 z-30 border-b-2 bg-hue1">
 	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
-			<a href="/" class="p-1.5 -m-1.5">
+			<a href="/static" class="p-1.5 -m-1.5">
 				<span class="sr-only">SXYA Community</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>
@@ -251,7 +251,7 @@
 	>
 		<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
 			<div class="flex items-center justify-between">
-				<a href="/" class="p-1.5 -m-1.5">
+				<a href="/static" class="p-1.5 -m-1.5">
 					<span class="sr-only">SXYA Community</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>

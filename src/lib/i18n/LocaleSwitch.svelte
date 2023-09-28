@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { _, locales, locale } from 'svelte-i18n';
-	import SelectMenu from '$lib/components/SelectMenu.svelte';
+	import SelectMenu from '$lib/shared/SelectMenu.svelte';
 
 	let clazz = '';
 	export { clazz as class };

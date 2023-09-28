@@ -1,9 +1,9 @@
 <script lang="ts">
 	import HeroSection from './HeroSection.svelte';
-	import { title } from '$lib/stores/title';
+	import { title } from '$lib/layout/title';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
-	
+
 export let data: PageData;
 
 	title.set('Events');

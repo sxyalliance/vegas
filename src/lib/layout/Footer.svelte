@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import BrandLogo from '$lib/components/BrandLogo.svelte';
+	import BrandLogo from '$lib/layout/BrandLogo.svelte';
 	import { onMount } from 'svelte';
 
 	let statistics = {

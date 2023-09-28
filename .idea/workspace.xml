@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/analytics/vitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/analytics/vitals.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +90,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\analytics" />
       <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\event" />
-      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\notion" />
-      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\notion\api" />
-      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\api\notion" />
-      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\data\event" />
+      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\layout" />
+      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\i18n" />
+      <recent name="\\wsl$\Ubuntu\home\sunxyw\dev\sxya\vegas\src\lib\shared" />
     </key>
   </component>
   <component name="RunManager">
@@ -147,7 +149,7 @@
       <workItem from="1695838608983" duration="173000" />
       <workItem from="1695842393040" duration="1297000" />
       <workItem from="1695876761386" duration="1243000" />
-      <workItem from="1695916467777" duration="2246000" />
+      <workItem from="1695916467777" duration="2943000" />
     </task>
     <servers />
   </component>

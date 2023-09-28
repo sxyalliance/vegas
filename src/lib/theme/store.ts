@@ -4,10 +4,10 @@ import { persistBrowserLocal } from '@macfja/svelte-persistent-store';
 import { getLogger } from '$lib/logging/logger';
 import { preferredDark } from 'svelte-legos';
 
-export const AvailableThemes = ['light', 'dark'] as const;
-export const AvailablePreferences = ['system', ...AvailableThemes] as const;
-export const DefaultPreference = 'system' as const;
-export const FallbackTheme = 'light' as const;
+export const AvailableThemes: readonly string[] = ['light', 'dark'] as const;
+export const AvailablePreferences: readonly string[] = ['system', ...AvailableThemes] as const;
+export const DefaultPreference: string = 'system' as const;
+export const FallbackTheme: string = 'light' as const;
 
 type ThemePreference = (typeof AvailablePreferences)[number];
 
@@ -57,4 +57,4 @@ function createTheme() {
 	};
 }
 
-export const theme = createTheme();
+export const store = createTheme();

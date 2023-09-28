@@ -1,5 +1,16 @@
-import type { Category } from '$lib/types/event';
-import { CategoryKey } from '$lib/types/event';
+export enum CategoryKey {
+	DINING = 'dining',
+	ENTERTAINMENT = 'entertainment',
+	ACADEMIC = 'academic',
+	SPORT = 'sport',
+	GIVEAWAY = 'giveaway'
+}
+
+export interface Category {
+	key: CategoryKey;
+	icon: string;
+	color: string;
+}
 
 const categories = new Map<CategoryKey, Category>([
 	[
