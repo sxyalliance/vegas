@@ -4,7 +4,7 @@
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
 
-export let data: PageData;
+	export let data: PageData;
 
 	title.set('Events');
 </script>

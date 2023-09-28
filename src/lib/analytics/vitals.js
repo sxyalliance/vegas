@@ -1,5 +1,5 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
-import { getLogger, normalizeForLog } from '$lib/logging/logger.js';
+import { getLogger, normalizeForLog } from '$lib/logging/logger';
 
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
 

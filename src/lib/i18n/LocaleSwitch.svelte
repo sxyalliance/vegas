@@ -15,6 +15,11 @@
 		label: locale,
 		icon: 'tabler:language'
 	}));
+
+	locale.subscribe((value) => {
+		if (typeof value !== 'string') return;
+		document.documentElement.lang = value;
+	});
 </script>
 
 <SelectMenu

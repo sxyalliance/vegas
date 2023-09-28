@@ -26,7 +26,6 @@ export default defineConfig({
 	plugins: [
 		UnoCSS({
 			injectReset: '@unocss/reset/tailwind.css'
-			// ...other Svelte Scoped options
 		}),
 		sveltekit(),
 		imagetools()

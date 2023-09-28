@@ -28,13 +28,7 @@ export default defineConfig({
 			}
 		}),
 		presetTypography(),
-		presetWebFonts({
-			fonts: {
-				// these will extend the default theme
-				// sans: 'Roboto',
-				mono: ['Fira Code', 'Fira Mono:400,700']
-			}
-		})
+		presetWebFonts()
 	],
 	transformers: [transformerVariantGroup()],
 	shortcuts: [
