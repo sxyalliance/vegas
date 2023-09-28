@@ -9,8 +9,8 @@
 </script>
 
 {#if tableOfContent && tableOfContent?.length > 0}
-	<nav class="flex flex-1 flex-col border rounded-md p-2" aria-label="Table of Content">
-		<ul role="list" class="space-y-1">
+	<nav class="flex flex-1 flex-col panel" aria-label="Table of Content">
+		<ul role="list" class="space-y-1 -m-2">
 			{#each tableOfContent as content}
 				{#if content}
 					<li>

@@ -16,7 +16,7 @@
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 			{#each spotted as spot (spot.phrase)}
 				<div
-					class="relative flex items-center rounded-lg bg-hue2 px-6 py-5 shadow-sm ring-0.3 ring-hue6 space-x-3"
+					class="relative flex items-center bg-hue2 panel space-x-3"
 				>
 					<div class="min-w-0 flex-1">
 						<span class="absolute inset-0" aria-hidden="true" />

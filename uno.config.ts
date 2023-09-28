@@ -67,7 +67,10 @@ export default defineConfig({
 			/^badge-flat-(.*)$/,
 			([, c]) =>
 				`hue-${c} inline-flex items-center rounded-md bg-hue5 px-2 py-1 text-xs font-medium text-hue11`
-		]
+		],
+
+		// === Panels ===
+		[/^panel$/, () => `shadow-sm rounded-lg border p-6`]
 	],
 	safelist: [
 		'h-full',

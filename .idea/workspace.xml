@@ -6,18 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7c1f9669-840c-4197-8fc7-1185ac05f46c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/extend/event.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/notion/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/events/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/+page.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/event/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/event/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/notion/components/TableOfContent.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/notion/components/TableOfContent.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/DictionarySection.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/events/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/events/[slug]/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/[slug]/+page.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/events/[slug]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/[slug]/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/events/[slug]/EventProperties.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/events/[slug]/EventProperties.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uno.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/uno.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

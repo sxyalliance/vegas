@@ -16,11 +16,13 @@ export type EventExtraProperties = {
 	inboundTransport: string | null;
 	inboundTime: Date | null;
 	proposer: string;
+
+	status: 'upcoming' | 'ongoing' | 'finished';
 };
 
 export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
 	extract: (page) => {
-		return {
+		const pre: PostProperties<EventExtraProperties> = {
 			title: makeNotNullable(mapPropertyToPrimitive(page.properties['活動名稱'])),
 			slug: makeNotNullable(mapPropertyToPrimitive(page.properties['Slug'])),
 			description: makeNotNullable(mapPropertyToPrimitive(page.properties['活動簡介'])),
@@ -38,9 +40,27 @@ export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
 				outboundTime: mapPropertyToDate(page.properties['去程時間']),
 				inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),
 				inboundTime: mapPropertyToDate(page.properties['回程時間']),
-				proposer: makeNotNullable(mapPropertyToPrimitive(page.properties['發起人']))
+				proposer: makeNotNullable(mapPropertyToPrimitive(page.properties['發起人'])),
+				status: 'ongoing'
 			}
 		};
+
+		// Calculate status using meeting time
+		// 1. If meeting time is in the future, status is upcoming
+		// 2. If meeting time is in the past (1 day), status is finished
+		// 3. Otherwise, status is ongoing
+		const now = new Date();
+		const meetingTime = pre.extra.meetingTime;
+
+		if (meetingTime > now) {
+			pre.extra.status = "upcoming";
+		} else if (now.getTime() - meetingTime.getTime() >= 24 * 60 * 60 * 1000) {
+			pre.extra.status = "finished";
+		} else {
+			pre.extra.status = "ongoing";
+		}
+
+		return pre;
 	}
 };
 
