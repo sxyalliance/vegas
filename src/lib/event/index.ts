@@ -4,7 +4,7 @@ import { getAllPosts, getPostByCriteria } from '$lib/notion';
 import { error } from '@sveltejs/kit';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { registerClient } from '$lib/notion/config';
-import { CategoryKey } from '$lib/types/event';
+import { CategoryKey } from './category';
 
 export type EventExtraProperties = {
 	id: string;
