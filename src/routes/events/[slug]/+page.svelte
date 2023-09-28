@@ -3,7 +3,7 @@
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import TableOfContent from '$lib/notion/components/TableOfContent.svelte';
 	import BlockRenderer from '$lib/notion/components/blocks/BlockRenderer.svelte';
-	import EventProperties from "./EventProperties.svelte";
+	import EventProperties from './EventProperties.svelte';
 
 	export let data: PageData;
 
@@ -48,7 +48,7 @@
 
 			<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 				<div class="col-span-2 lg:order-last">
-						<EventProperties properties={data.event.properties} />
+					<EventProperties properties={data.event.properties} />
 				</div>
 
 				<div class="col-span-1">

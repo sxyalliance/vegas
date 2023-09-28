@@ -1,22 +1,16 @@
-export type PostProperties = {
+import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+
+export type PostProperties<T> = {
 	title: string;
 	slug: string;
 	description: string;
 	category: string;
-	relatedPersonnel: number;
 
-	meetingTime: Date;
-	meetingPoint: string;
-
-	eventPoint: string;
-
-	outboundTransport: string | null;
-	outboundTime: Date | null;
-
-	inboundTransport: string | null;
-	inboundTime: Date | null;
-
-	proposer: string;
+	extra: T;
 };
+
+export interface PostExtraPropertiesExtractor<T> {
+	(post: PageObjectResponse): T;
+}
 
 export const placeholderDoNotUse = 1;

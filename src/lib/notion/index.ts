@@ -7,6 +7,7 @@ import type {
 } from '@notionhq/client/build/src/api-endpoints';
 import type { PostProperties } from '$lib/notion/types';
 import { error } from '@sveltejs/kit';
+import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
 
 type ClientConfig = {
 	integrationSecret: string;
@@ -105,6 +106,8 @@ export const getPostBySlug = async (
 const extractPropertiesFromPost = (post: PageObjectResponse): PostProperties => {
 	const properties = post.properties;
 
+	const id = makeNotNullable(mapPropertyToPrimitive(properties['活動編號']));
+
 	const slug = makeNotNullable(mapPropertyToPrimitive(properties['Slug']));
 	const title = makeNotNullable(mapPropertyToPrimitive(properties['活動名稱']));
 	const description = makeNotNullable(mapPropertyToPrimitive(properties['活動簡介']));
@@ -125,6 +128,7 @@ const extractPropertiesFromPost = (post: PageObjectResponse): PostProperties => 
 	const proposer = makeNotNullable(mapPropertyToPrimitive(properties['發起人']));
 
 	return {
+		id,
 		title,
 		slug,
 		description,
@@ -139,40 +143,4 @@ const extractPropertiesFromPost = (post: PageObjectResponse): PostProperties => 
 		inboundTime,
 		proposer
 	};
-};
-
-const mapPropertyToPrimitive = (
-	property: PageObjectResponse['properties'][string]
-): string | null => {
-	switch (property.type) {
-		case 'title':
-			return property.title.map((t) => t.plain_text).join('');
-		case 'rich_text':
-			return property.rich_text.map((t) => t.plain_text).join('');
-		case 'select':
-			return property.select?.name ?? null;
-		case 'number':
-			return property.number?.toString() ?? null;
-		case 'relation':
-			return property.relation?.map((r) => r.id).join(',') ?? null;
-		default:
-			throw new Error(`Unknown property type ${property.type}`);
-	}
-};
-
-const mapPropertyToDate = (property: PageObjectResponse['properties'][string]): Date | null => {
-	switch (property.type) {
-		case 'date':
-			return property.date ? new Date(property.date.start) : null;
-		default:
-			throw new Error(`Unknown property type ${property.type}`);
-	}
-};
-
-const makeNotNullable = <T>(value: T | null): T => {
-	if (value === null) {
-		throw new Error('Value is null');
-	}
-
-	return value;
 };

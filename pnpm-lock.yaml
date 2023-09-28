@@ -84,6 +84,9 @@ devDependencies:
   eslint-plugin-unused-imports:
     specifier: ^3.0.0
     version: 3.0.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.47.0)
+  head:
+    specifier: link:@unocss/eslint-config#pull/3142/head
+    version: link:@unocss/eslint-config#pull/3142/head
   mdsvex:
     specifier: ^0.11.0
     version: 0.11.0(svelte@4.2.0)

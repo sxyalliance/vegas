@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PostProperties } from '../types';
-	
-export let properties: PostProperties;
+
+	export let properties: PostProperties;
 </script>
 
 <article class="mb-16">
