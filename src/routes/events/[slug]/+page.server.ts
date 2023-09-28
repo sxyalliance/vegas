@@ -6,7 +6,7 @@ import { error } from '@sveltejs/kit';
 export const load: PageServerLoad = async (slEvent: ServerLoadEvent) => {
 	const slug = slEvent.params.slug;
 	if (!slug) {
-		return error(404, 'Not found');
+		throw error(404, 'Not found');
 	}
 
 	const event = await getEventBySlug(slug);

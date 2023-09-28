@@ -2,6 +2,7 @@
   import type { PostProperties } from "$lib/notion/types";
   import Icon from "@iconify/svelte";
   import type { EventExtraProperties } from "$lib/event";
+  import { _ } from "svelte-i18n";
 
   export let properties: PostProperties<EventExtraProperties>;
 
@@ -58,28 +59,33 @@
 </script>
 
 <div class="lg:col-start-3 lg:row-end-1">
-  <h2 class="sr-only">Summary</h2>
   <div class="panel">
     <dl class="flex flex-wrap">
       <div class="flex-auto">
-        <dt class="text-sm font-semibold leading-6 text-hue12">Related Personnel</dt>
+        <dt class="text-sm font-semibold leading-6 text-hue12">
+          {$_('event.property.related_personnel')}
+        </dt>
         <dd class="mt-1 text-base font-semibold leading-6 text-hue12">
           {properties.extra.relatedPersonnel}
         </dd>
       </div>
       <div class="flex-none self-end pt-4">
-        <dt class="sr-only">Status</dt>
-        {#if properties.extra.meetingTime > new Date()}
-          <dd class="badge-flat-teal">Ongoing</dd>
-        {:else}
-          <dd class="badge-flat-slate">Ended</dd>
+        <dt class="sr-only">
+          {$_('event.property.status')}
+        </dt>
+        {#if properties.extra.status === 'upcoming'}
+          <dd class="badge-flat-teal">{$_('event.status.upcoming.label')}</dd>
+        {:else if properties.extra.status === 'finished'}
+          <dd class="badge-flat-slate">{$_('event.status.finished.label')}</dd>
+        {:else if properties.extra.status === 'ongoing'}
+          <dd class="badge-flat-amber">{$_('event.status.ongoing.label')}</dd>
         {/if}
       </div>
       <div id="properties-list" class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 border-t pt-6 mt-6">
         {#each list as { type, label, value, icon }, i (label)}
           <div class="flex w-full flex-none gap-x-4">
             <dt class="flex-none">
-              <span class="sr-only">{label}</span>
+              <span class="sr-only">{$_(`event.property.${label}`)}</span>
               <Icon icon={icon} class="h-6 w-5 {i < 2 ? 'text-hue11' : 'text-hue10'}" />
             </dt>
             <dd class="text-sm font-medium leading-6 {i < 2 ? 'text-hue12' : 'text-hue11'}">

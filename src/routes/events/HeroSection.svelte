@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import { CategoryKey } from '$lib/types/event';
-	import { getCategoryByKey } from '$lib/data/event';
+	import { getCategoryByKey } from "$lib/event";
 
 	function gridConfigOf(categoryKey: CategoryKey, code: string) {
 		const category = getCategoryByKey(categoryKey);

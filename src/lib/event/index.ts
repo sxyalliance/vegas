@@ -4,6 +4,7 @@ import { getAllPosts, getPostByCriteria } from '$lib/notion';
 import { error } from '@sveltejs/kit';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { registerClient } from '$lib/notion/config';
+import { CategoryKey } from '$lib/types/event';
 
 export type EventExtraProperties = {
 	id: string;
@@ -20,13 +21,32 @@ export type EventExtraProperties = {
 	status: 'upcoming' | 'ongoing' | 'finished';
 };
 
+const convertCategory = (category: string): CategoryKey => {
+	switch (category) {
+		case '學術':
+			return CategoryKey.ACADEMIC;
+		case '聚餐':
+			return CategoryKey.DINING;
+		case '運動':
+			return CategoryKey.SPORT;
+		case '娛樂':
+			return CategoryKey.ENTERTAINMENT;
+		case '抽獎':
+			return CategoryKey.GIVEAWAY;
+		default:
+			throw error(500, 'Unknown category');
+	}
+};
+
 export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
 	extract: (page) => {
 		const pre: PostProperties<EventExtraProperties> = {
 			title: makeNotNullable(mapPropertyToPrimitive(page.properties['活動名稱'])),
 			slug: makeNotNullable(mapPropertyToPrimitive(page.properties['Slug'])),
 			description: makeNotNullable(mapPropertyToPrimitive(page.properties['活動簡介'])),
-			category: makeNotNullable(mapPropertyToPrimitive(page.properties['活動性質'])),
+			category: convertCategory(
+				makeNotNullable(mapPropertyToPrimitive(page.properties['活動性質']))
+			),
 
 			extra: {
 				id: makeNotNullable(mapPropertyToPrimitive(page.properties['活動編號'])),
@@ -53,11 +73,11 @@ export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
 		const meetingTime = pre.extra.meetingTime;
 
 		if (meetingTime > now) {
-			pre.extra.status = "upcoming";
+			pre.extra.status = 'upcoming';
 		} else if (now.getTime() - meetingTime.getTime() >= 24 * 60 * 60 * 1000) {
-			pre.extra.status = "finished";
+			pre.extra.status = 'finished';
 		} else {
-			pre.extra.status = "ongoing";
+			pre.extra.status = 'ongoing';
 		}
 
 		return pre;
@@ -95,3 +115,5 @@ export const getEventBySlug = async (
 	}
 	return result.value;
 };
+
+export * from './category';
