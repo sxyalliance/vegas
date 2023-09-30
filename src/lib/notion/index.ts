@@ -4,14 +4,12 @@ import type {
 	BlockObjectResponse,
 	PageObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
-import type { PostProperties, PostPropertiesExtractor } from '$lib/notion/types';
+import type { PostPropertiesExtractor } from '$lib/notion/types';
 import { getClient } from '$lib/notion/client';
 import { err, ok } from 'neverthrow';
 import type { StandardResult } from '$lib/shared/types/error';
 
-export const getAllPosts = async <T>(
-	alias: string
-): Promise<StandardResult<PostProperties<T>[]>> => {
+export const getAllPosts = async <T>(alias: string): Promise<StandardResult<T[]>> => {
 	const client = getClient(alias);
 
 	const res = await getDatabaseById(client);
@@ -35,7 +33,7 @@ export const getAllPosts = async <T>(
 export const getPostByCriteria = async <T>(
 	alias: string,
 	criteria: PageQueryCriteria
-): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: PostProperties<T> }>> => {
+): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: T }>> => {
 	const client = getClient(alias);
 
 	const response = await getPageByCriteria(client, criteria);
@@ -69,6 +67,6 @@ export const getPostByCriteria = async <T>(
 const extractPropertiesFromPage = <T>(
 	page: PageObjectResponse,
 	extractor: PostPropertiesExtractor<T>
-): PostProperties<T> => {
+): T => {
 	return extractor.extract(page);
 };

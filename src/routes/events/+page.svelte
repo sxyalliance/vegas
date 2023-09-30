@@ -24,13 +24,13 @@
 								{$_(`event.category.${event.category}.name`)}
 							</a>
 							<time
-								datetime={event.extra.meetingTime}
-								class:text-hue10={event.extra.status === 'finished'}
-								class:text-primary10={event.extra.status === 'upcoming'}
-								class:text-hue11={event.extra.status === 'ongoing'}
+								datetime={event.meetingTime}
+								class:text-hue10={event.status === 'finished'}
+								class:text-primary10={event.status === 'upcoming'}
+								class:text-hue11={event.status === 'ongoing'}
 							>
-								{$_(`event.status.${event.extra.status}.prefix`)}
-								{event.extra.meetingTime.toLocaleDateString()}
+								{$_(`event.status.${event.status}.prefix`)}
+								{event.meetingTime.toLocaleDateString()}
 							</time>
 						</div>
 						<div class="relative">
@@ -47,7 +47,7 @@
 								<p class="font-semibold text-hue12">
 									<a href="#">
 										<span class="absolute inset-0" />
-										{event.extra.proposer}
+										{event.proposer}
 									</a>
 								</p>
 								<p class="text-hue11">{$_('event.property.proposer')}</p>

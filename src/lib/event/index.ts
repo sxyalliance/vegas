@@ -1,4 +1,4 @@
-import type { PostProperties, PostPropertiesExtractor } from '$lib/notion/types';
+import type { PostPropertiesExtractor } from '$lib/notion/types';
 import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
 import { getAllPosts, getPostByCriteria } from '$lib/notion';
 import { error } from '@sveltejs/kit';
@@ -6,8 +6,12 @@ import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoin
 import { registerClient } from '$lib/notion/config';
 import { CategoryKey } from './category';
 
-export type EventExtraProperties = {
+export type EventProperties = {
 	id: string;
+	title: string;
+	slug: string;
+	description: string;
+	category: CategoryKey;
 	relatedPersonnel: number;
 	meetingTime: Date;
 	meetingPoint: string;
@@ -38,31 +42,28 @@ const convertCategory = (category: string): CategoryKey => {
 	}
 };
 
-export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
+export const extractor: PostPropertiesExtractor<EventProperties> = {
 	extract: (page) => {
-		const pre: PostProperties<EventExtraProperties> = {
+		const pre: EventProperties = {
+			id: makeNotNullable(mapPropertyToPrimitive(page.properties['活動編號'])),
 			title: makeNotNullable(mapPropertyToPrimitive(page.properties['活動名稱'])),
 			slug: makeNotNullable(mapPropertyToPrimitive(page.properties['Slug'])),
 			description: makeNotNullable(mapPropertyToPrimitive(page.properties['活動簡介'])),
 			category: convertCategory(
 				makeNotNullable(mapPropertyToPrimitive(page.properties['活動性質']))
 			),
-
-			extra: {
-				id: makeNotNullable(mapPropertyToPrimitive(page.properties['活動編號'])),
-				relatedPersonnel: parseInt(
-					makeNotNullable(mapPropertyToPrimitive(page.properties['參與人數']))
-				),
-				meetingTime: makeNotNullable(mapPropertyToDate(page.properties['會合時間'])),
-				meetingPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['會合地點'])),
-				eventPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點'])),
-				outboundTransport: mapPropertyToPrimitive(page.properties['去程載具']),
-				outboundTime: mapPropertyToDate(page.properties['去程時間']),
-				inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),
-				inboundTime: mapPropertyToDate(page.properties['回程時間']),
-				proposer: makeNotNullable(mapPropertyToPrimitive(page.properties['發起人'])),
-				status: 'ongoing'
-			}
+			relatedPersonnel: parseInt(
+				makeNotNullable(mapPropertyToPrimitive(page.properties['參與人數']))
+			),
+			meetingTime: makeNotNullable(mapPropertyToDate(page.properties['會合時間'])),
+			meetingPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['會合地點'])),
+			eventPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點'])),
+			outboundTransport: mapPropertyToPrimitive(page.properties['去程載具']),
+			outboundTime: mapPropertyToDate(page.properties['去程時間']),
+			inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),
+			inboundTime: mapPropertyToDate(page.properties['回程時間']),
+			proposer: makeNotNullable(mapPropertyToPrimitive(page.properties['發起人'])),
+			status: 'ongoing'
 		};
 
 		// Calculate status using meeting time
@@ -70,28 +71,22 @@ export const extractor: PostPropertiesExtractor<EventExtraProperties> = {
 		// 2. If meeting time is in the past (1 day), status is finished
 		// 3. Otherwise, status is ongoing
 		const now = new Date();
-		const meetingTime = pre.extra.meetingTime;
+		const meetingTime = pre.meetingTime;
 
 		if (meetingTime > now) {
-			pre.extra.status = 'upcoming';
+			pre.status = 'upcoming';
 		} else if (now.getTime() - meetingTime.getTime() >= 24 * 60 * 60 * 1000) {
-			pre.extra.status = 'finished';
+			pre.status = 'finished';
 		} else {
-			pre.extra.status = 'ongoing';
+			pre.status = 'ongoing';
 		}
 
 		return pre;
 	}
 };
 
-registerClient('event', {
-	integrationSecret: 'secret_SSIPpymveUd3gSYyFQarQFzNVWNfoHq56cN9AfDyKXe',
-	databaseId: '2342ff8d6c2b4654a29ed5994435fcd0',
-	extractor: extractor
-});
-
-export const getAllEvents = async (): Promise<PostProperties<EventExtraProperties>[]> => {
-	const result = await getAllPosts<EventExtraProperties>('event');
+export const getAllEvents = async (): Promise<EventProperties[]> => {
+	const result = await getAllPosts<EventProperties>('event');
 	if (result.isErr()) {
 		throw error(result.error.code, result.error.message);
 	}
@@ -100,8 +95,8 @@ export const getAllEvents = async (): Promise<PostProperties<EventExtraPropertie
 
 export const getEventBySlug = async (
 	slug: string
-): Promise<{ blocks: BlockObjectResponse[]; properties: PostProperties<EventExtraProperties> }> => {
-	const result = await getPostByCriteria<EventExtraProperties>('event', {
+): Promise<{ blocks: BlockObjectResponse[]; properties: EventProperties }> => {
+	const result = await getPostByCriteria<EventProperties>('event', {
 		filter: {
 			property: 'Slug',
 			rich_text: {
@@ -117,3 +112,9 @@ export const getEventBySlug = async (
 };
 
 export * from './category';
+
+registerClient('event', {
+	integrationSecret: 'secret_SSIPpymveUd3gSYyFQarQFzNVWNfoHq56cN9AfDyKXe',
+	databaseId: '2342ff8d6c2b4654a29ed5994435fcd0',
+	extractor: extractor
+});

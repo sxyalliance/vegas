@@ -1,58 +1,57 @@
 <script lang="ts">
-	import type { PostProperties } from '$lib/notion/types';
 	import Icon from '@iconify/svelte';
-	import type { EventExtraProperties } from '$lib/event';
+	import type { EventProperties } from '$lib/event';
 	import { _ } from 'svelte-i18n';
 
-	export let properties: PostProperties<EventExtraProperties>;
+	export let properties: EventProperties;
 
 	const list = [
 		{
 			type: 'datetime',
 			label: 'meeting_time',
-			value: properties.extra.meetingTime,
+			value: properties.meetingTime,
 			icon: 'tabler:calendar-time'
 		},
 		{
 			type: 'text',
 			label: 'meeting_point',
-			value: properties.extra.meetingPoint,
+			value: properties.meetingPoint,
 			icon: 'tabler:map-pin'
 		},
 		{
 			type: 'text',
 			label: 'event_point',
-			value: properties.extra.eventPoint,
+			value: properties.eventPoint,
 			icon: 'tabler:map'
 		},
 		{
 			type: 'text',
 			label: 'proposer',
-			value: properties.extra.proposer,
+			value: properties.proposer,
 			icon: 'tabler:user-edit'
 		},
 		{
 			type: 'text',
 			label: 'outbound_transport',
-			value: properties.extra.outboundTransport,
+			value: properties.outboundTransport,
 			icon: 'tabler:truck-delivery'
 		},
 		{
 			type: 'datetime',
 			label: 'outbound_time',
-			value: properties.extra.outboundTime,
+			value: properties.outboundTime,
 			icon: 'tabler:clock-up'
 		},
 		{
 			type: 'text',
 			label: 'inbound_transport',
-			value: properties.extra.inboundTransport,
+			value: properties.inboundTransport,
 			icon: 'tabler:truck-return'
 		},
 		{
 			type: 'datetime',
 			label: 'inbound_time',
-			value: properties.extra.inboundTime,
+			value: properties.inboundTime,
 			icon: 'tabler:clock-down'
 		}
 	];
@@ -66,18 +65,18 @@
 					{$_('event.property.related_personnel')}
 				</dt>
 				<dd class="mt-1 text-base font-semibold leading-6 text-hue12">
-					{properties.extra.relatedPersonnel}
+					{properties.relatedPersonnel}
 				</dd>
 			</div>
 			<div class="flex-none self-end pt-4">
 				<dt class="sr-only">
 					{$_('event.property.status')}
 				</dt>
-				{#if properties.extra.status === 'upcoming'}
+				{#if properties.status === 'upcoming'}
 					<dd class="badge-flat-teal">{$_('event.status.upcoming.label')}</dd>
-				{:else if properties.extra.status === 'finished'}
+				{:else if properties.status === 'finished'}
 					<dd class="badge-flat-slate">{$_('event.status.finished.label')}</dd>
-				{:else if properties.extra.status === 'ongoing'}
+				{:else if properties.status === 'ongoing'}
 					<dd class="badge-flat-amber">{$_('event.status.ongoing.label')}</dd>
 				{/if}
 			</div>

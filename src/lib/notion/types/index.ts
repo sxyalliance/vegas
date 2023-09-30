@@ -5,20 +5,11 @@ import type {
 
 export type Post = {
 	blocks: BlockObjectResponse[];
-	properties: PostProperties<unknown>;
-};
-
-export type PostProperties<T> = {
-	title: string;
-	slug: string;
-	description: string;
-	category: string;
-
-	extra: T;
+	properties: unknown;
 };
 
 export interface PostPropertiesExtractor<T> {
-	extract: (page: PageObjectResponse) => PostProperties<T>;
+	extract: (page: PageObjectResponse) => T;
 }
 
 export const placeholderDoNotUse = 1;

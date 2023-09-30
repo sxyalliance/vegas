@@ -28,7 +28,7 @@
 	<a class="ml-2" href="#"> Why? </a>
 </HeadBanner>
 
-<HeadBanner type="warning" display={supported && fullSupported}>
+<HeadBanner type="warning" display={supported && !fullSupported}>
 	<b class="capitalize">{browserName} is not fully supported.</b>
 	<span class="hidden sm:inline"> You may experience some issues. </span>
 	<a class="ml-2" href="#"> Why? </a>
