@@ -101,6 +101,7 @@
 </script>
 
 <header class="border-rainbow absolute inset-x-0 top-0 z-30 border-b-2 bg-hue1">
+	<div id="head-banner-holder" />
 	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
 			<a href="/static" class="p-1.5 -m-1.5">

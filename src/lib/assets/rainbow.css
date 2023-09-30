@@ -1,19 +1,46 @@
+/* Utility Class */
 .bg-rainbow {
-	background-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
-	animation: rainbow 20s linear infinite;
+	/*background: var(--vg-gradient);*/
+	background-image: var(--vg-gradient-bg-image);
 }
 
 .border-rainbow {
-	border-image: linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2)) 1;
+	border-image: var(--vg-gradient) 1;
+}
+
+/* Browser Support */
+/* default */
+:root {
+	--vg-gradient: -webkit-linear-gradient(120deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
+	--vg-gradient-bg-image: linear-gradient(-45deg, var(--vg-rainbow-1) 30%, var(--vg-rainbow-2));
+}
+
+/* firefox */
+@supports (-moz-appearance: none) {
+	:root {
+		--vg-gradient-bg-image: transparent;
+	}
+}
+
+/* safari (although it support gradient, but performs too bad */
+@media not all and (min-resolution: 0.001dpcm) {
+	@supports (-webkit-appearance: none) and (display: flow-root) {
+		:root {
+			--vg-gradient-bg-image: transparent;
+		}
+	}
+}
+
+/* Color Animation */
+:root {
+	--vg-rainbow-1: #00a98e;
+	--vg-rainbow-a: #00a98e7f;
+	--vg-rainbow-2: #009ff7;
 	animation: rainbow 20s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.bg-rainbow {
-		animation: none !important;
-	}
-
-	.border-rainbow {
+	:root {
 		animation: none !important;
 	}
 }

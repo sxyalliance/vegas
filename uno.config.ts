@@ -2,6 +2,7 @@ import { defineConfig, presetTypography, presetUno, presetWebFonts } from 'unocs
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { presetRadix } from 'unocss-preset-radix';
 import type { RadixColors } from 'unocss-preset-radix/dist/radix';
+import presetAutoprefixer from 'unocss-preset-autoprefixer';
 
 const colorPalette: readonly RadixColors[] = [
 	'indigo',
@@ -16,6 +17,7 @@ const colorPalette: readonly RadixColors[] = [
 export default defineConfig({
 	presets: [
 		presetUno(),
+		presetAutoprefixer(),
 		presetRadix({
 			palette: colorPalette,
 			aliases: {
