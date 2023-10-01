@@ -28,7 +28,9 @@ const config = {
 					// Displaying Icons
 					'api.iconify.design',
 					// Reading Discord Statistics
-					'discord.com'
+					'discord.com',
+					// Google Apis
+					'content-sheets.googleapis.com',
 				]
 			}
 		}
