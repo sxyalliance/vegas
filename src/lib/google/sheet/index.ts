@@ -1,4 +1,4 @@
-import { err, fromPromise, ok, ResultAsync } from 'neverthrow';
+import { err, ok } from 'neverthrow';
 import type { StandardResult } from '$lib/shared/types/error';
 
 interface SpreadsheetRangeData {

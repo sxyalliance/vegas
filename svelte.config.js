@@ -22,15 +22,12 @@ const config = {
 			directives: {
 				'connect-src': [
 					'self',
-					// Recording Analytics
-					'vitals.vercel-insights.com',
-					'vitals.vercel-analytics.com',
 					// Displaying Icons
 					'api.iconify.design',
 					// Reading Discord Statistics
 					'discord.com',
 					// Google Apis
-					'content-sheets.googleapis.com',
+					'content-sheets.googleapis.com'
 				]
 			}
 		}

@@ -1,30 +1,31 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
 import { getLogger, normalizeForLog } from '$lib/logging/logger';
-
-const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
+import type { Metric } from 'web-vitals';
 
 const logger = getLogger('analytics', 'vercel', 'vitals');
 
+type AnalyticsOptions = {
+	params: { [s: string]: never } | ArrayLike<never>;
+	path: string;
+	debug: boolean;
+};
+
 function getConnectionSpeed() {
-	return 'connection' in navigator &&
-		navigator['connection'] &&
-		'effectiveType' in navigator['connection']
-		? navigator['connection']['effectiveType']
-		: '';
+	if (navigator.connection) {
+		const { downlink, effectiveType } = navigator.connection;
+		return `${downlink}Mbps (${effectiveType})`;
+	}
+
+	return 'Unknown';
 }
 
-/**
- * @param {import("web-vitals").Metric} metric
- * @param {{ params: { [s: string]: any; } | ArrayLike<any>; path: string; analyticsId: string; debug: boolean; }} options
- */
-function sendToAnalytics(metric, options) {
+function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
 	const page = Object.entries(options.params).reduce(
 		(acc, [key, value]) => acc.replace(value, `[${key}]`),
 		options.path
 	);
 
 	const body = {
-		dsn: options.analyticsId,
 		id: metric.id,
 		page,
 		href: location.href,
@@ -36,26 +37,9 @@ function sendToAnalytics(metric, options) {
 	if (options.debug) {
 		logger.debug(normalizeForLog(body), 'Metric has been reported');
 	}
-
-	const blob = new Blob([new URLSearchParams(body).toString()], {
-		// This content type is necessary for `sendBeacon`
-		type: 'application/x-www-form-urlencoded'
-	});
-	if (navigator.sendBeacon) {
-		navigator.sendBeacon(vitalsUrl, blob);
-	} else
-		fetch(vitalsUrl, {
-			body: blob,
-			method: 'POST',
-			credentials: 'omit',
-			keepalive: true
-		});
 }
 
-/**
- * @param {any} options
- */
-export function webVitals(options) {
+export function webVitals(options: AnalyticsOptions) {
 	try {
 		getFID((metric) => sendToAnalytics(metric, options));
 		getTTFB((metric) => sendToAnalytics(metric, options));

@@ -13,13 +13,10 @@
 	import { onMount } from 'svelte';
 	import BrowserSupportNotice from '$lib/layout/BrowserSupportNotice.svelte';
 
-	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
-
-	$: if (browser && analyticsId) {
+	$: if (browser) {
 		webVitals({
 			path: $page.url.pathname,
-			params: $page.params,
-			analyticsId
+			params: $page.params
 		});
 	}
 
