@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { AvailablePreferences, themePreference, store } from '$lib/theme/store';
 	import { browser } from '$app/environment';
-	import va from '@vercel/analytics';
 	import { _ } from 'svelte-i18n';
 	import SelectMenu from '$lib/shared/SelectMenu.svelte';
 
@@ -40,10 +39,6 @@
 		} else if (value === 'light') {
 			deactivateDarkMode();
 		}
-
-		va.track('ChangeTheme', {
-			theme: value
-		});
 	});
 </script>
 
