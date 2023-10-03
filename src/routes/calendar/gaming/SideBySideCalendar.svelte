@@ -98,15 +98,16 @@
 						type="button"
 						on:click={() => (selected = day.date)}
 						disabled={!day.isCurrentPeriod}
-						class:text-white={day.isSelected}
+						class:text-hue1={day.isSelected && day.isToday}
+						class:ring-2={day.isSelected}
+						class:ring-inset={day.isSelected}
+						class:ring-primary10={day.isSelected}
 						class:text-primary10={!day.isSelected && day.isToday}
-						class:text-hue12={!day.isSelected && !day.isToday && day.isCurrentPeriod}
-						class:text-hue6={!day.isSelected && !day.isToday && !day.isCurrentPeriod}
+						class:text-hue12={!day.isToday}
 						class:bg-primary10={day.isSelected && day.isToday}
-						class:bg-hue12={day.isSelected && !day.isToday}
 						class:hover:bg-hue3={!day.isSelected}
 						class:font-semibold={day.isSelected || day.isToday}
-						class="mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+						class="mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:text-hue6"
 					>
 						<time datetime={day.date}>{day.date.getDate()}</time>
 					</button>
