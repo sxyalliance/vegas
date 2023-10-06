@@ -126,6 +126,11 @@ export const getStatementStatsOfTime = (
 ): { [key in Availability]: number } => {
 	let [available, tentative, notFree] = [0, 0, 0];
 	Object.values(gamingCalendar).forEach((user) => {
+		// empty case, usually means not filled in
+		if (!user[dayOfWeek]) {
+			return;
+		}
+
 		const availability = user[dayOfWeek][timeOfDay];
 		switch (availability) {
 			case Availability.AVAILABLE:
