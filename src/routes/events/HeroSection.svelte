@@ -10,7 +10,7 @@
 			code,
 			key: category.key,
 			icon: category.icon,
-			color: category.color
+			color: 'text-' + category.color
 		};
 	}
 

@@ -78,6 +78,8 @@ export default defineConfig({
 		'hue-natural',
 		'absolute',
 		'prose',
-		...colorPalette.map((c) => `text-${c}10`)
+		...colorPalette.map((c) => `text-${c}10`),
+		...colorPalette.map((c) => `bg-${c}10`),
+		...colorPalette.map((c) => `border-${c}10`)
 	]
 });

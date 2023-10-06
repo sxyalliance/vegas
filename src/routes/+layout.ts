@@ -7,6 +7,8 @@ import type { LayoutLoad } from './$types';
 // logger for debugging
 import '$lib/logging/init';
 
+import '$lib/shared/dayjs';
+
 export const load: LayoutLoad = async () => {
 	// locale detection
 	detectAndApplyLocale();

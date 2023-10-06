@@ -18,7 +18,7 @@ const categories = new Map<CategoryKey, Category>([
 		{
 			key: CategoryKey.DINING,
 			icon: 'tabler:cake',
-			color: 'text-teal10'
+			color: 'teal10'
 		}
 	],
 	[
@@ -26,7 +26,7 @@ const categories = new Map<CategoryKey, Category>([
 		{
 			key: CategoryKey.ENTERTAINMENT,
 			icon: 'tabler:music',
-			color: 'text-pink10'
+			color: 'pink10'
 		}
 	],
 	[
@@ -34,7 +34,7 @@ const categories = new Map<CategoryKey, Category>([
 		{
 			key: CategoryKey.ACADEMIC,
 			icon: 'tabler:school',
-			color: 'text-indigo10'
+			color: 'indigo10'
 		}
 	],
 	[
@@ -42,7 +42,7 @@ const categories = new Map<CategoryKey, Category>([
 		{
 			key: CategoryKey.SPORT,
 			icon: 'tabler:shirt-sport',
-			color: 'text-amber10'
+			color: 'amber10'
 		}
 	],
 	[
@@ -50,7 +50,7 @@ const categories = new Map<CategoryKey, Category>([
 		{
 			key: CategoryKey.GIVEAWAY,
 			icon: 'tabler:gift',
-			color: 'text-ruby10'
+			color: 'ruby10'
 		}
 	]
 ]);
