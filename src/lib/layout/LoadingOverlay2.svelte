@@ -1,5 +1,5 @@
 <script>
-  import loading from "$lib/assets/loading.gif?w=480&as=run:0";
+  import loading from "$lib/assets/loading.gif";
 </script>
 
 <section
@@ -8,6 +8,7 @@
   <div class="h-full w-full flex items-center justify-center">
     <div class="flex items-center justify-center">
       <img
+        loading="eager"
         src={loading}
         alt="loading animation"
         class="h-64 w-auto" />
