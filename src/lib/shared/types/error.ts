@@ -1,4 +1,4 @@
-import { Result } from 'neverthrow';
+import type { Result } from 'neverthrow';
 
 export type ErrorResult = { code: number; message: string; previous?: ErrorResult };
 

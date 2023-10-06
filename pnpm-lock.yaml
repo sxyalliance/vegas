@@ -151,6 +151,9 @@ devDependencies:
   vitest:
     specifier: ^0.34.5
     version: 0.34.5(lightningcss@1.22.0)
+  wretch:
+    specifier: ^2.7.0
+    version: 2.7.0
 
 packages:
 
@@ -4461,6 +4464,11 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    dev: true
+
+  /wretch@2.7.0:
+    resolution: {integrity: sha512-IOjqi9SlQ8FEWp1X3KJ74wLNqpDVBoJIJvC7ZDHxPhzriNJd84+7RAhFBTl2sHiqnzBhzfqs1sznaB0Ik/3Ngw==}
+    engines: {node: '>=14'}
     dev: true
 
   /yallist@4.0.0:

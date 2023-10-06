@@ -61,7 +61,8 @@
 		"unocss-preset-autoprefixer": "^0.0.6",
 		"unocss-preset-radix": "^2.5.5",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.5"
+		"vitest": "^0.34.5",
+		"wretch": "^2.7.0"
 	},
 	"type": "module",
 	"dependencies": {
