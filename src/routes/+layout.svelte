@@ -8,11 +8,10 @@
 	import { title } from '$lib/layout/title';
 
 	import '$lib/assets/rainbow.css';
-	import LoadingOverlay from '$lib/layout/LoadingOverlay.svelte';
 	import { isLoading } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import BrowserSupportNotice from '$lib/layout/BrowserSupportNotice.svelte';
-	import LoadingOverlay2 from "$lib/layout/LoadingOverlay2.svelte";
+	import LoadingOverlay2 from '$lib/layout/LoadingOverlay2.svelte';
 
 	$: if (browser) {
 		webVitals({
@@ -37,7 +36,7 @@
 <BrowserSupportNotice />
 
 {#if loading}
-<!--	<LoadingOverlay />-->
+	<!--	<LoadingOverlay />-->
 	<LoadingOverlay2 />
 {:else}
 	<Header />
