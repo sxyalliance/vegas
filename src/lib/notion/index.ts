@@ -23,11 +23,12 @@ export const getAllPosts = async <T>(alias: string): Promise<StandardResult<T[]>
 	}
 
 	const pages = res.value;
-	return ok(
-		pages.map((page) =>
-			extractPropertiesFromPage<T>(page, client.config.extractor as PostPropertiesExtractor<T>)
-		)
+	const extracted = pages.map((page) =>
+		extractPropertiesFromPage<T>(page, client.config.extractor as PostPropertiesExtractor<T>)
 	);
+	const filtered = extracted.filter((page) => !!page) as T[];
+
+	return ok(filtered);
 };
 
 export const getPostByCriteria = async <T>(
@@ -55,18 +56,24 @@ export const getPostByCriteria = async <T>(
 		return err({ code: blockResponse.error.code, message: blockResponse.error.message });
 	}
 
+	const properties = extractPropertiesFromPage<T>(
+		page,
+		client.config.extractor as PostPropertiesExtractor<T>
+	);
+
+	if (properties === null) {
+		return err({ code: 404, message: 'Not found' });
+	}
+
 	return ok({
 		blocks: blockResponse.value,
-		properties: extractPropertiesFromPage<T>(
-			page,
-			client.config.extractor as PostPropertiesExtractor<T>
-		)
+		properties
 	});
 };
 
 const extractPropertiesFromPage = <T>(
 	page: PageObjectResponse,
 	extractor: PostPropertiesExtractor<T>
-): T => {
+): T | null => {
 	return extractor.extract(page);
 };

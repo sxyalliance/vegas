@@ -15,7 +15,7 @@
 
 <section class="bg-hue1 px-4 py-12 lg:px-8 lg:py-24 sm:px-6">
   <div class="mx-auto max-w-7xl">
-    <div class="space-y-20 lg:space-y-20">
+    <div class="grid grid-cols-1 space-y-16 lg:space-y-16">
       {#each data.events as event (event.slug)}
         {@const meetingDay = dayjs(event.meetingTime)}
         {@const today = dayjs()}
@@ -48,11 +48,12 @@
                     <time class="sr-only" datetime={event.meetingTime}>{event.meetingTime.toLocaleDateString()}</time>
                     <div class="flex" aria-hidden="true">
                       <div class="mr-2 flex-shrink-0 self-center">
-                        <span class="text-3xl">{event.meetingTime.getDate()}</span>
+                        <span class="text-3xl">{event.meetingTime.getDate().toString().padStart(2, '0')}</span>
                       </div>
-                      <div>
-                        <h4
-                          class="text-lg font-bold">{event.meetingTime.toLocaleString('en-US', { month: 'long' })}</h4>
+                      <div class="w-23">
+                        <h4 class="text-lg font-bold">
+                          {event.meetingTime.toLocaleString('en-US', { month: 'long' })}
+                        </h4>
                         <span class="mt-1">{event.meetingTime.getFullYear()}</span>
                       </div>
                     </div>

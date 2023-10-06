@@ -44,10 +44,15 @@ const convertCategory = (category: string): CategoryKey => {
 
 export const extractor: PostPropertiesExtractor<EventProperties> = {
 	extract: (page) => {
+		const slug = mapPropertyToPrimitive(page.properties['Slug']);
+		if (!slug) {
+			return null;
+		}
+
 		const pre: EventProperties = {
 			id: makeNotNullable(mapPropertyToPrimitive(page.properties['活動編號'])),
 			title: makeNotNullable(mapPropertyToPrimitive(page.properties['活動名稱'])),
-			slug: makeNotNullable(mapPropertyToPrimitive(page.properties['Slug'])),
+			slug: makeNotNullable(slug),
 			description: makeNotNullable(mapPropertyToPrimitive(page.properties['活動簡介'])),
 			category: convertCategory(
 				makeNotNullable(mapPropertyToPrimitive(page.properties['活動性質']))
