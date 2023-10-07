@@ -91,7 +91,9 @@
 						</div>
 
 						<div class="flex-none hidden lg:block">
-							<Icon icon={category.icon} class="h-full w-36 text-{category.color}" />
+							<div class="p-4 bg-hue2 rounded-lg">
+								<Icon icon={category.icon} class="h-full w-26 text-{category.color}" />
+							</div>
 						</div>
 					</article>
 				</a>
