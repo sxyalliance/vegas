@@ -34,10 +34,10 @@
 			"sr_github": "GitHub",
 			"sr_youtube": "YouTube"
 		},
-		"useful_links": {
-			"heading": "Useful Links",
-			"join_discord": "Join Server",
-			"github": "GitHub"
+		"policies": {
+			"heading": "Policies",
+			"privacy_policy": "Privacy Policy",
+			"cookie_policy": "Cookie Policy"
 		},
 		"statistics": {
 			"heading": "Statistics",

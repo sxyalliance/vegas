@@ -101,14 +101,16 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-hue12">
-							{$_('footer.useful_links.heading')}
+							{$_('footer.policies.heading')}
 						</h3>
 						<ul role="list" class="mt-6 text-sm leading-6 text-hue11 space-y-4">
 							<li>
-								<a href="#" class="hover:text-hue12">{$_('footer.useful_links.join_discord')}</a>
+								<a href="/policies/privacy" class="hover:text-hue12"
+									>{$_('footer.policies.privacy_policy')}</a
+								>
 							</li>
 							<li>
-								<a href="#" class="hover:text-hue12">{$_('footer.useful_links.github')}</a>
+								<a href="#" class="hover:text-hue12">{$_('footer.policies.cookie_policy')}</a>
 							</li>
 						</ul>
 					</div>
