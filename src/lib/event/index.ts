@@ -42,6 +42,14 @@ const convertCategory = (category: string): CategoryKey => {
 	}
 };
 
+const maskString = (str: string): string => {
+	// mask 6 characters
+	if (str.length <= 6) {
+		return str;
+	}
+	return str.slice(0, 6) + '******';
+};
+
 export const extractor: PostPropertiesExtractor<EventProperties> = {
 	extract: (page) => {
 		const slug = mapPropertyToPrimitive(page.properties['Slug']);
@@ -61,8 +69,10 @@ export const extractor: PostPropertiesExtractor<EventProperties> = {
 				makeNotNullable(mapPropertyToPrimitive(page.properties['參與人數']))
 			),
 			meetingTime: makeNotNullable(mapPropertyToDate(page.properties['會合時間'])),
-			meetingPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['會合地點'])),
-			eventPoint: makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點'])),
+			meetingPoint: maskString(
+				makeNotNullable(mapPropertyToPrimitive(page.properties['會合地點']))
+			),
+			eventPoint: maskString(makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點']))),
 			outboundTransport: mapPropertyToPrimitive(page.properties['去程載具']),
 			outboundTime: mapPropertyToDate(page.properties['去程時間']),
 			inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),

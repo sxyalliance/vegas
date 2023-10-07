@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-	import TableOfContent from '$lib/notion/components/TableOfContent.svelte';
 	import BlockRenderer from '$lib/notion/components/blocks/BlockRenderer.svelte';
 	import EventProperties from './EventProperties.svelte';
 	import { _ } from 'svelte-i18n';
@@ -48,13 +47,12 @@
 		</p>
 
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-			<div class="col-span-2 lg:order-last">
+			<div class="col-span-3 /*col-span-2*/ lg:order-last">
 				<EventProperties properties={data.event.properties} />
 			</div>
-
-			<div class="col-span-1">
-				<TableOfContent tableOfContent={toc} />
-			</div>
+			<!--			<div class="col-span-1">-->
+			<!--				<TableOfContent tableOfContent={toc} />-->
+			<!--			</div>-->
 		</div>
 
 		<div class="relative my-6">
