@@ -81,6 +81,29 @@ export const getPageByCriteria = async (
 	}
 };
 
+export const getPageById = async (
+	client: Client,
+	pageId: string
+): Promise<Result<PageObjectResponse, ErrorResult>> => {
+	try {
+		const notion = client.sdk;
+
+		if (!notion) {
+			return err({ code: 400, message: 'Invalid or missing notion secret' });
+		}
+
+		const page = await notion.pages.retrieve({ page_id: pageId });
+
+		if (isFullPage(page)) {
+			return ok(page);
+		} else {
+			return err({ code: 500, message: 'Some error occurred' });
+		}
+	} catch (error) {
+		return handleNotionError(error);
+	}
+};
+
 export const getBlocks = async (
 	client: Client,
 	blockId: string

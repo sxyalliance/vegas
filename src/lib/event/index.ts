@@ -6,6 +6,8 @@ import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoin
 import { registerClient } from '$lib/notion/config';
 import { CategoryKey } from './category';
 import MaskData from 'maskdata';
+import { getMemberById } from '$lib/member';
+
 const { maskPassword } = MaskData;
 
 export type EventProperties = {
@@ -53,8 +55,13 @@ const maskAddress = (address: string): string => {
 	return maskPassword(address, options);
 };
 
+const getProposerNameById = async (id: string): Promise<string> => {
+	const member = await getMemberById(id);
+	return member.name;
+};
+
 export const extractor: PostPropertiesExtractor<EventProperties> = {
-	extract: (page) => {
+	extract: async (page) => {
 		const slug = mapPropertyToPrimitive(page.properties['Slug']);
 		if (!slug) {
 			return null;
@@ -80,7 +87,9 @@ export const extractor: PostPropertiesExtractor<EventProperties> = {
 			outboundTime: mapPropertyToDate(page.properties['去程時間']),
 			inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),
 			inboundTime: mapPropertyToDate(page.properties['回程時間']),
-			proposer: makeNotNullable(mapPropertyToPrimitive(page.properties['發起人'])),
+			proposer: await getProposerNameById(
+				makeNotNullable(mapPropertyToPrimitive(page.properties['發起人']))
+			),
 			status: 'ongoing'
 		};
 

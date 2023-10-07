@@ -1,9 +1,10 @@
 import type { PostPropertiesExtractor } from '$lib/notion/types';
 import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
-import { getAllPosts, getPostByCriteria } from '$lib/notion';
+import { getAllPosts, getPostByCriteria, getPostById } from '$lib/notion';
 import { error } from '@sveltejs/kit';
 import { registerClient } from '$lib/notion/config';
 import MaskData from 'maskdata';
+
 const { maskEmail2, maskPhone } = MaskData;
 
 export type MemberProperties = {
@@ -15,7 +16,7 @@ export type MemberProperties = {
 };
 
 export const extractor: PostPropertiesExtractor<MemberProperties> = {
-	extract: (page) => {
+	extract: async (page) => {
 		let email = mapPropertyToPrimitive(page.properties['電郵地址']);
 		if (email) {
 			email = maskEmail2(email);
@@ -53,6 +54,15 @@ export const getMemberByName = async (name: string): Promise<MemberProperties> =
 			}
 		}
 	});
+
+	if (result.isErr()) {
+		throw error(result.error.code, result.error.message);
+	}
+	return result.value.properties;
+};
+
+export const getMemberById = async (id: string): Promise<MemberProperties> => {
+	const result = await getPostById<MemberProperties>('member', id);
 
 	if (result.isErr()) {
 		throw error(result.error.code, result.error.message);

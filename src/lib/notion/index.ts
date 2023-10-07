@@ -1,4 +1,4 @@
-import { getBlocks, getDatabaseById, getPageByCriteria } from '$lib/notion/api';
+import { getBlocks, getDatabaseById, getPageByCriteria, getPageById } from '$lib/notion/api';
 import type { PageQueryCriteria } from '$lib/notion/api';
 import type {
 	BlockObjectResponse,
@@ -23,8 +23,10 @@ export const getAllPosts = async <T>(alias: string): Promise<StandardResult<T[]>
 	}
 
 	const pages = res.value;
-	const extracted = pages.map((page) =>
-		extractPropertiesFromPage<T>(page, client.config.extractor as PostPropertiesExtractor<T>)
+	const extracted = await Promise.all(
+		pages.map((page) =>
+			extractPropertiesFromPage<T>(page, client.config.extractor as PostPropertiesExtractor<T>)
+		)
 	);
 	const filtered = extracted.filter((page) => !!page) as T[];
 
@@ -56,7 +58,7 @@ export const getPostByCriteria = async <T>(
 		return err({ code: blockResponse.error.code, message: blockResponse.error.message });
 	}
 
-	const properties = extractPropertiesFromPage<T>(
+	const properties = await extractPropertiesFromPage<T>(
 		page,
 		client.config.extractor as PostPropertiesExtractor<T>
 	);
@@ -71,9 +73,41 @@ export const getPostByCriteria = async <T>(
 	});
 };
 
-const extractPropertiesFromPage = <T>(
+export const getPostById = async <T>(
+	alias: string,
+	pageId: string
+): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: T }>> => {
+	const client = getClient(alias);
+
+	const page = await getPageById(client, pageId);
+
+	if (page.isErr()) {
+		return err({ code: 404, message: 'Not found' });
+	}
+
+	const blockResponse = await getBlocks(client, pageId);
+	if (blockResponse.isErr()) {
+		return err({ code: blockResponse.error.code, message: blockResponse.error.message });
+	}
+
+	const properties = await extractPropertiesFromPage<T>(
+		page.value,
+		client.config.extractor as PostPropertiesExtractor<T>
+	);
+
+	if (properties === null) {
+		return err({ code: 404, message: 'Not found' });
+	}
+
+	return ok({
+		blocks: blockResponse.value,
+		properties
+	});
+};
+
+const extractPropertiesFromPage = async <T>(
 	page: PageObjectResponse,
 	extractor: PostPropertiesExtractor<T>
-): T | null => {
-	return extractor.extract(page);
+): Promise<T | null> => {
+	return await extractor.extract(page);
 };

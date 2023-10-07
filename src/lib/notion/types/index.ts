@@ -9,7 +9,7 @@ export type Post = {
 };
 
 export interface PostPropertiesExtractor<T> {
-	extract: (page: PageObjectResponse) => T | null;
+	extract: (page: PageObjectResponse) => Promise<T | null>;
 }
 
 export const placeholderDoNotUse = 1;
