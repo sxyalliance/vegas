@@ -3,7 +3,8 @@ import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib
 import { getAllPosts, getPostByCriteria } from '$lib/notion';
 import { error } from '@sveltejs/kit';
 import { registerClient } from '$lib/notion/config';
-import { maskEmail2, maskPhone } from 'maskdata';
+import MaskData from 'maskdata';
+const { maskEmail2, maskPhone } = MaskData;
 
 export type MemberProperties = {
 	name: string;

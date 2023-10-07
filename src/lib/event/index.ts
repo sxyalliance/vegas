@@ -5,7 +5,8 @@ import { error } from '@sveltejs/kit';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { registerClient } from '$lib/notion/config';
 import { CategoryKey } from './category';
-import { maskPassword, PasswordMaskOptions } from 'maskdata';
+import MaskData from 'maskdata';
+const { maskPassword } = MaskData;
 
 export type EventProperties = {
 	id: string;
@@ -44,7 +45,7 @@ const convertCategory = (category: string): CategoryKey => {
 };
 
 const maskAddress = (address: string): string => {
-	const options: PasswordMaskOptions = {
+	const options = {
 		maskWith: '*',
 		unmaskedStartCharacters: 8,
 		unmaskedEndCharacters: 0
