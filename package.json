@@ -14,10 +14,15 @@
 		"lint:fix": "prettier --plugin-search-dir . --write . && eslint . --fix",
 		"format": "prettier --plugin-search-dir . --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"commit": "git-cz"
 	},
 	"devDependencies": {
 		"@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
+		"@commitlint/cli": "^17.7.2",
+		"@commitlint/config-conventional": "^17.7.0",
+		"@commitlint/cz-commitlint": "^17.7.2",
+		"@commitlint/prompt-cli": "^17.7.2",
 		"@iconify/svelte": "^3.1.4",
 		"@macfja/svelte-persistent-store": "^2.4.0",
 		"@notionhq/client": "^2.2.13",
@@ -37,11 +42,14 @@
 		"browserslist": "^4.22.1",
 		"browserslist-useragent-regexp": "^4.1.0",
 		"canvas-confetti": "^1.6.1",
+		"commitizen": "^4.3.0",
 		"dayjs": "^1.11.10",
 		"eslint": "^8.50.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.33.2",
 		"eslint-plugin-unused-imports": "^3.0.0",
+		"husky": "^8.0.3",
+		"inquirer": "8",
 		"lightningcss": "^1.22.0",
 		"maskdata": "^1.2.2",
 		"mdsvex": "^0.11.0",
@@ -76,6 +84,11 @@
 			"allowedVersions": {
 				"@rgossiaux/svelte-headlessui>svelte": "4"
 			}
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "@commitlint/cz-commitlint"
 		}
 	}
 }
