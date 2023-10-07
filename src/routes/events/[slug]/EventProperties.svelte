@@ -80,7 +80,10 @@
 					<dd class="badge-flat-amber">{$_('event.status.ongoing.label')}</dd>
 				{/if}
 			</div>
-			<div id="properties-list" class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 border-t pt-6 mt-6">
+			<div
+				id="properties-list"
+				class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 border-t pt-6 mt-6 w-full"
+			>
 				{#each list as { type, label, value, icon }, i (label)}
 					<div class="flex w-full flex-none gap-x-4">
 						<dt class="flex-none">
