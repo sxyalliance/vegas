@@ -43,6 +43,7 @@
 		"eslint-plugin-svelte": "^2.33.2",
 		"eslint-plugin-unused-imports": "^3.0.0",
 		"lightningcss": "^1.22.0",
+		"maskdata": "^1.2.2",
 		"mdsvex": "^0.11.0",
 		"network-information-types": "^0.1.1",
 		"neverthrow": "^6.0.0",

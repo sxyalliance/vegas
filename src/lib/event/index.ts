@@ -5,6 +5,7 @@ import { error } from '@sveltejs/kit';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { registerClient } from '$lib/notion/config';
 import { CategoryKey } from './category';
+import { maskPassword, PasswordMaskOptions } from 'maskdata';
 
 export type EventProperties = {
 	id: string;
@@ -42,12 +43,13 @@ const convertCategory = (category: string): CategoryKey => {
 	}
 };
 
-const maskString = (str: string): string => {
-	// mask 6 characters
-	if (str.length <= 6) {
-		return str;
-	}
-	return str.slice(0, 6) + '******';
+const maskAddress = (address: string): string => {
+	const options: PasswordMaskOptions = {
+		maskWith: '*',
+		unmaskedStartCharacters: 8,
+		unmaskedEndCharacters: 0
+	};
+	return maskPassword(address, options);
 };
 
 export const extractor: PostPropertiesExtractor<EventProperties> = {
@@ -69,10 +71,10 @@ export const extractor: PostPropertiesExtractor<EventProperties> = {
 				makeNotNullable(mapPropertyToPrimitive(page.properties['參與人數']))
 			),
 			meetingTime: makeNotNullable(mapPropertyToDate(page.properties['會合時間'])),
-			meetingPoint: maskString(
+			meetingPoint: maskAddress(
 				makeNotNullable(mapPropertyToPrimitive(page.properties['會合地點']))
 			),
-			eventPoint: maskString(makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點']))),
+			eventPoint: maskAddress(makeNotNullable(mapPropertyToPrimitive(page.properties['活動地點']))),
 			outboundTransport: mapPropertyToPrimitive(page.properties['去程載具']),
 			outboundTime: mapPropertyToDate(page.properties['去程時間']),
 			inboundTransport: mapPropertyToPrimitive(page.properties['回程載具']),

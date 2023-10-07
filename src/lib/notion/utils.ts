@@ -5,19 +5,23 @@ export const mapPropertyToPrimitive = (
 ): string | null => {
 	switch (property.type) {
 		case 'title':
-			return property.title.map((t) => t.plain_text).join('');
+			return valueOrNull(property.title.map((t) => t.plain_text).join(''));
 		case 'rich_text':
-			return property.rich_text.map((t) => t.plain_text).join('');
+			return valueOrNull(property.rich_text.map((t) => t.plain_text).join(''));
 		case 'select':
 			return property.select?.name ?? null;
 		case 'number':
 			return property.number?.toString() ?? null;
 		case 'relation':
-			return property.relation?.map((r) => r.id).join(',') ?? null;
+			return valueOrNull(property.relation?.map((r) => r.id).join(','));
 		case 'unique_id':
 			return property.unique_id
 				? (property.unique_id.prefix || '') + property.unique_id.number
 				: null;
+		case 'email':
+			return valueOrNull(property.email);
+		case 'phone_number':
+			return valueOrNull(property.phone_number);
 		default:
 			throw new Error(`Unknown property type ${property.type}`);
 	}
@@ -40,4 +44,8 @@ export const makeNotNullable = <T>(value: T | null): T => {
 	}
 
 	return value;
+};
+
+const valueOrNull = <T>(value: T | null): T | null => {
+	return !value ? null : value;
 };
