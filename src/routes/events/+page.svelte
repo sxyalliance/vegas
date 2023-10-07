@@ -5,6 +5,7 @@
 	import { _ } from 'svelte-i18n';
 	import { getCategoryByKey } from '$lib/event';
 	import dayjs from 'dayjs';
+	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 
@@ -19,12 +20,13 @@
 			{#each data.events as event (event.slug)}
 				{@const meetingDay = dayjs(event.meetingTime)}
 				{@const today = dayjs()}
+				{@const category = getCategoryByKey(event.category)}
 				<a href={`/events/${event.slug}`}>
 					<article
-						class="relative isolate flex flex-col lg:flex-row gap-10 justify-between bg-hue3"
+						class="p-6 relative isolate flex flex-col lg:flex-row gap-10 justify-between bg-hue3"
 					>
-						<div class="flex-none p-6 pb-0 lg:pb-6 pr-0">
-							<div class="group relative max-w-xl text-hue12">
+						<div class="flex-none">
+							<div class="group relative max-w-xl text-hue12 mb-6">
 								<span class="text-xl">
 									{#if meetingDay.isSame(today, 'day')}
 										{$_('event.status.ongoing.label')}
@@ -40,49 +42,46 @@
 									{meetingDay.fromNow()}
 								</h2>
 							</div>
-							<div class="mt-6 flex">
-								<div class="relative flex items-center gap-x-4">
-									<!-- Meeting Time (Bookmark effect) -->
+
+							<div
+								class="relative lg:(absolute bottom-4) flex items-center gap-x-4 justify-between"
+							>
+								<!-- Meeting Time (Bookmark effect) -->
+								<div
+									class="relative top-0 -left-10 p-2 pl-2 pr-4 font-bold text-primary-fg bg-{category.color}"
+								>
 									<div
-										class="relative top-0 -left-10 p-2 pl-2 pr-4 font-bold text-primary-fg bg-{getCategoryByKey(
-											event.category
-										).color}"
+										class="absolute top-17 left-0 border-8 border-l-transparent border-b-transparent border-{category.color}"
+									/>
+									<time class="sr-only" datetime={event.meetingTime}
+										>{event.meetingTime.toLocaleDateString()}</time
 									>
-										<div
-											class="absolute top-17 left-0 border-8 border-l-transparent border-b-transparent border-{getCategoryByKey(
-												event.category
-											).color}"
-										/>
-										<time class="sr-only" datetime={event.meetingTime}
-											>{event.meetingTime.toLocaleDateString()}</time
-										>
-										<div class="flex" aria-hidden="true">
-											<div class="mr-2 flex-shrink-0 self-center">
-												<span class="text-3xl"
-													>{event.meetingTime.getDate().toString().padStart(2, '0')}</span
-												>
-											</div>
-											<div class="w-23">
-												<h4 class="text-lg font-bold">
-													{event.meetingTime.toLocaleString('en-US', { month: 'long' })}
-												</h4>
-												<span class="mt-1">{event.meetingTime.getFullYear()}</span>
-											</div>
+									<div class="flex" aria-hidden="true">
+										<div class="mr-2 flex-shrink-0 self-center">
+											<span class="text-3xl"
+												>{event.meetingTime.getDate().toString().padStart(2, '0')}</span
+											>
+										</div>
+										<div class="w-23">
+											<h4 class="text-lg font-bold">
+												{event.meetingTime.toLocaleString('en-US', { month: 'long' })}
+											</h4>
+											<span class="mt-1">{event.meetingTime.getFullYear()}</span>
 										</div>
 									</div>
+								</div>
 
-									<!-- Event Name & Proposer -->
-									<div class="-ml-8">
-										<span class="font-semibold text-hue12">
-											{$_('event.property.proposer')}
-										</span>
-										<p class="text-hue11 text-sm truncate w-[12ch]">{event.proposer}</p>
-									</div>
+								<!-- Event Name & Proposer -->
+								<div class="-ml-8">
+									<span class="font-semibold text-hue12">
+										{$_('event.property.proposer')}
+									</span>
+									<p class="text-hue11 text-sm truncate w-[12ch]">{event.proposer}</p>
 								</div>
 							</div>
 						</div>
 
-						<div class="px-6 lg:(px-0 py-6) lg:(flex flex-col place-content-center) min-w-prose">
+						<div class="mr-auto lg:(flex flex-col place-content-center)">
 							<div class="text-5xl font-bold text-hue12">
 								{event.title}
 							</div>
@@ -91,12 +90,8 @@
 							</p>
 						</div>
 
-						<div>
-							<img
-								src="https://placehold.co/640x360?text=16:9"
-								class="h-full object-cover"
-								alt="Promotion cover of this event"
-							/>
+						<div class="flex-none hidden lg:block">
+							<Icon icon={category.icon} class="h-full w-36 text-{category.color}" />
 						</div>
 					</article>
 				</a>
