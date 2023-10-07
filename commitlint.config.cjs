@@ -1,1 +1,1 @@
-module.exports = { extends: ['@commitlint/config-conventional'], branches: ['main'] };
+module.exports = { extends: ['@commitlint/config-conventional'] };

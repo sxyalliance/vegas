@@ -17,7 +17,7 @@
     "test:integration": "playwright test",
     "test:unit": "vitest",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --branches main"
   },
   "devDependencies": {
     "@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
