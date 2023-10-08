@@ -108,7 +108,7 @@
 	<div id="head-banner-holder" />
 	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
-			<a href="/static" class="p-1.5 -m-1.5">
+			<a href="/" class="p-1.5 -m-1.5">
 				<span class="sr-only">SXYA Community</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>

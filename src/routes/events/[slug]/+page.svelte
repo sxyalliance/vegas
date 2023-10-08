@@ -1,14 +1,18 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-	import BlockRenderer from '$lib/notion/components/blocks/BlockRenderer.svelte';
+	import BlockRenderer from '$lib/components/notion/blocks/BlockRenderer.svelte';
 	import EventProperties from './EventProperties.svelte';
 	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
+	import { deserialize } from 'serializr';
+	import { Event } from '$lib/entities/event';
 
 	export let data: PageData;
 
-	$: toc = data.event.blocks.map((block: BlockObjectResponse) => {
+	const event = deserialize(Event, data.event);
+
+	$: toc = event.blocks.map((block: BlockObjectResponse) => {
 		if (block.type === 'heading_1') {
 			return {
 				type: block.type,
@@ -36,19 +40,19 @@
 <section class="bg-hue1 px-6 py-32 lg:px-8">
 	<article class="mx-auto max-w-3xl text-base leading-7">
 		<p class="text-base font-semibold leading-7 text-primary11">
-			{$_(`event.category.${data.event.properties.category}.name`)}
-			#{data.event.properties.id}
+			{$_(`event.category.${event.category}.name`)}
+			#{event.id}
 		</p>
 		<h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
-			{data.event.properties.title}
+			{event.title}
 		</h1>
 		<p class="my-4 text-xl leading-8 text-hue11">
-			{data.event.properties.description}
+			{event.description}
 		</p>
 
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 			<div class="col-span-3 /*col-span-2*/ lg:order-last">
-				<EventProperties properties={data.event.properties} />
+				<EventProperties properties={event} />
 			</div>
 			<!--			<div class="col-span-1">-->
 			<!--				<TableOfContent tableOfContent={toc} />-->
@@ -66,9 +70,9 @@
 			</div>
 		</div>
 
-		{#if data.event.blocks && data.event.blocks.length > 0}
+		{#if event.blocks && event.blocks.length > 0}
 			<div class="prose-here max-w-full prose">
-				{#each data.event.blocks as block}
+				{#each event.blocks as block}
 					<BlockRenderer {block} />
 				{/each}
 			</div>

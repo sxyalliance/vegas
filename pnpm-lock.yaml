@@ -139,6 +139,9 @@ devDependencies:
   semantic-release:
     specifier: ^22.0.5
     version: 22.0.5(typescript@4.9.5)
+  serializr:
+    specifier: ^3.0.2
+    version: 3.0.2
   svelte:
     specifier: ^4.2.1
     version: 4.2.1
@@ -5946,6 +5949,10 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
+
+  /serializr@3.0.2:
+    resolution: {integrity: sha512-bCACTuCiAEjtk1NxkATc3yz2j/8OoaWYxRkC4D5yq0ikZeLO7KLmmI/owmvJ/N4vS9SX4fZTXgSmsNzWtxDJ/Q==}
     dev: true
 
   /set-cookie-parser@2.6.0:

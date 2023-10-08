@@ -5,7 +5,7 @@
 	import NumberedList from './NumberedList.svelte';
 	import BulletList from './BulletList.svelte';
 	import Embed from './Embed.svelte';
-	import EnImage from '$lib/notion/components/blocks/EnImage.svelte';
+	import EnImage from '$lib/components/notion/blocks/EnImage.svelte';
 
 	export let block: BlockObjectResponse;
 	//$: console.log("type",block.type);

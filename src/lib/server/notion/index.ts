@@ -1,11 +1,11 @@
-import { getBlocks, getDatabaseById, getPageByCriteria, getPageById } from '$lib/notion/api';
-import type { PageQueryCriteria } from '$lib/notion/api';
+import { getBlocks, getDatabaseById, getPageByCriteria, getPageById } from '$lib/server/notion/api';
+import type { PageQueryCriteria } from '$lib/server/notion/api';
 import type {
 	BlockObjectResponse,
 	PageObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
-import type { PostPropertiesExtractor } from '$lib/notion/types';
-import { getClient } from '$lib/notion/client';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
+import { getClient } from '$lib/server/notion/client';
 import { err, ok } from 'neverthrow';
 import type { StandardResult } from '$lib/shared/types/error';
 

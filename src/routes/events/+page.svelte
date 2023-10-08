@@ -3,13 +3,17 @@
 	import { title } from '$lib/layout/title';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
-	import { getCategoryByKey } from '$lib/event';
+	import { getCategoryByKey } from '$lib/event/category';
 	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
+	import { Event } from '$lib/entities/event';
+	import { deserialize } from 'serializr';
 
 	export let data: PageData;
 
 	title.set('Events');
+
+	const events: Event[] = deserialize(Event, data.events);
 </script>
 
 <HeroSection />
@@ -17,7 +21,7 @@
 <section class="bg-hue1 px-4 py-12 lg:px-8 lg:py-24 sm:px-6">
 	<div class="mx-auto max-w-7xl">
 		<div class="grid grid-cols-1 space-y-16 lg:space-y-16">
-			{#each data.events as event (event.slug)}
+			{#each events as event (event.slug)}
 				{@const meetingDay = dayjs(event.meetingTime)}
 				{@const today = dayjs()}
 				{@const category = getCategoryByKey(event.category)}

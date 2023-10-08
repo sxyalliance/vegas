@@ -1,8 +1,12 @@
-import type { PostPropertiesExtractor } from '$lib/notion/types';
-import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
-import { getAllPosts, getPostByCriteria, getPostById } from '$lib/notion';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
+import {
+	makeNotNullable,
+	mapPropertyToDate,
+	mapPropertyToPrimitive
+} from '$lib/server/notion/utils';
+import { getAllPosts, getPostByCriteria, getPostById } from '../server/notion';
 import { error } from '@sveltejs/kit';
-import { registerClient } from '$lib/notion/config';
+import { registerClient } from '$lib/server/notion/config';
 import MaskData from 'maskdata';
 
 const { maskEmail2, maskPhone } = MaskData;

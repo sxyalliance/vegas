@@ -1,7 +1,7 @@
-import type { PostPropertiesExtractor } from '$lib/notion/types';
-import { makeNotNullable, mapPropertyToPrimitive } from '$lib/notion/utils';
-import { registerClient } from '$lib/notion/config';
-import { getAllPosts } from '$lib/notion';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
+import { makeNotNullable, mapPropertyToPrimitive } from '$lib/server/notion/utils';
+import { registerClient } from '$lib/server/notion/config';
+import { getAllPosts } from '../server/notion';
 import { error } from '@sveltejs/kit';
 
 export type PhraseProperties = {

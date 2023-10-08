@@ -1,9 +1,13 @@
-import type { PostPropertiesExtractor } from '$lib/notion/types';
-import { makeNotNullable, mapPropertyToDate, mapPropertyToPrimitive } from '$lib/notion/utils';
-import { getAllPosts, getPostByCriteria } from '$lib/notion';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
+import {
+	makeNotNullable,
+	mapPropertyToDate,
+	mapPropertyToPrimitive
+} from '$lib/server/notion/utils';
+import { getAllPosts, getPostByCriteria } from '../server/notion';
 import { error } from '@sveltejs/kit';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { registerClient } from '$lib/notion/config';
+import { registerClient } from '$lib/server/notion/config';
 import { CategoryKey } from './category';
 import MaskData from 'maskdata';
 import { getMemberById } from '$lib/member';

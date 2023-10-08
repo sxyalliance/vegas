@@ -9,7 +9,8 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"types": ["./node_modules/network-information-types"]
+		"types": ["./node_modules/network-information-types"],
+		"experimentalDecorators": true
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

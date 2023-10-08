@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PostProperties } from '../types';
+	import type { PostProperties } from '../../server/notion/types';
 
 	export let properties: PostProperties;
 </script>

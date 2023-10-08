@@ -1,6 +1,6 @@
 import { Client as NotionClient } from '@notionhq/client';
-import { config } from '$lib/notion/config';
-import type { PostPropertiesExtractor } from '$lib/notion/types';
+import { config } from '$lib/server/notion/config';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
 
 export type ClientConfig = {
 	integrationSecret: string;

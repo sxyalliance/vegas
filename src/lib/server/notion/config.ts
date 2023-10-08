@@ -1,4 +1,4 @@
-import type { ClientConfig } from '$lib/notion/client';
+import type { ClientConfig } from '$lib/server/notion/client';
 
 interface Config {
 	clients: {
