@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { AvailablePreferences, themePreference, store } from '$lib/theme/store';
+	import { AvailablePreferences, themePreference, theme } from '$lib/stores/theme';
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
-	import SelectMenu from '$lib/shared/SelectMenu.svelte';
+	import SelectMenu from '$lib/components/SelectMenu.svelte';
 
 	let clazz = '';
 	export { clazz as class };
@@ -29,7 +29,7 @@
 		document.documentElement.classList.remove('dark-theme');
 	}
 
-	store.subscribe((value: string) => {
+	theme.subscribe((value: string) => {
 		if (!browser) {
 			return;
 		}

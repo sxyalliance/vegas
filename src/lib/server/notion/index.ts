@@ -6,7 +6,7 @@ import type {
 } from '@notionhq/client/build/src/api-endpoints';
 import type { PostPropertiesExtractor } from '$lib/server/notion/types';
 import { err, ok } from 'neverthrow';
-import type { StandardResult } from '$lib/shared/types/error';
+import type { StandardResult } from '$lib/utils/result';
 import type { Client } from '$lib/server/notion/client';
 
 export const getAllPosts = async <T>(client: Client): Promise<StandardResult<T[]>> => {

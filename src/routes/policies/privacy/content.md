@@ -3,7 +3,7 @@
 **Last updated October 07, 2023**
 
 This privacy notice for SXYA Community (doing business as SXYA) ('**we**', '**us**', or '**our**'),
-describes how and why we might collect, store, use,
+describes how and why we might collect, theme, use,
 and/or share ('**process**') your information when you use our services ('**Services**'), such as when you:
 
 - Visit our website at sxya.org, or any website of ours that links to this privacy notice
@@ -230,9 +230,9 @@ We also may need to share your personal information in the following situations:
 
 ## <a id="cookies"></a> 4\. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
 
-**_In Short:_** _We may use cookies and other tracking technologies to collect and store your information._
+**_In Short:_** _We may use cookies and other tracking technologies to collect and theme your information._
 
-We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information.
+We may use cookies and similar tracking technologies (like web beacons and pixels) to access or theme information.
 Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie
 Notice: [http://www.sxya.org/policies/cookies](http://www.sxya.org/policies/cookies).
 
@@ -266,7 +266,7 @@ months past the termination of the user's account.
 
 When we have no ongoing legitimate business need to process your personal information, we will either delete or
 anonymise such information, or, if this is not possible (for example, because your personal information has been stored
-in backup archives), then we will securely store your personal information and isolate it from any further processing
+in backup archives), then we will securely theme your personal information and isolate it from any further processing
 until deletion is possible.
 
 ## <a id="infosafe"></a> 7\. HOW DO WE KEEP YOUR INFORMATION SAFE?

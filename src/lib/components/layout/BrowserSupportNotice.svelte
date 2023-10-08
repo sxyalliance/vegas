@@ -1,7 +1,7 @@
 <script lang="ts">
-	import HeadBanner from '$lib/layout/HeadBanner.svelte';
+	import HeadBanner from '$lib/components/layout/HeadBanner.svelte';
 	import { browser } from '$app/environment';
-	import { getBrowserName, isSupported, isFullSupported } from '$lib/shared/supportedBrowsers';
+	import { getBrowserName, isSupported, isFullSupported } from '$lib/utils/supportedBrowsers';
 
 	let supported = true;
 	let fullSupported = true;

@@ -1,7 +1,7 @@
 import wretch from 'wretch';
 import QueryStringAddon from 'wretch/addons/queryString';
 import { err, ok } from 'neverthrow';
-import type { ErrorResult, StandardResult } from '$lib/shared/types/error';
+import type { ErrorResult, StandardResult } from '$lib/utils/result';
 
 const baseRequester = wretch()
 	.options({ cors: true })

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeroSection from './HeroSection.svelte';
-	import { title } from '$lib/layout/title';
+	import { title } from '$lib/stores/title';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
 	import dayjs from 'dayjs';

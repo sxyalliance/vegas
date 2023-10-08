@@ -1,7 +1,7 @@
 import { derived, get, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import { persistBrowserLocal } from '@macfja/svelte-persistent-store';
-import { getLogger } from '$lib/logging/logger';
+import { getLogger } from '$lib/utils/logging/logger';
 import { preferredDark } from 'svelte-legos';
 
 export const AvailableThemes: readonly string[] = ['light', 'dark'] as const;
@@ -57,4 +57,4 @@ function createTheme() {
 	};
 }
 
-export const store = createTheme();
+export const theme = createTheme();

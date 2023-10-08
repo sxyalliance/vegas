@@ -11,104 +11,21 @@
 		PopoverGroup,
 		PopoverPanel
 	} from '@rgossiaux/svelte-headlessui';
-	import type { NavigationDefinition } from '$lib/layout/navigation.js';
+	import { navigation } from '$lib/components/layout/navigation';
 
 	import { fade } from 'svelte/transition';
-	import ThemeSwitch from '$lib/theme/ThemeSwitch.svelte';
-	import BrandLogo from '$lib/layout/BrandLogo.svelte';
-	import LocaleSwitch from '$lib/i18n/LocaleSwitch.svelte';
+	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+	import BrandLogo from '$lib/components/layout/BrandLogo.svelte';
+	import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
 
 	let mobileMenuOpen = false;
-
-	const navigation: NavigationDefinition = [
-		{
-			name: 'navigation.home',
-			type: 'pure',
-			href: '/'
-		},
-		{
-			name: 'navigation.about',
-			type: 'flyout',
-			flyout: {
-				rich: false,
-				items: [
-					{
-						name: 'navigation.members',
-						href: '/members'
-					},
-					{
-						name: 'navigation.chronicle',
-						href: '/about/chronicle'
-					}
-				]
-			}
-		},
-		{
-			name: 'navigation.resources',
-			type: 'flyout',
-			flyout: {
-				rich: false,
-				items: [
-					{
-						name: 'navigation.dictionary',
-						href: '/dictionary'
-					},
-					{
-						name: 'navigation.events',
-						href: '/events'
-					},
-					{
-						name: 'navigation.calendar',
-						href: '/calendar/gaming'
-					}
-				]
-			}
-		},
-		{
-			name: 'navigation.other',
-			type: 'flyout',
-			flyout: {
-				rich: true,
-				items: [
-					{
-						name: 'navigation.universal_rules',
-						href: '#',
-						icon: 'tabler:ruler',
-						highlight: 'text-green10',
-						description: 'navigation.universal_rules_desc'
-					},
-					{
-						name: 'navigation.meeting_planning_white_paper',
-						href: '#',
-						icon: 'tabler:school',
-						highlight: 'text-orange10',
-						description: 'navigation.meeting_planning_white_paper_desc'
-					},
-					{
-						name: 'navigation.late_handling_reference',
-						href: '#',
-						icon: 'tabler:flag',
-						highlight: 'text-blue10',
-						description: 'navigation.late_handling_reference_desc'
-					},
-					{
-						name: 'navigation.talk_shit_definition_white_paper',
-						href: '#',
-						icon: 'tabler:message-report',
-						highlight: 'text-purple10',
-						description: 'navigation.talk_shit_definition_white_paper_desc'
-					}
-				]
-			}
-		}
-	];
 </script>
 
 <header class="border-rainbow absolute inset-x-0 top-0 z-30 border-b-2 bg-hue1">
 	<div id="head-banner-holder" />
 	<nav class="mx-auto max-w-7xl flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex items-center gap-x-12">
-			<a href="/" class="p-1.5 -m-1.5">
+			<a href="/static" class="p-1.5 -m-1.5">
 				<span class="sr-only">SXYA Community</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>
@@ -256,7 +173,7 @@
 	>
 		<div class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
 			<div class="flex items-center justify-between">
-				<a href="/" class="p-1.5 -m-1.5">
+				<a href="/static" class="p-1.5 -m-1.5">
 					<span class="sr-only">SXYA Community</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>

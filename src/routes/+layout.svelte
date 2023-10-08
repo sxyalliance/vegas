@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Header from '$lib/layout/Header.svelte';
-	import Footer from '$lib/layout/Footer.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
 	import { browser } from '$app/environment';
 	import { navigating, page } from '$app/stores';
 	import { webVitals } from '$lib/analytics/vitals';
 	import BottomCenterFloatingNotice from './BottomCenterFloatingNotice.svelte';
-	import { title } from '$lib/layout/title';
+	import { title } from '$lib/stores/title';
 
 	import '$lib/assets/rainbow.css';
 	import { isLoading } from 'svelte-i18n';
 	import { onMount } from 'svelte';
-	import BrowserSupportNotice from '$lib/layout/BrowserSupportNotice.svelte';
-	import LoadingOverlay2 from '$lib/layout/LoadingOverlay2.svelte';
+	import BrowserSupportNotice from '$lib/components/layout/BrowserSupportNotice.svelte';
+	import LoadingOverlay2 from '$lib/components/layout/LoadingOverlay2.svelte';
 
 	$: if (browser) {
 		webVitals({

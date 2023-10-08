@@ -3,7 +3,7 @@ import { init, register, locales as localesStore, locale } from 'svelte-i18n';
 import { get } from 'svelte/store';
 import { persistedLocale } from '$lib/i18n/persist';
 import { i18nConfig } from '$lib/i18n/config';
-import { getLogger } from '$lib/logging/logger';
+import { getLogger } from '$lib/utils/logging/logger';
 import { preferredLanguages } from 'svelte-legos';
 
 const logger = getLogger('i18n');

@@ -1,6 +1,6 @@
 import { createLogWriter } from '@roarr/browser-log-writer';
 import { browser, dev } from '$app/environment';
-import { SuperLogger } from '$lib/logging/logger';
+import { SuperLogger } from '$lib/utils/logging/logger.js';
 
 globalThis.ROARR = globalThis.ROARR ?? {};
 
