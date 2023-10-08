@@ -5,13 +5,11 @@ import type {
 	PageObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
 import type { PostPropertiesExtractor } from '$lib/server/notion/types';
-import { getClient } from '$lib/server/notion/client';
 import { err, ok } from 'neverthrow';
 import type { StandardResult } from '$lib/shared/types/error';
+import type { Client } from '$lib/server/notion/client';
 
-export const getAllPosts = async <T>(alias: string): Promise<StandardResult<T[]>> => {
-	const client = getClient(alias);
-
+export const getAllPosts = async <T>(client: Client): Promise<StandardResult<T[]>> => {
 	const res = await getDatabaseById(client);
 
 	if (res.isErr()) {
@@ -34,11 +32,9 @@ export const getAllPosts = async <T>(alias: string): Promise<StandardResult<T[]>
 };
 
 export const getPostByCriteria = async <T>(
-	alias: string,
+	client: Client,
 	criteria: PageQueryCriteria
 ): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: T }>> => {
-	const client = getClient(alias);
-
 	const response = await getPageByCriteria(client, criteria);
 
 	if (response.isErr()) {
@@ -74,11 +70,9 @@ export const getPostByCriteria = async <T>(
 };
 
 export const getPostById = async <T>(
-	alias: string,
+	client: Client,
 	pageId: string
 ): Promise<StandardResult<{ blocks: BlockObjectResponse[]; properties: T }>> => {
-	const client = getClient(alias);
-
 	const page = await getPageById(client, pageId);
 
 	if (page.isErr()) {

@@ -1,57 +1,71 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import type { EventProperties } from '$lib/event';
 	import { _ } from 'svelte-i18n';
+	import type { Event } from '$lib/entities/event';
 
-	export let properties: EventProperties;
+	export let properties: Event;
 
-	const list = [
+	type Property =
+		| {
+				type: 'text';
+				label: string;
+				text: string | null;
+				icon: string;
+		  }
+		| {
+				type: 'datetime';
+				label: string;
+				datetime: Date | null;
+				icon: string;
+		  };
+
+	const list: Property[] = [
 		{
 			type: 'datetime',
 			label: 'meeting_time',
-			value: properties.meetingTime,
+			datetime: properties.meetingTime,
 			icon: 'tabler:calendar-time'
 		},
 		{
 			type: 'text',
 			label: 'meeting_point',
-			value: properties.meetingPoint,
+			text: properties.meetingPoint,
 			icon: 'tabler:map-pin'
 		},
 		{
 			type: 'text',
 			label: 'event_point',
-			value: properties.eventPoint,
+			text: properties.eventPoint,
 			icon: 'tabler:map'
 		},
 		{
 			type: 'text',
 			label: 'proposer',
-			value: properties.proposer,
+			text: properties.proposer.name,
 			icon: 'tabler:user-edit'
 		},
 		{
 			type: 'text',
 			label: 'outbound_transport',
-			value: properties.outboundTransport,
+			text: properties.outboundTransport,
 			icon: 'tabler:truck-delivery'
 		},
 		{
 			type: 'datetime',
 			label: 'outbound_time',
-			value: properties.outboundTime,
+			datetime: properties.outboundTime,
 			icon: 'tabler:clock-up'
 		},
 		{
 			type: 'text',
 			label: 'inbound_transport',
-			value: properties.inboundTransport,
+			text: properties.inboundTransport,
 			icon: 'tabler:truck-return'
 		},
 		{
 			type: 'datetime',
 			label: 'inbound_time',
-			value: properties.inboundTime,
+			datetime: properties.inboundTime,
 			icon: 'tabler:clock-down'
 		}
 	];
@@ -84,21 +98,23 @@
 				id="properties-list"
 				class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 border-t pt-6 mt-6 w-full"
 			>
-				{#each list as { type, label, value, icon }, i (label)}
+				{#each list as property, i (property.label)}
 					<div class="flex w-full flex-none gap-x-4">
 						<dt class="flex-none">
-							<span class="sr-only">{$_(`event.property.${label}`)}</span>
-							<Icon {icon} class="h-6 w-5 {i < 2 ? 'text-hue11' : 'text-hue10'}" />
+							<span class="sr-only">{$_(`event.property.${property.label}`)}</span>
+							<Icon icon={property.icon} class="h-6 w-5 {i < 2 ? 'text-hue11' : 'text-hue10'}" />
 						</dt>
 						<dd class="text-sm font-medium leading-6 {i < 2 ? 'text-hue12' : 'text-hue11'}">
-							{#if value}
-								{#if type === 'datetime'}
-									<time datetime={value}>{value.toLocaleDateString()}</time>
+							{#if property.type === 'datetime'}
+								{#if property.datetime}
+									<time datetime={property.datetime.toISOString()}>
+										{property.datetime.toLocaleDateString()}
+									</time>
 								{:else}
-									{value}
+									N/A
 								{/if}
 							{:else}
-								N/A
+								{property.text ?? 'N/A'}
 							{/if}
 						</dd>
 					</div>

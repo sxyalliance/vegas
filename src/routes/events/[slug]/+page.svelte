@@ -40,7 +40,7 @@
 <section class="bg-hue1 px-6 py-32 lg:px-8">
 	<article class="mx-auto max-w-3xl text-base leading-7">
 		<p class="text-base font-semibold leading-7 text-primary11">
-			{$_(`event.category.${event.category}.name`)}
+			{$_(`event.category.${event.category.key}.name`)}
 			#{event.id}
 		</p>
 		<h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">

@@ -1,0 +1,27 @@
+[
+	{
+		"key": "dining",
+		"icon": "tabler:cake",
+		"color": "teal10"
+	},
+	{
+		"key": "entertainment",
+		"icon": "tabler:music",
+		"color": "pink10"
+	},
+	{
+		"key": "academic",
+		"icon": "tabler:school",
+		"color": "indigo10"
+	},
+	{
+		"key": "sport",
+		"icon": "tabler:shirt-sport",
+		"color": "amber10"
+	},
+	{
+		"key": "giveaway",
+		"icon": "tabler:gift",
+		"color": "ruby10"
+	}
+]

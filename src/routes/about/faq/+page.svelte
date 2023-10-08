@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 
 	interface FrequentlyAskedQuestionSection {
-		title: string;
+		key: string;
 		questions: FrequentlyAskedQuestion[];
 	}
 

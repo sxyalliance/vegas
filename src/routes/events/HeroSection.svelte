@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
-	import { CategoryKey } from '$lib/event/category';
-	import { getCategoryByKey } from '$lib/event/category';
+	import { categoryRepository } from '$lib/repositories/category';
 
-	function gridConfigOf(categoryKey: CategoryKey, code: string) {
-		const category = getCategoryByKey(categoryKey);
+	async function gridConfigOf(categoryKey: string, code: string) {
+		const category = await categoryRepository.findByPk(categoryKey);
 		return {
 			code,
 			key: category.key,
@@ -14,11 +13,13 @@
 		};
 	}
 
-	const gridSchema = [
-		[gridConfigOf(CategoryKey.DINING, '01'), gridConfigOf(CategoryKey.ENTERTAINMENT, '02')],
-		[{ code: null }, gridConfigOf(CategoryKey.ACADEMIC, '03'), { code: null }],
-		[gridConfigOf(CategoryKey.SPORT, '04'), gridConfigOf(CategoryKey.GIVEAWAY, '05')]
-	];
+	const getGridSchema = async () => {
+		return await Promise.all([
+			Promise.all([gridConfigOf('dining', '01'), gridConfigOf('entertainment', '02')]),
+			Promise.all([{ code: null }, gridConfigOf('academic', '03'), { code: null }]),
+			Promise.all([gridConfigOf('sport', '04'), gridConfigOf('giveaway', '05')])
+		]);
+	};
 </script>
 
 <div class="isolate lg:h-screen overflow-hidden bg-hue2 relative mt-20 lg:mt-0">
@@ -42,41 +43,49 @@
 							class="absolute transform lg:left-1/2 lg:top-1/2 sm:left-1/2 sm:top-0 lg:translate-x-8 sm:translate-x-8 lg:-translate-y-1/2"
 						>
 							<div class="flex items-center space-x-6 lg:space-x-8">
-								{#each gridSchema as grid}
-									<div class="grid grid-cols-1 flex-shrink-0 gap-y-6 lg:gap-y-8">
-										{#each grid as category, i (i)}
-											{#if category.code === null}
-												<div class="h-64 w-44 overflow-hidden rounded-lg" />
-											{:else}
-												<div class="h-64 w-44 overflow-hidden rounded-lg shadow">
-													<div class="h-full w-full overflow-hidden rounded-lg bg-hue1">
-														<div class="px-2 py-3 sm:p-4">
-															<div class="relative mb-4">
-																<div class="absolute inset-0 flex items-center" aria-hidden="true">
-																	<div class="w-full border-t border-hue6" />
+								{#await getGridSchema() then gridSchema}
+									{#each gridSchema as grid}
+										<div class="grid grid-cols-1 flex-shrink-0 gap-y-6 lg:gap-y-8">
+											{#each grid as category, i (i)}
+												{#if category.code === null}
+													<div class="h-64 w-44 overflow-hidden rounded-lg" />
+												{:else}
+													<div class="h-64 w-44 overflow-hidden rounded-lg shadow">
+														<div class="h-full w-full overflow-hidden rounded-lg bg-hue1">
+															<div class="px-2 py-3 sm:p-4">
+																<div class="relative mb-4">
+																	<div
+																		class="absolute inset-0 flex items-center"
+																		aria-hidden="true"
+																	>
+																		<div class="w-full border-t border-hue6" />
+																	</div>
+																	<div class="relative flex justify-start">
+																		<span class="bg-hue1 pr-3 text-sm font-medium text-hue10">
+																			{category.code}
+																		</span>
+																	</div>
 																</div>
-																<div class="relative flex justify-start">
-																	<span class="bg-hue1 pr-3 text-sm font-medium text-hue10">
-																		{category.code}
-																	</span>
-																</div>
+
+																<Icon
+																	icon={category.icon}
+																	class="mb-4 h-12 w-12 {category.color}"
+																/>
+
+																<h2 class="text-lg font-medium leading-6 text-hue12">
+																	{$_(`event.category.${category.key}.name`)}
+																</h2>
+																<p class="mt-2 text-base text-hue11">
+																	{$_(`event.category.${category.key}.description`)}
+																</p>
 															</div>
-
-															<Icon icon={category.icon} class="mb-4 h-12 w-12 {category.color}" />
-
-															<h2 class="text-lg font-medium leading-6 text-hue12">
-																{$_(`event.category.${category.key}.name`)}
-															</h2>
-															<p class="mt-2 text-base text-hue11">
-																{$_(`event.category.${category.key}.description`)}
-															</p>
 														</div>
 													</div>
-												</div>
-											{/if}
-										{/each}
-									</div>
-								{/each}
+												{/if}
+											{/each}
+										</div>
+									{/each}
+								{/await}
 							</div>
 						</div>
 					</div>

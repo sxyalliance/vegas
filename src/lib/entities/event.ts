@@ -1,6 +1,7 @@
-import type { CategoryKey } from '$lib/event';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { date, identifier, serializable } from 'serializr';
+import { date, identifier, object, serializable } from 'serializr';
+import { Category } from '$lib/entities/category';
+import { Member } from '$lib/entities/member';
 
 export class Event {
 	public blocks: BlockObjectResponse[] = [];
@@ -17,8 +18,8 @@ export class Event {
 	@serializable
 	public readonly description: string;
 
-	@serializable
-	public readonly category: CategoryKey;
+	@serializable(object(Category))
+	public readonly category: Category;
 
 	@serializable
 	public readonly relatedPersonnel: number;
@@ -44,15 +45,15 @@ export class Event {
 	@serializable(date())
 	public readonly inboundTime: Date | null;
 
-	@serializable
-	public readonly proposer: string;
+	@serializable(object(Member))
+	public readonly proposer: Member;
 
 	constructor(
 		id: string,
 		title: string,
 		slug: string,
 		description: string,
-		category: CategoryKey,
+		category: Category,
 		relatedPersonnel: number,
 		meetingTime: Date,
 		meetingPoint: string,
@@ -61,7 +62,7 @@ export class Event {
 		outboundTime: Date | null,
 		inboundTransport: string | null,
 		inboundTime: Date | null,
-		proposer: string
+		proposer: Member
 	) {
 		this.id = id;
 		this.title = title;

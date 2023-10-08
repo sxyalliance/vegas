@@ -3,7 +3,6 @@
 	import { title } from '$lib/layout/title';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
-	import { getCategoryByKey } from '$lib/event/category';
 	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
 	import { Event } from '$lib/entities/event';
@@ -24,7 +23,6 @@
 			{#each events as event (event.slug)}
 				{@const meetingDay = dayjs(event.meetingTime)}
 				{@const today = dayjs()}
-				{@const category = getCategoryByKey(event.category)}
 				<a href={`/events/${event.slug}`}>
 					<article
 						class="p-6 relative isolate flex flex-col lg:flex-row gap-10 justify-between bg-hue3"
@@ -52,12 +50,14 @@
 							>
 								<!-- Meeting Time (Bookmark effect) -->
 								<div
-									class="relative top-0 -left-10 p-2 pl-2 pr-4 font-bold text-primary-fg bg-{category.color}"
+									class="relative top-0 -left-10 p-2 pl-2 pr-4 font-bold text-primary-fg bg-{event
+										.category.color}"
 								>
 									<div
-										class="absolute top-17 left-0 border-8 border-l-transparent border-b-transparent border-{category.color}"
+										class="absolute top-17 left-0 border-8 border-l-transparent border-b-transparent border-{event
+											.category.color}"
 									/>
-									<time class="sr-only" datetime={event.meetingTime}
+									<time class="sr-only" datetime={event.meetingTime.toISOString()}>
 										>{event.meetingTime.toLocaleDateString()}</time
 									>
 									<div class="flex" aria-hidden="true">
@@ -80,7 +80,7 @@
 									<span class="font-semibold text-hue12">
 										{$_('event.property.proposer')}
 									</span>
-									<p class="text-hue11 text-sm truncate w-[12ch]">{event.proposer}</p>
+									<p class="text-hue11 text-sm truncate w-[12ch]">{event.proposer.name}</p>
 								</div>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
 
 						<div class="flex-none hidden lg:block">
 							<div class="p-4 bg-hue4 rounded-lg">
-								<Icon icon={category.icon} class="h-full w-26 text-{category.color}" />
+								<Icon icon={event.category.icon} class="h-full w-26 text-{event.category.color}" />
 							</div>
 						</div>
 					</article>

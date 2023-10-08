@@ -1,5 +1,4 @@
 import { Client as NotionClient } from '@notionhq/client';
-import { config } from '$lib/server/notion/config';
 import type { PostPropertiesExtractor } from '$lib/server/notion/types';
 
 export type ClientConfig = {
@@ -13,28 +12,9 @@ export type Client = {
 	config: ClientConfig;
 };
 
-const clientInstances = new Map<string, Client>();
-
-const constructClient = (config: ClientConfig, alias: string): Client => {
-	if (clientInstances.has(alias)) {
-		return clientInstances.get(alias) as Client;
-	}
-
+export const constructClient = (config: ClientConfig): Client => {
 	const sdk = new NotionClient({
 		auth: config.integrationSecret
 	});
-	const client: Client = { sdk, config };
-	clientInstances.set(alias, client);
-	return client;
-};
-
-export const getClient = (alias: string): Client => {
-	if (clientInstances.has(alias)) {
-		return clientInstances.get(alias) as Client;
-	} else {
-		if (config.clients[alias]) {
-			return constructClient(config.clients[alias], alias);
-		}
-		throw new Error(`No client registered with alias ${alias}`);
-	}
+	return { sdk, config };
 };
