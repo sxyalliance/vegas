@@ -1,11 +1,18 @@
-<script>
+<script lang="ts">
 	import HeroSection from './HeroSection.svelte';
 	import DictionarySection from './DictionarySection.svelte';
 	import ProcedureSection from './ProcedureSection.svelte';
 	import MemberSection from './MemberSection.svelte';
-	import { title } from '$lib/shared/shared/title.ts';
+	import { title } from '$lib/shared/shared/title';
+	import type { PageData } from './$types';
+	import { deserialize } from 'serializr';
+	import { Phrase } from '$lib/dictionary/phrase/phrase.js';
+
+	export let data: PageData;
 
 	title.set('Home');
+
+	const randomPhrases = deserialize(Phrase, data.phrases);
 </script>
 
 <svelte:head>
@@ -22,5 +29,5 @@
 
 	<ProcedureSection />
 
-	<DictionarySection />
+	<DictionarySection phrases={randomPhrases} />
 </main>

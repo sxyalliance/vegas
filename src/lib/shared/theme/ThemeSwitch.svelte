@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AvailablePreferences, themePreference, store } from '$lib/shared/theme/store';
+	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
 	import { browser } from '$app/environment';
 	import { _ } from 'svelte-i18n';
 	import SelectMenu from '$lib/shared/shared/SelectMenu.svelte';
@@ -29,7 +29,7 @@
 		document.documentElement.classList.remove('dark-theme');
 	}
 
-	store.subscribe((value: string) => {
+	theme.subscribe((value: string) => {
 		if (!browser) {
 			return;
 		}

@@ -1,10 +1,8 @@
 <script lang="ts">
-	import dictionary from '$lib/api/dictionary.json';
 	import { _ } from 'svelte-i18n';
+	import type { Phrase } from '$lib/dictionary/phrase/phrase';
 
-	const spotted: { phrase: string; definition: string }[] = dictionary
-		.sort(() => Math.random() - 0.5)
-		.slice(0, 4);
+	export let phrases: Phrase[];
 </script>
 
 <section class="bg-hue1 py-24">
@@ -14,7 +12,7 @@
 		</div>
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-			{#each spotted as spot (spot.phrase)}
+			{#each phrases as spot (spot.phrase)}
 				<div class="relative flex items-center bg-hue2 panel space-x-3">
 					<div class="min-w-0 flex-1">
 						<span class="absolute inset-0" aria-hidden="true" />

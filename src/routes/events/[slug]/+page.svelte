@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-	import BlockRenderer from '$lib/notion/blocks/BlockRenderer.svelte';
+	import BlockRenderer from '$lib/shared/notion/blocks/BlockRenderer.svelte';
 	import EventProperties from './EventProperties.svelte';
 	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
