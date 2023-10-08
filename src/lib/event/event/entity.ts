@@ -2,6 +2,7 @@ import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoin
 import { date, identifier, object, serializable } from 'serializr';
 import { Category } from '$lib/event/category/entity';
 import { Member } from '$lib/member/member/member';
+import dayjs from 'dayjs';
 
 export class Event {
 	public blocks: BlockObjectResponse[] = [];
@@ -81,6 +82,23 @@ export class Event {
 	}
 
 	get status(): 'upcoming' | 'ongoing' | 'finished' {
-		return 'upcoming';
+		const now = dayjs();
+		const meetingTime = dayjs(this.meetingTime);
+		const outboundTime = this.outboundTime ? dayjs(this.outboundTime) : null;
+		const inboundTime = this.inboundTime ? dayjs(this.inboundTime) : null;
+
+		if (now.isBefore(meetingTime)) {
+			return 'upcoming';
+		}
+		if (outboundTime && now.isBefore(outboundTime)) {
+			return 'ongoing';
+		}
+		if (inboundTime && now.isBefore(inboundTime)) {
+			return 'ongoing';
+		}
+		if (now.isSame(meetingTime, 'date')) {
+			return 'ongoing';
+		}
+		return 'finished';
 	}
 }

@@ -37,7 +37,7 @@
 									{:else}
 										{$_('event.status.upcoming.label')}
 									{/if}
-									Entity
+									Event
 								</span>
 								<h2 class="mt-1 text-2xl font-semibold leading-6">
 									{$_(`event.status.${event.status}.label`)}
