@@ -5,9 +5,9 @@ import { detectAndApplyLocale } from '$lib/i18n';
 import type { LayoutLoad } from './$types';
 
 // logger for debugging
-import '$lib/utils/logging/init';
+import '$lib/shared/logging/init';
 
-import '$lib/utils/dayjs';
+import '$lib/shared/shared/dayjs';
 
 export const load: LayoutLoad = async () => {
 	// locale detection

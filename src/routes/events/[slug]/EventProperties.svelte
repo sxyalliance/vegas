@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
-	import type { Event } from '$lib/entities/event';
+	import type { Event } from '$lib/event/event/entity';
 
 	export let properties: Event;
 

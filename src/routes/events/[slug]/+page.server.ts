@@ -1,7 +1,7 @@
 import type { ServerLoadEvent } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { eventRepository } from '$lib/repositories/event';
+import { eventRepository } from '$lib/event/event/repository';
 import { serialize } from 'serializr';
 
 export const load: PageServerLoad = async (slEvent: ServerLoadEvent) => {

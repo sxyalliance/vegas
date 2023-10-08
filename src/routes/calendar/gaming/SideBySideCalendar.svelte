@@ -1,13 +1,8 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
-	import type { GamingCalendar } from '$lib/calendar/gaming';
-	import {
-		Availability,
-		getAvailabilityOfTime,
-		getDayOfWeek,
-		TimeOfDay
-	} from '$lib/calendar/gaming';
+	import type { GamingCalendar } from './calendar';
+	import { Availability, getAvailabilityOfTime, getDayOfWeek, TimeOfDay } from './calendar';
 
 	export let calendar: GamingCalendar;
 

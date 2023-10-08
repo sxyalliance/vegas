@@ -1,12 +1,12 @@
 <script lang="ts">
 	import HeroSection from './HeroSection.svelte';
-	import { title } from '$lib/stores/title';
+	import { title } from '$lib/shared/shared/title';
 	import type { PageData } from './$types';
 	import { _ } from 'svelte-i18n';
 	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
-	import { Event } from '$lib/entities/event';
 	import { deserialize } from 'serializr';
+	import { Event } from '$lib/event/event/entity';
 
 	export let data: PageData;
 
@@ -37,7 +37,7 @@
 									{:else}
 										{$_('event.status.upcoming.label')}
 									{/if}
-									Event
+									Entity
 								</span>
 								<h2 class="mt-1 text-2xl font-semibold leading-6">
 									{$_(`event.status.${event.status}.label`)}
@@ -75,7 +75,7 @@
 									</div>
 								</div>
 
-								<!-- Event Name & Proposer -->
+								<!-- Entity Name & Proposer -->
 								<div class="-ml-8">
 									<span class="font-semibold text-hue12">
 										{$_('event.property.proposer')}

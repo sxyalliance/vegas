@@ -12,7 +12,7 @@ import {
 	isNotionClientError
 } from '@notionhq/client';
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import type { ErrorResult } from '$lib/utils/result';
+import type { ErrorResult } from '$lib/shared/shared/result';
 
 export type PageQueryCriteria = Pick<
 	QueryDatabaseParameters,

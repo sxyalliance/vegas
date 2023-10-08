@@ -7,7 +7,7 @@
 		getStatementStatsOfTime,
 		getTimeOfDay,
 		TimeOfDay
-	} from '$lib/calendar/gaming';
+	} from './calendar';
 	import SideBySideCalendar from './SideBySideCalendar.svelte';
 
 	export let data: PageData;

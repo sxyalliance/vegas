@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
-	import { categoryRepository } from '$lib/repositories/category';
+	import { categoryRepository } from '$lib/event/category/repository';
 
 	async function gridConfigOf(categoryKey: string, code: string) {
 		const category = await categoryRepository.findByPk(categoryKey);

@@ -3,7 +3,7 @@
 	import DictionarySection from './DictionarySection.svelte';
 	import ProcedureSection from './ProcedureSection.svelte';
 	import MemberSection from './MemberSection.svelte';
-	import { title } from '$lib/stores/title.js';
+	import { title } from '$lib/shared/shared/title.ts';
 
 	title.set('Home');
 </script>

@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { eventRepository } from '$lib/repositories/event';
+import { eventRepository } from '$lib/event/event/repository';
 import { serialize } from 'serializr';
 
 export const load: PageServerLoad = async () => {

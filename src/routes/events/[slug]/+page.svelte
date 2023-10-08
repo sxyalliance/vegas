@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-	import BlockRenderer from '$lib/components/notion/blocks/BlockRenderer.svelte';
+	import BlockRenderer from '$lib/notion/blocks/BlockRenderer.svelte';
 	import EventProperties from './EventProperties.svelte';
 	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
 	import { deserialize } from 'serializr';
-	import { Event } from '$lib/entities/event';
+	import { Event } from '$lib/event/event/entity';
 
 	export let data: PageData;
 

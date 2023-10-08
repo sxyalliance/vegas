@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getGamingCalendar } from '$lib/calendar/gaming';
+import { getGamingCalendar } from './calendar';
 
 export const load: PageServerLoad = async () => {
 	const gamingCalendar = await getGamingCalendar();
