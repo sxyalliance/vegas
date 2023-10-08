@@ -108,7 +108,7 @@
 							{#if property.type === 'datetime'}
 								{#if property.datetime}
 									<time datetime={property.datetime.toISOString()}>
-										{property.datetime.toLocaleDateString()}
+										{property.datetime.toLocaleString()}
 									</time>
 								{:else}
 									N/A
