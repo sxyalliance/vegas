@@ -12,7 +12,7 @@
 
 	title.set('Home');
 
-	const randomPhrases = deserialize(Phrase, data.phrases);
+	const randomPhrases = deserialize(Phrase, data.randomPhrases);
 </script>
 
 <svelte:head>
