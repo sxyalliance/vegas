@@ -254,9 +254,9 @@
 		open={mobileMenuOpen}
 		on:close={() => (mobileMenuOpen = false)}
 	>
-		<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
+		<div class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-hue1 px-6 py-6 sm:max-w-sm">
 			<div class="flex items-center justify-between">
-				<a href="/static" class="p-1.5 -m-1.5">
+				<a href="/" class="p-1.5 -m-1.5">
 					<span class="sr-only">SXYA Community</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
