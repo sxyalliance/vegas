@@ -40,24 +40,28 @@
 	];
 </script>
 
-<div class="bg-hue1 px-6 pt-36 lg:px-8 pb-16 sm:pb-24">
+<div class="bg-neutral-1 px-6 pt-36 lg:px-8 pb-16 sm:pb-24">
 	<div class="mx-auto max-w-2xl text-center">
-		<p class="text-base font-semibold leading-7 text-primary10">Get the answer you want</p>
-		<h2 class="mt-2 text-4xl font-bold tracking-tight text-hue12 sm:text-6xl">Support Center</h2>
+		<p class="text-base font-semibold leading-7 text-accent-11">Get the answer you want</p>
+		<h2 class="mt-2 text-4xl font-bold tracking-tight text-high-contrast sm:text-6xl">
+			Support Center
+		</h2>
 	</div>
 </div>
 
-<div class="bg-hue2">
+<div class="bg-neutral-2">
 	<div class="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8 lg:py-20 space-y-10">
 		{#each faq as section}
-			<div class="mx-auto max-w-4xl divide-y divide-hue5" id={section.key}>
-				<h2 class="text-2xl font-bold leading-10 tracking-tight text-hue12">{section.key}</h2>
-				<dl class="mt-2 space-y-6 divide-y divide-hue4">
+			<div class="mx-auto max-w-4xl divide-y divide-neutral-6" id={section.key}>
+				<h2 class="text-2xl font-bold leading-10 tracking-tight text-high-contrast">
+					{section.key}
+				</h2>
+				<dl class="mt-2 space-y-6 divide-y divide-neutral-6">
 					{#each section.questions as question}
 						<Disclosure as="div" class="pt-4" let:open>
 							<dt>
 								<DisclosureButton
-									class="flex w-full items-start justify-between text-left text-hue12"
+									class="flex w-full items-start justify-between text-left text-high-contrast"
 								>
 									<span class="text-base font-semibold leading-7">{question.question}</span>
 									<span class="ml-6 flex h-7 items-center">
@@ -70,7 +74,7 @@
 								</DisclosureButton>
 							</dt>
 							<DisclosurePanel as="dd" class="mt-2 pr-12">
-								<p class="text-base leading-7 text-hue11">{question.answer}</p>
+								<p class="text-base leading-7 text-low-contrast">{question.answer}</p>
 							</DisclosurePanel>
 						</Disclosure>
 					{/each}

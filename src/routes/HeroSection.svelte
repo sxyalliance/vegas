@@ -6,7 +6,7 @@
 </script>
 
 <!-- Hero section -->
-<div class="relative isolate h-screen overflow-hidden bg-hue1">
+<div class="relative isolate h-screen overflow-hidden bg-neutral-1">
 	<div
 		class="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl -z-10 sm:-top-40"
 		aria-hidden="true"
@@ -21,29 +21,29 @@
 			<div class="mx-auto max-w-2xl lg:mx-0">
 				<div class="hidden sm:flex">
 					<div
-						class="relative rounded-full px-3 py-1 text-sm leading-6 text-hue11 ring-1 ring-hue7 hover:ring-hue8"
+						class="relative rounded-full px-3 py-1 text-sm leading-6 text-low-contrast ring-1 ring-neutral-7 hover:ring-neutral-8"
 					>
 						{$_('home.hero.tagline')}
-						<a href="#" class="whitespace-nowrap font-semibold text-primary10">
+						<a href="#" class="whitespace-nowrap font-semibold text-accent-11">
 							<span class="absolute inset-0" aria-hidden="true" />
 							{$_('home.hero.tagline_link')}
 							<span aria-hidden="true">&rarr;</span>
 						</a>
 					</div>
 				</div>
-				<h1 class="mt-24 text-4xl font-bold tracking-tight text-hue12 sm:mt-10 sm:text-6xl">
+				<h1 class="mt-24 text-4xl font-bold tracking-tight text-high-contrast sm:mt-10 sm:text-6xl">
 					<span class="bg-rainbow bg-clip-text text-transparent">
 						{$_('home.hero.title')}
 					</span>
 				</h1>
-				<p class="mt-6 text-lg leading-8 text-hue11">
+				<p class="mt-6 text-lg leading-8 text-low-contrast">
 					{$_('home.hero.text')}
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
-					<a href="#" class="btn-xl btn-primary">
+					<a href="#" class="btn-xl btn-accent">
 						{$_('home.hero.primary_action')}
 					</a>
-					<a href="#" class="text-sm font-semibold leading-6 text-hue12">
+					<a href="#" class="text-sm font-semibold leading-6 text-high-contrast">
 						{$_('home.hero.secondary_action')}
 						<span aria-hidden="true">→</span>
 					</a>
@@ -54,7 +54,7 @@
 			class="relative xl:absolute xl:inset-0 xl:left-1/2 lg:col-span-6 xl:mr-0 lg:pt-20 lg:-mr-8"
 		>
 			<Img
-				class="aspect-[3/2] w-full bg-hue1 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+				class="aspect-[3/2] w-full object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
 				src={cover}
 				alt="Group of SXYA Members"
 				factor={0.95}

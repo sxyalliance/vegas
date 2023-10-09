@@ -37,16 +37,16 @@
 	});
 </script>
 
-<section class="bg-hue1 px-6 py-32 lg:px-8">
+<section class="bg-neutral-1 px-6 py-32 lg:px-8">
 	<article class="mx-auto max-w-3xl text-base leading-7">
-		<p class="text-base font-semibold leading-7 text-primary11">
+		<p class="text-base font-semibold leading-7 text-accent-11">
 			{$_(`event.category.${event.category.key}.name`)}
 			#{event.id}
 		</p>
-		<h1 class="mt-2 text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
+		<h1 class="mt-2 text-3xl font-bold tracking-tight text-high-contrast sm:text-4xl">
 			{event.title}
 		</h1>
-		<p class="my-4 text-xl leading-8 text-hue11">
+		<p class="my-4 text-xl leading-8 text-low-contrast">
 			{event.description}
 		</p>
 
@@ -61,17 +61,17 @@
 
 		<div class="relative my-6">
 			<div class="absolute inset-0 flex items-center" aria-hidden="true">
-				<div class="w-full border-t border-hue6" />
+				<div class="w-full border-t border-neutral-6" />
 			</div>
 			<div class="relative flex justify-center">
-				<span class="px-2 text-hue10 bg-hue1">
+				<span class="px-2 text-neutral-9 bg-neutral-1">
 					<Icon icon="tabler:lego" class="h-5 w-5" />
 				</span>
 			</div>
 		</div>
 
 		{#if event.blocks && event.blocks.length > 0}
-			<div class="max-w-full prose prose-primary">
+			<div class="max-w-full prose prose-here">
 				{#each event.blocks as block}
 					<BlockRenderer {block} />
 				{/each}

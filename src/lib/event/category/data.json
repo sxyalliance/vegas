@@ -2,26 +2,26 @@
 	{
 		"key": "dining",
 		"icon": "tabler:cake",
-		"color": "teal10"
+		"color": "teal-9"
 	},
 	{
 		"key": "entertainment",
 		"icon": "tabler:music",
-		"color": "pink10"
+		"color": "pink-9"
 	},
 	{
 		"key": "academic",
 		"icon": "tabler:school",
-		"color": "indigo10"
+		"color": "indigo-9"
 	},
 	{
 		"key": "sport",
 		"icon": "tabler:shirt-sport",
-		"color": "amber10"
+		"color": "amber-9"
 	},
 	{
 		"key": "giveaway",
 		"icon": "tabler:gift",
-		"color": "ruby10"
+		"color": "ruby-9"
 	}
 ]

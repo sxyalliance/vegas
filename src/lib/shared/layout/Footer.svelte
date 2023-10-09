@@ -28,19 +28,16 @@
 	});
 </script>
 
-<footer class="bg-hue3" aria-labelledby="footer-heading">
-	<h2 id="footer-heading" class="sr-only">
-		{$_('footer.sr_title')}
-	</h2>
+<footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={$_('footer.sr_title')}>
 	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-32 sm:pt-24">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-4">
 				<BrandLogo class="h-24 w-auto" />
-				<p class="text-sm leading-6 text-hue11">
+				<p class="text-sm leading-6 text-low-contrast">
 					{$_('footer.slogan')}
 				</p>
 				<div class="flex space-x-6">
-					<a href="#" class="text-hue9 hover:text-hue10">
+					<a href="#" class="text-neutral-9 hover:text-neutral-10">
 						<span class="sr-only">{$_('footer.social.facebook')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
@@ -50,7 +47,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="text-hue9 hover:text-hue10">
+					<a href="#" class="text-neutral-9 hover:text-neutral-10">
 						<span class="sr-only">{$_('footer.social.sr_instagram')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
@@ -60,7 +57,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="text-hue9 hover:text-hue10">
+					<a href="#" class="text-neutral-9 hover:text-neutral-10">
 						<span class="sr-only">{$_('footer.social.sr_twitter')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
@@ -68,7 +65,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="text-hue9 hover:text-hue10">
+					<a href="#" class="text-neutral-9 hover:text-neutral-10">
 						<span class="sr-only">{$_('footer.social.sr_github')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
@@ -78,7 +75,7 @@
 							/>
 						</svg>
 					</a>
-					<a href="#" class="text-hue9 hover:text-hue10">
+					<a href="#" class="text-neutral-9 hover:text-neutral-10">
 						<span class="sr-only">{$_('footer.social.sr_youtube')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
@@ -89,7 +86,7 @@
 						</svg>
 					</a>
 				</div>
-				<p class="text-xs text-hue10">
+				<p class="text-xs text-low-contrast">
 					rev {__LASTMOD__}.{__VERSION__}
 				</p>
 			</div>
@@ -100,72 +97,78 @@
 				</div>
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
-						<h3 class="text-sm font-semibold leading-6 text-hue12">
+						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{$_('footer.policies.heading')}
 						</h3>
-						<ul role="list" class="mt-6 text-sm leading-6 text-hue11 space-y-4">
+						<ul role="list" class="mt-6 text-sm leading-6 text-low-contrast space-y-4">
 							<li>
-								<a href="/policies/privacy" class="hover:text-hue12"
-									>{$_('footer.policies.privacy_policy')}</a
-								>
+								<a href="/policies/privacy" class="hover:text-high-contrast">
+									{$_('footer.policies.privacy_policy')}
+								</a>
 							</li>
 							<li>
-								<a href="#" class="hover:text-hue12">{$_('footer.policies.cookie_policy')}</a>
+								<a href="#" class="hover:text-high-contrast"
+									>{$_('footer.policies.cookie_policy')}</a
+								>
 							</li>
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
-						<h3 class="text-sm font-semibold leading-6 text-hue12">
+						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{$_('footer.statistics.heading')}
 						</h3>
-						<ul role="list" class="mt-6 text-sm leading-6 text-hue11 space-y-4">
+						<ul role="list" class="mt-6 text-sm leading-6 text-low-contrast space-y-4">
 							<li>
-								<div class="relative rounded-md bg-hue1 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md">
+								<div
+									class="relative rounded-md bg-neutral-3 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md"
+								>
 									{$_('footer.statistics.online_members')}
-									<span class="float-right inline pl-2 text-hue10">
+									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.online_members}
 									</span>
 									{#if statistics.online_members === -1}
 										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
 											<span
-												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-primary10 opacity-75"
+												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-accent-9 opacity-75"
 											/>
-											<span class="relative h-3 w-3 inline-flex rounded-full bg-primary10" />
+											<span class="relative h-3 w-3 inline-flex rounded-full bg-accent-9" />
 										</span>
 									{/if}
 								</div>
 							</li>
 							<li>
 								{$_('footer.statistics.total_members')}
-								<span class="float-right inline text-hue10">
+								<span class="float-right inline text-low-contrast">
 									{statistics.total_members}
 								</span>
 							</li>
 							<li>
-								<div class="relative rounded-md bg-hue1 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md">
+								<div
+									class="relative rounded-md bg-neutral-3 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md"
+								>
 									{$_('footer.statistics.ongoing_events')}
-									<span class="float-right inline pl-2 text-hue10">
+									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.ongoing_events}
 									</span>
 									{#if statistics.ongoing_events === -1}
 										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
 											<span
-												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-primary10 opacity-75"
+												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-accent-9 opacity-75"
 											/>
-											<span class="relative h-3 w-3 inline-flex rounded-full bg-primary10" />
+											<span class="relative h-3 w-3 inline-flex rounded-full bg-accent-9" />
 										</span>
 									{/if}
 								</div>
 							</li>
 							<li>
 								{$_('footer.statistics.total_events')}
-								<span class="float-right inline text-hue10">
+								<span class="float-right inline text-low-contrast">
 									{statistics.total_events}
 								</span>
 							</li>
 							<li>
 								{$_('footer.statistics.founded_days')}
-								<span class="float-right inline text-hue10">
+								<span class="float-right inline text-low-contrast">
 									{statistics.founded_days}
 								</span>
 							</li>
@@ -174,8 +177,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 border-t border-hue5 pt-8 lg:mt-24 sm:mt-20">
-			<p class="text-xs leading-5 text-hue10">
+		<div class="mt-16 border-t border-neutral-6 pt-8 lg:mt-24 sm:mt-20">
+			<p class="text-xs leading-5 text-low-contrast">
 				{$_('footer.legal')}
 			</p>
 		</div>

@@ -10,19 +10,19 @@
 {#if display}
 	<div
 		use:portalAction={'#head-banner-holder'}
-		class:bg-primary10={type === 'primary'}
-		class:bg-info10={type === 'info'}
-		class:bg-success10={type === 'success'}
-		class:bg-warning10={type === 'warning'}
-		class:bg-error10={type === 'error'}
-		class:text-primary-fg={type === 'primary'}
-		class:text-info-fg={type === 'info'}
-		class:text-success-fg={type === 'success'}
-		class:text-warning-fg={type === 'warning'}
-		class:text-error-fg={type === 'error'}
+		class:bg-accent-9={type === 'primary'}
+		class:bg-info-9={type === 'info'}
+		class:bg-success-9={type === 'success'}
+		class:bg-warning-9={type === 'warning'}
+		class:bg-danger-9={type === 'error'}
+		class:text-accent-12={type === 'primary'}
+		class:text-info-12={type === 'info'}
+		class:text-success-12={type === 'success'}
+		class:text-warning-12={type === 'warning'}
+		class:text-danger-12={type === 'error'}
 	>
 		<div
-			class="flex mx-auto max-w-7xl items-center gap-x-6 px-6 py-2.5 sm:px-8 sm:before:flex-1 whitespace-nowrap overflow-hidden"
+			class="flex mx-auto max-w-7xl items-center gap-x-6 px-6 py-2.5 sm:px-8 whitespace-nowrap overflow-hidden"
 		>
 			<p class="text-sm leading-6">
 				<slot />

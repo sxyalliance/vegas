@@ -72,12 +72,12 @@
 	$: details = getDetailsOfDay(selected);
 </script>
 
-<div class="md:grid md:grid-cols-2 md:divide-x md:divide-hue6">
+<div class="md:grid md:grid-cols-2 md:divide-x md:divide-neutral-6">
 	<div class="md:pr-14">
 		<div class="flex items-center">
-			<h2 class="flex-auto text-sm font-semibold text-hue12">January 2022</h2>
+			<h2 class="flex-auto text-sm font-semibold text-high-contrast">January 2022</h2>
 		</div>
-		<div class="mt-10 grid grid-cols-7 text-center text-xs leading-6 text-hue10">
+		<div class="mt-10 grid grid-cols-7 text-center text-xs leading-6 text-low-contrast">
 			<div>S</div>
 			<div>M</div>
 			<div>T</div>
@@ -88,7 +88,7 @@
 		</div>
 		<div class="mt-2 grid grid-cols-7 text-sm">
 			{#each days as day, dayIdx (day.date)}
-				<div class="py-2 {dayIdx > 6 ? 'border-t border-hue4' : ''}">
+				<div class="py-2 {dayIdx > 6 ? 'border-t border-neutral-6' : ''}">
 					<button
 						type="button"
 						on:click={() => (selected = day.date)}
@@ -102,7 +102,7 @@
 						class:bg-primary10={day.isSelected && day.isToday}
 						class:hover:bg-hue3={!day.isSelected}
 						class:font-semibold={day.isSelected || day.isToday}
-						class="mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:text-hue6"
+						class="mx-auto flex h-8 w-8 items-center justify-center rounded-full disabled:text-low-contrast"
 					>
 						<time datetime={day.date}>{day.date.getDate()}</time>
 					</button>

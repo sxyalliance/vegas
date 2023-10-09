@@ -2,6 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import type { Event } from '$lib/event/event/entity';
+	import FlatBadge from '$lib/shared/shared/FlatBadge.svelte';
 
 	export let properties: Event;
 
@@ -75,10 +76,10 @@
 	<div class="panel">
 		<dl class="flex flex-wrap">
 			<div class="flex-auto">
-				<dt class="text-sm font-semibold leading-6 text-hue12">
+				<dt class="text-sm font-semibold leading-6 text-high-contrast">
 					{$_('event.property.related_personnel')}
 				</dt>
-				<dd class="mt-1 text-base font-semibold leading-6 text-hue12">
+				<dd class="mt-1 text-base font-semibold leading-6 text-high-contrast">
 					{properties.relatedPersonnel}
 				</dd>
 			</div>
@@ -87,11 +88,17 @@
 					{$_('event.property.status')}
 				</dt>
 				{#if properties.status === 'upcoming'}
-					<dd class="badge-flat-teal">{$_('event.status.upcoming.label')}</dd>
+					<dd>
+						<FlatBadge color="teal">{$_('event.status.upcoming.label')}</FlatBadge>
+					</dd>
 				{:else if properties.status === 'finished'}
-					<dd class="badge-flat-slate">{$_('event.status.finished.label')}</dd>
+					<dd>
+						<FlatBadge color="slate">{$_('event.status.finished.label')}</FlatBadge>
+					</dd>
 				{:else if properties.status === 'ongoing'}
-					<dd class="badge-flat-amber">{$_('event.status.ongoing.label')}</dd>
+					<dd>
+						<FlatBadge color="amber">{$_('event.status.ongoing.label')}</FlatBadge>
+					</dd>
 				{/if}
 			</div>
 			<div
@@ -102,9 +109,16 @@
 					<div class="flex w-full flex-none gap-x-4">
 						<dt class="flex-none">
 							<span class="sr-only">{$_(`event.property.${property.label}`)}</span>
-							<Icon icon={property.icon} class="h-6 w-5 {i < 2 ? 'text-hue11' : 'text-hue10'}" />
+							<Icon
+								icon={property.icon}
+								class="h-6 w-5 {i < 2 ? 'text-neutral-10' : 'text-neutral-9'}"
+							/>
 						</dt>
-						<dd class="text-sm font-medium leading-6 {i < 2 ? 'text-hue12' : 'text-hue11'}">
+						<dd
+							class="text-sm font-medium leading-6 {i < 2
+								? 'text-high-contrast'
+								: 'text-low-contrast'}"
+						>
 							{#if property.type === 'datetime'}
 								{#if property.datetime}
 									<time datetime={property.datetime.toISOString()}>

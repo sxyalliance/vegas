@@ -2,23 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	.text-tomato-fg,
+	.text-red-fg,
+	.text-ruby-fg,
+	.text-crimson-fg,
+	.text-pink-fg,
+	.text-plum-fg,
+	.text-purple-fg,
+	.text-violet-fg,
+	.text-iris-fg,
+	.text-indigo-fg,
+	.text-blue-fg,
+	.text-cyan-fg,
+	.text-teal-fg,
+	.text-jade-fg,
+	.text-green-fg,
+	.text-grass-fg,
+	.text-orange-fg,
+	.text-brown-fg,
+	.text-gold-fg,
+	.text-bronze-fg,
+	.text-gray-fg {
+		@apply text-white;
+	}
+
+	.text-accent-fg,
+	.text-info-fg,
+	.text-success-fg,
+	.text-danger-fg {
+		@apply text-white;
+	}
+
+	.text-sky-fg,
+	.text-mint-fg,
+	.text-lime-fg,
+	.text-yellow-fg,
+	.text-amber-fg {
+		@apply text-black;
+	}
+
+	.text-warning-fg {
+		@apply text-black;
+	}
+}
+
+@layer components {
+	/* Buttons */
+	.btn-xs {
+		@apply inline-flex rounded px-2 py-1 text-xs;
+	}
+
+	.btn-sm {
+		@apply inline-flex rounded-md px-2 py-1 text-sm;
+	}
+
+	.btn-md {
+		@apply inline-flex rounded-md px-2.5 py-1.5 text-sm;
+	}
+
+	.btn-lg {
+		@apply inline-flex rounded-md px-3 py-2 text-sm;
+	}
+
+	.btn-xl {
+		@apply inline-flex rounded-md px-3.5 py-2.5 text-sm;
+	}
+
+	.btn-accent {
+		@apply bg-accent-9 font-semibold text-accent-fg shadow-sm hover:bg-accent-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-7;
+	}
+
+	.icon-btn {
+		@apply -ml-1 mr-1 h-5 w-5;
+	}
+
+	/* Panels */
+	.panel {
+		@apply shadow-sm rounded-lg border border-neutral-6 p-6;
+	}
+}
+
 @layer utilities {
 	.prose-here {
-		--tw-prose-body: var(--mauve11);
-		--tw-prose-headings: var(--mauve12);
-		--tw-prose-lead: var(--purple11);
-		--tw-prose-links: var(--purple11);
-		--tw-prose-bold: var(--mauve12);
-		--tw-prose-counters: var(--mauve11);
-		--tw-prose-bullets: var(--mauve7);
-		--tw-prose-hr: var(--mauve6);
-		--tw-prose-quotes: var(--mauve11);
-		--tw-prose-quote-borders: var(--purple6);
-		--tw-prose-captions: var(--mauve11);
-		--tw-prose-code: var(--mauve12);
-		--tw-prose-pre-code: var(--mauve12);
-		--tw-prose-pre-bg: var(--mauve3);
-		--tw-prose-th-borders: var(--purple7);
-		--tw-prose-td-borders: var(--purple6);
+		--tw-prose-body: theme('colors.mauve.11');
+		--tw-prose-headings: theme('colors.mauve.12');
+		--tw-prose-lead: theme('colors.purple.11');
+		--tw-prose-links: theme('colors.purple.11');
+		--tw-prose-bold: theme('colors.mauve.12');
+		--tw-prose-counters: theme('colors.mauve.11');
+		--tw-prose-bullets: theme('colors.mauve.7');
+		--tw-prose-hr: theme('colors.mauve.6');
+		--tw-prose-quotes: theme('colors.mauve.11');
+		--tw-prose-quote-borders: theme('colors.purple.6');
+		--tw-prose-captions: theme('colors.mauve.11');
+		--tw-prose-code: theme('colors.mauve.12');
+		--tw-prose-pre-code: theme('colors.mauve.12');
+		--tw-prose-pre-bg: theme('colors.mauve.3');
+		--tw-prose-th-borders: theme('colors.purple.7');
+		--tw-prose-td-borders: theme('colors.purple.6');
 	}
 }

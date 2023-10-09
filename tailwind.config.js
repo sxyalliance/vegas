@@ -6,12 +6,12 @@ const colors = createPlugin();
 export default {
 	darkMode: 'class',
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	safelist: ['dark'],
+	safelist: ['dark', { pattern: /(text|bg|border)-(.+)-9/ }],
 	theme: {
 		extend: {
 			colors: {
 				// Brand
-				primary: colors.alias('purple'),
+				accent: colors.alias('purple'),
 
 				// Semantic
 				success: colors.alias('green'),
@@ -25,6 +25,10 @@ export default {
 				// Text
 				'high-contrast': colors.alias('mauve', 12),
 				'low-contrast': colors.alias('mauve', 11)
+			},
+			spacing: {
+				17: '4.25rem',
+				26: '6.5rem'
 			}
 		}
 	},
