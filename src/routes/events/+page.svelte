@@ -17,7 +17,7 @@
 
 <HeroSection />
 
-<section class="bg-neutral-1 px-4 py-12 lg:px-8 lg:py-24 sm:px-6">
+<section class="bg-neutral-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
 	<div class="mx-auto max-w-7xl">
 		<div class="grid grid-cols-1 space-y-16 lg:space-y-16">
 			{#each events as event (event.slug)}
@@ -25,10 +25,10 @@
 				{@const today = dayjs()}
 				<a href={`/events/${event.slug}`}>
 					<article
-						class="p-6 relative isolate flex flex-col lg:flex-row gap-10 justify-between bg-neutral-3"
+						class="relative isolate flex flex-col justify-between gap-10 bg-neutral-3 p-6 lg:flex-row"
 					>
 						<div class="flex-none">
-							<div class="group relative max-w-xl text-high-contrast mb-6">
+							<div class="group relative mb-6 max-w-xl text-high-contrast">
 								<span class="text-xl">
 									{#if meetingDay.isSame(today, 'day')}
 										{$_('event.status.ongoing.label')}
@@ -46,15 +46,15 @@
 							</div>
 
 							<div
-								class="relative lg:absolute lg:bottom-4 flex items-center gap-x-4 justify-between"
+								class="relative flex items-center justify-between gap-x-4 lg:absolute lg:bottom-4"
 							>
 								<!-- Meeting Time (Bookmark effect) -->
 								<div
-									class="relative top-0 -left-10 p-2 pl-2 pr-4 font-bold text-accent-fg bg-{event
+									class="text-accent-fg relative -left-10 top-0 p-2 pl-2 pr-4 font-bold bg-{event
 										.category.color}"
 								>
 									<div
-										class="absolute top-17 left-0 border-8 border-l-transparent border-b-transparent border-{event
+										class="absolute left-0 top-17 border-8 border-b-transparent border-l-transparent border-{event
 											.category.color}"
 									/>
 									<time class="sr-only" datetime={event.meetingTime.toISOString()}>
@@ -80,7 +80,7 @@
 									<span class="font-semibold text-high-contrast">
 										{$_('event.property.proposer')}
 									</span>
-									<p class="text-low-contrast text-sm truncate w-[12ch]">{event.proposer.name}</p>
+									<p class="w-[12ch] truncate text-sm text-low-contrast">{event.proposer.name}</p>
 								</div>
 							</div>
 						</div>
@@ -89,13 +89,13 @@
 							<div class="text-5xl font-bold text-high-contrast">
 								{event.title}
 							</div>
-							<p class="line-clamp-3 text-low-contrast mt-2">
+							<p class="mt-2 line-clamp-3 text-low-contrast">
 								{event.description}
 							</p>
 						</div>
 
-						<div class="flex-none hidden lg:block">
-							<div class="p-4 bg-neutral-4 rounded-lg">
+						<div class="hidden flex-none lg:block">
+							<div class="rounded-lg bg-neutral-4 p-4">
 								<Icon icon={event.category.icon} class="h-full w-26 text-{event.category.color}" />
 							</div>
 						</div>

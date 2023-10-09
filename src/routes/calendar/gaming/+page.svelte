@@ -38,12 +38,12 @@
 	}[availability];
 </script>
 
-<div class="bg-hue1 pt-36 pb-16 sm:pb-24">
+<div class="bg-hue1 pb-16 pt-36 sm:pb-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl lg:max-w-none mb-6">
+		<div class="mx-auto mb-6 max-w-2xl lg:max-w-none">
 			<div class="text-center">
-				<h2 class="text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">Gaming Time</h2>
-				<p class="mt-4 text-lg leading-8 text-hue11 max-w-3xl mx-auto">
+				<h2 class="text-hue12 text-3xl font-bold tracking-tight sm:text-4xl">Gaming Time</h2>
+				<p class="text-hue11 mx-auto mt-4 max-w-3xl text-lg leading-8">
 					This is a visual representation of the
 					<a
 						class="underline"
@@ -58,19 +58,19 @@
 				class="mt-12 grid grid-cols-1 gap-0.5 overflow-hidden text-center sm:grid-cols-2 lg:grid-cols-4"
 			>
 				<div class="flex flex-col p-8">
-					<dt class="text-sm font-semibold leading-6 text-hue11">Day of Week</dt>
-					<dd class="order-first text-3xl font-semibold tracking-tight text-hue12">{dayOfWeek}</dd>
+					<dt class="text-hue11 text-sm font-semibold leading-6">Day of Week</dt>
+					<dd class="text-hue12 order-first text-3xl font-semibold tracking-tight">{dayOfWeek}</dd>
 				</div>
 				<div class="flex flex-col p-8">
-					<dt class="text-sm font-semibold leading-6 text-hue11">Time of Day</dt>
-					<dd class="order-first text-3xl font-semibold tracking-tight text-hue12">
+					<dt class="text-hue11 text-sm font-semibold leading-6">Time of Day</dt>
+					<dd class="text-hue12 order-first text-3xl font-semibold tracking-tight">
 						{timeOfDayLong}
 					</dd>
 				</div>
 				<div class="flex flex-col p-8">
-					<dt class="text-sm font-semibold leading-6 text-hue11">Overall Availability</dt>
+					<dt class="text-hue11 text-sm font-semibold leading-6">Overall Availability</dt>
 					<dd
-						class="order-first text-3xl font-semibold tracking-tight text-hue12"
+						class="text-hue12 order-first text-3xl font-semibold tracking-tight"
 						class:text-success10={availability === Availability.AVAILABLE}
 						class:text-warning10={availability === Availability.TENTATIVE}
 						class:text-error10={availability === Availability.NOT_FREE}
@@ -79,8 +79,8 @@
 					</dd>
 				</div>
 				<div class="flex flex-col p-8">
-					<dt class="text-sm font-semibold leading-6 text-hue11">Statements</dt>
-					<dd class="order-first text-3xl font-semibold tracking-tight text-hue12">
+					<dt class="text-hue11 text-sm font-semibold leading-6">Statements</dt>
+					<dd class="text-hue12 order-first text-3xl font-semibold tracking-tight">
 						{#if timeOfDay}
 							<span class="text-success10">{statementStats[Availability.AVAILABLE]}</span>
 							|
@@ -96,9 +96,9 @@
 		</div>
 
 		<div
-			class="-m-2 rounded-xl bg-hue3 p-2 ring-1 ring-inset ring-hue4 lg:-m-4 lg:rounded-2xl lg:p-4"
+			class="bg-hue3 ring-hue4 -m-2 rounded-xl p-2 ring-1 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4"
 		>
-			<div class="rounded-md shadow-2xl ring-1 ring-hue4 p-6 bg-hue1">
+			<div class="ring-hue4 bg-hue1 rounded-md p-6 shadow-2xl ring-1">
 				<SideBySideCalendar calendar={data.gamingCalendar} />
 			</div>
 		</div>
@@ -108,11 +108,11 @@
 <div class="bg-hue2">
 	<div class="px-6 py-12 sm:px-6 sm:py-16 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-hue12 sm:text-4xl">
+			<h2 class="text-hue12 text-3xl font-bold tracking-tight sm:text-4xl">
 				Don't want to miss any games?<br />
 				Subscribe to gaming notifications.
 			</h2>
-			<p class="mx-auto mt-2 max-w-xl text-lg leading-8 text-hue11">
+			<p class="text-hue11 mx-auto mt-2 max-w-xl text-lg leading-8">
 				Be notified when we are about to start playing.
 			</p>
 			<div class="mt-4 flex items-center justify-center">

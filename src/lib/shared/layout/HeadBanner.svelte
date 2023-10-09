@@ -22,7 +22,7 @@
 		class:text-danger-12={type === 'error'}
 	>
 		<div
-			class="flex mx-auto max-w-7xl items-center gap-x-6 px-6 py-2.5 sm:px-8 whitespace-nowrap overflow-hidden"
+			class="mx-auto flex max-w-7xl items-center gap-x-6 overflow-hidden whitespace-nowrap px-6 py-2.5 sm:px-8"
 		>
 			<p class="text-sm leading-6">
 				<slot />

@@ -14,7 +14,7 @@
 			class="aspect-video rounded-md object-cover"
 		/>
 		{#if block.image.caption?.length > 0}
-			<p class="text-gray-400 w-full text-center text-xs">{block.image.caption?.[0].plain_text}</p>
+			<p class="w-full text-center text-xs text-gray-400">{block.image.caption?.[0].plain_text}</p>
 		{/if}
 	{:else if block.image.type === 'external'}
 		<Image
@@ -24,7 +24,7 @@
 			class="aspect-video rounded-md object-cover"
 		/>
 		{#if block.image.caption?.length > 0}
-			<p class="text-gray-400 w-full text-center text-xs">{block.image.caption?.[0].plain_text}</p>
+			<p class="w-full text-center text-xs text-gray-400">{block.image.caption?.[0].plain_text}</p>
 		{/if}
 	{/if}
 {/if}

@@ -103,7 +103,7 @@
 			</div>
 			<div
 				id="properties-list"
-				class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 border-t pt-6 mt-6 w-full"
+				class="mt-6 grid w-full grid-cols-1 gap-y-4 border-t border-neutral-6 pt-6 lg:grid-cols-2"
 			>
 				{#each list as property, i (property.label)}
 					<div class="flex w-full flex-none gap-x-4">

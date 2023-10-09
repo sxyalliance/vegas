@@ -35,7 +35,7 @@
 <Listbox bind:value aria-label={label}>
 	<div class={clazz}>
 		<ListboxButton
-			class="relative w-full cursor-pointer rounded-md bg-neutral-2 py-1.5 pl-3 pr-10 text-left text-high-contrast shadow-sm ring-1 ring-neutral-8 ring-inset sm:text-sm sm:leading-6"
+			class="relative w-full cursor-pointer rounded-md bg-neutral-2 py-1.5 pl-3 pr-10 text-left text-high-contrast shadow-sm ring-1 ring-inset ring-neutral-8 sm:text-sm sm:leading-6"
 		>
 			<span class="flex items-center">
 				<Icon icon={matchedValue.icon} class="h-5 w-5 flex-shrink-0" />
@@ -47,7 +47,7 @@
 		</ListboxButton>
 
 		<ListboxOptions
-			class="absolute z-10 mt-1 max-h-56 w-auto overflow-auto rounded-md bg-neutral-3 py-1 text-base shadow-lg ring-1 ring-neutral-7 sm:text-sm focus:outline-none"
+			class="absolute z-10 mt-1 max-h-56 w-auto overflow-auto rounded-md bg-neutral-3 py-1 text-base shadow-lg ring-1 ring-neutral-7 focus:outline-none sm:text-sm"
 		>
 			{#each options as option (option.value)}
 				<ListboxOption value={option.value} let:selected let:active>

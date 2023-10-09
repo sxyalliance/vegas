@@ -111,16 +111,16 @@
 		</div>
 	</div>
 	<section class="mt-12 md:mt-0 md:pl-14">
-		<h2 class="text-base font-semibold leading-6 text-hue12">
+		<h2 class="text-hue12 text-base font-semibold leading-6">
 			Availability for
 			<time datetime={selected}>{selected.toLocaleDateString()}</time>
 		</h2>
-		<ol class="mt-4 space-y-1 text-sm leading-6 text-hue10">
+		<ol class="text-hue10 mt-4 space-y-1 text-sm leading-6">
 			{#each details as detail}
 				<li
-					class="group flex items-center space-x-4 rounded-xl p-2 focus-within:bg-hue2 hover:bg-hue1"
+					class="focus-within:bg-hue2 hover:bg-hue1 group flex items-center space-x-4 rounded-xl p-2"
 				>
-					<Icon icon={detail.icon} class="h-15 w-15 flex-none -m-2 -mt-4" />
+					<Icon icon={detail.icon} class="h-15 w-15 -m-2 -mt-4 flex-none" />
 					<div class="flex-auto">
 						<p class="text-hue12">{detail.period}</p>
 						<p class="mt-0.5">

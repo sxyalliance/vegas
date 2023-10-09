@@ -29,7 +29,7 @@
 </script>
 
 <footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={$_('footer.sr_title')}>
-	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-32 sm:pt-24">
+	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-4">
 				<BrandLogo class="h-24 w-auto" />
@@ -90,7 +90,7 @@
 					rev {__LASTMOD__}.{__VERSION__}
 				</p>
 			</div>
-			<div class="grid-cols-2 mt-16 hidden gap-8 lg:grid xl:col-span-2 xl:mt-0">
+			<div class="mt-16 hidden grid-cols-2 gap-8 lg:grid xl:col-span-2 xl:mt-0">
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div />
 					<div class="mt-10 md:mt-0" />
@@ -100,7 +100,7 @@
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{$_('footer.policies.heading')}
 						</h3>
-						<ul role="list" class="mt-6 text-sm leading-6 text-low-contrast space-y-4">
+						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<a href="/policies/privacy" class="hover:text-high-contrast">
 									{$_('footer.policies.privacy_policy')}
@@ -117,21 +117,21 @@
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{$_('footer.statistics.heading')}
 						</h3>
-						<ul role="list" class="mt-6 text-sm leading-6 text-low-contrast space-y-4">
+						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<div
-									class="relative rounded-md bg-neutral-3 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md"
+									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
 									{$_('footer.statistics.online_members')}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.online_members}
 									</span>
 									{#if statistics.online_members === -1}
-										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
+										<span class="absolute right-0 top-0 -mr-1 -mt-1 flex h-3 w-3">
 											<span
-												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-accent-9 opacity-75"
+												class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-9 opacity-75"
 											/>
-											<span class="relative h-3 w-3 inline-flex rounded-full bg-accent-9" />
+											<span class="relative inline-flex h-3 w-3 rounded-full bg-accent-9" />
 										</span>
 									{/if}
 								</div>
@@ -144,18 +144,18 @@
 							</li>
 							<li>
 								<div
-									class="relative rounded-md bg-neutral-3 p-1 px-2 shadow -m-1 -mx-2 hover:shadow-md"
+									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
 									{$_('footer.statistics.ongoing_events')}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.ongoing_events}
 									</span>
 									{#if statistics.ongoing_events === -1}
-										<span class="absolute right-0 top-0 h-3 w-3 flex -mr-1 -mt-1">
+										<span class="absolute right-0 top-0 -mr-1 -mt-1 flex h-3 w-3">
 											<span
-												class="absolute h-full w-full inline-flex animate-ping rounded-full bg-accent-9 opacity-75"
+												class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-9 opacity-75"
 											/>
-											<span class="relative h-3 w-3 inline-flex rounded-full bg-accent-9" />
+											<span class="relative inline-flex h-3 w-3 rounded-full bg-accent-9" />
 										</span>
 									{/if}
 								</div>
@@ -177,7 +177,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 border-t border-neutral-6 pt-8 lg:mt-24 sm:mt-20">
+		<div class="mt-16 border-t border-neutral-6 pt-8 sm:mt-20 lg:mt-24">
 			<p class="text-xs leading-5 text-low-contrast">
 				{$_('footer.legal')}
 			</p>

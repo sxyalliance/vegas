@@ -31,7 +31,7 @@
 </script>
 
 <main class="h-screen w-full bg-neutral-1">
-	<div class="mx-auto max-w-7xl flex flex-auto flex-col justify-center px-6 py-24 lg:px-8 sm:py-64">
+	<div class="mx-auto flex max-w-7xl flex-auto flex-col justify-center px-6 py-24 sm:py-64 lg:px-8">
 		<p class="text-base font-semibold leading-8 text-accent-11">
 			{statusCode}
 		</p>
@@ -42,7 +42,7 @@
 			{detail}
 		</p>
 		<div class="mt-10">
-			<a href="/" class="btn-xl inline-flex btn-primary">
+			<a href="/" class="btn-xl btn-primary inline-flex">
 				<Icon icon="tabler:arrow-back" class="icon-btn" />
 				Back to Home
 			</a>

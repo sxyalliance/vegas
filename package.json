@@ -63,6 +63,7 @@
 		"postcss": "^8.4.31",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
+		"prettier-plugin-tailwindcss": "^0.4.1",
 		"semantic-release": "^22.0.5",
 		"serializr": "^3.0.2",
 		"svelte": "^4.2.1",

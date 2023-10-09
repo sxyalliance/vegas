@@ -50,8 +50,8 @@
 			{event.description}
 		</p>
 
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-			<div class="col-span-3 /*col-span-2*/ lg:order-last">
+		<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+			<div class="/*col-span-2*/ col-span-3 lg:order-last">
 				<EventProperties properties={event} />
 			</div>
 			<!--			<div class="col-span-1">-->
@@ -64,14 +64,14 @@
 				<div class="w-full border-t border-neutral-6" />
 			</div>
 			<div class="relative flex justify-center">
-				<span class="px-2 text-neutral-9 bg-neutral-1">
+				<span class="bg-neutral-1 px-2 text-neutral-9">
 					<Icon icon="tabler:lego" class="h-5 w-5" />
 				</span>
 			</div>
 		</div>
 
 		{#if event.blocks && event.blocks.length > 0}
-			<div class="max-w-full prose prose-here">
+			<div class="prose-here prose max-w-full">
 				{#each event.blocks as block}
 					<BlockRenderer {block} />
 				{/each}

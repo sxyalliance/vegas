@@ -9,14 +9,14 @@
 </script>
 
 {#if tableOfContent && tableOfContent?.length > 0}
-	<nav class="flex flex-1 flex-col panel" aria-label="Table of Content">
-		<ul role="list" class="space-y-1 -m-2">
+	<nav class="panel flex flex-1 flex-col" aria-label="Table of Content">
+		<ul role="list" class="-m-2 space-y-1">
 			{#each tableOfContent as content}
 				{#if content}
 					<li>
 						<a
 							href="#{content.id}"
-							class="group flex gap-x-3 rounded-md p-2 px-4 text-sm leading-6 font-semibold text-hue11 hover:text-primary10 hover:bg-hue3"
+							class="text-hue11 hover:text-primary10 hover:bg-hue3 group flex gap-x-3 rounded-md p-2 px-4 text-sm font-semibold leading-6"
 							class:indent-4={content.type === 'heading_2'}
 							class:indent={content.type === 'heading_3'}
 						>

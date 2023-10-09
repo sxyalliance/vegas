@@ -14,7 +14,7 @@
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 			{#each phrases as spot (spot.phrase)}
-				<div class="relative flex items-center bg-neutral-3 panel space-x-3">
+				<div class="panel relative flex items-center space-x-3 bg-neutral-3">
 					<div class="min-w-0 flex-1">
 						<span class="absolute inset-0" aria-hidden="true" />
 						<FlatBadge color="accent">
@@ -28,7 +28,7 @@
 			{/each}
 		</div>
 
-		<div class="mx-auto px-4 py-6 text-center lg:px-8 lg:py-8 sm:px-6">
+		<div class="mx-auto px-4 py-6 text-center sm:px-6 lg:px-8 lg:py-8">
 			<a href="/dictionary" class="btn-xl btn-accent">
 				{$_('home.dictionary.view_more')}
 			</a>

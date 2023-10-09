@@ -90,9 +90,9 @@
 </script>
 
 <section class="bg-neutral-1">
-	<div class="mx-auto max-w-7xl px-4 py-12 text-center lg:px-8 lg:py-24 sm:px-6">
+	<div class="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-24">
 		<div class="space-y-8 sm:space-y-12">
-			<div class="sm:mx-auto lg:max-w-5xl sm:max-w-xl space-y-5 sm:space-y-4">
+			<div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
 				<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
 					{$_('home.member.title')}
 				</h2>
@@ -102,7 +102,7 @@
 			</div>
 			<ul
 				role="list"
-				class="grid grid-cols-2 mx-auto gap-x-4 gap-y-8 sm:grid-cols-4 xl:grid-cols-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 md:gap-x-6"
+				class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6"
 			>
 				{#each people as person (person.name)}
 					<li>

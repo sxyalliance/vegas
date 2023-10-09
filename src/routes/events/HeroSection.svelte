@@ -22,9 +22,9 @@
 	};
 </script>
 
-<div class="isolate lg:h-screen overflow-hidden bg-neutral-2 relative mt-20 lg:mt-0">
-	<div class="pb-12 pt-16 lg:pb-48 lg:pt-40 sm:pb-40 sm:pt-24">
-		<div class="relative mx-auto max-w-7xl px-4 sm:static lg:px-8 sm:px-6">
+<div class="relative isolate mt-20 overflow-hidden bg-neutral-2 lg:mt-0 lg:h-screen">
+	<div class="pb-12 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
 				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
 					{$_('event.list.hero.title')}
@@ -37,15 +37,15 @@
 				<div class="mt-10">
 					<div
 						aria-hidden="true"
-						class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:max-w-7xl lg:w-full"
+						class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
 					>
 						<div
-							class="absolute transform lg:left-1/2 lg:top-1/2 sm:left-1/2 sm:top-0 lg:translate-x-8 sm:translate-x-8 lg:-translate-y-1/2"
+							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8"
 						>
 							<div class="flex items-center space-x-6 lg:space-x-8">
 								{#await getGridSchema() then gridSchema}
 									{#each gridSchema as grid}
-										<div class="grid grid-cols-1 flex-shrink-0 gap-y-6 lg:gap-y-8">
+										<div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 											{#each grid as category, i (i)}
 												{#if category.code === null}
 													<div class="h-64 w-44 overflow-hidden rounded-lg" />
@@ -96,11 +96,11 @@
 		</div>
 	</div>
 
-	<div class="hidden lg:block absolute bottom-0 left-0 right-0 h-[50vh] -z-10">
+	<div class="absolute bottom-0 left-0 right-0 -z-10 hidden h-[50vh] lg:block">
 		<svg
 			viewBox="0 0 1440 390"
 			xmlns="http://www.w3.org/2000/svg"
-			class="transition duration-300 ease-in-out delay-150"
+			class="transition delay-150 duration-300 ease-in-out"
 		>
 			<defs>
 				<linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -114,7 +114,7 @@
 				stroke-width="0"
 				fill="url(#gradient)"
 				fill-opacity="0.4"
-				class="transition-all duration-300 ease-in-out delay-150 path-0"
+				class="path-0 transition-all delay-150 duration-300 ease-in-out"
 			/>
 			<defs>
 				<linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -128,7 +128,7 @@
 				stroke-width="0"
 				fill="url(#gradient)"
 				fill-opacity="0.53"
-				class="transition-all duration-300 ease-in-out delay-150 path-1"
+				class="path-1 transition-all delay-150 duration-300 ease-in-out"
 			/>
 			<defs>
 				<linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -142,7 +142,7 @@
 				stroke-width="0"
 				fill="url(#gradient)"
 				fill-opacity="1"
-				class="transition-all duration-300 ease-in-out delay-150 path-2"
+				class="path-2 transition-all delay-150 duration-300 ease-in-out"
 			/>
 		</svg>
 	</div>
