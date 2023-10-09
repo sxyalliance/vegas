@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.prose-here {
+		--tw-prose-body: var(--mauve11);
+		--tw-prose-headings: var(--mauve12);
+		--tw-prose-lead: var(--purple11);
+		--tw-prose-links: var(--purple11);
+		--tw-prose-bold: var(--mauve12);
+		--tw-prose-counters: var(--mauve11);
+		--tw-prose-bullets: var(--mauve7);
+		--tw-prose-hr: var(--mauve6);
+		--tw-prose-quotes: var(--mauve11);
+		--tw-prose-quote-borders: var(--purple6);
+		--tw-prose-captions: var(--mauve11);
+		--tw-prose-code: var(--mauve12);
+		--tw-prose-pre-code: var(--mauve12);
+		--tw-prose-pre-bg: var(--mauve3);
+		--tw-prose-th-borders: var(--purple7);
+		--tw-prose-td-borders: var(--purple6);
+	}
+}

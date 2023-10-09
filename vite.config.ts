@@ -1,5 +1,4 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import UnoCSS from '@unocss/svelte-scoped/vite';
 import { defineConfig } from 'vitest/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
@@ -23,13 +22,7 @@ const [version, lastmod] = (
 });
 
 export default defineConfig({
-	plugins: [
-		UnoCSS({
-			injectReset: '@unocss/reset/tailwind.css'
-		}),
-		sveltekit(),
-		imagetools()
-	],
+	plugins: [sveltekit(), imagetools()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},

@@ -71,7 +71,7 @@
 		</div>
 
 		{#if event.blocks && event.blocks.length > 0}
-			<div class="prose-here max-w-full prose">
+			<div class="max-w-full prose prose-primary">
 				{#each event.blocks as block}
 					<BlockRenderer {block} />
 				{/each}
@@ -79,17 +79,3 @@
 		{/if}
 	</article>
 </section>
-
-<style>
-	.prose-here {
-		--un-prose-body: var(--un-preset-radix-hue11);
-		--un-prose-headings: var(--un-preset-radix-hue12);
-		--un-prose-links: var(--un-preset-radix-indigo12);
-		--un-prose-lists: var(--un-preset-radix-hue10);
-		--un-prose-hr: var(--un-preset-radix-hue8);
-		--un-prose-captions: var(--un-preset-radix-hue10);
-		--un-prose-code: var(--un-preset-radix-hue12);
-		--un-prose-borders: var(--un-preset-radix-hue6);
-		--un-prose-bg-soft: var(--un-preset-radix-hue2);
-	}
-</style>

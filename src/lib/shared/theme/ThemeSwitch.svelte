@@ -22,11 +22,11 @@
 	});
 
 	function activateDarkMode() {
-		document.documentElement.classList.add('dark-theme');
+		document.documentElement.classList.add('dark');
 	}
 
 	function deactivateDarkMode() {
-		document.documentElement.classList.remove('dark-theme');
+		document.documentElement.classList.remove('dark');
 	}
 
 	theme.subscribe((value: string) => {
