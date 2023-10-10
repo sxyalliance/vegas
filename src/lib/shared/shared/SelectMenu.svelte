@@ -47,13 +47,13 @@
 		</ListboxButton>
 
 		<ListboxOptions
-			class="absolute z-10 mt-1 max-h-56 w-auto overflow-auto rounded-md bg-neutral-3 py-1 text-base shadow-lg ring-1 ring-neutral-7 focus:outline-none sm:text-sm"
+			class="absolute z-10 mt-1 max-h-56 w-auto overflow-auto rounded-md bg-neutral-2 py-1 text-base shadow-lg ring-1 ring-neutral-6 focus:outline-none sm:text-sm"
 		>
 			{#each options as option (option.value)}
 				<ListboxOption value={option.value} let:selected let:active>
 					<li
 						class="relative cursor-pointer select-none py-2 pl-3 pr-9 {active
-							? 'bg-accent-5 text-accent-12'
+							? 'text-accent-fg bg-accent-9'
 							: 'text-high-contrast'}"
 					>
 						<div class="mr-2 flex items-center">
@@ -68,7 +68,7 @@
 						{#if selected}
 							<span
 								class="absolute inset-y-0 right-0 flex items-center pr-4 {active
-									? ' text-accent-10'
+									? ' text-accent-fg'
 									: ' text-accent-9'}"
 							>
 								<Icon icon="tabler:check" class="h-5 w-5" />

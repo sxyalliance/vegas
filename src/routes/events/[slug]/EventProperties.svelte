@@ -2,7 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import type { Event } from '$lib/event/event/entity';
-	import FlatBadge from '$lib/shared/shared/FlatBadge.svelte';
+	import Badge from '$lib/shared/shared/components/Badge.svelte';
+	import Card from '$lib/shared/shared/components/Card.svelte';
 
 	export let properties: Event;
 
@@ -73,7 +74,7 @@
 </script>
 
 <div class="lg:col-start-3 lg:row-end-1">
-	<div class="panel">
+	<Card class="">
 		<dl class="flex flex-wrap">
 			<div class="flex-auto">
 				<dt class="text-sm font-semibold leading-6 text-high-contrast">
@@ -89,15 +90,15 @@
 				</dt>
 				{#if properties.status === 'upcoming'}
 					<dd>
-						<FlatBadge color="teal">{$_('event.status.upcoming.label')}</FlatBadge>
+						<Badge color="teal" variant="soft">{$_('event.status.upcoming.label')}</Badge>
 					</dd>
 				{:else if properties.status === 'finished'}
 					<dd>
-						<FlatBadge color="slate">{$_('event.status.finished.label')}</FlatBadge>
+						<Badge color="slate" variant="soft">{$_('event.status.finished.label')}</Badge>
 					</dd>
 				{:else if properties.status === 'ongoing'}
 					<dd>
-						<FlatBadge color="amber">{$_('event.status.ongoing.label')}</FlatBadge>
+						<Badge color="amber" variant="soft">{$_('event.status.ongoing.label')}</Badge>
 					</dd>
 				{/if}
 			</div>
@@ -135,5 +136,5 @@
 				{/each}
 			</div>
 		</dl>
-	</div>
+	</Card>
 </div>

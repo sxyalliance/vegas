@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import type { Phrase } from '$lib/dictionary/phrase/phrase';
-	import FlatBadge from '$lib/shared/shared/FlatBadge.svelte';
+	import Button from '$lib/shared/shared/components/Button.svelte';
+	import Card from '$lib/shared/shared/components/Card.svelte';
+	import Badge from '$lib/shared/shared/components/Badge.svelte';
 
 	export let phrases: Phrase[];
 </script>
@@ -14,24 +16,24 @@
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 			{#each phrases as spot (spot.phrase)}
-				<div class="panel relative flex items-center space-x-3 bg-neutral-3">
+				<Card class="relative flex items-center space-x-3">
 					<div class="min-w-0 flex-1">
 						<span class="absolute inset-0" aria-hidden="true" />
-						<FlatBadge color="accent">
+						<Badge size="large" variant="soft" color="accent">
 							{spot.phrase}
-						</FlatBadge>
+						</Badge>
 						<p class="mt-1 text-sm text-low-contrast">
 							{spot.definition}
 						</p>
 					</div>
-				</div>
+				</Card>
 			{/each}
 		</div>
 
 		<div class="mx-auto px-4 py-6 text-center sm:px-6 lg:px-8 lg:py-8">
-			<a href="/dictionary" class="btn-xl btn-accent">
+			<Button size="large" variant="soft" as="a" href="/dictionary">
 				{$_('home.dictionary.view_more')}
-			</a>
+			</Button>
 		</div>
 	</div>
 </section>

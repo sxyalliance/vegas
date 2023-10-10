@@ -95,7 +95,7 @@
 						</div>
 
 						<div class="hidden flex-none lg:block">
-							<div class="rounded-lg bg-neutral-4 p-4">
+							<div class="rounded-lg bg-neutralA-2 p-4">
 								<Icon icon={event.category.icon} class="h-full w-26 text-{event.category.color}" />
 							</div>
 						</div>

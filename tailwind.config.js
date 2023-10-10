@@ -12,6 +12,7 @@ export default {
 			colors: {
 				// Brand
 				accent: colors.alias('purple'),
+				accentA: colors.alias('purpleA'),
 
 				// Semantic
 				success: colors.alias('green'),
@@ -21,6 +22,7 @@ export default {
 
 				// Grayscale
 				neutral: colors.alias('mauve'),
+				neutralA: colors.alias('mauveA'),
 
 				// Text
 				'high-contrast': colors.alias('mauve', 12),

@@ -52,15 +52,15 @@
 											class="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4"
 										>
 											<div
-												class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-neutral-3 text-sm leading-6 shadow-lg"
+												class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-neutral-2 text-sm leading-6 shadow-lg"
 											>
 												<div class="p-4">
 													{#each item.flyout.items as sub_item (sub_item.name)}
 														<div
-															class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-neutral-4"
+															class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-neutral-3"
 														>
 															<div
-																class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-neutral-3 group-hover:bg-neutral-4"
+																class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-neutralA-2"
 															>
 																<Icon
 																	icon={sub_item.icon}
@@ -95,10 +95,10 @@
 									<div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
 										<PopoverPanel
 											static
-											class="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-neutral-3 p-4 shadow-lg"
+											class="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-neutral-2 p-4 shadow-lg"
 										>
 											{#each item.flyout.items as sub_item (sub_item.name)}
-												<div class="relative rounded-lg p-4 hover:bg-neutral-4">
+												<div class="relative rounded-lg p-4 hover:bg-neutral-3">
 													<a
 														href={sub_item.href}
 														class="block text-sm font-semibold leading-6 text-high-contrast"

@@ -3,7 +3,8 @@
 	import { FxParallax as Img } from '@zerodevx/svelte-img';
 
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
-</script>
+	import Button from '$lib/shared/shared/components/Button.svelte';
+	</script>
 
 <!-- Hero section -->
 <div class="relative isolate h-screen overflow-hidden bg-neutral-1">
@@ -40,9 +41,9 @@
 					{$_('home.hero.text')}
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
-					<a href="#" class="btn-xl btn-accent">
+					<Button size="large" as="a" href="#">
 						{$_('home.hero.primary_action')}
-					</a>
+					</Button>
 					<a href="#" class="text-sm font-semibold leading-6 text-high-contrast">
 						{$_('home.hero.secondary_action')}
 						<span aria-hidden="true">→</span>
