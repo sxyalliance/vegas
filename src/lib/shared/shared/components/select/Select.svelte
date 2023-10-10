@@ -131,13 +131,13 @@
 									</span>
 								</div>
 
-								{#if $isSelected(item)}
-									<span
-										class="data-[highlighted]:text-accent-fg absolute inset-y-0 right-0 flex items-center pr-4 text-accent-9"
-									>
-										<Icon icon="tabler:check" class="h-5 w-5" />
-									</span>
-								{/if}
+								<span
+									class="{$isSelected(item)
+										? 'flex'
+										: 'hidden'} text-accent-fg absolute inset-y-0 right-0 items-center pr-4"
+								>
+									<Icon icon="tabler:check" class="h-5 w-5" />
+								</span>
 							</div>
 						{/each}
 					</div>

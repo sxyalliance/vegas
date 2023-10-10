@@ -17,7 +17,10 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"commit": "git-cz",
-		"semantic-release": "semantic-release --branches main"
+		"semantic-release": "semantic-release --branches main",
+		"story:dev": "histoire dev",
+		"story:build": "histoire build",
+		"story:preview": "histoire preview"
 	},
 	"devDependencies": {
 		"@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
@@ -25,6 +28,7 @@
 		"@commitlint/config-conventional": "^17.7.0",
 		"@commitlint/cz-commitlint": "^17.7.2",
 		"@commitlint/prompt-cli": "^17.7.2",
+		"@histoire/plugin-svelte": "^0.17.0",
 		"@iconify/svelte": "^3.1.4",
 		"@macfja/svelte-persistent-store": "^2.4.0",
 		"@melt-ui/pp": "^0.1.2",
@@ -55,6 +59,7 @@
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.34.0",
 		"eslint-plugin-unused-imports": "^3.0.0",
+		"histoire": "^0.17.2",
 		"husky": "^8.0.3",
 		"inquirer": "8.2.6",
 		"lightningcss": "^1.22.0",

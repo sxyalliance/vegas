@@ -28,3 +28,6 @@ vite.config.ts.timestamp-*
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
+
+.histoire/
