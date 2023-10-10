@@ -1,0 +1,37 @@
+.btn {
+	@apply inline-flex rounded-md text-sm;
+
+	&.small {
+		@apply px-2.5 py-1.5;
+	}
+
+	&.medium {
+		@apply px-3 py-2;
+	}
+
+	&.large {
+		@apply px-3.5 py-2.5;
+	}
+
+	&.solid {
+		&.accent {
+			@apply text-accent-fg bg-accent-9 hover:bg-accent-10;
+		}
+	}
+
+	&.soft {
+		&.accent {
+			@apply bg-accentA-3 text-accentA-11 hover:bg-accentA-4 active:bg-accentA-5;
+		}
+	}
+
+	&.surface {
+		&.accent {
+			@apply border border-accentA-7 bg-accentA-2 text-accentA-11 hover:border-accentA-8 active:bg-accentA-3;
+		}
+	}
+
+	> .iconify {
+		@apply -ml-1 mr-1 h-5 w-5;
+	}
+}

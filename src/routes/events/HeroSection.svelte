@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
 	import { categoryRepository } from '$lib/event/category/repository';
-	import Panel from '$lib/shared/shared/components/Panel.svelte';
+	import Card from '$lib/shared/shared/components/card/Card.svelte';
 
 	async function gridConfigOf(categoryKey: string, code: string) {
 		const category = await categoryRepository.findByPk(categoryKey);
@@ -52,7 +52,7 @@
 													<div class="h-64 w-44 overflow-hidden rounded-lg" />
 												{:else}
 													<div class="h-64 w-44 overflow-hidden rounded-lg shadow">
-														<Panel class="h-full w-full overflow-hidden">
+														<Card variant="surface" class="h-full w-full overflow-hidden">
 															<div class="px-2 py-3 sm:p-4">
 																<div class="relative mb-4">
 																	<div
@@ -82,7 +82,7 @@
 																	{$_(`event.category.${category.key}.description`)}
 																</p>
 															</div>
-														</Panel>
+														</Card>
 													</div>
 												{/if}
 											{/each}

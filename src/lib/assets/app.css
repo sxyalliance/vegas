@@ -23,7 +23,8 @@
 	.text-brown-fg,
 	.text-gold-fg,
 	.text-bronze-fg,
-	.text-gray-fg {
+	.text-gray-fg,
+	.text-slate-fg {
 		@apply text-white;
 	}
 

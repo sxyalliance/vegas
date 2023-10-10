@@ -1,0 +1,65 @@
+.badge {
+	@apply inline-flex items-center rounded-md font-medium;
+
+	&.small {
+		@apply px-2 py-1 text-xs;
+	}
+
+	&.large {
+		@apply px-3 py-1 text-sm;
+	}
+
+	&.solid {
+		&.accent {
+			@apply text-accent-fg bg-accent-9;
+		}
+
+		&.teal {
+			@apply text-teal-fg bg-teal-9;
+		}
+
+		&.slate {
+			@apply text-slate-fg bg-slate-9;
+		}
+
+		&.amber {
+			@apply text-amber-fg bg-amber-9;
+		}
+	}
+
+	&.soft {
+		&.accent {
+			@apply bg-accentA-3 text-accentA-11;
+		}
+
+		&.teal {
+			@apply bg-tealA-3 text-tealA-11;
+		}
+
+		&.slate {
+			@apply bg-slateA-3 text-slateA-11;
+		}
+
+		&.amber {
+			@apply bg-amberA-3 text-amberA-11;
+		}
+	}
+
+	&.surface {
+		&.accent {
+			@apply border border-accentA-6 bg-accentA-1 text-accentA-11;
+		}
+
+		&.teal {
+			@apply border border-tealA-6 bg-tealA-1 text-tealA-11;
+		}
+
+		&.slate {
+			@apply border border-slateA-6 bg-slateA-1 text-slateA-11;
+		}
+
+		&.amber {
+			@apply border border-amberA-6 bg-amberA-1 text-amberA-11;
+		}
+	}
+}

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import type { Phrase } from '$lib/dictionary/phrase/phrase';
-	import Button from '$lib/shared/shared/components/Button.svelte';
-	import Card from '$lib/shared/shared/components/Card.svelte';
-	import Badge from '$lib/shared/shared/components/Badge.svelte';
+	import Button from '$lib/shared/shared/components/button/Button.svelte';
+	import Card from '$lib/shared/shared/components/card/Card.svelte';
+	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
 
 	export let phrases: Phrase[];
 </script>
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="mx-auto px-4 py-6 text-center sm:px-6 lg:px-8 lg:py-8">
-			<Button size="large" variant="soft" as="a" href="/dictionary">
+			<Button size="large" variant="soft" href="/dictionary">
 				{$_('home.dictionary.view_more')}
 			</Button>
 		</div>
