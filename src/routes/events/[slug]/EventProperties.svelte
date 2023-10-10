@@ -3,7 +3,7 @@
 	import { _ } from 'svelte-i18n';
 	import type { Event } from '$lib/event/event/entity';
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
-	import Card from '$lib/shared/shared/components/Card.svelte';
+	import Card from '$lib/shared/shared/components/card/Card.svelte';
 
 	export let properties: Event;
 
