@@ -7,7 +7,7 @@
 </script>
 
 <!-- Hero section -->
-<div class="relative isolate h-screen overflow-hidden bg-neutral-1">
+<div class="h-hero relative isolate overflow-hidden bg-neutral-1">
 	<div
 		class="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
 		aria-hidden="true"
@@ -18,7 +18,7 @@
 		/>
 	</div>
 	<div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-		<div class="px-6 pb-12 pt-10 sm:pb-32 lg:col-span-6 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-5">
+		<div class="px-6 pb-12 pt-10 sm:pb-32 lg:col-span-6 lg:px-0 lg:pb-56 lg:pt-44 xl:col-span-5">
 			<div class="mx-auto max-w-2xl lg:mx-0">
 				<div class="hidden sm:flex">
 					<div
@@ -51,9 +51,7 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="relative lg:col-span-6 lg:-mr-8 lg:pt-20 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0"
-		>
+		<div class="relative lg:col-span-6 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
 			<Img
 				class="aspect-[3/2] w-full object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
 				src={cover}

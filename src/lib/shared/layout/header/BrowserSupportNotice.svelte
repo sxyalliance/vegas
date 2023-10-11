@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HeadBanner from '$lib/shared/layout/HeadBanner.svelte';
+	import HeadBanner from '$lib/shared/layout/header/HeadBanner.svelte';
 	import { browser } from '$app/environment';
 	import {
 		getBrowserName,

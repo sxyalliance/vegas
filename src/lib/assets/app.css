@@ -46,6 +46,10 @@
 	.text-warning-fg {
 		@apply text-black;
 	}
+
+	.h-hero {
+		height: calc(100vh - 84px);
+	}
 }
 
 @layer components {
