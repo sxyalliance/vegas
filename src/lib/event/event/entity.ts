@@ -1,7 +1,7 @@
 import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { date, identifier, object, serializable } from 'serializr';
 import { Category } from '$lib/event/category/entity';
-import { Member } from '$lib/member/member/member';
+import { Member } from '$lib/member/member/entity';
 import dayjs from 'dayjs';
 
 export class Event {

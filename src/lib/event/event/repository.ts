@@ -14,7 +14,7 @@ import type { Client } from '$lib/server/notion/client';
 import { constructClient } from '$lib/server/notion/client';
 import { categoryRepository } from '$lib/event/category/repository';
 import type { Category } from '$lib/event/category/entity';
-import { memberRepository } from '$lib/member/member';
+import { memberRepository } from '$lib/member/member/repository';
 
 const { maskPassword } = MaskData;
 

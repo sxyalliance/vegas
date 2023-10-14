@@ -7,7 +7,7 @@ import {
 	mapPropertyToDate,
 	mapPropertyToPrimitive
 } from '$lib/server/notion/utils';
-import type { Member } from '$lib/member/member/member';
+import type { Member } from '$lib/member/member/entity';
 
 import MaskData from 'maskdata';
 import { getAllPosts, getPostById } from '$lib/server/notion';

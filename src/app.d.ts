@@ -1,12 +1,16 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 
+import type { ConstructedDirectusClient } from "$lib/shared/shared/directus";
+
 declare global {
 	namespace App {
 		// interface Error {
 		// 	status: number;
 		// }
-		// interface Locals {}
+		interface Locals {
+			directus: ConstructedDirectusClient;
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}

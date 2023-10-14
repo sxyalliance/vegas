@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+}
+
+@layer components {
+}
+
+@layer utilities {
+	.prose-here {
+		--tw-prose-body: theme('colors.mauve.11');
+		--tw-prose-headings: theme('colors.mauve.12');
+		--tw-prose-lead: theme('colors.purple.11');
+		--tw-prose-links: theme('colors.purple.11');
+		--tw-prose-bold: theme('colors.mauve.12');
+		--tw-prose-counters: theme('colors.mauve.11');
+		--tw-prose-bullets: theme('colors.mauve.7');
+		--tw-prose-hr: theme('colors.mauve.6');
+		--tw-prose-quotes: theme('colors.mauve.11');
+		--tw-prose-quote-borders: theme('colors.purple.6');
+		--tw-prose-captions: theme('colors.mauve.11');
+		--tw-prose-code: theme('colors.mauve.12');
+		--tw-prose-pre-code: theme('colors.mauve.12');
+		--tw-prose-pre-bg: theme('colors.mauve.3');
+		--tw-prose-th-borders: theme('colors.purple.7');
+		--tw-prose-td-borders: theme('colors.purple.6');
+	}
+
 	.text-tomato-fg,
 	.text-red-fg,
 	.text-ruby-fg,
@@ -48,63 +73,11 @@
 	}
 
 	.h-hero {
+		/* 84px is the height of the navbar */
 		height: calc(100vh - 84px);
 	}
-}
 
-@layer components {
-	/* Buttons */
-	.btn-xs {
-		@apply inline-flex rounded px-2 py-1 text-xs;
-	}
-
-	.btn-sm {
-		@apply inline-flex rounded-md px-2 py-1 text-sm;
-	}
-
-	.btn-md {
-		@apply inline-flex rounded-md px-2.5 py-1.5 text-sm;
-	}
-
-	.btn-lg {
-		@apply inline-flex rounded-md px-3 py-2 text-sm;
-	}
-
-	.btn-xl {
-		@apply inline-flex rounded-md px-3.5 py-2.5 text-sm;
-	}
-
-	.btn-accent {
-		@apply text-accent-fg bg-accent-9 font-semibold shadow-sm hover:bg-accent-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-7;
-	}
-
-	.icon-btn {
-		@apply -ml-1 mr-1 h-5 w-5;
-	}
-
-	/* Panels */
-	.panel {
-		@apply rounded-lg border border-neutral-6 p-6 shadow-sm;
-	}
-}
-
-@layer utilities {
-	.prose-here {
-		--tw-prose-body: theme('colors.mauve.11');
-		--tw-prose-headings: theme('colors.mauve.12');
-		--tw-prose-lead: theme('colors.purple.11');
-		--tw-prose-links: theme('colors.purple.11');
-		--tw-prose-bold: theme('colors.mauve.12');
-		--tw-prose-counters: theme('colors.mauve.11');
-		--tw-prose-bullets: theme('colors.mauve.7');
-		--tw-prose-hr: theme('colors.mauve.6');
-		--tw-prose-quotes: theme('colors.mauve.11');
-		--tw-prose-quote-borders: theme('colors.purple.6');
-		--tw-prose-captions: theme('colors.mauve.11');
-		--tw-prose-code: theme('colors.mauve.12');
-		--tw-prose-pre-code: theme('colors.mauve.12');
-		--tw-prose-pre-bg: theme('colors.mauve.3');
-		--tw-prose-th-borders: theme('colors.purple.7');
-		--tw-prose-td-borders: theme('colors.purple.6');
+	.clip-pentagon {
+		clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 	}
 }
