@@ -1,5 +1,5 @@
 import { constructDirectus } from '$lib/shared/directus/client';
-import { readItems } from '@directus/sdk';
+import { aggregate, readItems } from '@directus/sdk';
 
 export default function query(customFetch = fetch) {
 	return constructDirectus(customFetch).request(
@@ -24,6 +24,15 @@ export function queryCategories(customFetch = fetch) {
 		readItems('event_categories', {
 			fields: ['key', 'icon', 'color'],
 			sort: 'sort'
+		})
+	);
+}
+
+export function queryCategoriesEventsCount(customFetch = fetch) {
+	return constructDirectus(customFetch).request(
+		aggregate('events', {
+			aggregate: { count: '*' },
+			groupBy: ['category']
 		})
 	);
 }

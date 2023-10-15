@@ -11,28 +11,16 @@
 		queryFn: () => queryCategories()
 	});
 
-	let increment = 1;
-
 	type GridItem = Awaited<ReturnType<typeof queryCategories>>[number] & {
 		display?: boolean;
 	};
 
-	const injectCodeField = (category: GridItem): GridItem & { code?: string } => {
-		if (category.display === false) return category;
-		return {
-			...category,
-			code: String(increment++).padStart(2, '0'),
-			display: true
-		};
-	};
-
 	const groupCategories = (categories: GridItem[]) => {
-		const grouped: GridItem[][] = [
+		return [
 			[categories[0], categories[1]],
 			[{ ...categories[2], display: false }, categories[2], { ...categories[2], display: false }],
 			[categories[3], categories[4]]
 		];
-		return grouped.map((grid) => grid.map(injectCodeField));
 	};
 </script>
 
@@ -54,7 +42,7 @@
 						class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
 					>
 						<div
-							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:-translate-y-10 lg:translate-x-8"
+							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:translate-x-8"
 						>
 							<div class="flex items-center space-x-6 lg:space-x-8">
 								{#if $categories.isSuccess}
@@ -62,27 +50,11 @@
 										<div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 											{#each grid as category, i (i)}
 												{#if category.display === false}
-													<div class="h-64 w-44 overflow-hidden rounded-lg" />
+													<div class="h-56 w-44 overflow-hidden rounded-lg" />
 												{:else}
-													<div class="h-64 w-44 overflow-hidden rounded-lg shadow">
+													<div class="h-56 w-44 overflow-hidden rounded-lg shadow">
 														<Card variant="surface" class="h-full w-full overflow-hidden">
 															<div class="px-2 py-3 sm:p-4">
-																<div class="relative mb-4">
-																	<div
-																		class="absolute inset-0 flex items-center"
-																		aria-hidden="true"
-																	>
-																		<div class="w-full border-t border-neutral-6" />
-																	</div>
-																	<div class="relative flex justify-start">
-																		<span
-																			class="bg-neutral-1 pr-3 text-sm font-medium text-accent-11"
-																		>
-																			{category.code}
-																		</span>
-																	</div>
-																</div>
-
 																<Icon
 																	icon={`material-symbols:${paramCase(String(category.icon))}`}
 																	class="mb-4 h-12 w-12 text-{category.color}"

@@ -5,8 +5,8 @@
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
 	import { createQuery, useQueryClient } from '@tanstack/svelte-query';
 	import query from './query';
-	
-const phrases = createQuery({
+
+	const phrases = createQuery({
 		queryKey: ['phrases', 'random'],
 		queryFn: () => query()
 	});
