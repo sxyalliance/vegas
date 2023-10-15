@@ -36,10 +36,6 @@ export const definition: NavigationDefinition = [
 				{
 					name: 'navigation.events',
 					href: '/events'
-				},
-				{
-					name: 'navigation.calendar',
-					href: '/calendar/gaming'
 				}
 			]
 		}

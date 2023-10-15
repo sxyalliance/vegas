@@ -1,4 +1,4 @@
-import { getSpreadsheetRangeData } from '$lib/shared/gsheet/api';
+import { getSpreadsheetRangeData } from '$lib/shared/google/gsheet';
 import { error } from '@sveltejs/kit';
 
 const SpreadsheetId = '1XL4WQfdRTIBIGRJ2051Lt02cRSF99gIVTRwMX35Ym2c' as const;
