@@ -13,7 +13,8 @@ export default function query(customFetch = fetch) {
 				'status',
 				{ category: ['key', 'icon', 'color'] },
 				{ proposer: ['id', 'first_name'] }
-			]
+			],
+			sort: '-meeting_time'
 		})
 	);
 }
@@ -21,7 +22,8 @@ export default function query(customFetch = fetch) {
 export function queryCategories(customFetch = fetch) {
 	return constructDirectus(customFetch).request(
 		readItems('event_categories', {
-			fields: ['key', 'icon', 'color']
+			fields: ['key', 'icon', 'color'],
+			sort: 'sort'
 		})
 	);
 }
