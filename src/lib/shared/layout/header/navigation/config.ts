@@ -14,7 +14,7 @@ export const definition: NavigationDefinition = [
 			items: [
 				{
 					name: 'navigation.members',
-					href: '/members'
+					href: '/about/members'
 				},
 				{
 					name: 'navigation.chronicle',

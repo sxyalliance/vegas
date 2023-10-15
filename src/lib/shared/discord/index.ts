@@ -3,3 +3,5 @@ export const getOnlineMemberCount = async () => {
 	const data = await res.json();
 	return data.presence_count;
 };
+
+export * from './member';
