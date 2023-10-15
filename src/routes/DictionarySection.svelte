@@ -1,11 +1,20 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import type { Phrase } from '$lib/dictionary/phrase/phrase';
 	import Button from '$lib/shared/shared/components/button/Button.svelte';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
+	import { createQuery, useQueryClient } from '@tanstack/svelte-query';
+	import query from './query';
+	
+const phrases = createQuery({
+		queryKey: ['phrases', 'random'],
+		queryFn: () => query()
+	});
 
-	export let phrases: Phrase[];
+	const client = useQueryClient();
+	const pickAnother = () => {
+		client.invalidateQueries(['phrases', 'random']);
+	};
 </script>
 
 <section class="bg-neutral-1 py-24">
@@ -15,24 +24,29 @@
 		</div>
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-			{#each phrases as spot (spot.phrase)}
-				<Card class="relative flex items-center space-x-3">
-					<div class="min-w-0 flex-1">
-						<span class="absolute inset-0" aria-hidden="true" />
-						<Badge size="large" variant="soft" color="accent">
-							{spot.phrase}
-						</Badge>
-						<p class="mt-1 text-sm text-low-contrast">
-							{spot.definition}
-						</p>
-					</div>
-				</Card>
-			{/each}
+			{#if $phrases.isSuccess}
+				{#each $phrases.data as spot (spot.phrase)}
+					<Card class="relative flex items-center space-x-3">
+						<div class="min-w-0 flex-1">
+							<span class="absolute inset-0" aria-hidden="true" />
+							<Badge size="large" variant="soft" color="accent">
+								{spot.phrase}
+							</Badge>
+							<p class="mt-1 text-sm text-low-contrast">
+								{spot.definition}
+							</p>
+						</div>
+					</Card>
+				{/each}
+			{/if}
 		</div>
 
 		<div class="mx-auto px-4 py-6 text-center sm:px-6 lg:px-8 lg:py-8">
 			<Button size="large" variant="soft" href="/dictionary">
 				{$_('home.dictionary.view_more')}
+			</Button>
+			<Button size="large" variant="transparent" on:click={pickAnother}>
+				{$_('home.dictionary.pick_another')}
 			</Button>
 		</div>
 	</div>

@@ -104,7 +104,8 @@
 		},
 		"dictionary": {
 			"note": "The following phrases are randomly selected from SXYA dictionary.",
-			"view_more": "View More"
+			"view_more": "View More",
+			"pick_another": "Pick Another"
 		},
 		"team": {
 			"title": "Team section title",

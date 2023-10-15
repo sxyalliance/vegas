@@ -16,9 +16,13 @@ export default {
 
 				// Semantic
 				success: colors.alias('green'),
+				successA: colors.alias('greenA'),
 				warning: colors.alias('yellow'),
+				warningA: colors.alias('yellowA'),
 				danger: colors.alias('red'),
+				dangerA: colors.alias('redA'),
 				info: colors.alias('blue'),
+				infoA: colors.alias('blueA'),
 
 				// Grayscale
 				neutral: colors.alias('mauve'),

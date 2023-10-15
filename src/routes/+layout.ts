@@ -20,7 +20,7 @@ export const load: LayoutLoad = async () => {
 		defaultOptions: {
 			queries: {
 				enabled: browser,
-				staleTime: 1000
+				staleTime: 60 * 1000
 			}
 		}
 	});

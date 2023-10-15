@@ -326,15 +326,6 @@ export type EventCategories = {
 	icon?: string | null;
 	key: string;
 	sort?: number | null;
-	translations: any[] & EventCategoriesTranslations[];
-};
-
-export type EventCategoriesTranslations = {
-	description?: string | null;
-	event_categories_key?: (string & EventCategories) | null;
-	id: number;
-	languages_code?: (string & Languages) | null;
-	name?: string | null;
 };
 
 export type Events = {
@@ -352,13 +343,19 @@ export type Events = {
 	proposer?: (string & DirectusUsers) | null;
 	related_personnel?: number | null;
 	slug?: string | null;
-	status: string;
+	status?: string | null;
 };
 
 export type Languages = {
 	code: string;
 	direction?: string | null;
 	name?: string | null;
+};
+
+export type Phrases = {
+	definition?: string | null;
+	id: string;
+	phrase?: string | null;
 };
 
 export type CustomDirectusTypes = {
@@ -385,7 +382,7 @@ export type CustomDirectusTypes = {
 	directus_users: DirectusUsers[];
 	directus_webhooks: DirectusWebhooks[];
 	event_categories: EventCategories[];
-	event_categories_translations: EventCategoriesTranslations[];
 	events: Events[];
 	languages: Languages[];
+	phrases: Phrases[];
 };

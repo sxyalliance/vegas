@@ -12,7 +12,7 @@
 	/**
 	 * Gives the button a different look.
 	 */
-	export let variant: 'solid' | 'soft' | 'surface' = 'solid';
+	export let variant: 'solid' | 'soft' | 'surface' | 'transparent' = 'solid';
 
 	/**
 	 * Turns the button into a link.
