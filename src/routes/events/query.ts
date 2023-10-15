@@ -17,3 +17,11 @@ export default function query(customFetch = fetch) {
 		})
 	);
 }
+
+export function queryCategories(customFetch = fetch) {
+	return constructDirectus(customFetch).request(
+		readItems('event_categories', {
+			fields: ['key', 'icon', 'color']
+		})
+	);
+}

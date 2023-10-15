@@ -1,29 +1,42 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
-	import { categoryRepository } from '$lib/event/category/repository';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
+	import { createQuery } from '@tanstack/svelte-query';
+	import { queryCategories } from './query';
+	import { paramCase } from 'change-case';
 
-	async function gridConfigOf(categoryKey: string, code: string) {
-		const category = await categoryRepository.findByPk(categoryKey);
+	const categories = createQuery({
+		queryKey: ['categories'],
+		queryFn: () => queryCategories()
+	});
+
+	let increment = 1;
+
+	type GridItem = Awaited<ReturnType<typeof queryCategories>>[number] & {
+		display?: boolean;
+	};
+
+	const injectCodeField = (category: GridItem): GridItem & { code?: string } => {
+		if (category.display === false) return category;
 		return {
-			code,
-			key: category.key,
-			icon: category.icon,
-			color: 'text-' + category.color
+			...category,
+			code: String(increment++).padStart(2, '0'),
+			display: true
 		};
-	}
+	};
 
-	const getGridSchema = async () => {
-		return await Promise.all([
-			Promise.all([gridConfigOf('dining', '01'), gridConfigOf('entertainment', '02')]),
-			Promise.all([{ code: null }, gridConfigOf('academic', '03'), { code: null }]),
-			Promise.all([gridConfigOf('sport', '04'), gridConfigOf('giveaway', '05')])
-		]);
+	const groupCategories = (categories: GridItem[]) => {
+		const grouped: GridItem[][] = [
+			[categories[0], categories[1]],
+			[{ ...categories[2], display: false }, categories[2], { ...categories[2], display: false }],
+			[categories[3], categories[4]]
+		];
+		return grouped.map((grid) => grid.map(injectCodeField));
 	};
 </script>
 
-<div class="relative isolate mt-20 overflow-hidden bg-neutral-2 lg:mt-0 lg:h-screen">
+<div class="lg:h-hero relative isolate overflow-hidden bg-neutral-2 lg:mt-0">
 	<div class="pb-12 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
@@ -41,14 +54,14 @@
 						class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
 					>
 						<div
-							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8"
+							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:-translate-y-10 lg:translate-x-8"
 						>
 							<div class="flex items-center space-x-6 lg:space-x-8">
-								{#await getGridSchema() then gridSchema}
-									{#each gridSchema as grid}
+								{#if $categories.isSuccess}
+									{#each groupCategories($categories.data) as grid}
 										<div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 											{#each grid as category, i (i)}
-												{#if category.code === null}
+												{#if category.display === false}
 													<div class="h-64 w-44 overflow-hidden rounded-lg" />
 												{:else}
 													<div class="h-64 w-44 overflow-hidden rounded-lg shadow">
@@ -71,8 +84,8 @@
 																</div>
 
 																<Icon
-																	icon={category.icon}
-																	class="mb-4 h-12 w-12 {category.color}"
+																	icon={`material-symbols:${paramCase(String(category.icon))}`}
+																	class="mb-4 h-12 w-12 text-{category.color}"
 																/>
 
 																<h2 class="text-lg font-medium leading-6 text-high-contrast">
@@ -88,7 +101,7 @@
 											{/each}
 										</div>
 									{/each}
-								{/await}
+								{/if}
 							</div>
 						</div>
 					</div>

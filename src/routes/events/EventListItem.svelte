@@ -49,7 +49,7 @@
 						<div class="mr-2 flex-shrink-0 self-center">
 							<span class="text-3xl">{meetingDay.format('MM')}</span>
 						</div>
-						<div class="w-23">
+						<div class="w-24">
 							<h4 class="text-lg font-bold">
 								{meetingDay.format('MMMM')}
 							</h4>
@@ -80,7 +80,7 @@
 		<div class="hidden flex-none lg:block">
 			<div class="rounded-lg bg-neutralA-2 p-4">
 				<Icon
-					icon={`mdi:${paramCase(String(category.icon))}`}
+					icon={`material-symbols:${paramCase(String(category.icon))}`}
 					class="h-full w-26 text-{category.color}"
 				/>
 			</div>

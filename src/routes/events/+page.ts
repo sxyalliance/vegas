@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import query from './query';
+import query, { queryCategories } from './query';
 
 export const load: PageLoad = async ({ parent, fetch }) => {
 	const { queryClient } = await parent();
@@ -7,5 +7,10 @@ export const load: PageLoad = async ({ parent, fetch }) => {
 	await queryClient.prefetchQuery({
 		queryKey: ['events'],
 		queryFn: () => query(fetch)
+	});
+
+	await queryClient.prefetchQuery({
+		queryKey: ['categories'],
+		queryFn: () => queryCategories(fetch)
 	});
 };
