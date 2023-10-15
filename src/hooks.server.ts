@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { locale } from 'svelte-i18n';
 import { resolveFirstAvailableLocale } from '$lib/i18n';
-import { constructDirectus } from '$lib/shared/shared/directus';
+import { constructDirectus } from '$lib/shared/directus/client';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const langs = event.request.headers.get('accept-language')?.split(',');
@@ -11,5 +11,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	event.locals.directus = constructDirectus(event.fetch);
 
-	return resolve(event);
+	return resolve(event, {
+		filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
+	});
 };

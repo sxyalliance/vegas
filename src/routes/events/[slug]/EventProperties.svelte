@@ -1,73 +1,76 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from 'svelte-i18n';
-	import type { Event } from '$lib/event/event/entity';
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
+	import type query from './query';
+	import dayjs from 'dayjs';
 
-	export let properties: Event;
+	export let properties: Awaited<ReturnType<typeof query>>[number];
 
 	type Property =
 		| {
 				type: 'text';
 				label: string;
-				text: string | null;
+				text?: string | null;
 				icon: string;
 		  }
 		| {
 				type: 'datetime';
 				label: string;
-				datetime: Date | null;
+				datetime?: string | null;
 				icon: string;
 		  };
+
+	const proposer = properties.proposer as NonNullable<typeof properties.proposer>;
 
 	const list: Property[] = [
 		{
 			type: 'datetime',
 			label: 'meeting_time',
-			datetime: properties.meetingTime,
+			datetime: properties.meeting_time,
 			icon: 'tabler:calendar-time'
 		},
 		{
 			type: 'text',
 			label: 'meeting_point',
-			text: properties.meetingPoint,
+			text: properties.meeting_point,
 			icon: 'tabler:map-pin'
 		},
 		{
 			type: 'text',
 			label: 'event_point',
-			text: properties.eventPoint,
+			text: properties.event_point,
 			icon: 'tabler:map'
 		},
 		{
 			type: 'text',
 			label: 'proposer',
-			text: properties.proposer.name,
+			text: proposer.first_name,
 			icon: 'tabler:user-edit'
 		},
 		{
 			type: 'text',
 			label: 'outbound_transport',
-			text: properties.outboundTransport,
+			text: properties.outbound_transport,
 			icon: 'tabler:truck-delivery'
 		},
 		{
 			type: 'datetime',
 			label: 'outbound_time',
-			datetime: properties.outboundTime,
+			datetime: properties.outbound_time,
 			icon: 'tabler:clock-up'
 		},
 		{
 			type: 'text',
 			label: 'inbound_transport',
-			text: properties.inboundTransport,
+			text: properties.inbound_transport,
 			icon: 'tabler:truck-return'
 		},
 		{
 			type: 'datetime',
 			label: 'inbound_time',
-			datetime: properties.inboundTime,
+			datetime: properties.inbound_time,
 			icon: 'tabler:clock-down'
 		}
 	];
@@ -81,7 +84,7 @@
 					{$_('event.property.related_personnel')}
 				</dt>
 				<dd class="mt-1 text-base font-semibold leading-6 text-high-contrast">
-					{properties.relatedPersonnel}
+					{properties.related_personnel}
 				</dd>
 			</div>
 			<div class="flex-none self-end pt-4">
@@ -122,8 +125,9 @@
 						>
 							{#if property.type === 'datetime'}
 								{#if property.datetime}
-									<time datetime={property.datetime.toISOString()}>
-										{property.datetime.toLocaleString()}
+									{@const day = dayjs(property.datetime)}
+									<time datetime={day.format()}>
+										{day.format('l')}
 									</time>
 								{:else}
 									N/A

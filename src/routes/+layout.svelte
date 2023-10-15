@@ -5,6 +5,7 @@
 	import { navigating, page } from '$app/stores';
 	import { webVitals } from '$lib/shared/analytics/vitals';
 	import { title } from '$lib/shared/shared/title';
+	import type { PageData } from './$types';
 
 	import '$lib/assets/app.css';
 	import '$lib/assets/rainbow.css';
@@ -12,6 +13,9 @@
 	import { onMount } from 'svelte';
 	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
 	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
+	import { QueryClientProvider } from '@tanstack/svelte-query';
+
+	export let data: PageData;
 
 	$: if (browser) {
 		webVitals({
@@ -33,15 +37,17 @@
 	<title>{$title}</title>
 </svelte:head>
 
-<BrowserSupportNotice />
+<QueryClientProvider client={data.queryClient}>
+	<BrowserSupportNotice />
 
-{#if loading}
-	<!--	<LoadingOverlay />-->
-	<LoadingOverlay2 />
-{:else}
-	<Header />
+	{#if loading}
+		<!--	<LoadingOverlay />-->
+		<LoadingOverlay2 />
+	{:else}
+		<Header />
 
-	<slot />
+		<slot />
 
-	<Footer />
-{/if}
+		<Footer />
+	{/if}
+</QueryClientProvider>
