@@ -14,6 +14,7 @@
 	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
 	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
+	import ParaglideJsSvelteKitProviderCsr from '$lib/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
 
 	export let data: PageData;
 
@@ -37,17 +38,19 @@
 	<title>{$title}</title>
 </svelte:head>
 
-<QueryClientProvider client={data.queryClient}>
-	<BrowserSupportNotice />
+<ParaglideJsSvelteKitProviderCsr>
+	<QueryClientProvider client={data.queryClient}>
+		<BrowserSupportNotice />
 
-	{#if loading}
-		<!--	<LoadingOverlay />-->
-		<LoadingOverlay2 />
-	{:else}
-		<Header />
+		{#if loading}
+			<!--	<LoadingOverlay />-->
+			<LoadingOverlay2 />
+		{:else}
+			<Header />
 
-		<slot />
+			<slot />
 
-		<Footer />
-	{/if}
-</QueryClientProvider>
+			<Footer />
+		{/if}
+	</QueryClientProvider>
+</ParaglideJsSvelteKitProviderCsr>

@@ -46,6 +46,9 @@ devDependencies:
   '@iconify/svelte':
     specifier: ^3.1.4
     version: 3.1.4(svelte@4.2.1)
+  '@inlang/paraglide-js':
+    specifier: 1.0.0-prerelease.0
+    version: 1.0.0-prerelease.0
   '@macfja/svelte-persistent-store':
     specifier: ^2.4.0
     version: 2.4.0(svelte@4.2.1)
@@ -1233,6 +1236,127 @@ packages:
       - supports-color
     dev: true
 
+  /@inlang/json-types@1.1.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-n6vS6AqETsCFbV4TdBvR/EH57waVXzKsMqeUQ+eH2Q6NUATfKhfLabgNms2A+QV3aedH/hLtb1pRmjl2ykBVZg==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/language-tag@1.2.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-AwKNPYPgJrhM9ebEYQvcG5PGM4v79jMPlsv2bUYEhEZzMpwIJKQo4t7P7EekMhO086sXOmeTu410Lm8abX/2Yw==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/message-lint-rule@1.3.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-cYaKkjIAWAcV4kzv12gmL3zv+KQjkLy6eqQfvChgdrEKad19mTVp+rEiFQEGILVpe3yHPI+uYnJyLQmfDvbgbQ==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/message': 2.0.0(@sinclair/typebox@0.31.17)
+      '@inlang/project-settings': 2.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.17)
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/message@2.0.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-RPFcbega2Cnxi78d08O7SbuXyuhEqsB819QjgloNTXWtlBFwVDkF87xAMIZN37hpM6JZzMaYv2O1ipyncU3Ccg==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/module@1.1.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-4PoW9GMV9S1wZsXpNPNQIgpgIdD3y6kqgaWTXCAiRk5vk/a82E0SJrcA7P4qEhcLxo7DHJu4djrMco6h0v4O5Q==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/message-lint-rule': 1.3.0(@sinclair/typebox@0.31.17)
+      '@inlang/plugin': 2.1.0(@sinclair/typebox@0.31.17)
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/paraglide-js@1.0.0-prerelease.0:
+    resolution: {integrity: sha512-x7rN9BvJFQdmyinPjaibJr3ljpSOgL4ZdN1yM4B3HdmDRJYlo/eDfgMhYew67E9e1GyRLuY3GxvhzmKfZr9aPw==}
+    hasBin: true
+    dependencies:
+      '@inlang/sdk': 0.13.0
+      commander: 11.1.0
+      consola: 3.2.3
+      dedent: 1.5.1
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
+  /@inlang/plugin@2.1.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-p4HeMrY9+azBCche2u9TxtVARqDjTOgMo7wxoJiajKJQKZjvBFHrRsXe5IaX9DWW0FoGXhHkjxAz/s4WICKOuw==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/message': 2.0.0(@sinclair/typebox@0.31.17)
+      '@inlang/project-settings': 2.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.17)
+      '@lix-js/fs': 0.3.0
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/project-settings@2.2.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-M1D150KYiYoyiHhQp627zhvo/w/M1B11ROEu2u7Jn9005mKEWZS1DDlEOsLuNRl5doHSPHfkGa9qItMtrqr0dA==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
+  /@inlang/result@1.1.0:
+    resolution: {integrity: sha512-zLGroi9EUiHuOjUOaglUVTFO7EWdo2OARMJLBO1Q5Ga/xJmSQb6XS1lhqEXBFAjgFarfEMX5YEJWWALogYV3wA==}
+    dev: true
+
+  /@inlang/sdk@0.13.0:
+    resolution: {integrity: sha512-438itQnljZzpBsPFfbmcwPwzLsRs/tT+xBqyBFiyH+OubqxKoOA5gBiX5Afexy1NVgfXNUxQZ0Narx9Z+mRGEw==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/message': 2.0.0(@sinclair/typebox@0.31.17)
+      '@inlang/message-lint-rule': 1.3.0(@sinclair/typebox@0.31.17)
+      '@inlang/module': 1.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/plugin': 2.1.0(@sinclair/typebox@0.31.17)
+      '@inlang/project-settings': 2.2.0(@sinclair/typebox@0.31.17)
+      '@inlang/result': 1.1.0
+      '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.17)
+      '@lix-js/fs': 0.3.0
+      '@sinclair/typebox': 0.31.17
+      dedent: 1.5.1
+      deepmerge-ts: 5.1.0
+      solid-js: 1.6.12
+      throttle-debounce: 5.0.0
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
+  /@inlang/translatable@1.2.0(@sinclair/typebox@0.31.17):
+    resolution: {integrity: sha512-Od/nBm3qigfSpYJKu/Isg0rb34ohZApNk+fOtmZ0vBZXsTBzKaYFW0SeBVqwociRCr1tj40N659Ky+RoyLcv8A==}
+    peerDependencies:
+      '@sinclair/typebox': ^0.31.0
+    dependencies:
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.17)
+      '@sinclair/typebox': 0.31.17
+    dev: true
+
   /@jest/schemas@29.6.3:
     resolution: {integrity: sha512-mo5j5X+jIZmJQveBKeS/clAueipV7KgiX1vMgCxam1RNYiqE1w62n0/tJJnHtjW8ZHcQco5gY85jA3mi0L+nSA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -1293,6 +1417,12 @@ packages:
     resolution: {integrity: sha512-RLAbau/4uSzKgIKj96mI5WUtG1qtiR0Frn0Ei9zhPj8YOkHM+1Bb8SgdVvmR/aWJCFIzjo2KFnDiRZ75Xf5NdQ==}
     dependencies:
       '@lezer/common': 1.1.0
+    dev: true
+
+  /@lix-js/fs@0.3.0:
+    resolution: {integrity: sha512-OKXfToFZXSZ6eiGue/6RZC29UdOTAabObF1trAHX2QXg1WCp8iLfi8IbWCSclqWK108tn0hRShgjof0aHvtjqw==}
+    dependencies:
+      js-base64: 3.7.5
     dev: true
 
   /@macfja/serializer@1.1.2:
@@ -1672,6 +1802,10 @@ packages:
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+    dev: true
+
+  /@sinclair/typebox@0.31.17:
+    resolution: {integrity: sha512-GVYVHHOGINx+DT2DwjXoCQO0mRpztYKyb3d48tucuqhjhHpQYGp7Xx7dhhQGzILx/beuBrzfITMC7/5X7fw+UA==}
     dev: true
 
   /@sindresorhus/is@3.1.2:
@@ -3071,6 +3205,11 @@ packages:
       delayed-stream: 1.0.0
     dev: true
 
+  /commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
+    dev: true
+
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: false
@@ -3304,6 +3443,10 @@ packages:
       cssom: 0.3.8
     dev: true
 
+  /csstype@3.1.2:
+    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
+
   /cz-conventional-changelog@3.3.0:
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
@@ -3397,6 +3540,15 @@ packages:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
     dev: true
 
+  /dedent@1.5.1:
+    resolution: {integrity: sha512-+LxW+KLWxu3HW3M2w2ympwtqPrqYRzU8fqi6Fhd18fBALe15blJPI/I4+UHveMVG6lJqB4JNd4UG0S5cnVHwIg==}
+    peerDependencies:
+      babel-plugin-macros: ^3.1.0
+    peerDependenciesMeta:
+      babel-plugin-macros:
+        optional: true
+    dev: true
+
   /deep-eql@4.1.3:
     resolution: {integrity: sha512-WaEtAOpRA1MQ0eohqZjpGD8zdI0Ovsm8mmFhaDN8dvDZzyoUMcYDnf5Y6iu7HTXxf8JDS23qWa4a+hKCDyOPzw==}
     engines: {node: '>=6'}
@@ -3411,6 +3563,11 @@ packages:
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+    dev: true
+
+  /deepmerge-ts@5.1.0:
+    resolution: {integrity: sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==}
+    engines: {node: '>=16.0.0'}
     dev: true
 
   /deepmerge@4.3.1:
@@ -5049,6 +5206,10 @@ packages:
   /jiti@1.20.0:
     resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
     hasBin: true
+    dev: true
+
+  /js-base64@3.7.5:
+    resolution: {integrity: sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA==}
     dev: true
 
   /js-cookie@3.0.5:
@@ -7256,6 +7417,12 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /solid-js@1.6.12:
+    resolution: {integrity: sha512-JFqRobfG3q5r1l4RYVOAukk6+FWtHpXGIjgh/GEsHKweN/kK+iHOtzUALE6+P5t/jIcSNeGiVitX8gmJg+cYvQ==}
+    dependencies:
+      csstype: 3.1.2
+    dev: true
+
   /sorcery@0.11.0:
     resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
     hasBin: true
@@ -7807,6 +7974,11 @@ packages:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
     dependencies:
       any-promise: 1.3.0
+    dev: true
+
+  /throttle-debounce@5.0.0:
+    resolution: {integrity: sha512-2iQTSgkkc1Zyk0MeVrt/3BvuOXYPl/R8Z0U2xxo9rjwNciaHDG3R+Lm6dh4EeUci49DanvBnuqI6jshoQQRGEg==}
+    engines: {node: '>=12.22'}
     dev: true
 
   /through2@2.0.5:

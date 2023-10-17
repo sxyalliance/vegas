@@ -21,7 +21,8 @@
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
-		"graphql:codegen": "graphql codegen"
+		"graphql:codegen": "graphql codegen",
+		"i18n:compile": "paraglide-js compile --namespace vegas"
 	},
 	"devDependencies": {
 		"@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
@@ -32,6 +33,7 @@
 		"@directus/sdk": "^12.0.1",
 		"@histoire/plugin-svelte": "^0.17.0",
 		"@iconify/svelte": "^3.1.4",
+		"@inlang/paraglide-js": "1.0.0-prerelease.0",
 		"@macfja/svelte-persistent-store": "^2.4.0",
 		"@melt-ui/pp": "^0.1.2",
 		"@melt-ui/svelte": "^0.53.0",

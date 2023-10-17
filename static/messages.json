@@ -1,0 +1,47 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"data": [
+		{
+			"id": "hello",
+			"selectors": [],
+			"variants": [
+				{
+					"languageTag": "en",
+					"match": [],
+					"pattern": [{ "type": "Text", "value": "Welcome to SvelteKit" }]
+				},
+				{
+					"languageTag": "de",
+					"match": [],
+					"pattern": [{ "type": "Text", "value": "Willkommen bei SvelteKit" }]
+				}
+			]
+		},
+		{
+			"id": "docs",
+			"selectors": [],
+			"variants": [
+				{
+					"languageTag": "en",
+					"match": [],
+					"pattern": [
+						{
+							"type": "Text",
+							"value": "Visit <a href=\"https://kit.svelte.dev\">kit.svelte.dev</a> to read the documentation"
+						}
+					]
+				},
+				{
+					"languageTag": "de",
+					"match": [],
+					"pattern": [
+						{
+							"type": "Text",
+							"value": "Besuche <a href=\"https://kit.svelte.dev\">kit.svelte.dev</a> um die Dokumentation zu lesen"
+						}
+					]
+				}
+			]
+		}
+	]
+}
