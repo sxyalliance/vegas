@@ -10,7 +10,8 @@
 		"sourceMap": true,
 		"strict": true,
 		"types": ["./node_modules/network-information-types"],
-		"experimentalDecorators": true
+		"experimentalDecorators": true,
+		"moduleResolution": "Bundler"
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
