@@ -4,8 +4,8 @@
 		"tagline_link": "Read more",
 		"title": "SXYA Community Worldwide",
 		"text": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?",
-		"primary_action": "Get started",
-		"secondary_action": "Learn more"
+		"get_started": "Get started",
+		"learn_more": "Learn more"
 	},
 	"member": {
 		"title": "Our Members",
