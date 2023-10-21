@@ -6,6 +6,7 @@ import { imagetools } from '@zerodevx/svelte-img/vite';
 
 // get project name from package.json
 import { name } from './package.json';
+import { watch } from 'vite-plugin-watch';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
@@ -21,8 +22,25 @@ const [version, lastmod] = (
 	return JSON.stringify('unknown');
 });
 
-export default defineConfig({
-	plugins: [sveltekit(), imagetools()],
+export default defineConfig(({ command }) => ({
+	plugins: [
+		sveltekit(),
+		imagetools(),
+
+		watch({
+			pattern: 'i18n/*.json',
+			command: 'pnpm run i18n:compile'
+		}),
+
+		{
+			name: 'compile-i18n',
+			async buildStart() {
+				if (command == 'build') {
+					await pexec('pnpm run i18n:compile');
+				}
+			}
+		}
+	],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
@@ -31,4 +49,4 @@ export default defineConfig({
 		__LASTMOD__: lastmod,
 		__APPNAME__: JSON.stringify(name)
 	}
-});
+}));

@@ -3,57 +3,19 @@
   <component name="JsonSchemaMappingsProjectConfiguration">
     <state>
       <map>
-        <entry key="No JSON schema">
+        <entry key="Inlang Message Format">
           <value>
             <SchemaInfo>
-              <option name="ignoredFile" value="true" />
-              <option name="name" value="No JSON schema" />
-              <option name="relativePathToSchema" value="" />
-              <option name="applicationDefined" value="true" />
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="Inlang Message Format" />
+              <option name="relativePathToSchema" value="https://inlang.com/schema/inlang-message-format" />
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="file://$PROJECT_DIR$/src/lib/repositories/category/data.json" />
+                    <option name="path" value="static/messages.json" />
                   </Item>
                 </list>
               </option>
-              <option name="isIgnoredFile" value="true" />
-            </SchemaInfo>
-          </value>
-        </entry>
-        <entry key="No JSON schema1">
-          <value>
-            <SchemaInfo>
-              <option name="ignoredFile" value="true" />
-              <option name="name" value="No JSON schema" />
-              <option name="relativePathToSchema" value="" />
-              <option name="applicationDefined" value="true" />
-              <option name="patterns">
-                <list>
-                  <Item>
-                    <option name="path" value="file://$PROJECT_DIR$/src/lib/api/discord_members.json" />
-                  </Item>
-                </list>
-              </option>
-              <option name="isIgnoredFile" value="true" />
-            </SchemaInfo>
-          </value>
-        </entry>
-        <entry key="No JSON schema11">
-          <value>
-            <SchemaInfo>
-              <option name="ignoredFile" value="true" />
-              <option name="name" value="No JSON schema" />
-              <option name="relativePathToSchema" value="" />
-              <option name="applicationDefined" value="true" />
-              <option name="patterns">
-                <list>
-                  <Item>
-                    <option name="path" value="file://$PROJECT_DIR$/static/i18n/en-US/app.json" />
-                  </Item>
-                </list>
-              </option>
-              <option name="isIgnoredFile" value="true" />
             </SchemaInfo>
           </value>
         </entry>

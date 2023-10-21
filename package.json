@@ -22,7 +22,7 @@
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
 		"graphql:codegen": "graphql codegen",
-		"i18n:compile": "paraglide-js compile --namespace vegas"
+		"i18n:compile": "node i18n/merge.js && paraglide-js compile --namespace vegas"
 	},
 	"devDependencies": {
 		"@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
@@ -96,6 +96,7 @@
 		"unocss-preset-autoprefixer": "^0.0.6",
 		"unocss-preset-radix": "^2.5.5",
 		"vite": "^4.4.11",
+		"vite-plugin-watch": "^0.2.0",
 		"vitest": "^0.34.6",
 		"windy-radix-palette": "2.0.0-beta.0",
 		"wretch": "^2.7.0"
