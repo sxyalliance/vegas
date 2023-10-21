@@ -1,7 +1,9 @@
 <script lang="ts" context="module">
+	import type { MessageId } from '$lib/shared/i18n';
+
 	export interface Option {
 		value: unknown;
-		label: string;
+		label: MessageId;
 		icon?: string;
 	}
 </script>
@@ -10,8 +12,9 @@
 	import { createSelect, melt } from '@melt-ui/svelte';
 	import { fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import { _ } from 'svelte-i18n';
 	import { derived } from 'svelte/store';
+	import { createEventDispatcher } from 'svelte';
+	import { _ } from '$lib/shared/i18n';
 
 	type Options = Option[];
 
@@ -36,6 +39,8 @@
 	 * The value of the selected option.
 	 */
 	export let value: unknown;
+
+	const dispatch = createEventDispatcher();
 
 	const {
 		elements: { trigger, menu, option, group, groupLabel },
@@ -76,6 +81,7 @@
 	selectedOption.subscribe((selected) => {
 		if (selected && selected.value !== value) {
 			value = selected.value;
+			dispatch('change', value);
 		}
 	});
 </script>
@@ -90,7 +96,7 @@
 			{#if $selectedOption.icon}
 				<Icon icon={$selectedOption.icon} class="h-5 w-5 flex-shrink-0" />
 			{/if}
-			<span class="ml-3 block truncate capitalize">{$_($selectedOption.label)}</span>
+			<span class="ml-3 block truncate capitalize">{_($selectedOption.label, false)}</span>
 		</span>
 		<span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
 			<Icon icon="tabler:selector" class="h-5 w-5 text-neutral-9" />
@@ -127,7 +133,7 @@
 											? 'font-semibold'
 											: 'font-normal'}"
 									>
-										{$_(item.label)}
+										{_(item.label, false)}
 									</span>
 								</div>
 
@@ -159,7 +165,7 @@
 									? 'font-semibold'
 									: 'font-normal'}"
 							>
-								{$_(item.label)}
+								{_(item.label, false)}
 							</span>
 						</div>
 

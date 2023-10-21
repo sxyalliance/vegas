@@ -1,6 +1,6 @@
 <script>
+	import { _ } from '$lib/shared/i18n';
 	import Img from '@zerodevx/svelte-img';
-	import { _ } from 'svelte-i18n';
 	import { theme } from '$lib/shared/theme/store';
 
 	import logoLight from '$lib/assets/logo-light.png?w=128&as=run:0';
@@ -12,4 +12,4 @@
 	export { clazz as class };
 </script>
 
-<Img src={logo} class={clazz} alt={$_('brand.sr_logo')} />
+<Img src={logo} class={clazz} alt={_('common_brand_name')} />

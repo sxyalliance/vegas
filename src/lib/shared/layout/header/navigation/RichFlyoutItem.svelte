@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { RichFlyoutItem } from './types';
-	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
+	import { _ } from '$lib/shared/i18n';
 
 	export let item: RichFlyoutItem;
 </script>
@@ -12,9 +12,9 @@
 	</div>
 	<div>
 		<a href={item.href} class="font-semibold text-high-contrast">
-			{$_(item.name)}
+			{_(item.name)}
 			<span class="absolute inset-0" />
 		</a>
-		<p class="mt-1 text-low-contrast">{$_(item.description)}</p>
+		<p class="mt-1 text-low-contrast">{_(item.description)}</p>
 	</div>
 </div>

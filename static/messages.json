@@ -803,7 +803,7 @@
 			]
 		},
 		{
-			"id": "home_hero_primary_action",
+			"id": "home_hero_get_started",
 			"selectors": [],
 			"variants": [
 				{
@@ -819,7 +819,7 @@
 			]
 		},
 		{
-			"id": "home_hero_secondary_action",
+			"id": "home_hero_learn_more",
 			"selectors": [],
 			"variants": [
 				{

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
 	import type { FlyoutNavItem, FlyoutDefinition } from '../types';
 	import { createCollapsible, melt } from '@melt-ui/svelte';
@@ -22,7 +21,7 @@
 		use:melt={$trigger}
 		class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-high-contrast"
 	>
-		{$_(item.name)}
+		{item.name}
 		<Icon
 			icon="tabler:chevron-down"
 			aria-hidden="true"
@@ -36,7 +35,7 @@
 					href={sub_item.href}
 					class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-high-contrast"
 				>
-					{$_(sub_item.name)}
+					{sub_item.name}
 				</a>
 			{/each}
 		</div>

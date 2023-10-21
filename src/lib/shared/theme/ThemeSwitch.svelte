@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
 	import { browser } from '$app/environment';
-	import { _ } from 'svelte-i18n';
 	import Select from '$lib/shared/shared/components/select/Select.svelte';
+	import { _ } from '$lib/shared/i18n';
 
 	let clazz = '';
 	export { clazz as class };
@@ -16,7 +16,7 @@
 	const options = AvailablePreferences.map((preference: string) => {
 		return {
 			value: preference,
-			label: `theme_switch.${preference}`,
+			label: `theme_switch_${preference}`,
 			icon: themeIcons[preference]
 		};
 	});
@@ -42,4 +42,4 @@
 	});
 </script>
 
-<Select class={clazz} bind:value={$themePreference} label={$_('theme_switch.sr_label')} {options} />
+<Select class={clazz} bind:value={$themePreference} label={_('theme_switch_label')} {options} />

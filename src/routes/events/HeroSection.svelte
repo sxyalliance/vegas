@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { queryCategories } from './query';
@@ -29,10 +29,10 @@
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
 				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
-					{$_('event.list.hero.title')}
+					{_('event_list_hero_title')}
 				</h1>
 				<p class="mt-4 text-xl text-low-contrast">
-					{$_('event.list.hero.text')}
+					{_('event_list_hero_text')}
 				</p>
 			</div>
 			<div class="hidden lg:block">
@@ -61,10 +61,10 @@
 																/>
 
 																<h2 class="text-lg font-medium leading-6 text-high-contrast">
-																	{$_(`event.category.${category.key}.name`)}
+																	{_(`event_category_${category.key}_name`)}
 																</h2>
 																<p class="mt-2 text-base text-low-contrast">
-																	{$_(`event.category.${category.key}.description`)}
+																	{_(`event_category_${category.key}_description`)}
 																</p>
 															</div>
 														</Card>

@@ -1,15 +1,17 @@
+import type { MessageId } from '$lib/shared/i18n';
+
 export type NavigationDefinition = NavigationItem[];
 
 export type NavigationItem = PureNavItem | FlyoutNavItem;
 
 export interface PureNavItem {
-	name: string;
+	name: MessageId;
 	type: 'pure';
 	href: string;
 }
 
 export interface FlyoutNavItem {
-	name: string;
+	name: MessageId;
 	type: 'flyout';
 	flyout: FlyoutDefinition | RichFlyoutDefinition;
 }
@@ -25,15 +27,15 @@ export interface RichFlyoutDefinition {
 }
 
 export interface FlyoutItem {
-	name: string;
+	name: MessageId;
 	href: string;
-	description?: string;
+	description?: MessageId;
 }
 
 export interface RichFlyoutItem {
-	name: string;
+	name: MessageId;
 	href: string;
 	icon: string;
 	highlight: string;
-	description: string;
+	description: MessageId;
 }

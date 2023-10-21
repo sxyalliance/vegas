@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { onMount } from 'svelte';
 
@@ -28,17 +28,17 @@
 	});
 </script>
 
-<footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={$_('footer.sr_title')}>
+<footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={_('footer_title')}>
 	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-4">
 				<BrandLogo class="h-24 w-auto" />
 				<p class="text-sm leading-6 text-low-contrast">
-					{$_('footer.slogan')}
+					{_('footer_slogan')}
 				</p>
 				<div class="flex space-x-6">
 					<a href="#" class="text-neutral-9 hover:text-neutral-10">
-						<span class="sr-only">{$_('footer.social.facebook')}</span>
+						<span class="sr-only">{_('footer_social_facebook')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fill-rule="evenodd"
@@ -48,7 +48,7 @@
 						</svg>
 					</a>
 					<a href="#" class="text-neutral-9 hover:text-neutral-10">
-						<span class="sr-only">{$_('footer.social.sr_instagram')}</span>
+						<span class="sr-only">{_('footer_social_instagram')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fill-rule="evenodd"
@@ -58,7 +58,7 @@
 						</svg>
 					</a>
 					<a href="#" class="text-neutral-9 hover:text-neutral-10">
-						<span class="sr-only">{$_('footer.social.sr_twitter')}</span>
+						<span class="sr-only">{_('footer_social_twitter')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
@@ -66,7 +66,7 @@
 						</svg>
 					</a>
 					<a href="#" class="text-neutral-9 hover:text-neutral-10">
-						<span class="sr-only">{$_('footer.social.sr_github')}</span>
+						<span class="sr-only">{_('footer_social_github')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fill-rule="evenodd"
@@ -76,7 +76,7 @@
 						</svg>
 					</a>
 					<a href="#" class="text-neutral-9 hover:text-neutral-10">
-						<span class="sr-only">{$_('footer.social.sr_youtube')}</span>
+						<span class="sr-only">{_('footer_social_youtube')}</span>
 						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								fill-rule="evenodd"
@@ -98,31 +98,31 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
-							{$_('footer.policies.heading')}
+							{_('footer_policies_heading')}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<a href="/policies/privacy" class="hover:text-high-contrast">
-									{$_('footer.policies.privacy_policy')}
+									{_('footer_policies_privacy_policy')}
 								</a>
 							</li>
 							<li>
-								<a href="#" class="hover:text-high-contrast"
-									>{$_('footer.policies.cookie_policy')}</a
-								>
+								<a href="#" class="hover:text-high-contrast">
+									{_('footer_policies_cookie_policy')}
+								</a>
 							</li>
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
-							{$_('footer.statistics.heading')}
+							{_('footer_statistics_heading')}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<div
 									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
-									{$_('footer.statistics.online_members')}
+									{_('footer_statistics_online_members')}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.online_members}
 									</span>
@@ -137,7 +137,7 @@
 								</div>
 							</li>
 							<li>
-								{$_('footer.statistics.total_members')}
+								{_('footer_statistics_total_members')}
 								<span class="float-right inline text-low-contrast">
 									{statistics.total_members}
 								</span>
@@ -146,7 +146,7 @@
 								<div
 									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
-									{$_('footer.statistics.ongoing_events')}
+									{_('footer_statistics_ongoing_events')}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.ongoing_events}
 									</span>
@@ -161,13 +161,13 @@
 								</div>
 							</li>
 							<li>
-								{$_('footer.statistics.total_events')}
+								{_('footer_statistics_total_events')}
 								<span class="float-right inline text-low-contrast">
 									{statistics.total_events}
 								</span>
 							</li>
 							<li>
-								{$_('footer.statistics.founded_days')}
+								{_('footer_statistics_founded_days')}
 								<span class="float-right inline text-low-contrast">
 									{statistics.founded_days}
 								</span>
@@ -179,7 +179,7 @@
 		</div>
 		<div class="mt-16 border-t border-neutral-6 pt-8 sm:mt-20 lg:mt-24">
 			<p class="text-xs leading-5 text-low-contrast">
-				{$_('footer.legal')}
+				{_('footer_legal')}
 			</p>
 		</div>
 	</div>

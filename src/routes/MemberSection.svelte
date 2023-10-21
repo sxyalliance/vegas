@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { all } from '$lib/shared/discord';
 
@@ -11,10 +11,10 @@
 		<div class="space-y-8 sm:space-y-12">
 			<div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-3xl">
 				<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
-					{$_('home.member.title')}
+					{_('home_member_title')}
 				</h2>
 				<p class="text-xl text-low-contrast">
-					{$_('home.member.text')}
+					{_('home_member_text')}
 				</p>
 			</div>
 			<ul
@@ -34,7 +34,7 @@
 			</ul>
 
 			<div class="text-xs text-low-contrast">
-				<p>{$_('home.member.note')}</p>
+				<p>{_('home_member_note')}</p>
 			</div>
 		</div>
 	</div>

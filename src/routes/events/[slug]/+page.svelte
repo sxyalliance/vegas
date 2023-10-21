@@ -1,6 +1,6 @@
 <script lang="ts">
 	import EventProperties from './EventProperties.svelte';
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import query from './query';
@@ -26,7 +26,7 @@
 		{#each $events.data as event}
 			<article class="mx-auto max-w-3xl text-base leading-7">
 				<p class="text-base font-semibold leading-7 text-accent-11">
-					{$_(`event.category.${getCategory(event).key}.name`)}
+					{_(`event_category_${getCategory(event).key}_name`)}
 					#{event.id}
 				</p>
 				<h1 class="mt-2 text-3xl font-bold tracking-tight text-high-contrast sm:text-4xl">
