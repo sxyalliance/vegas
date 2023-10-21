@@ -1,0 +1,25 @@
+{
+	"title": "Footer",
+	"slogan": "The truth of the sea, and let not found to lie down in front of my eyes, all things for me to explore.",
+	"legal": "Copyright © 2023 SXYA Community. All rights reserved.",
+	"social": {
+		"facebook": "Facebook",
+		"instagram": "Instagram",
+		"twitter": "Twitter",
+		"github": "GitHub",
+		"youtube": "YouTube"
+	},
+	"policies": {
+		"heading": "Policies",
+		"privacy_policy": "Privacy Policy",
+		"cookie_policy": "Cookie Policy"
+	},
+	"statistics": {
+		"heading": "Statistics",
+		"online_members": "Online Members",
+		"total_members": "Total Members",
+		"ongoing_events": "Ongoing Events",
+		"total_events": "Total Events",
+		"founded_days": "Founded Days"
+	}
+}

@@ -1,0 +1,171 @@
+{
+	"brand": {
+		"name": "SXYA Community",
+		"sr_logo": "Logo of SXYA Community"
+	},
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"members": "Members",
+		"chronicle": "Chronicle",
+		"resources": "Resources",
+		"dictionary": "Dictionary",
+		"events": "Events",
+		"other": "Other",
+		"universal_rules": "SXYA Community Universal Rules",
+		"universal_rules_desc": "Universal rules applicable to all speech and behavior within the server",
+		"meeting_planning_white_paper": "Group Meeting Planning White Paper",
+		"meeting_planning_white_paper_desc": "Regulations and procedures for planning and holding activities and gatherings",
+		"late_handling_reference": "Late/Absence/Obstruction Handling Reference",
+		"late_handling_reference_desc": "Provides a reference for handling individuals who arrive late, are absent, or obstruct activities",
+		"talk_shit_definition_white_paper": "Talk Shit Definition White Paper",
+		"talk_shit_definition_white_paper_desc": "Provides a definition of the \"Talk Shit\" action",
+		"open": "Open main menu",
+		"close": "Close main menu"
+	},
+	"footer": {
+		"sr_title": "Footer",
+		"slogan": "The truth of the sea, and let not found to lie down in front of my eyes, all things for me to explore.",
+		"legal": "Copyright © 2023 SXYA Community. All rights reserved.",
+		"social": {
+			"sr_facebook": "Facebook",
+			"sr_instagram": "Instagram",
+			"sr_twitter": "Twitter",
+			"sr_github": "GitHub",
+			"sr_youtube": "YouTube"
+		},
+		"policies": {
+			"heading": "Policies",
+			"privacy_policy": "Privacy Policy",
+			"cookie_policy": "Cookie Policy"
+		},
+		"statistics": {
+			"heading": "Statistics",
+			"online_members": "Online Members",
+			"total_members": "Total Members",
+			"ongoing_events": "Ongoing Events",
+			"total_events": "Total Events",
+			"founded_days": "Founded Days"
+		}
+	},
+	"theme_switch": {
+		"sr_label": "Change Theme",
+		"system": "System",
+		"light": "Light",
+		"dark": "Dark"
+	},
+	"locale_switch": {
+		"sr_label": "Change Language"
+	},
+	"home": {
+		"hero": {
+			"tagline": "Some important promotion or news here.",
+			"tagline_link": "Read more",
+			"title": "SXYA Community Worldwide",
+			"text": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?",
+			"primary_action": "Get started",
+			"secondary_action": "Learn more"
+		},
+		"member": {
+			"title": "Our Members",
+			"text": "As a close-knit team of friends with diverse talents and a shared passion for event planning, we collaborate to design and organize private parties that are truly one-of-a-kind and unforgettable.",
+			"note": "The list will be updated periodically. Sorting is based on name, role and role count."
+		},
+		"procedure": {
+			"subtitle": "How We Works",
+			"title": "Event Planning Procedure",
+			"text": "We have built various standardized processes to build events that are more reliable and suited for the majority of people in order to make events function more smoothly and efficiently.",
+			"steps": {
+				"1": {
+					"name": "Preliminary Planning",
+					"description": "Develop initial event details, including location, number of participants, date, and time."
+				},
+				"2": {
+					"name": "Feedback-based Adjustments",
+					"description": "Ask all members if they choose to participate and make adjustments to satisfy the majority."
+				},
+				"3": {
+					"name": "Follow-up and Confirmation",
+					"description": "Follow-up with non-responsive members to ask if they choose to participate and adjust to satisfy the majority"
+				},
+				"4": {
+					"name": "Event Execution",
+					"description": "Carry out the details that have been agreed upon, such as reservations and confirmation."
+				},
+				"5": {
+					"name": "Post-execution Inquiry",
+					"description": "Follow-up with non-responsive members to ask if they choose to participate (without adjusting event details)."
+				},
+				"6": {
+					"name": "Detail Notification",
+					"description": "Notify all members of the event details and any changes that have been made."
+				}
+			}
+		},
+		"dictionary": {
+			"note": "The following phrases are randomly selected from SXYA dictionary.",
+			"view_more": "View More",
+			"pick_another": "Pick Another"
+		},
+		"team": {
+			"title": "Team section title",
+			"text": "Team section text."
+		}
+	},
+	"event": {
+		"category": {
+			"dining": {
+				"name": "Dining",
+				"description": "Social meal event, casual or formal."
+			},
+			"entertainment": {
+				"name": "Music Party",
+				"description": "Performance featuring talented singers."
+			},
+			"academic": {
+				"name": "Academic Gathering",
+				"description": "Gathering for intellectual activities."
+			},
+			"sport": {
+				"name": "Sport",
+				"description": "Physical activity and competition."
+			},
+			"giveaway": {
+				"name": "Giveaway",
+				"description": "Exchanging presents to show appreciation or celebrate."
+			}
+		},
+		"list": {
+			"hero": {
+				"title": "Check out the latest events and have fun together",
+				"text": "We regularly hold various types of events, such as barbecues, sports, etc. To ensure that all members can enjoy comfortable and happy times."
+			}
+		},
+		"status": {
+			"upcoming": {
+				"label": "Upcoming",
+				"prefix": "Upcoming on"
+			},
+			"finished": {
+				"label": "Finished",
+				"prefix": "Finished on"
+			},
+			"ongoing": {
+				"label": "Ongoing",
+				"prefix": "Ongoing since"
+			}
+		},
+		"property": {
+			"related_personnel": "Related Personnel",
+			"status": "Status",
+			"meeting_time": "Meeting Time",
+			"meeting_point": "Meeting Point",
+			"event_point": "Event Point",
+			"proposer": "Proposer",
+			"outbound_transport": "Outbound Transport",
+			"outbound_time": "Outbound Time",
+			"inbound_transport": "Inbound Transport",
+			"inbound_time": "Inbound Time"
+		}
+	}
+}
