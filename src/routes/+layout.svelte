@@ -9,12 +9,12 @@
 
 	import '$lib/assets/app.css';
 	import '$lib/assets/rainbow.css';
-	import { isLoading } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
 	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
+	import { localeLoaded } from "$lib/shared/i18n/loaded";
 
 	export let data: PageData;
 
@@ -31,7 +31,7 @@
 		pageLoaded = true;
 	});
 
-	$: loading = $navigating || $isLoading || !pageLoaded;
+	$: loading = $navigating || !pageLoaded || !$localeLoaded;
 </script>
 
 <svelte:head>
