@@ -14,7 +14,6 @@
 	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
-	import { localeLoaded } from "$lib/shared/i18n/loaded";
 
 	export let data: PageData;
 
@@ -31,7 +30,7 @@
 		pageLoaded = true;
 	});
 
-	$: loading = $navigating || !pageLoaded || !$localeLoaded;
+	$: loading = $navigating || !pageLoaded;
 </script>
 
 <svelte:head>
