@@ -16,65 +16,78 @@ const messages = {
 	data: []
 };
 
-// Read all files in the input directory
-for (const file of fs.readdirSync(inputDirectory)) {
-	const filePath = path.join(inputDirectory, file);
+// Read all folders in the input directory
+for (const folder of fs.readdirSync(inputDirectory)) {
+	// Skip files
+	if (!fs.statSync(path.join(inputDirectory, folder)).isDirectory()) {
+		continue;
+	}
 
-	if (fs.statSync(filePath).isFile() && file.endsWith('.json') && file !== outputFile) {
-		const languageTag = file.replace('.json', '');
+	// Extract the language tag from the folder name
+	const languageTag = folder;
 
-		// Read the JSON file
-		const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+	const folderPath = path.join(inputDirectory, folder);
 
-		// Iterate through each message in the file
-		const flattenMessages = (obj, parentKey = '') => {
-			let result = {};
-			for (let key in obj) {
-				const currentKey = parentKey ? `${parentKey}_${key}` : key;
-				if (typeof obj[key] === 'object') {
-					result = { ...result, ...flattenMessages(obj[key], currentKey) };
-				} else {
-					result[currentKey] = obj[key];
+	// Read all files in the folder
+	for (const file of fs.readdirSync(folderPath)) {
+		const filePath = path.join(folderPath, file);
+
+		if (fs.statSync(filePath).isFile() && file.endsWith('.json') && file !== outputFile) {
+			const namespace = file.replace('.json', '');
+
+			// Read the JSON file
+			const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+			// Iterate through each message in the file
+			const flattenMessages = (obj, parentKey = '') => {
+				let result = {};
+				for (let key in obj) {
+					const currentKey = parentKey ? `${parentKey}_${key}` : key;
+					if (typeof obj[key] === 'object') {
+						result = { ...result, ...flattenMessages(obj[key], currentKey) };
+					} else {
+						result[currentKey] = obj[key];
+					}
 				}
-			}
-			return result;
-		};
+				return result;
+			};
 
-		const flattenedContent = flattenMessages(content);
+			const flattenedContent = flattenMessages(content, namespace);
 
-		for (const id in flattenedContent) {
-			const existingMessage = messages.data.find((m) => m.id === id);
+			for (const id in flattenedContent) {
+				const existingMessage = messages.data.find((m) => m.id === id);
 
-			if (existingMessage) {
-				// Message with the same ID already exists, add a new variant
-				existingMessage.variants.push({
-					match: [],
-					languageTag,
-					pattern: [
-						{
-							type: 'Text',
-							value: flattenedContent[id]
-						}
-					]
-				});
-			} else {
-				// Message does not exist, create a new message
-				messages.data.push({
-					id,
-					selectors: [],
-					variants: [
-						{
-							match: [],
-							languageTag,
-							pattern: [
-								{
-									type: 'Text',
-									value: flattenedContent[id]
-								}
-							]
-						}
-					]
-				});
+				if (existingMessage) {
+					// Message with the same ID already exists, add a new variant
+					existingMessage.variants.push({
+						match: [],
+						languageTag,
+						pattern: [
+							{
+								type: 'Text',
+								value: flattenedContent[id]
+							}
+						]
+					});
+				} else {
+					// Message does not exist, create a new message
+					messages.data.push({
+						id,
+						selectors: [],
+						variants: [
+							{
+								match: [],
+								languageTag,
+								pattern: [
+									{
+										type: 'Text',
+										value: flattenedContent[id]
+									}
+								]
+							}
+						]
+					});
+				}
 			}
 		}
 	}
