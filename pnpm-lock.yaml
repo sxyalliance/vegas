@@ -235,6 +235,9 @@ devDependencies:
   vite:
     specifier: ^4.4.11
     version: 4.4.11(@types/node@20.5.1)(lightningcss@1.22.0)
+  vite-plugin-watch:
+    specifier: ^0.2.0
+    version: 0.2.0
   vitest:
     specifier: ^0.34.6
     version: 0.34.6(lightningcss@1.22.0)
@@ -8473,6 +8476,13 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-watch@0.2.0:
+    resolution: {integrity: sha512-MBlqIuL8OW6YBgsDuIq39/2HPOjz9E1na595k3EoFQVFJiL3IfnKGKrqNe6OYj+LIA67opun13YvgterMWSqgA==}
+    engines: {node: '>=10.6.0'}
+    dependencies:
+      minimatch: 5.1.6
     dev: true
 
   /vite@4.4.11(@types/node@20.5.1)(lightningcss@1.22.0):
