@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { _, MessageId } from '$lib/shared/i18n';
+	import { _, type MessageId } from '$lib/shared/i18n';
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
 	import type query from './query';
