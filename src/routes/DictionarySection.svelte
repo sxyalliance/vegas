@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import Button from '$lib/shared/shared/components/button/Button.svelte';
 	import Card from '$lib/shared/shared/components/card/Card.svelte';
 	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
@@ -20,7 +20,7 @@
 <section class="bg-neutral-1 py-24">
 	<div class="mx-auto max-w-4xl">
 		<div class="mb-4 text-center text-xs text-low-contrast">
-			<p>{$_('home.dictionary.note')}</p>
+			<p>{_('home_dictionary_note')}</p>
 		</div>
 
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -43,10 +43,10 @@
 
 		<div class="mx-auto px-4 py-6 text-center sm:px-6 lg:px-8 lg:py-8">
 			<Button size="large" variant="soft" href="/dictionary">
-				{$_('home.dictionary.view_more')}
+				{_('home_dictionary_view_more')}
 			</Button>
 			<Button size="large" variant="transparent" on:click={pickAnother}>
-				{$_('home.dictionary.pick_another')}
+				{_('home_dictionary_pick_another')}
 			</Button>
 		</div>
 	</div>

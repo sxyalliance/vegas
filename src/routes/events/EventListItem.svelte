@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
 	import { paramCase } from 'change-case';
@@ -22,16 +22,16 @@
 			<div class="group relative mb-6 max-w-xl text-high-contrast">
 				<span class="text-xl">
 					{#if meetingDay.isSame(today, 'day')}
-						{$_('event.status.ongoing.label')}
+						{_('event_status_ongoing_label')}
 					{:else if meetingDay.isBefore(today, 'day')}
-						{$_('event.status.finished.label')}
+						{_('event_status_finished_label')}
 					{:else}
-						{$_('event.status.upcoming.label')}
+						{_('event_status_upcoming_label')}
 					{/if}
 					Event
 				</span>
 				<h2 class="mt-1 text-2xl font-semibold leading-6">
-					{$_(`event.status.${event.status}.label`)}
+					{_(`event_status_${event.status}_label`)}
 					{meetingDay.fromNow()}
 				</h2>
 			</div>

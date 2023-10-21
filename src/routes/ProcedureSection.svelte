@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { _ } from '$lib/shared/i18n';
 </script>
 
 <section class="bg-neutral-2">
@@ -8,13 +8,13 @@
 	>
 		<div>
 			<h2 class="text-base font-semibold uppercase tracking-wide text-accent-11">
-				{$_('home.procedure.subtitle')}
+				{_('home_procedure_subtitle')}
 			</h2>
 			<p class="mt-2 text-3xl font-extrabold text-high-contrast">
-				{$_('home.procedure.title')}
+				{_('home_procedure_title')}
 			</p>
 			<p class="mt-4 text-lg text-low-contrast">
-				{$_('home.procedure.text')}
+				{_('home_procedure_text')}
 			</p>
 		</div>
 		<div class="mt-12 lg:col-span-2 lg:mt-0">
@@ -26,11 +26,11 @@
 						<dt>
 							<span class="absolute text-2xl text-accent-11">{i + 1}</span>
 							<p class="ml-9 text-lg font-medium leading-6 text-high-contrast">
-								{$_(`home.procedure.steps.${i + 1}.name`)}
+								{_(`home_procedure_steps_${i + 1}_name`)}
 							</p>
 						</dt>
 						<dd class="ml-9 mt-2 text-base text-low-contrast">
-							{$_(`home.procedure.steps.${i + 1}.description`)}
+							{_(`home_procedure_steps_${i + 1}_description`)}
 						</dd>
 					</div>
 				{/each}

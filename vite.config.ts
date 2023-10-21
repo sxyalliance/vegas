@@ -41,6 +41,18 @@ export default defineConfig(({ command }) => ({
 			}
 		}
 	],
+	optimizeDeps: {
+		exclude: ['@inlang/paraglide-js']
+	},
+	server: {
+		proxy: {
+			'/apid': {
+				target: 'https://apid.sxya.org',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/apid/, '')
+			}
+		}
+	},
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},

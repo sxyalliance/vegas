@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
 	import Icon from '@iconify/svelte';
 	import type { FlyoutNavItem, FlyoutDefinition } from './types';
 	import { fade } from 'svelte/transition';
 	import { melt } from '@melt-ui/svelte';
 	import FlyoutItem from './FlyoutItem.svelte';
+	import { _ } from '$lib/shared/i18n';
 
 	export let item: FlyoutNavItem;
 
@@ -30,7 +30,7 @@
 		use:melt={$trigger}
 		class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-high-contrast"
 	>
-		{$_(item.name)}
+		{_(item.name)}
 		<Icon icon="tabler:chevron-down" class="text-neutral-9" aria-hidden="true" />
 	</button>
 
