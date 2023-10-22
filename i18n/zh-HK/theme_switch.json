@@ -1,6 +1,6 @@
 {
-	"label": "Change Theme",
-	"system": "System",
-	"light": "Light",
-	"dark": "Dark"
+	"label": "改變主題",
+	"system": "系統",
+	"light": "明亮模式",
+	"dark": "暗黑模式"
 }
