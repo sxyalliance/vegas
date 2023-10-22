@@ -6,7 +6,7 @@
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"dev": "vite dev",
-		"build": "pnpm i18n:compile && vite build",
+		"build": "vite build",
 		"preview": "vite preview",
 		"test": "pnpm test:integration && pnpm test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
