@@ -22,7 +22,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "SXYA Community"
+              "value": "SXYA 互助聚集地"
             }
           ]
         }
@@ -776,7 +776,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Footer"
+              "value": "頁尾"
             }
           ]
         }
@@ -828,7 +828,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Copyright © 2023 SXYA Community. All rights reserved."
+              "value": "Copyright © 2023 SXYA Community. 保留一切權利。"
             }
           ]
         }
@@ -1062,7 +1062,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Statistics"
+              "value": "統計"
             }
           ]
         }
@@ -1088,7 +1088,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Online Members"
+              "value": "在線會員"
             }
           ]
         }
@@ -1114,7 +1114,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Total Members"
+              "value": "會員總數"
             }
           ]
         }
@@ -1140,7 +1140,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Ongoing Events"
+              "value": "正在進行的活動"
             }
           ]
         }
@@ -1166,7 +1166,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Total Events"
+              "value": "活動總數"
             }
           ]
         }
@@ -1192,7 +1192,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Founded Days"
+              "value": "成立天數"
             }
           ]
         }
@@ -1218,7 +1218,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Some important promotion or news here."
+              "value": "這裡有一些重要的推廣或消息。"
             }
           ]
         }
@@ -1244,7 +1244,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Read more"
+              "value": "閱讀更多"
             }
           ]
         }
@@ -1270,7 +1270,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "SXYA Community Worldwide"
+              "value": "SXYA 互助聚集地"
             }
           ]
         }
@@ -1296,7 +1296,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?"
+              "value": "如果你想找些話題來聊天，我們可以談談嗜好、旅遊、時事、個人目標、流行文化、美食或職業。有沒有什麼特別的你感興趣的呢？告訴我吧！"
             }
           ]
         }
@@ -1322,7 +1322,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Get started"
+              "value": "開始使用"
             }
           ]
         }
@@ -1348,7 +1348,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Learn more"
+              "value": "了解更多"
             }
           ]
         }
@@ -1374,7 +1374,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Our Members"
+              "value": "我們的成員"
             }
           ]
         }
@@ -1400,7 +1400,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "As a close-knit team of friends with diverse talents and a shared passion for event planning, we collaborate to design and organize private parties that are truly one-of-a-kind and unforgettable."
+              "value": "作為一個密切合作、擁有各種才華和共同熱愛活動策劃的團隊，我們合作設計和組織真正獨一無二、令人難忘的私人派對。"
             }
           ]
         }
@@ -1426,7 +1426,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "The list will be updated periodically. Sorting is based on name, role and role count."
+              "value": "名單將定期更新。排序基於姓名、會員級別和級別數量。"
             }
           ]
         }
@@ -1452,7 +1452,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "How We Works"
+              "value": "我們的工作方式"
             }
           ]
         }
@@ -1478,7 +1478,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Event Planning Procedure"
+              "value": "活動策劃流程"
             }
           ]
         }
@@ -1504,7 +1504,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "We have built various standardized processes to build events that are more reliable and suited for the majority of people in order to make events function more smoothly and efficiently."
+              "value": "我們建立了各種標準化流程，以建立更可靠、更適合大多數人的活動，使活動運作更順暢、更高效。"
             }
           ]
         }
@@ -1530,7 +1530,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Preliminary Planning"
+              "value": "初步計劃"
             }
           ]
         }
@@ -1556,7 +1556,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Develop initial event details, including location, number of participants, date, and time."
+              "value": "制定初始活動細節，包括地點、參與人數、日期和時間。"
             }
           ]
         }
@@ -1582,7 +1582,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Feedback-based Adjustments"
+              "value": "基於反饋的調整"
             }
           ]
         }
@@ -1608,7 +1608,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Ask all members if they choose to participate and make adjustments to satisfy the majority."
+              "value": "詢問所有成員是否選擇參與並進行調整以滿足大多數人的需求。"
             }
           ]
         }
@@ -1634,7 +1634,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Follow-up and Confirmation"
+              "value": "跟進和確認"
             }
           ]
         }
@@ -1660,7 +1660,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Follow-up with non-responsive members to ask if they choose to participate and adjust to satisfy the majority"
+              "value": "跟進未回應的成員，詢問是否選擇參與並進行調整以滿足大多數人的需求。"
             }
           ]
         }
@@ -1686,7 +1686,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Event Execution"
+              "value": "活動執行"
             }
           ]
         }
@@ -1712,7 +1712,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Carry out the details that have been agreed upon, such as reservations and confirmation."
+              "value": "執行已經達成共識的細節，例如預訂和確認。"
             }
           ]
         }
@@ -1738,7 +1738,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Post-execution Inquiry"
+              "value": "執行後詢問"
             }
           ]
         }
@@ -1764,7 +1764,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Follow-up with non-responsive members to ask if they choose to participate (without adjusting event details)."
+              "value": "跟進未回應的成員，詢問是否選擇參與（不調整活動細節）。"
             }
           ]
         }
@@ -1790,7 +1790,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Detail Notification"
+              "value": "詳細通知"
             }
           ]
         }
@@ -1816,7 +1816,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Notify all members of the event details and any changes that have been made."
+              "value": "通知所有成員有關活動細節和任何已經進行的更改。"
             }
           ]
         }
@@ -1842,7 +1842,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "The following phrases are randomly selected from SXYA dictionary."
+              "value": "以下詞彙是從 SXYA 詞典中隨機選取的。"
             }
           ]
         }
@@ -1868,7 +1868,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "View More"
+              "value": "查看更多"
             }
           ]
         }
@@ -1920,7 +1920,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Team section title"
+              "value": "團隊部分標題"
             }
           ]
         }
@@ -1946,7 +1946,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Team section text."
+              "value": "團隊部分文本。"
             }
           ]
         }
@@ -1998,7 +1998,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Home"
+              "value": "首頁"
             }
           ]
         }
@@ -2024,7 +2024,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "About"
+              "value": "關於我們"
             }
           ]
         }
@@ -2050,7 +2050,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Members"
+              "value": "成員"
             }
           ]
         }
@@ -2076,7 +2076,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Chronicle"
+              "value": "編年史"
             }
           ]
         }
@@ -2102,7 +2102,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Resources"
+              "value": "資源"
             }
           ]
         }
@@ -2128,7 +2128,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Dictionary"
+              "value": "詞典"
             }
           ]
         }
@@ -2154,7 +2154,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Events"
+              "value": "活動"
             }
           ]
         }
@@ -2180,7 +2180,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Other"
+              "value": "其他"
             }
           ]
         }
@@ -2206,7 +2206,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "SXYA Community Universal Rules"
+              "value": "SXYA 互助聚集地普適規則"
             }
           ]
         }
@@ -2232,7 +2232,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Universal rules applicable to all speech and behavior within the server"
+              "value": "適用於伺服器中所有言論和行為的普適規則"
             }
           ]
         }
@@ -2258,7 +2258,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Group Meeting Planning White Paper"
+              "value": "團體聚會策劃白皮書"
             }
           ]
         }
@@ -2284,7 +2284,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Regulations and procedures for planning and holding activities and gatherings"
+              "value": "策劃和舉行活動和聚會的規完和程序"
             }
           ]
         }
@@ -2310,7 +2310,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Late/Absence/Obstruction Handling Reference"
+              "value": "遲到/缺席/阻礙處理參考"
             }
           ]
         }
@@ -2336,7 +2336,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Provides a reference for handling individuals who arrive late, are absent, or obstruct activities"
+              "value": "提供處理遲到、缺席或阻礙活動的參考資料"
             }
           ]
         }
@@ -2362,7 +2362,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Talk Shit Definition White Paper"
+              "value": "Talk shit 定義白皮書"
             }
           ]
         }
@@ -2388,7 +2388,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Provides a definition of the \"Talk Shit\" action"
+              "value": "提供 \"Talk Shit\" 行為的定義"
             }
           ]
         }
@@ -2414,7 +2414,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Open main menu"
+              "value": "開啟主選單"
             }
           ]
         }
@@ -2440,7 +2440,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Close main menu"
+              "value": "關閉主選單"
             }
           ]
         }
@@ -2466,7 +2466,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Change Theme"
+              "value": "改變主題"
             }
           ]
         }
@@ -2492,7 +2492,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "System"
+              "value": "系統"
             }
           ]
         }
@@ -2518,7 +2518,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Light"
+              "value": "明亮模式"
             }
           ]
         }
@@ -2544,7 +2544,7 @@
           "pattern": [
             {
               "type": "Text",
-              "value": "Dark"
+              "value": "暗黑模式"
             }
           ]
         }

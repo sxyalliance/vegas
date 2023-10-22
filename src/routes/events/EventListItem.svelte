@@ -61,7 +61,7 @@
 				<!-- Entity Name & Proposer -->
 				<div class="-ml-8">
 					<span class="font-semibold text-high-contrast">
-						{$_('event.property.proposer')}
+						{_('event_property_proposer')}
 					</span>
 					<p class="w-[12ch] truncate text-sm text-low-contrast">{proposer.first_name}</p>
 				</div>
