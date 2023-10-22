@@ -6,11 +6,11 @@ import '$lib/shared/logging/init';
 import '$lib/shared/shared/dayjs';
 import { QueryClient } from '@tanstack/svelte-query';
 import { browser } from '$app/environment';
+import { detectAndApplyLocale } from '$lib/shared/i18n';
 
 export const load: LayoutLoad = async () => {
 	// locale detection
-	// detectAndApplyLocale();
-	// await waitLocale();
+	detectAndApplyLocale();
 
 	const queryClient = new QueryClient({
 		defaultOptions: {

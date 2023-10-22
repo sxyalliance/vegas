@@ -1,11 +1,14 @@
 import { persistCookie } from '@macfja/svelte-persistent-store';
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 import {
 	setLanguageTag,
 	type AvailableLanguageTag,
-	sourceLanguageTag
+	sourceLanguageTag,
+	availableLanguageTags
 } from '@inlang/paraglide-js/vegas';
 import * as m from '@inlang/paraglide-js/vegas/messages';
+import { browser } from '$app/environment';
+import { preferredLanguages } from 'svelte-legos';
 
 function createLocalePreference() {
 	const { subscribe, set } = persistCookie(
@@ -44,4 +47,27 @@ export function _(id: MessageId, strict: boolean = true): string {
 	return m[id]();
 }
 
-export const mgs = m;
+export const resolveFirstAvailableLocale = (locales: readonly string[]): AvailableLanguageTag => {
+	const persisted = get(localePreference);
+	if (persisted && availableLanguageTags.includes(persisted)) {
+		return persisted;
+	}
+
+	for (const locale of locales) {
+		// remove part of priority string after ';'
+		const localeWithoutPriority = locale.split(';')[0] as AvailableLanguageTag;
+		if (availableLanguageTags.includes(localeWithoutPriority)) {
+			return localeWithoutPriority;
+		}
+	}
+
+	return sourceLanguageTag;
+};
+
+export const detectAndApplyLocale = () => {
+	if (!browser) {
+		return;
+	}
+
+	localePreference.set(resolveFirstAvailableLocale(get(preferredLanguages())));
+};
