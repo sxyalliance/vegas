@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PureNavItem } from '../types';
+	import { _ } from "$lib/shared/i18n";
 
 	export let item: PureNavItem;
 </script>
@@ -8,5 +9,5 @@
 	href={item.href}
 	class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-high-contrast"
 >
-	{item.name}
+	{_(item.name)}
 </a>

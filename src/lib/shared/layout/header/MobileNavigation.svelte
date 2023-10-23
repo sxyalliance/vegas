@@ -33,7 +33,7 @@
 		>
 			<div class="flex items-center justify-between">
 				<a href="/" class="-m-1.5 p-1.5">
-					<span class="sr-only">{_('brand_name')}</span>
+					<span class="sr-only">{_('common_brand_name')}</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
 				<button type="button" class="-m-2.5 rounded-md p-2.5 text-neutral-9" use:melt={$close}>

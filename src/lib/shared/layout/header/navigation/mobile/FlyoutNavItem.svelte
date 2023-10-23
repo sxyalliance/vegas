@@ -3,6 +3,7 @@
 	import type { FlyoutNavItem, FlyoutDefinition } from '../types';
 	import { createCollapsible, melt } from '@melt-ui/svelte';
 	import { slide } from 'svelte/transition';
+	import { _ } from "$lib/shared/i18n";
 
 	export let item: FlyoutNavItem;
 
@@ -21,7 +22,7 @@
 		use:melt={$trigger}
 		class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-high-contrast"
 	>
-		{item.name}
+		{_(item.name)}
 		<Icon
 			icon="tabler:chevron-down"
 			aria-hidden="true"
@@ -35,7 +36,7 @@
 					href={sub_item.href}
 					class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-high-contrast"
 				>
-					{sub_item.name}
+					{_(sub_item.name)}
 				</a>
 			{/each}
 		</div>
