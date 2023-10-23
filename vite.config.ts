@@ -27,6 +27,7 @@ const [versionTag, commitHash, lastModified] = (
 export default defineConfig(({ command }) => ({
 	plugins: [
 		sentrySvelteKit({
+			autoInstrument: false, // reset when Sentry fixed issues with Cloudflare Page
 			sourceMapsUploadOptions: {
 				org: 'sxya',
 				project: 'vegas'
