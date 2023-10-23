@@ -1,0 +1,25 @@
+{
+	"title": "頁尾",
+	"slogan": "The truth of the sea, and let not found to lie down in front of my eyes, all things for me to explore.",
+	"legal": "Copyright © 2023 SXYA Community. 保留一切權利。",
+	"social": {
+		"facebook": "Facebook",
+		"instagram": "Instagram",
+		"twitter": "Twitter",
+		"github": "GitHub",
+		"youtube": "YouTube"
+	},
+	"policies": {
+		"heading": "Policies",
+		"privacy_policy": "Privacy Policy",
+		"cookie_policy": "Cookie Policy"
+	},
+	"statistics": {
+		"heading": "統計",
+		"online_members": "在線會員",
+		"total_members": "會員總數",
+		"ongoing_events": "正在進行的活動",
+		"total_events": "活動總數",
+		"founded_days": "成立天數"
+	}
+}
