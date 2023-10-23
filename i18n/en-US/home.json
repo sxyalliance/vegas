@@ -1,11 +1,11 @@
 {
 	"hero": {
-		"tagline": "Some important promotion or news here.",
-		"tagline_link": "Read more",
 		"title": "SXYA Community Worldwide",
 		"text": "If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?",
-		"get_started": "Get started",
-		"learn_more": "Learn more"
+		"contact_us": "Contact Us",
+		"check_events": "Check Events",
+		"build_better_internet": "We're building a better Internet.",
+		"build_better_internet_learn_more": "Check Mozilla Manifesto"
 	},
 	"member": {
 		"title": "Our Members",
