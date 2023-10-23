@@ -18,10 +18,3 @@ declare global {
 }
 
 export {};
-
-// App version
-declare const __VERSION__: string;
-// Last commit date
-declare const __LASTMOD__: string;
-// App name
-declare const __APPNAME__: string;

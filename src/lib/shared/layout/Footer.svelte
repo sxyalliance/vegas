@@ -2,6 +2,7 @@
 	import { _ } from '$lib/shared/i18n';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { onMount } from 'svelte';
+	import { version } from '$lib/shared/shared/version';
 
 	let statistics = {
 		online_members: -1,
@@ -86,8 +87,8 @@
 						</svg>
 					</a>
 				</div>
-				<p class="text-xs text-low-contrast">
-					rev {__LASTMOD__}.{__VERSION__}
+				<p class="text-xs text-low-contrast" aria-label="Version">
+					rev {version.tag}.{version.hash}
 				</p>
 			</div>
 			<div class="mt-16 hidden grid-cols-2 gap-8 lg:grid xl:col-span-2 xl:mt-0">

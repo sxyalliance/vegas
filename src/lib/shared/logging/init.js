@@ -1,6 +1,7 @@
 import { createLogWriter } from '@roarr/browser-log-writer';
 import { browser, dev } from '$app/environment';
-import { SuperLogger } from '$lib/shared/logging/logger.ts';
+import { SuperLogger } from '$lib/shared/logging/logger';
+import { version } from '$lib/shared/shared/version';
 
 globalThis.ROARR = globalThis.ROARR ?? {};
 
@@ -14,8 +15,7 @@ if (browser) {
 SuperLogger.info(
 	{
 		application: __APPNAME__,
-		version: __VERSION__,
-		lastmod: __LASTMOD__,
+		version: version,
 		environment: dev ? 'development' : 'production',
 		browser: browser ? 'browser' : 'node'
 	},

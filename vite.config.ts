@@ -10,9 +10,10 @@ import { watch } from 'vite-plugin-watch';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
-const [version, lastmod] = (
+const [versionTag, commitHash, lastModified] = (
 	await Promise.allSettled([
-		pexec('git describe --tags || git rev-parse --short HEAD'),
+		pexec('git describe --tags --abbrev=0'),
+		pexec('git rev-parse --short HEAD'),
 		pexec('git log -1 --format=%cd --date=format:"%Y-%m-%d %H:%M"')
 	])
 ).map((v) => {
@@ -48,8 +49,11 @@ export default defineConfig(() => ({
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
 	define: {
-		__VERSION__: version,
-		__LASTMOD__: lastmod,
-		__APPNAME__: JSON.stringify(name)
+		__APPNAME__: JSON.stringify(name),
+		__VERSION__: {
+			tag: versionTag,
+			hash: commitHash,
+			date: lastModified
+		}
 	}
 }));
