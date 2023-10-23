@@ -15,3 +15,7 @@ export const version: Version = {
 	hash: JSON.parse(__VERSION__.hash),
 	date: JSON.parse(__VERSION__.date)
 };
+
+export const versionString = version.tag
+	? `${version.tag}.${version.hash} @ ${version.date}`
+	: `${version.hash} @ ${version.date}`;
