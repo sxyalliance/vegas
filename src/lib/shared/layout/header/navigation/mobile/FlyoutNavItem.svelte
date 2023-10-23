@@ -3,7 +3,7 @@
 	import type { FlyoutNavItem, FlyoutDefinition } from '../types';
 	import { createCollapsible, melt } from '@melt-ui/svelte';
 	import { slide } from 'svelte/transition';
-	import { _ } from "$lib/shared/i18n";
+	import { _ } from '$lib/shared/i18n';
 
 	export let item: FlyoutNavItem;
 
