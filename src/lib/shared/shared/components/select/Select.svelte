@@ -12,8 +12,8 @@
 	import Icon from '@iconify/svelte';
 	import { derived } from 'svelte/store';
 	import { createEventDispatcher } from 'svelte';
-	
-type Options = Option[];
+
+	type Options = Option[];
 
 	interface GroupedOptions {
 		[key: string]: Options;
