@@ -18,9 +18,9 @@ const [versionTag, commitHash, lastModified] = (
 	])
 ).map((v) => {
 	if (v.status !== 'rejected') {
-		return JSON.stringify(v.value?.stdout.trim());
+		return v.value?.stdout.trim();
 	}
-	return JSON.stringify('unknown');
+	return null;
 });
 
 export default defineConfig(({ command }) => ({
@@ -59,10 +59,10 @@ export default defineConfig(({ command }) => ({
 	},
 	define: {
 		__APPNAME__: JSON.stringify(name),
-		__VERSION__: {
+		__VERSION__: JSON.stringify({
 			tag: versionTag,
 			hash: commitHash,
 			date: lastModified
-		}
+		})
 	}
 }));

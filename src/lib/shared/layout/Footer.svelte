@@ -62,7 +62,7 @@
 					{/each}
 				</div>
 				<p class="text-xs text-low-contrast" aria-label="Version">
-					rev {versionString}
+					{versionString}
 				</p>
 			</div>
 			<div class="mt-16 hidden grid-cols-2 gap-8 lg:grid xl:col-span-2 xl:mt-0">
