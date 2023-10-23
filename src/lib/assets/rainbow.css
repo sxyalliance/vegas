@@ -8,6 +8,10 @@
 	border-image: var(--vg-gradient) 1;
 }
 
+.text-rainbow {
+	color: var(--vg-rainbow-1);
+}
+
 /* Browser Support */
 /* default */
 :root {
