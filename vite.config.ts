@@ -12,7 +12,7 @@ import { watch } from 'vite-plugin-watch';
 const pexec = promisify(exec);
 const [versionTag, commitHash, lastModified] = (
 	await Promise.allSettled([
-		pexec('git describe --tags --abbrev=0'),
+		pexec('git describe --tags $(git rev-list --tags --max-count=1)'),
 		pexec('git rev-parse --short HEAD'),
 		pexec('git log -1 --format=%cd --date=format:"%Y-%m-%d %H:%M"')
 	])
