@@ -1263,6 +1263,16 @@
               "value": "Contact Us"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Contact Us"
+            }
+          ]
         }
       ]
     },
@@ -1273,6 +1283,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Check Events"
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -1295,6 +1315,16 @@
               "value": "We're building a better Internet."
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "We're building a better Internet."
+            }
+          ]
         }
       ]
     },
@@ -1305,6 +1335,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Check Mozilla Manifesto"
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2505,70 +2545,6 @@
             {
               "type": "Text",
               "value": "暗黑模式"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "home_hero_tagline",
-      "selectors": [],
-      "variants": [
-        {
-          "match": [],
-          "languageTag": "zh-HK",
-          "pattern": [
-            {
-              "type": "Text",
-              "value": "這裡有一些重要的推廣或消息。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "home_hero_tagline_link",
-      "selectors": [],
-      "variants": [
-        {
-          "match": [],
-          "languageTag": "zh-HK",
-          "pattern": [
-            {
-              "type": "Text",
-              "value": "閱讀更多"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "home_hero_get_started",
-      "selectors": [],
-      "variants": [
-        {
-          "match": [],
-          "languageTag": "zh-HK",
-          "pattern": [
-            {
-              "type": "Text",
-              "value": "開始使用"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "home_hero_learn_more",
-      "selectors": [],
-      "variants": [
-        {
-          "match": [],
-          "languageTag": "zh-HK",
-          "pattern": [
-            {
-              "type": "Text",
-              "value": "了解更多"
             }
           ]
         }

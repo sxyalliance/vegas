@@ -4,3 +4,4 @@ Disallow: /cgi-bin/
 Disallow: /api/
 Disallow: /apid/
 Disallow: /test/
+Disallow: /lab/

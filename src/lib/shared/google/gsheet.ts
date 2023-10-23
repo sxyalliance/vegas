@@ -1,6 +1,6 @@
 import { err, ok } from 'neverthrow';
 import type { StandardResult } from '$lib/shared/shared/result';
-import { createRequester } from '$lib/shared/shared/request';
+import { createRequester } from '$lib/shared/request';
 
 export interface SpreadsheetRangeData {
 	spreadsheetId: string;

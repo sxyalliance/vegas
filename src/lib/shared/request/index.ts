@@ -3,17 +3,26 @@ import QueryStringAddon from 'wretch/addons/queryString';
 import { err, ok } from 'neverthrow';
 import type { ErrorResult, StandardResult } from '$lib/shared/shared/result';
 
-const baseRequester = wretch()
-	.options({ cors: true })
-	.addon(QueryStringAddon)
-	.errorType('json')
-	.resolve((r) => r.json());
+const setupRequester = (customFetch: typeof window.fetch) => {
+	return wretch()
+		.polyfills({
+			fetch: customFetch
+		})
+		.addon(QueryStringAddon)
+		.errorType('json')
+		.resolve((r) => r.json());
+};
+
+export const baseRequester = setupRequester(fetch);
 
 export class Requester {
-	private requester;
+	private requester: ReturnType<typeof setupRequester>;
 
-	constructor(public baseUrl: string) {
-		this.requester = baseRequester.url(baseUrl);
+	constructor(public baseUrl: string, customFetch: typeof window.fetch = fetch, token?: string) {
+		this.requester = setupRequester(customFetch).url(baseUrl);
+		if (token) {
+			this.requester = this.requester.auth(`Bearer ${token}`);
+		}
 	}
 
 	async get<T>(url: string, params?: string | object): Promise<StandardResult<T>> {
@@ -30,10 +39,10 @@ export class Requester {
 		}
 	}
 
-	async post<T>(url: string, body?: string | object): Promise<StandardResult<T>> {
+	async post<T>(url: string, body?: object): Promise<StandardResult<T>> {
 		let r = this.requester.url(url);
 		if (body) {
-			r = r.body(body);
+			r = r.json(body);
 		}
 
 		try {
@@ -44,10 +53,10 @@ export class Requester {
 		}
 	}
 
-	async put<T>(url: string, body?: string | object): Promise<StandardResult<T>> {
+	async put<T>(url: string, body?: object): Promise<StandardResult<T>> {
 		let r = this.requester.url(url);
 		if (body) {
-			r = r.body(body);
+			r = r.json(body);
 		}
 
 		try {
@@ -58,10 +67,10 @@ export class Requester {
 		}
 	}
 
-	async delete<T>(url: string, body?: string | object): Promise<StandardResult<T>> {
+	async delete<T>(url: string, body?: object): Promise<StandardResult<T>> {
 		let r = this.requester.url(url);
 		if (body) {
-			r = r.body(body);
+			r = r.json(body);
 		}
 
 		try {
@@ -72,10 +81,10 @@ export class Requester {
 		}
 	}
 
-	async patch<T>(url: string, body?: string | object): Promise<StandardResult<T>> {
+	async patch<T>(url: string, body?: object): Promise<StandardResult<T>> {
 		let r = this.requester.url(url);
 		if (body) {
-			r = r.body(body);
+			r = r.json(body);
 		}
 
 		try {
@@ -87,6 +96,7 @@ export class Requester {
 	}
 
 	private transformError = (e: unknown): ErrorResult => {
+		console.log(e);
 		if (e instanceof wretch.WretchError) {
 			const message =
 				typeof e.message === 'object' && Object.keys(e.message).length > 0
@@ -100,6 +110,10 @@ export class Requester {
 	};
 }
 
-export const createRequester = (baseUrl: string): Requester => {
-	return new Requester(baseUrl);
+export const createRequester = (
+	baseUrl: string,
+	customFetch: typeof window.fetch = fetch,
+	token?: string
+): Requester => {
+	return new Requester(baseUrl, customFetch, token);
 };

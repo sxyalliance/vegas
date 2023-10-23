@@ -38,5 +38,5 @@ export default {
 			}
 		}
 	},
-	plugins: [colors.plugin, require('@tailwindcss/typography')]
+	plugins: [colors.plugin, require('@tailwindcss/typography'), require('@tailwindcss/forms')]
 };
