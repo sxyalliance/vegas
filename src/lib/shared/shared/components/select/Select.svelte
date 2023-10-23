@@ -1,9 +1,7 @@
 <script lang="ts" context="module">
-	import type { MessageId } from '$lib/shared/i18n';
-
 	export interface Option {
 		value: unknown;
-		label: MessageId;
+		label: string;
 		icon?: string;
 	}
 </script>
@@ -14,9 +12,8 @@
 	import Icon from '@iconify/svelte';
 	import { derived } from 'svelte/store';
 	import { createEventDispatcher } from 'svelte';
-	import { _ } from '$lib/shared/i18n';
-
-	type Options = Option[];
+	
+type Options = Option[];
 
 	interface GroupedOptions {
 		[key: string]: Options;
@@ -96,7 +93,7 @@
 			{#if $selectedOption.icon}
 				<Icon icon={$selectedOption.icon} class="h-5 w-5 flex-shrink-0" />
 			{/if}
-			<span class="ml-3 block truncate capitalize">{_($selectedOption.label, false)}</span>
+			<span class="ml-3 block truncate capitalize">{$selectedOption.label}</span>
 		</span>
 		<span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
 			<Icon icon="tabler:selector" class="h-5 w-5 text-neutral-9" />
@@ -133,7 +130,7 @@
 											? 'font-semibold'
 											: 'font-normal'}"
 									>
-										{_(item.label, false)}
+										{item.label}
 									</span>
 								</div>
 
@@ -165,7 +162,7 @@
 									? 'font-semibold'
 									: 'font-normal'}"
 							>
-								{_(item.label, false)}
+								{item.label}
 							</span>
 						</div>
 

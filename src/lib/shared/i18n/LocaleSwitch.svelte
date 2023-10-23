@@ -2,19 +2,28 @@
 	import Select from '$lib/shared/shared/components/select/Select.svelte';
 	import { availableLanguageTags } from '@inlang/paraglide-js/vegas';
 	import { _, localePreference } from '$lib/shared/i18n/index';
+	import { parse } from 'bcp-47';
 
 	let clazz = '';
 	export { clazz as class };
 
-	const labels: Record<string, string> = {
-		'en-US': 'English (US)',
-		'zh-HK': '繁體中文 (香港)'
+	const getLanguageName = (locale: string): string => {
+		return (
+			new Intl.DisplayNames([locale], {
+				type: 'language'
+			}).of(locale) || locale
+		);
+	};
+
+	const getLanguageFlag = (locale: string): string => {
+		const parsed = parse(locale, { forgiving: true });
+		return parsed.region ? `flag:${parsed.region.toLowerCase()}-4x3` : 'tabler:language';
 	};
 
 	$: options = availableLanguageTags.map((locale) => ({
 		value: locale,
-		label: labels[locale] ?? locale,
-		icon: 'tabler:language'
+		label: getLanguageName(locale),
+		icon: getLanguageFlag(locale)
 	}));
 </script>
 

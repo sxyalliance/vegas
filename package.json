@@ -55,6 +55,7 @@
 		"@unpic/svelte": "^0.0.31",
 		"@zerodevx/svelte-img": "^2.1.0",
 		"autoprefixer": "^10.4.16",
+		"bcp-47": "^2.1.0",
 		"browserslist": "^4.22.1",
 		"browserslist-useragent-regexp": "^4.1.0",
 		"canvas-confetti": "^1.9.0",

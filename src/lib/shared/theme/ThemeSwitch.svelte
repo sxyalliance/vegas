@@ -16,7 +16,7 @@
 	const options = AvailablePreferences.map((preference: string) => {
 		return {
 			value: preference,
-			label: `theme_switch_${preference}`,
+			label: _(`theme_switch_${preference}`),
 			icon: themeIcons[preference]
 		};
 	});
