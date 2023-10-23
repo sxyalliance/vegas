@@ -23,7 +23,7 @@ const [versionTag, commitHash, lastModified] = (
 	return JSON.stringify('unknown');
 });
 
-export default defineConfig(() => ({
+export default defineConfig(({ command }) => ({
 	plugins: [
 		sveltekit(),
 		imagetools(),
@@ -31,7 +31,16 @@ export default defineConfig(() => ({
 		watch({
 			pattern: 'i18n/*.json',
 			command: 'pnpm run i18n:compile'
-		})
+		}),
+
+		{
+			name: 'compile-i18n',
+			async buildStart() {
+				if (command === 'build') {
+					await pexec('pnpm run i18n:compile');
+				}
+			}
+		}
 	],
 	optimizeDeps: {
 		exclude: ['@inlang/paraglide-js']
