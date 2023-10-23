@@ -3,6 +3,8 @@ import { browser, dev } from '$app/environment';
 import { SuperLogger } from '$lib/shared/logging/logger';
 import { version } from '$lib/shared/shared/version';
 
+declare const __APPNAME__: string;
+
 globalThis.ROARR = globalThis.ROARR ?? {};
 
 if (browser) {
