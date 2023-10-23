@@ -1,11 +1,11 @@
 {
 	"hero": {
+		"tagline": "這裡有一些重要的推廣或消息。",
+		"tagline_link": "閱讀更多",
 		"title": "SXYA 互助聚集地",
 		"text": "如果你想找些話題來聊天，我們可以談談嗜好、旅遊、時事、個人目標、流行文化、美食或職業。有沒有什麼特別的你感興趣的呢？告訴我吧！",
-		"contact_us": "Contact Us",
-		"check_events": "Check Events",
-		"build_better_internet": "We're building a better Internet.",
-		"build_better_internet_learn_more": "Check Mozilla Manifesto"
+		"get_started": "開始使用",
+		"learn_more": "了解更多"
 	},
 	"member": {
 		"title": "我們的成員",
