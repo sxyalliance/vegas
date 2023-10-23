@@ -23,7 +23,8 @@ const config = {
 					'api.iconify.design',
 					'discord.com',
 					'content-sheets.googleapis.com',
-					'*.sxya.org'
+					'*.sxya.org',
+					'*.sentry.io'
 				]
 			}
 		}

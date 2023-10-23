@@ -7,6 +7,7 @@ import { imagetools } from '@zerodevx/svelte-img/vite';
 // get project name from package.json
 import { name } from './package.json';
 import { watch } from 'vite-plugin-watch';
+import { sentrySvelteKit } from '@sentry/sveltekit';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
@@ -25,6 +26,12 @@ const [versionTag, commitHash, lastModified] = (
 
 export default defineConfig(({ command }) => ({
 	plugins: [
+		sentrySvelteKit({
+			sourceMapsUploadOptions: {
+				org: 'sxya',
+				project: 'vegas'
+			}
+		}),
 		sveltekit(),
 		imagetools(),
 
