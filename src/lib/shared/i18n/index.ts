@@ -7,9 +7,9 @@ import {
 	availableLanguageTags
 } from '@inlang/paraglide-js/vegas';
 import * as m from '@inlang/paraglide-js/vegas/messages';
-import { browser, dev } from "$app/environment";
+import { browser, dev } from '$app/environment';
 import { preferredLanguages } from 'svelte-legos';
-import { getLogger } from "$lib/shared/logging/logger";
+import { getLogger } from '$lib/shared/logging/logger';
 
 const logger = getLogger('i18n');
 

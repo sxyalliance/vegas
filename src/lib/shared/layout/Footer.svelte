@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { versionString } from '$lib/shared/shared/version';
 	import Icon from '@iconify/svelte';
+	import { all as allMembers } from '$lib/shared/discord';
 
 	let statistics = {
 		online_members: -1,
@@ -18,7 +19,7 @@
 		const data = await res.json();
 		return {
 			online_members: data.presence_count,
-			total_members: -1,
+			total_members: allMembers.length,
 			ongoing_events: -1,
 			total_events: -1,
 			founded_days: Math.floor((Date.now() - new Date('2019-04-15').getTime()) / 86400000)
