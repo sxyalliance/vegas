@@ -41,6 +41,16 @@
               "value": "Sorry, data is unavailable at the moment. Please try again later."
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Sorry, data is unavailable at the moment. Please try again later."
+            }
+          ]
         }
       ]
     },
@@ -51,6 +61,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Due to productivity constraints, event information is currently only available in Chinese (Hong Kong)."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -1009,6 +1029,16 @@
               "value": "Helpful Resources"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Helpful Resources"
+            }
+          ]
         }
       ]
     },
@@ -1019,6 +1049,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "About Us"
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -1041,6 +1081,16 @@
               "value": "Contact Us"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Contact Us"
+            }
+          ]
         }
       ]
     },
@@ -1051,6 +1101,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Support Center"
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2087,6 +2147,16 @@
               "value": "Our Members"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "我們的成員"
+            }
+          ]
         }
       ]
     },
@@ -2097,6 +2167,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "We are a community of people who are passionate about life and the world around us. We are a diverse group of people from all walks of life, and we are united to gaming and various events."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2119,6 +2199,16 @@
               "value": "Core Members"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Core Members"
+            }
+          ]
         }
       ]
     },
@@ -2129,6 +2219,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom soul and heart connected to the community."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2151,6 +2251,16 @@
               "value": "Official Members"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Official Members"
+            }
+          ]
         }
       ]
     },
@@ -2161,6 +2271,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom actively participate in the community."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2183,6 +2303,16 @@
               "value": "Verified Members"
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Verified Members"
+            }
+          ]
         }
       ]
     },
@@ -2193,6 +2323,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom are known to the community."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",
@@ -2215,6 +2355,16 @@
               "value": "The above list is according to our Discord server member list."
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The above list is according to our Discord server member list."
+            }
+          ]
         }
       ]
     },
@@ -2231,6 +2381,16 @@
               "value": "If you wish to opt-out from this list, please contact us via Discord."
             }
           ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "If you wish to opt-out from this list, please contact us via Discord."
+            }
+          ]
         }
       ]
     },
@@ -2241,6 +2401,16 @@
         {
           "match": [],
           "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Order do not represent any hierarchy. All members are equal."
+            }
+          ]
+        },
+        {
+          "match": [],
+          "languageTag": "zh-HK",
           "pattern": [
             {
               "type": "Text",

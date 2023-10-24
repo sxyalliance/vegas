@@ -7,8 +7,11 @@ import {
 	availableLanguageTags
 } from '@inlang/paraglide-js/vegas';
 import * as m from '@inlang/paraglide-js/vegas/messages';
-import { browser } from '$app/environment';
+import { browser, dev } from "$app/environment";
 import { preferredLanguages } from 'svelte-legos';
+import { getLogger } from "$lib/shared/logging/logger";
+
+const logger = getLogger('i18n');
 
 function createLocalePreference() {
 	const { subscribe, set } = persistCookie(
@@ -37,9 +40,10 @@ export type MessageId = keyof typeof m;
 
 export function _(id: MessageId, strict: boolean = true): string {
 	if (!m[id]) {
-		if (strict) {
+		if (strict && !dev) {
 			throw new Error(`Message id ${id} not found`);
 		} else {
+			logger.warn({ id }, `Message of the specified id not found, returning id as message`);
 			return id;
 		}
 	}

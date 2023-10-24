@@ -67,10 +67,6 @@
 			</div>
 			<div class="mt-16 hidden grid-cols-2 gap-8 lg:grid xl:col-span-2 xl:mt-0">
 				<div class="md:grid md:grid-cols-2 md:gap-8">
-					<div />
-					<div class="mt-10 md:mt-0" />
-				</div>
-				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{_('footer_helpful_resources_heading')}
@@ -93,6 +89,9 @@
 							</li>
 						</ul>
 					</div>
+					<div class="mt-10 md:mt-0" />
+				</div>
+				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{_('footer_policies_heading')}
