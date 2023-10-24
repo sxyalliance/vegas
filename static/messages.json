@@ -29,6 +29,38 @@
       ]
     },
     {
+      "id": "common_data_unavailable",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Sorry, data is unavailable at the moment. Please try again later."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event_information_language_restriction",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Due to productivity constraints, event information is currently only available in Chinese (Hong Kong)."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "event_category_dining_name",
       "selectors": [],
       "variants": [
@@ -959,6 +991,70 @@
             {
               "type": "Text",
               "value": "YouTube"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer_helpful_resources_heading",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Helpful Resources"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer_helpful_resources_about_us",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "About Us"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer_helpful_resources_contact_us",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Contact Us"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer_helpful_resources_support_center",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Support Center"
             }
           ]
         }
@@ -1973,6 +2069,182 @@
             {
               "type": "Text",
               "value": "Change Language"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_hero_title",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Our Members"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_hero_text",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "We are a community of people who are passionate about life and the world around us. We are a diverse group of people from all walks of life, and we are united to gaming and various events."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_core_title",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Core Members"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_core_description",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom soul and heart connected to the community."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_official_title",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Official Members"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_official_description",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom actively participate in the community."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_verified_title",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Verified Members"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_level_verified_description",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The members whom are known to the community."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_source_disclaimer",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "The above list is according to our Discord server member list."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_opt_out_guide",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "If you wish to opt-out from this list, please contact us via Discord."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "member_hierarchy_disclaimer",
+      "selectors": [],
+      "variants": [
+        {
+          "match": [],
+          "languageTag": "en-US",
+          "pattern": [
+            {
+              "type": "Text",
+              "value": "Order do not represent any hierarchy. All members are equal."
             }
           ]
         }

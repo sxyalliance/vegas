@@ -7,6 +7,7 @@
 	import Callout from '$lib/vgui/callout/Callout.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
+	import { _ } from '$lib/shared/i18n';
 
 	title.set('Events');
 
@@ -20,10 +21,7 @@
 
 <Section>
 	<Callout class="mb-12">
-		<p>
-			Due to productivity constraints, event information is currently only available in Chinese
-			(Hong Kong).
-		</p>
+		<p>{_('information_language_restriction')}</p>
 	</Callout>
 
 	{#if $events.isSuccess}

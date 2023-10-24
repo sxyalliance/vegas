@@ -9,6 +9,12 @@
 		"github": "GitHub",
 		"youtube": "YouTube"
 	},
+	"helpful_resources": {
+		"heading": "Helpful Resources",
+		"about_us": "About Us",
+		"contact_us": "Contact Us",
+		"support_center": "Support Center"
+	},
 	"policies": {
 		"heading": "Policies",
 		"privacy_policy": "Privacy Policy",

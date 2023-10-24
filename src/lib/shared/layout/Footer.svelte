@@ -73,6 +73,28 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
+							{_('footer_helpful_resources_heading')}
+						</h3>
+						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
+							<li>
+								<a href="/about" class="hover:text-high-contrast">
+									{_('footer_helpful_resources_about_us')}
+								</a>
+							</li>
+							<li>
+								<a href="/about/faq" class="hover:text-high-contrast">
+									{_('footer_helpful_resources_support_center')}
+								</a>
+							</li>
+							<li>
+								<a href="/about/contact" class="hover:text-high-contrast">
+									{_('footer_helpful_resources_contact_us')}
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
 							{_('footer_policies_heading')}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
