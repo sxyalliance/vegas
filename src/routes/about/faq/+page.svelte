@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 	import Icon from '@iconify/svelte';
+	import SimpleHeroSection from '$lib/shared/shared/components/section/SimpleHeroSection.svelte';
+	import Section from '$lib/shared/shared/components/section/Section.svelte';
 
 	interface FrequentlyAskedQuestionSection {
 		key: string;
@@ -40,17 +42,10 @@
 	];
 </script>
 
-<div class="bg-neutral-1 px-6 pb-16 pt-36 sm:pb-24 lg:px-8">
-	<div class="mx-auto max-w-2xl text-center">
-		<p class="text-base font-semibold leading-7 text-accent-11">Get the answer you want</p>
-		<h2 class="mt-2 text-4xl font-bold tracking-tight text-high-contrast sm:text-6xl">
-			Support Center
-		</h2>
-	</div>
-</div>
+<SimpleHeroSection title="Support Center" tagline="Get the answer you want" />
 
-<div class="bg-neutral-2">
-	<div class="mx-auto max-w-7xl space-y-10 px-6 py-12 sm:py-16 lg:px-8 lg:py-20">
+<Section>
+	<div class="space-y-10">
 		{#each faq as section}
 			<div class="mx-auto max-w-4xl divide-y divide-neutral-6" id={section.key}>
 				<h2 class="text-2xl font-bold leading-10 tracking-tight text-high-contrast">
@@ -82,4 +77,4 @@
 			</div>
 		{/each}
 	</div>
-</div>
+</Section>

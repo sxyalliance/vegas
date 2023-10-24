@@ -61,6 +61,7 @@
 				src={cover}
 				alt="Group of SXYA Members"
 				factor={0.95}
+				loading="eager"
 			/>
 		</div>
 	</div>

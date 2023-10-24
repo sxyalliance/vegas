@@ -12,4 +12,4 @@
 	export { clazz as class };
 </script>
 
-<Img src={logo} class={clazz} alt={_('common_brand_name')} />
+<Img src={logo} class={clazz} alt={_('common_brand_name')} loading="eager" />

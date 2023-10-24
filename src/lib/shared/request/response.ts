@@ -18,7 +18,7 @@ export const buildResponse = <T>(result: StandardResult<T>): Response => {
 	const response = responseFromResult<T>(result);
 
 	if (response.error) {
-		return new Response(JSON.stringify(response.error), {
+		return new Response(JSON.stringify(response), {
 			status: response.error.code,
 			headers: {
 				'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export const buildResponse = <T>(result: StandardResult<T>): Response => {
 		});
 	}
 
-	return new Response(JSON.stringify(response.data), {
+	return new Response(JSON.stringify(response), {
 		status: 200,
 		headers: {
 			'Content-Type': 'application/json'
