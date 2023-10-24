@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { loadingAction } from 'svelte-legos';
 
 	let clazz: string | false | null = null;
 	export { clazz as class };
@@ -19,6 +20,11 @@
 	 */
 	export let href: string | null = null;
 
+	/**
+	 * Shows a loading indicator.
+	 */
+	export let loading: boolean = false;
+
 	const dispatch = createEventDispatcher();
 </script>
 
@@ -27,6 +33,7 @@
 		class="btn {size} {variant} accent {clazz}"
 		{href}
 		on:click={(e) => dispatch('click', { nativeEvent: e })}
+		use:loadingAction={loading}
 		{...$$restProps}
 	>
 		<slot />
@@ -36,6 +43,7 @@
 		type="button"
 		class="btn {size} {variant} accent {clazz}"
 		on:click={(e) => dispatch('click', { nativeEvent: e })}
+		use:loadingAction={loading}
 		{...$$restProps}
 	>
 		<slot />
@@ -43,5 +51,5 @@
 {/if}
 
 <style lang="postcss">
-	@import './button.pcss';
+	@import 'button.pcss';
 </style>

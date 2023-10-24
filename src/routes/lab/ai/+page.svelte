@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { cfAi } from '$lib/shared/cloudflare';
-	import TextArea from '$lib/shared/shared/components/textarea/TextArea.svelte';
-	import Button from '$lib/shared/shared/components/button/Button.svelte';
-	import Card from '$lib/shared/shared/components/card/Card.svelte';
-	import SimpleHeroSection from '$lib/shared/shared/components/section/SimpleHeroSection.svelte';
+	import TextArea from '$lib/vgui/textarea/TextArea.svelte';
+	import Button from '$lib/vgui/button/Button.svelte';
+	import Card from '$lib/vgui/card/Card.svelte';
+	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import { error } from '@sveltejs/kit';
-	import Section from '$lib/shared/shared/components/section/Section.svelte';
+	import Section from '$lib/vgui/section/Section.svelte';
 
 	let prompt = '';
 	let resp = '';

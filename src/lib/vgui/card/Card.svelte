@@ -13,5 +13,5 @@
 </div>
 
 <style lang="postcss">
-	@import './card.pcss';
+	@import 'card.pcss';
 </style>

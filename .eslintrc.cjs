@@ -4,7 +4,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:svelte/recommended',
-		'@unocss',
 		'prettier'
 	],
 	rules: {
@@ -13,8 +12,7 @@ module.exports = {
 		'unused-imports/no-unused-vars': [
 			'warn',
 			{ vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }
-		],
-		'@unocss/order': 'off' // disable until issue unocss#3179 solved
+		]
 	},
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint', 'unused-imports'],

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Select from '$lib/shared/shared/components/select/Select.svelte';
+	import Select from '$lib/vgui/select/Select.svelte';
 	import { availableLanguageTags } from '@inlang/paraglide-js/vegas';
 	import { _, localePreference } from '$lib/shared/i18n/index';
 	import { parse } from 'bcp-47';

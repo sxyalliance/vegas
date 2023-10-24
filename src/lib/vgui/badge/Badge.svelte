@@ -23,5 +23,5 @@
 </span>
 
 <style lang="postcss">
-	@import './badge.pcss';
+	@import 'badge.pcss';
 </style>

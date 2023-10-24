@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Select from '$lib/shared/shared/components/select/Select.svelte';
+	import Select from '$lib/vgui/select/Select.svelte';
 	import { writable } from 'svelte/store';
 
 	// eslint-disable-next-line no-import-assign

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Button from '$lib/shared/shared/components/button/Button.svelte';
+	import Button from '$lib/vgui/button/Button.svelte';
 
 	// eslint-disable-next-line no-import-assign
 	export let Hst: Hst;
@@ -9,6 +9,7 @@
 	let text = 'Button';
 	let hasHref = false;
 	$: href = hasHref ? 'https://www.example.org' : null;
+	let loading = false;
 
 	const variants = ['solid', 'soft', 'surface'] as const;
 </script>
@@ -24,5 +25,6 @@
 		<Hst.Text title="Text" bind:value={text} />
 		<Hst.Select title="Size" bind:value={size} options={['small', 'medium', 'large']} />
 		<Hst.Checkbox title="Has href (Turns button into link)" bind:value={hasHref} />
+		<Hst.Checkbox title="Loading (Shows loading indicator)" bind:value={loading} />
 	</svelte:fragment>
 </Hst.Story>

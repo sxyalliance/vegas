@@ -1,8 +1,8 @@
 <script>
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
-	import SimpleHeroSection from '$lib/shared/shared/components/section/SimpleHeroSection.svelte';
-	import Section from '$lib/shared/shared/components/section/Section.svelte';
+	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
+	import Section from '$lib/vgui/section/Section.svelte';
 </script>
 
 <SimpleHeroSection title="Our Members">

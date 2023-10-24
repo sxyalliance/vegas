@@ -3,7 +3,7 @@
 	import { FxParallax as Img } from '@zerodevx/svelte-img';
 
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
-	import Button from '$lib/shared/shared/components/button/Button.svelte';
+	import Button from '$lib/vgui/button/Button.svelte';
 </script>
 
 <!-- Hero section -->

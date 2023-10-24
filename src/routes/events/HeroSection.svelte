@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { _ } from '$lib/shared/i18n';
-	import Card from '$lib/shared/shared/components/card/Card.svelte';
+	import Card from '$lib/vgui/card/Card.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { queryCategories } from './query';
 	import { paramCase } from 'change-case';

@@ -6,6 +6,7 @@
 	import query from './query';
 	import type { PageData } from './$types';
 	import type { CustomDirectusTypes } from '$lib/shared/directus/types';
+	import Section from '$lib/vgui/section/Section.svelte';
 
 	export let data: PageData;
 
@@ -21,10 +22,10 @@
 	};
 </script>
 
-<section class="bg-neutral-1 px-6 py-32 lg:px-8">
+<Section width="3xl">
 	{#if $events.isSuccess}
 		{#each $events.data as event}
-			<article class="mx-auto max-w-3xl text-base leading-7">
+			<article class="text-base leading-7">
 				<p class="text-base font-semibold leading-7 text-accent-11">
 					{_(`event_category_${getCategory(event).key}_name`)}
 					#{event.id}
@@ -55,4 +56,4 @@
 			</article>
 		{/each}
 	{/if}
-</section>
+</Section>

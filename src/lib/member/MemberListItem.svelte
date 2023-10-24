@@ -3,7 +3,7 @@
 	import { createLinkPreview } from '@melt-ui/svelte';
 	import { melt } from '@melt-ui/svelte';
 	import { fly } from 'svelte/transition';
-	import Badge from '$lib/shared/shared/components/badge/Badge.svelte';
+	import Badge from '$lib/vgui/badge/Badge.svelte';
 
 	export let avatar: unknown;
 	export let name: string;

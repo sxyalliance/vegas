@@ -26,5 +26,5 @@
 </div>
 
 <style lang="postcss">
-	@import './callout.pcss';
+	@import 'callout.pcss';
 </style>

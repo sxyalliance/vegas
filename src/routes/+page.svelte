@@ -20,7 +20,7 @@
 
 	<MemberSection />
 
-	<ProcedureSection />
+	<ProcedureSection alternate />
 
 	<DictionarySection />
 </main>

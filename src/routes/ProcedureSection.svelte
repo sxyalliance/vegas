@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { _ } from '$lib/shared/i18n';
+	import Section from '$lib/vgui/section/Section.svelte';
 </script>
 
-<section class="bg-neutral-2">
-	<div
-		class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:py-24"
-	>
+<Section {...$$restProps}>
+	<div class="lg:grid lg:grid-cols-3 lg:gap-x-8">
 		<div>
 			<h2 class="text-base font-semibold uppercase tracking-wide text-accent-11">
 				{_('home_procedure_subtitle')}
@@ -37,4 +36,4 @@
 			</dl>
 		</div>
 	</div>
-</section>
+</Section>
