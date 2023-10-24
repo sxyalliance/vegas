@@ -1,0 +1,23 @@
+{
+	"hero": {
+		"title": "我們的成員",
+		"text": "We are a community of people who are passionate about life and the world around us. We are a diverse group of people from all walks of life, and we are united to gaming and various events."
+	},
+	"level": {
+		"core": {
+			"title": "Core Members",
+			"description": "The members whom soul and heart connected to the community."
+		},
+		"official": {
+			"title": "Official Members",
+			"description": "The members whom actively participate in the community."
+		},
+		"verified": {
+			"title": "Verified Members",
+			"description": "The members whom are known to the community."
+		}
+	},
+	"source_disclaimer": "The above list is according to our Discord server member list.",
+	"opt_out_guide": "If you wish to opt-out from this list, please contact us via Discord.",
+	"hierarchy_disclaimer": "Order do not represent any hierarchy. All members are equal."
+}
