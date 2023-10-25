@@ -21,7 +21,7 @@
 
 <Section>
 	<Callout class="mb-12">
-		<p>{_('information_language_restriction')}</p>
+		<p>{_('event_information_language_restriction')}</p>
 	</Callout>
 
 	{#if $events.isSuccess}
