@@ -13,7 +13,7 @@ import { sentrySvelteKit } from '@sentry/sveltekit';
 const pexec = promisify(exec);
 const [versionTag, commitHash, lastModified] = (
 	await Promise.allSettled([
-		pexec('git describe --tags --abbrev=0'),
+		pexec('git describe --tags --dirty --always'),
 		pexec('git rev-parse --short HEAD'),
 		pexec('git log -1 --format=%cd --date=format:"%Y-%m-%d %H:%M"')
 	])

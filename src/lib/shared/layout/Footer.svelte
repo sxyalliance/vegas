@@ -2,9 +2,9 @@
 	import { _ } from '$lib/shared/i18n';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { onMount } from 'svelte';
-	import { versionString } from '$lib/shared/shared/version';
 	import Icon from '@iconify/svelte';
 	import { all as allMembers } from '$lib/shared/discord';
+	import { Release } from '$lib/shared/shared/release';
 
 	let statistics = {
 		online_members: -1,
@@ -62,8 +62,9 @@
 						</a>
 					{/each}
 				</div>
-				<p class="text-xs text-low-contrast" aria-label="Version">
-					{versionString}
+				<p class="text-xs text-low-contrast" aria-label="Release">
+					{Release.name}
+					{Release.versionForHumans()}
 				</p>
 			</div>
 			<div class="mt-16 hidden grid-cols-2 gap-8 lg:grid xl:col-span-2 xl:mt-0">

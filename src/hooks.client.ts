@@ -1,7 +1,7 @@
 import { handleErrorWithSentry, Replay } from '@sentry/sveltekit';
 import * as Sentry from '@sentry/sveltekit';
 import { dev } from '$app/environment';
-import { versionIdentifier } from '$lib/shared/shared/version';
+import { Release } from '$lib/shared/shared/release';
 
 if (!dev) {
 	Sentry.init({
@@ -19,7 +19,7 @@ if (!dev) {
 		// If you don't want to use Session Replay, just remove the line below:
 		integrations: [new Replay()],
 
-		release: versionIdentifier,
+		release: Release.versionIdentifier(),
 
 		beforeSend(event) {
 			// Check if it is an exception, and if so, show the report dialog
