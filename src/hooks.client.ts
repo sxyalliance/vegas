@@ -19,7 +19,15 @@ if (!dev) {
 		// If you don't want to use Session Replay, just remove the line below:
 		integrations: [new Replay()],
 
-		release: versionIdentifier
+		release: versionIdentifier,
+
+		beforeSend(event) {
+			// Check if it is an exception, and if so, show the report dialog
+			if (event.exception) {
+				Sentry.showReportDialog({ eventId: event.event_id });
+			}
+			return event;
+		}
 	});
 }
 
