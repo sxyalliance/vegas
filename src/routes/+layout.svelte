@@ -4,8 +4,7 @@
 	import { browser } from '$app/environment';
 	import { navigating, page } from '$app/stores';
 	import { webVitals } from '$lib/shared/analytics/vitals';
-	import { title } from '$lib/shared/shared/title';
-	import type { PageData } from './$types';
+	import type { LayoutData } from './$types';
 
 	import '$lib/assets/app.css';
 	import '$lib/assets/rainbow.css';
@@ -15,7 +14,7 @@
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
 
-	export let data: PageData;
+	export let data: LayoutData;
 
 	$: if (browser) {
 		webVitals({
@@ -32,10 +31,6 @@
 
 	$: loading = $navigating || !pageLoaded;
 </script>
-
-<svelte:head>
-	<title>{$title}</title>
-</svelte:head>
 
 <ParaglideJsSvelteKitProviderCsr>
 	<QueryClientProvider client={data.queryClient}>

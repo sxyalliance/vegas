@@ -4,7 +4,14 @@
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
+	import SeoHandler from '$lib/shared/shared/components/SeoHandler.svelte';
 </script>
+
+<SeoHandler
+	metaTags={{
+		title: 'Our Members'
+	}}
+/>
 
 <SimpleHeroSection title={_('member_hero_title')}>
 	{_('member_hero_text')}
