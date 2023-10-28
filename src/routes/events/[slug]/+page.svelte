@@ -7,7 +7,8 @@
 	import type { PageData } from './$types';
 	import type { CustomDirectusTypes } from '$lib/shared/directus/types';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import SeoHandler from '$lib/shared/shared/components/SeoHandler.svelte';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
 
 	export let data: PageData;
 
@@ -26,12 +27,7 @@
 <Section width="3xl">
 	{#if $events.isSuccess}
 		{#each $events.data as event}
-			<SeoHandler
-				metaTags={{
-					title: event.name || '',
-					description: event.description || ''
-				}}
-			/>
+			<SeoHandler factory={new EventSeoFactory(event)} />
 
 			<article class="text-base leading-7">
 				<p class="text-base font-semibold leading-7 text-accent-11">

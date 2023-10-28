@@ -1,6 +1,6 @@
 <script>
 	import Content from './content.md';
-	import SeoHandler from '$lib/shared/shared/components/SeoHandler.svelte';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 </script>
 
 <SeoHandler

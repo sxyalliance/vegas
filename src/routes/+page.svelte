@@ -3,25 +3,11 @@
 	import DictionarySection from './DictionarySection.svelte';
 	import ProcedureSection from './ProcedureSection.svelte';
 	import MemberSection from './MemberSection.svelte';
-	import SeoHandler from '$lib/shared/shared/components/SeoHandler.svelte';
-	import LogoLight from '$lib/assets/logo-light.png';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import { HomeSeoFactory } from '$lib/shared/seo/factory/home';
 </script>
 
-<SeoHandler
-	metaTags={{
-		title: 'Home',
-		description:
-			"If you're looking for conversation ideas, we could talk about hobbies, travel, current events, personal goals, pop culture, food, or career. Is there anything in particular that interests you?"
-	}}
-	jsonLd={{
-		'@type': 'Organization',
-		url: 'https://www.sxya.org',
-		logo: LogoLight,
-		foundingDate: new Date('2019-04-15').toISOString(),
-		slogan:
-			'The truth of the sea, and let not found to lie down in front of my eyes, all things for me to explore.'
-	}}
-/>
+<SeoHandler factory={new HomeSeoFactory()} />
 
 <main>
 	<HeroSection />

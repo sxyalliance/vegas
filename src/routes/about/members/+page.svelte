@@ -4,7 +4,7 @@
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import SeoHandler from '$lib/shared/shared/components/SeoHandler.svelte';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 </script>
 
 <SeoHandler
