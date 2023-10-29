@@ -37,3 +37,6 @@ vite.config.ts.timestamp-*
 
 # Inlang
 static/messages.json
+
+# Sitemap Generation
+src/sitemap.ts
