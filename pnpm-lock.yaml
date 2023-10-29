@@ -229,6 +229,9 @@ devDependencies:
   sveltekit-embed:
     specifier: ^0.0.12
     version: 0.0.12
+  sveltekit-sitemap:
+    specifier: ^1.0.21
+    version: 1.0.21
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5(ts-node@10.9.1)
@@ -7826,6 +7829,10 @@ packages:
 
   /sveltekit-embed@0.0.12:
     resolution: {integrity: sha512-77GiPxkn4ZyF5tcq+YuosYjiFTrjYwA+sOMUiWoN+8sTCM0vJVi9sxHpIHWK6Cvmn0fAeaHagV//2i+tFmELkA==}
+    dev: true
+
+  /sveltekit-sitemap@1.0.21:
+    resolution: {integrity: sha512-Pc8hJFqTdP9vvJfpHfzMm0oSoWVp2I/vOgReTT0lM//ZUCnfdPjAqTc/PA11CFITCCksKOrtun/o3F8ZvMAldA==}
     dev: true
 
   /symbol-tree@3.2.4:

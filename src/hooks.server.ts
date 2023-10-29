@@ -3,6 +3,9 @@ import { sequence } from '@sveltejs/kit/hooks';
 import type { Handle } from '@sveltejs/kit';
 import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
+import { sitemapHook } from 'sveltekit-sitemap';
+import { sitemap } from './sitemap';
+import * as seoSites from '$lib/shared/seo/sites';
 
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({
@@ -11,7 +14,8 @@ import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n'
 // });
 
 export const handle: Handle = sequence(
-	/*Sentry.sentryHandle(),*/ async ({ event, resolve }) => {
+	/*Sentry.sentryHandle(),*/
+	async ({ event, resolve }) => {
 		const langs = event.request.headers.get('accept-language')?.split(',');
 		if (langs) {
 			localePreference.set(resolveFirstAvailableLocale(langs));
@@ -22,6 +26,10 @@ export const handle: Handle = sequence(
 		return resolve(event, {
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
 		});
-	}
+	},
+	sitemapHook(sitemap, {
+		getRobots: seoSites.getRobots,
+		getRoutes: seoSites.getRoutes
+	})
 );
 // export const handleError = Sentry.handleErrorWithSentry();

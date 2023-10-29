@@ -8,6 +8,7 @@ import { imagetools } from '@zerodevx/svelte-img/vite';
 import { name } from './package.json';
 import { watch } from 'vite-plugin-watch';
 import { sentrySvelteKit } from '@sentry/sveltekit';
+import { sitemapPlugin } from 'sveltekit-sitemap/dist/plugin';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
@@ -35,6 +36,7 @@ export default defineConfig(({ command }) => ({
 		}),
 		sveltekit(),
 		imagetools(),
+		sitemapPlugin(),
 
 		watch({
 			pattern: 'i18n/*.json',
