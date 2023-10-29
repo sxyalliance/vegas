@@ -34,3 +34,6 @@ vite.config.ts.timestamp-*
 
 # Sentry Config File
 .sentryclirc
+
+# Inlang
+static/messages.json
