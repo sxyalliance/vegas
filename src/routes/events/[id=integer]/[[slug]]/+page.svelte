@@ -11,8 +11,8 @@
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
-	
-export let data: PageData;
+
+	export let data: PageData;
 
 	const event = createQuery({
 		queryKey: ['event', data.id],
