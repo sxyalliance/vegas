@@ -30,6 +30,16 @@
 	});
 
 	$: loading = $navigating || !pageLoaded;
+
+	$: {
+		if (browser) {
+			if (loading) {
+				document.body.classList.add('overflow-hidden');
+			} else {
+				document.body.classList.remove('overflow-hidden');
+			}
+		}
+	}
 </script>
 
 <ParaglideJsSvelteKitProviderCsr>
@@ -39,12 +49,12 @@
 		{#if loading}
 			<!--	<LoadingOverlay />-->
 			<LoadingOverlay2 />
-		{:else}
-			<Header />
-
-			<slot />
-
-			<Footer />
 		{/if}
+
+		<Header />
+
+		<slot />
+
+		<Footer />
 	</QueryClientProvider>
 </ParaglideJsSvelteKitProviderCsr>
