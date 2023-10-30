@@ -41,19 +41,10 @@ export default defineConfig(({ command }) => ({
 		watch({
 			pattern: 'i18n/*.json',
 			command: 'pnpm run i18n:compile'
-		}),
-
-		{
-			name: 'compile-i18n',
-			async buildStart() {
-				if (command === 'build') {
-					await pexec('pnpm run i18n:compile');
-				}
-			}
-		}
+		})
 	],
 	optimizeDeps: {
-		exclude: ['@inlang/paraglide-js']
+		exclude: command === 'serve' ? ['@inlang/paraglide-js'] : []
 	},
 	server: {
 		proxy: {

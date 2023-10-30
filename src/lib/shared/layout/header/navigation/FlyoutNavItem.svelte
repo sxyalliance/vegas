@@ -34,7 +34,7 @@
 		<Icon icon="tabler:chevron-down" class="text-neutral-9" aria-hidden="true" />
 	</button>
 
-	{#if $open}
+	{#key $open}
 		<div
 			use:melt={$menu}
 			in:fade={{ duration: 200 }}
@@ -47,5 +47,5 @@
 				</div>
 			{/each}
 		</div>
-	{/if}
+	{/key}
 </div>
