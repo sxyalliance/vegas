@@ -17,7 +17,7 @@ export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () =>
 
 export const getRoutes: SitemapParams<typeof sitemap>['getRoutes'] = async () => {
 	return {
-		'/events/[slug]': await getEventRoutes()
+		'/events/[id=integer]/[[slug]]': await getEventRoutes()
 	};
 };
 
@@ -31,7 +31,7 @@ const getEventRoutes = async () => {
 	return await events.then((res) => {
 		return res.map((event) => {
 			return {
-				path: `/events/${event.slug}`
+				path: `/events/${event.id}/${event.slug}`
 			};
 		});
 	});

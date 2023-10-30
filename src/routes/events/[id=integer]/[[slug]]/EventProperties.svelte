@@ -6,7 +6,7 @@
 	import type query from './query';
 	import dayjs from 'dayjs';
 
-	export let properties: Awaited<ReturnType<typeof query>>[number];
+	export let properties: Awaited<ReturnType<typeof query>>;
 
 	type Property =
 		| {

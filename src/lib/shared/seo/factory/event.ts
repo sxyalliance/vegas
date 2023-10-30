@@ -22,7 +22,7 @@ export class EventListSeoFactory extends SeoFactory {
 			ld.push({
 				'@type': 'Event',
 				name: valueOrNothing(event.name),
-				sameAs: 'https://www.sxya.org/events/' + event.slug,
+				sameAs: `https://www.sxya.org/events/${event.id}/${event.slug}`,
 				description: valueOrNothing(event.description),
 				startDate: valueOrNothing(event.meeting_time),
 				organizer: {
@@ -36,7 +36,7 @@ export class EventListSeoFactory extends SeoFactory {
 }
 
 export class EventSeoFactory extends SeoFactory {
-	constructor(private readonly event: Awaited<ReturnType<typeof eventQuery>>[number]) {
+	constructor(private readonly event: Awaited<ReturnType<typeof eventQuery>>) {
 		super();
 	}
 

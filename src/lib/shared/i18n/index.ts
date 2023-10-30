@@ -38,17 +38,21 @@ export const localePreference = createLocalePreference();
 
 export type MessageId = keyof typeof m;
 
-export function _(id: MessageId, strict: boolean = true): string {
-	if (!m[id]) {
-		if (strict && !dev) {
-			throw new Error(`Message id ${id} not found`);
-		} else {
-			logger.warn({ id }, `Message of the specified id not found, returning id as message`);
-			return id;
-		}
+const isValidMessageId = (id: string): id is MessageId => {
+	return id in m;
+};
+
+export function _(id: MessageId | string, strict: boolean = true): string {
+	if (isValidMessageId(id)) {
+		return m[id]();
 	}
 
-	return m[id]();
+	if (strict && !dev) {
+		throw new Error(`Message id ${id} not found`);
+	} else {
+		logger.warn({ id }, `Message of the specified id not found, returning id as message`);
+		return id;
+	}
 }
 
 export const resolveFirstAvailableLocale = (locales: readonly string[]): AvailableLanguageTag => {

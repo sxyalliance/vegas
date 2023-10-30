@@ -14,7 +14,7 @@
 	const proposer = event.proposer as NonNullable<typeof event.proposer>;
 </script>
 
-<a href={`/events/${event.slug}`}>
+<a href={`/events/${event.id}/${event.slug}`}>
 	<article
 		class="relative isolate flex flex-col justify-between gap-10 bg-neutral-3 p-6 lg:flex-row"
 	>
