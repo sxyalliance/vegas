@@ -122,6 +122,9 @@
 		},
 		"overrides": {
 			"postcss@<8.4.31": ">=8.4.31"
+		},
+		"patchedDependencies": {
+			"sveltekit-sitemap@1.0.21": "patches/sveltekit-sitemap@1.0.21.patch"
 		}
 	},
 	"config": {

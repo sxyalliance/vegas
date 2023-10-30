@@ -1,5 +1,7 @@
 import type { SitemapParams } from 'sveltekit-sitemap';
 import type { sitemap } from '../../../sitemap';
+import { constructDirectus } from '$lib/shared/directus/client';
+import { readItems } from '@directus/sdk';
 
 export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () => {
 	return {
@@ -14,6 +16,23 @@ export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () =>
 };
 
 export const getRoutes: SitemapParams<typeof sitemap>['getRoutes'] = async () => {
-	// TODO: get routes from directus
-	return {};
+	return {
+		'/events/[slug]': await getEventRoutes()
+	};
+};
+
+const getEventRoutes = async () => {
+	const events = constructDirectus().request(
+		readItems('events', {
+			fields: ['id', 'slug']
+		})
+	);
+
+	return await events.then((res) => {
+		return res.map((event) => {
+			return {
+				path: `/events/${event.slug}`
+			};
+		});
+	});
 };
