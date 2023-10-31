@@ -5,7 +5,7 @@
 	/**
 	 * Gives the card a different look.
 	 */
-	export let variant: 'surface' | 'classic' = 'classic';
+	export let variant: 'surface' | 'classic' | 'classic-slim' = 'classic';
 </script>
 
 <div class="card {variant} {clazz}" {...$$restProps}>

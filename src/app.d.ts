@@ -4,7 +4,6 @@
 
 import type { ConstructedDirectusClient } from '$lib/shared/directus/client';
 import type { LoggerType } from 'roarr';
-import type { Seo } from '$lib/shared/shared/seo';
 
 declare global {
 	namespace App {
@@ -14,10 +13,7 @@ declare global {
 		interface Locals {
 			directus: ConstructedDirectusClient;
 		}
-
-		interface PageData {
-			seo: Seo;
-		}
+		// interface PageData {}
 		// interface Platform {}
 	}
 

@@ -36,7 +36,7 @@ export default defineConfig(({ command }) => ({
 		}),
 		sveltekit(),
 		imagetools(),
-		sitemapPlugin(),
+		command === 'build' && sitemapPlugin(),
 
 		watch({
 			pattern: 'i18n/*.json',
@@ -53,7 +53,7 @@ export default defineConfig(({ command }) => ({
 		}
 	],
 	optimizeDeps: {
-		exclude: command === 'serve' ? ['@inlang/paraglide-js'] : []
+		exclude: ['@inlang/paraglide-js']
 	},
 	server: {
 		proxy: {
