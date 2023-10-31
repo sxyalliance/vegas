@@ -1,28 +1,21 @@
 <script lang="ts">
-	import { cfAi } from '$lib/shared/cloudflare';
 	import TextArea from '$lib/vgui/textarea/TextArea.svelte';
 	import Button from '$lib/vgui/button/Button.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
-	import { error } from '@sveltejs/kit';
 	import Section from '$lib/vgui/section/Section.svelte';
+	import { trpc } from '$lib/trpc/client';
+	import { page } from '$app/stores';
 
 	let prompt = '';
-	let resp = '';
+	const mutation = trpc($page).ask.createMutation();
 
 	const ask = async () => {
 		if (!prompt || prompt.length < 1) {
 			return;
 		}
 
-		const resps = await cfAi().ask(prompt);
-		if (resps.isErr()) {
-			throw error(resps.error.code, resps.error.message);
-		}
-		if (resps.value.error) {
-			throw error(500, JSON.stringify(resps.value.error));
-		}
-		resp = resps.value.data || 'No response';
+		$mutation.mutate(prompt);
 	};
 </script>
 
@@ -39,6 +32,14 @@
 	</div>
 
 	<Card class="text-low-contrast">
-		{resp || 'AI response will appear here...'}
+		{#if $mutation.isLoading}
+			Thinking 🤔
+		{:else if $mutation.isError}
+			Oh no, my mind is blank 😵
+		{:else if $mutation.isSuccess}
+			{$mutation.data}
+		{:else}
+			Ask me something!
+		{/if}
 	</Card>
 </Section>

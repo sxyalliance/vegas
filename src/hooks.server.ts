@@ -6,6 +6,9 @@ import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n'
 import { sitemapHook } from 'sveltekit-sitemap';
 import { sitemap } from './sitemap';
 import * as seoSites from '$lib/shared/seo/sites';
+import { createTRPCHandle } from 'trpc-sveltekit';
+import { createContext } from '$lib/trpc/context';
+import { router } from '$lib/trpc/router';
 
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({
@@ -27,6 +30,7 @@ export const handle: Handle = sequence(
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
 		});
 	},
+	createTRPCHandle({ router, createContext }),
 	sitemapHook(sitemap, {
 		getRobots: seoSites.getRobots,
 		getRoutes: seoSites.getRoutes

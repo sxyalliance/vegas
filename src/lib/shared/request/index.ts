@@ -15,10 +15,17 @@ const setupRequester = (customFetch: typeof window.fetch) => {
 
 export const baseRequester = setupRequester(fetch);
 
+export type RequesterErrorTransformer = (e: unknown) => ErrorResult | false;
+
 export class Requester {
 	private requester: ReturnType<typeof setupRequester>;
 
-	constructor(public baseUrl: string, customFetch: typeof window.fetch = fetch, token?: string) {
+	constructor(
+		public baseUrl: string,
+		customFetch: typeof window.fetch = fetch,
+		token?: string,
+		private errorTransformer?: RequesterErrorTransformer
+	) {
 		this.requester = setupRequester(customFetch).url(baseUrl);
 		if (token) {
 			this.requester = this.requester.auth(`Bearer ${token}`);
@@ -96,7 +103,11 @@ export class Requester {
 	}
 
 	private transformError = (e: unknown): ErrorResult => {
-		console.log(e);
+		if (this.errorTransformer) {
+			const result = this.errorTransformer(e);
+			if (result) return result;
+		}
+
 		if (e instanceof wretch.WretchError) {
 			const message =
 				typeof e.message === 'object' && Object.keys(e.message).length > 0
@@ -113,7 +124,8 @@ export class Requester {
 export const createRequester = (
 	baseUrl: string,
 	customFetch: typeof window.fetch = fetch,
-	token?: string
+	token?: string,
+	errorTransformer?: RequesterErrorTransformer
 ): Requester => {
-	return new Requester(baseUrl, customFetch, token);
+	return new Requester(baseUrl, customFetch, token, errorTransformer);
 };
