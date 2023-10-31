@@ -1,5 +1,5 @@
 diff --git a/dist/index.js b/dist/index.js
-index 35cbc0c8b649397eec5db580be3c26d2b4612a67..ac5618c6e6c9350526ca2221eb0a0f7a83867bdf 100644
+index 35cbc0c8b649397eec5db580be3c26d2b4612a67..01cbf856887928d437b60a757df5bc8e135533a8 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -11,7 +11,6 @@ xmlns:pagemap="http://www.google.com/schemas/sitemap-pagemap/1.0"
@@ -10,13 +10,54 @@ index 35cbc0c8b649397eec5db580be3c26d2b4612a67..ac5618c6e6c9350526ca2221eb0a0f7a
    ${w?`<lastmod>${w}</lastmod>`:""}
    ${n?`<priority>${n}</priority>`:""}
    ${g?`<changefreq>${g}</changefreq>`:""}
-@@ -20,7 +19,8 @@ ${Object.entries(a).map(([s,e])=>{var h,f;if(!e)return"";let{path:o,priority:n,c
+@@ -20,7 +19,7 @@ ${Object.entries(a).map(([s,e])=>{var h,f;if(!e)return"";let{path:o,priority:n,c
        <image:loc>${c(m.url)}</image:loc>
        <image:title>${c((h=m.title)!=null?h:" ")}</image:title>
        <image:caption>${c((f=m.altText)!=null?f:" ")}</image:caption>
 -    </image:image>`:""}`}).join(`
-+    </image:image>`:""}
-+  </url>`}).join(`
++    </image:image>`:""}</url>`}).join(`
  `)}
  </urlset>`},S= exports.generateRobots =(r,i)=>{let t=[],l=a=>{let s=Object.entries(a.paths).reduce((e,[o,n])=>(n?e.allow.push(o):e.disallow.push(o),e),{allow:[],disallow:[]});Array.isArray(a.userAgent)?a.userAgent.forEach(e=>{t.push(_chunk4DJVROEEjs.a.call(void 0, {agent:e,crawlDelay:a.crawlDelay},s))}):t.push(_chunk4DJVROEEjs.a.call(void 0, {agent:a.userAgent||"*",crawlDelay:a.crawlDelay},s))};return typeof r=="boolean"?t.push({agent:"*",allow:r===!0?["/"]:[],disallow:r===!1?["/"]:[]}):Array.isArray(r)?r.forEach(l):l(r),`${t.map(({agent:a,crawlDelay:s,allow:e,disallow:o})=>`User-agent: ${a}
  Sitemap: ${i}/sitemap.xml
+diff --git a/dist/index.mjs b/dist/index.mjs
+index ad7e63d45201f88e8f0684f52a5baeddbb0b7522..d21793226b341980d4eeb2e97f20dae77258b1f9 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -11,7 +11,6 @@ xmlns:pagemap="http://www.google.com/schemas/sitemap-pagemap/1.0"
+ xmlns:xhtml="http://www.w3.org/1999/xhtml">
+ ${Object.entries(a).map(([s,e])=>{var h,f;if(!e)return"";let{path:o,priority:n,changeFreq:g,image:m,lastMod:w}=e;return`  <url>
+     <loc>${i}${o||s}</loc>
+-  </url>
+   ${w?`<lastmod>${w}</lastmod>`:""}
+   ${n?`<priority>${n}</priority>`:""}
+   ${g?`<changefreq>${g}</changefreq>`:""}
+@@ -20,7 +19,7 @@ ${Object.entries(a).map(([s,e])=>{var h,f;if(!e)return"";let{path:o,priority:n,c
+       <image:loc>${c(m.url)}</image:loc>
+       <image:title>${c((h=m.title)!=null?h:" ")}</image:title>
+       <image:caption>${c((f=m.altText)!=null?f:" ")}</image:caption>
+-    </image:image>`:""}`}).join(`
++    </image:image>`:""}</url>`}).join(`
+ `)}
+ </urlset>`},S=(r,i)=>{let t=[],l=a=>{let s=Object.entries(a.paths).reduce((e,[o,n])=>(n?e.allow.push(o):e.disallow.push(o),e),{allow:[],disallow:[]});Array.isArray(a.userAgent)?a.userAgent.forEach(e=>{t.push(p({agent:e,crawlDelay:a.crawlDelay},s))}):t.push(p({agent:a.userAgent||"*",crawlDelay:a.crawlDelay},s))};return typeof r=="boolean"?t.push({agent:"*",allow:r===!0?["/"]:[],disallow:r===!1?["/"]:[]}):Array.isArray(r)?r.forEach(l):l(r),`${t.map(({agent:a,crawlDelay:s,allow:e,disallow:o})=>`User-agent: ${a}
+ Sitemap: ${i}/sitemap.xml
+diff --git a/src/utils.ts b/src/utils.ts
+index 2c263a04f11d565dfde121ca0bc705f934ab25fa..45a7f0a995d1bfeb178c40cb952e762bb0dab745 100644
+--- a/src/utils.ts
++++ b/src/utils.ts
+@@ -66,7 +66,6 @@ ${Object.entries(routes)
+     const { path, priority, changeFreq, image, lastMod } = d;
+     return `  <url>
+     <loc>${baseUrl}${path || r}</loc>
+-  </url>
+   ${lastMod ? `<lastmod>${lastMod}</lastmod>` : ""}
+   ${priority ? `<priority>${priority}</priority>` : ""}
+   ${changeFreq ? `<changefreq>${changeFreq}</changefreq>` : ""}
+@@ -79,7 +78,7 @@ ${Object.entries(routes)
+       <image:caption>${encodeXML(image.altText ?? " ")}</image:caption>
+     </image:image>`
+       : ""
+-  }`;
++  }</url>`;
+   })
+   .join("\n")}
+ </urlset>`;

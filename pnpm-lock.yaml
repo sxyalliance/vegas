@@ -9,7 +9,7 @@ overrides:
 
 patchedDependencies:
   sveltekit-sitemap@1.0.21:
-    hash: 4irh3sd4rzztvhtgdnv3ikdroi
+    hash: ve7jnqku6464myxxb7ugrrjtwe
     path: patches/sveltekit-sitemap@1.0.21.patch
 
 dependencies:
@@ -242,7 +242,7 @@ devDependencies:
     version: 0.0.12
   sveltekit-sitemap:
     specifier: ^1.0.21
-    version: 1.0.21(patch_hash=4irh3sd4rzztvhtgdnv3ikdroi)
+    version: 1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5(ts-node@10.9.1)
@@ -7920,7 +7920,7 @@ packages:
     resolution: {integrity: sha512-77GiPxkn4ZyF5tcq+YuosYjiFTrjYwA+sOMUiWoN+8sTCM0vJVi9sxHpIHWK6Cvmn0fAeaHagV//2i+tFmELkA==}
     dev: true
 
-  /sveltekit-sitemap@1.0.21(patch_hash=4irh3sd4rzztvhtgdnv3ikdroi):
+  /sveltekit-sitemap@1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe):
     resolution: {integrity: sha512-Pc8hJFqTdP9vvJfpHfzMm0oSoWVp2I/vOgReTT0lM//ZUCnfdPjAqTc/PA11CFITCCksKOrtun/o3F8ZvMAldA==}
     dev: true
     patched: true
