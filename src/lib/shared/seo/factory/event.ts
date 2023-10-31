@@ -3,7 +3,7 @@ import type { MetaTagsProps } from 'svelte-meta-tags';
 import type { Event } from 'schema-dts';
 import type { default as eventsQuery } from '../../../../routes/events/query';
 import { valueOrNothing } from '$lib/shared/shared/utils';
-import type { default as eventQuery } from '../../../../routes/events/[slug]/query';
+import type { default as eventQuery } from '../../../../routes/events/[id=integer]/[[slug]]/query';
 
 export class EventListSeoFactory extends SeoFactory {
 	constructor(private readonly events: Awaited<ReturnType<typeof eventsQuery>>) {
@@ -25,6 +25,7 @@ export class EventListSeoFactory extends SeoFactory {
 				sameAs: `https://www.sxya.org/events/${event.id}/${event.slug}`,
 				description: valueOrNothing(event.description),
 				startDate: valueOrNothing(event.meeting_time),
+				location: valueOrNothing(event.event_point),
 				organizer: {
 					'@type': 'Person',
 					name: valueOrNothing(event.proposer?.first_name)

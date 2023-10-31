@@ -11,6 +11,7 @@ export default function query(customFetch = fetch) {
 				'description',
 				'meeting_time',
 				'status',
+				'event_point',
 				{ category: ['key', 'icon', 'color'] },
 				{ proposer: ['id', 'first_name'] }
 			],
