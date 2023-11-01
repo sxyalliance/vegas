@@ -1,9 +1,10 @@
-import type { Repository } from '$lib/shared/shared/repository';
-import { Category } from '$lib/event/category/entity';
 import { error } from '@sveltejs/kit';
+import { deserialize } from 'serializr';
+
+import { Category } from '$lib/event/category/entity';
+import type { Repository } from '$lib/shared/shared/repository';
 
 import data from './data.json';
-import { deserialize } from 'serializr';
 
 export interface CategoryRepository extends Repository<string, Category> {}
 

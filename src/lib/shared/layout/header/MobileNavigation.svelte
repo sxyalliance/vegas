@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
-	import * as Nav from './navigation';
 	import Icon from '@iconify/svelte';
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
-	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
-	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
-	import { createDialog } from '@melt-ui/svelte';
+	import { melt, createDialog } from '@melt-ui/svelte';
 	import { writable } from 'svelte/store';
-	import { melt } from '@melt-ui/svelte';
 	import { fly } from 'svelte/transition';
+
+	import { _ } from '$lib/shared/i18n';
+	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
+	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
+	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
+
+	import * as Nav from './navigation';
 
 	export let mobileMenuOpen = false;
 

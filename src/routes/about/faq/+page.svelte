@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 	import Icon from '@iconify/svelte';
+	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
+
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
 

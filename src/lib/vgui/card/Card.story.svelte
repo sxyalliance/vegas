@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { Hst } from '@histoire/plugin-svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
+
+	import type { Hst } from '@histoire/plugin-svelte';
 
 	// eslint-disable-next-line no-import-assign
 	export let Hst: Hst;

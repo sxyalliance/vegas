@@ -1,6 +1,7 @@
 <script>
-	import demo from '$lib/assets/home_team_demo.png';
 	import { _ } from 'svelte-i18n';
+
+	import demo from '$lib/assets/home_team_demo.png';
 </script>
 
 <!-- Team section -->

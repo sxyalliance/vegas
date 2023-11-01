@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { GenericEmbed } from 'sveltekit-embed';
+
 	import type { EmbedBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 	export let block: EmbedBlockObjectResponse;
-	import { GenericEmbed } from 'sveltekit-embed';
 
 	// $: if(block?.embed?.url) {fetchEmbedMetas(block?.embed?.url);}
 

@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import dayjs from 'dayjs';
+
 	import { _, type MessageId } from '$lib/shared/i18n';
 	import Badge from '$lib/vgui/badge/Badge.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
+
 	import type query from './query';
-	import dayjs from 'dayjs';
 
 	export let properties: Awaited<ReturnType<typeof query>>;
 

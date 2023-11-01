@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
 	import Icon from '@iconify/svelte';
 
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
-	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
+	import { _ } from '$lib/shared/i18n';
+
 	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
+	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import DesktopNavigation from '$lib/shared/layout/header/DesktopNavigation.svelte';
 	import MobileNavigation from '$lib/shared/layout/header/MobileNavigation.svelte';
+	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
 
 	let mobileMenuOpen = false;
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
+	import { _ } from '$lib/shared/i18n';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 </script>
 
 <SeoHandler

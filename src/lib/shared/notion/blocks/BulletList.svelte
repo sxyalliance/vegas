@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { BulletedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import RichText from './RichText.svelte';
+
+	import type { BulletedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 	export let block: BulletedListItemBlockObjectResponse;
 </script>

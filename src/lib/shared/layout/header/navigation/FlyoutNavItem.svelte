@@ -1,10 +1,13 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import type { FlyoutNavItem, FlyoutDefinition } from './types';
-	import { fade } from 'svelte/transition';
 	import { melt } from '@melt-ui/svelte';
-	import FlyoutItem from './FlyoutItem.svelte';
+	import { fade } from 'svelte/transition';
+
 	import { _ } from '$lib/shared/i18n';
+
+	import FlyoutItem from './FlyoutItem.svelte';
+
+	import type { FlyoutNavItem, FlyoutDefinition } from './types';
 
 	export let item: FlyoutNavItem;
 

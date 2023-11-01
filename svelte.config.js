@@ -1,9 +1,10 @@
 import { preprocessMeltUI } from '@melt-ui/pp';
-import sequence from 'svelte-sequential-preprocessor';
-import { mdsvex } from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js';
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { mdsvex } from 'mdsvex';
+import sequence from 'svelte-sequential-preprocessor';
+
+import mdsvexConfig from './mdsvex.config.js';
 /** @type {import("@sveltejs/kit").Config}*/
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],

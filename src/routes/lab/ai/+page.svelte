@@ -1,11 +1,12 @@
 <script lang="ts">
-	import TextArea from '$lib/vgui/textarea/TextArea.svelte';
+	import { page } from '$app/stores';
+
+	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
+	import { trpc } from '$lib/trpc/client';
 	import Button from '$lib/vgui/button/Button.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
-	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import { trpc } from '$lib/trpc/client';
-	import { page } from '$app/stores';
+	import TextArea from '$lib/vgui/textarea/TextArea.svelte';
 
 	let prompt = '';
 	const mutation = trpc($page).ask.createMutation();

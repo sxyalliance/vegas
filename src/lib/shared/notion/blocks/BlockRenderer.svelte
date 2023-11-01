@@ -1,11 +1,14 @@
 <script lang="ts">
-	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-	import Heading from './Heading.svelte';
-	import Paragraph from './Paragraph.svelte';
-	import NumberedList from './NumberedList.svelte';
+	import EnImage from '$lib/shared/notion/blocks/EnImage.svelte';
+
 	import BulletList from './BulletList.svelte';
 	import Embed from './Embed.svelte';
-	import EnImage from '$lib/shared/notion/blocks/EnImage.svelte';
+	import Heading from './Heading.svelte';
+
+	import NumberedList from './NumberedList.svelte';
+	import Paragraph from './Paragraph.svelte';
+
+	import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 	export let block: BlockObjectResponse;
 	//$: console.log("type",block.type);

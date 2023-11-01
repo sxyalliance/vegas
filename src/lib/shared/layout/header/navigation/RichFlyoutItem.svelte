@@ -1,7 +1,9 @@
 <script lang="ts">
-	import type { RichFlyoutItem } from './types';
 	import Icon from '@iconify/svelte';
+
 	import { _ } from '$lib/shared/i18n';
+
+	import type { RichFlyoutItem } from './types';
 
 	export let item: RichFlyoutItem;
 </script>

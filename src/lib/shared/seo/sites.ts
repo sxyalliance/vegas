@@ -1,7 +1,9 @@
-import type { SitemapParams } from 'sveltekit-sitemap';
-import type { sitemap } from '../../../sitemap';
-import { constructDirectus } from '$lib/shared/directus/client';
 import { readItems } from '@directus/sdk';
+
+import { constructDirectus } from '$lib/shared/directus/client';
+
+import type { sitemap } from '../../../sitemap';
+import type { SitemapParams } from 'sveltekit-sitemap';
 
 export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () => {
 	return {

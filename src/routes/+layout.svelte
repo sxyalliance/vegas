@@ -1,18 +1,19 @@
 <script lang="ts">
-	import Header from '$lib/shared/layout/header/Header.svelte';
-	import Footer from '$lib/shared/layout/Footer.svelte';
 	import { browser } from '$app/environment';
 	import { navigating, page } from '$app/stores';
-	import { webVitals } from '$lib/shared/analytics/vitals';
-	import type { LayoutData } from './$types';
+	import { QueryClientProvider } from '@tanstack/svelte-query';
+	import { onMount } from 'svelte';
 
+	import { webVitals } from '$lib/shared/analytics/vitals';
+	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
+	import Footer from '$lib/shared/layout/Footer.svelte';
+	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
+	import Header from '$lib/shared/layout/header/Header.svelte';
+	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
+
+	import type { LayoutData } from './$types';
 	import '$lib/assets/app.css';
 	import '$lib/assets/rainbow.css';
-	import { onMount } from 'svelte';
-	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
-	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
-	import { QueryClientProvider } from '@tanstack/svelte-query';
-	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
 
 	export let data: LayoutData;
 

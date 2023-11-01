@@ -1,16 +1,20 @@
 <script lang="ts">
-	import EventProperties from './EventProperties.svelte';
-	import { _ } from '$lib/shared/i18n';
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
-	import query from './query';
-	import type { PageData } from './$types';
+
 	import type { CustomDirectusTypes } from '$lib/shared/directus/types';
-	import Section from '$lib/vgui/section/Section.svelte';
-	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import { _ } from '$lib/shared/i18n';
+
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
-	import { goto } from '$app/navigation';
-	import { browser } from '$app/environment';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import Section from '$lib/vgui/section/Section.svelte';
+
+	import EventProperties from './EventProperties.svelte';
+	import query from './query';
+
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 

@@ -1,9 +1,3 @@
-import type { Client } from '../client';
-import { Err, err, ok, Result } from 'neverthrow';
-import type {
-	PageObjectResponse,
-	QueryDatabaseParameters
-} from '@notionhq/client/build/src/api-endpoints';
 import {
 	APIErrorCode,
 	ClientErrorCode,
@@ -11,8 +5,16 @@ import {
 	isFullPage,
 	isNotionClientError
 } from '@notionhq/client';
-import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { Err, err, ok, Result } from 'neverthrow';
+
 import type { ErrorResult } from '$lib/shared/shared/result';
+
+import type { Client } from '../client';
+import type {
+	PageObjectResponse,
+	QueryDatabaseParameters,
+	BlockObjectResponse
+} from '@notionhq/client/build/src/api-endpoints';
 
 export type PageQueryCriteria = Pick<
 	QueryDatabaseParameters,

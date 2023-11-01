@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import {
 		Availability,
 		getAvailabilityOfTime,
@@ -9,6 +8,8 @@
 		TimeOfDay
 	} from './calendar';
 	import SideBySideCalendar from './SideBySideCalendar.svelte';
+
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 

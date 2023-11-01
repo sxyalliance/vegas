@@ -1,9 +1,10 @@
 <script lang="ts">
+	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
+
+	import { all as allMembers } from '$lib/shared/discord';
 	import { _ } from '$lib/shared/i18n';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
-	import { onMount } from 'svelte';
-	import Icon from '@iconify/svelte';
-	import { all as allMembers } from '$lib/shared/discord';
 	import { Release } from '$lib/shared/shared/release';
 
 	let statistics = {

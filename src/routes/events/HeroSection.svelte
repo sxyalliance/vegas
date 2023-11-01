@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { createQuery } from '@tanstack/svelte-query';
+	import { paramCase } from 'change-case';
+
 	import { _ } from '$lib/shared/i18n';
 	import Card from '$lib/vgui/card/Card.svelte';
-	import { createQuery } from '@tanstack/svelte-query';
+
 	import { queryCategories } from './query';
-	import { paramCase } from 'change-case';
 
 	const categories = createQuery({
 		queryKey: ['categories'],

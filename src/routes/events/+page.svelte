@@ -1,14 +1,17 @@
 <script lang="ts">
-	import HeroSection from './HeroSection.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
-	import EventListItem from './EventListItem.svelte';
-	import query from './query';
-	import Callout from '$lib/vgui/callout/Callout.svelte';
-	import Section from '$lib/vgui/section/Section.svelte';
-	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
+
 	import { _ } from '$lib/shared/i18n';
-	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import { EventListSeoFactory } from '$lib/shared/seo/factory/event';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
+	import Callout from '$lib/vgui/callout/Callout.svelte';
+
+	import Section from '$lib/vgui/section/Section.svelte';
+
+	import EventListItem from './EventListItem.svelte';
+	import HeroSection from './HeroSection.svelte';
+	import query from './query';
 
 	const events = createQuery({
 		queryKey: ['events'],

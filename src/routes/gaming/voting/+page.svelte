@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
-	import Section from '$lib/vgui/section/Section.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
+	import Section from '$lib/vgui/section/Section.svelte';
 </script>
 
 <SimpleHeroSection title="Gaming Votes" tagline="Vote your favours games to play" />

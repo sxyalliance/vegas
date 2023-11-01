@@ -1,5 +1,6 @@
-import { getSpreadsheetRangeData } from '$lib/shared/google/gsheet';
 import { error } from '@sveltejs/kit';
+
+import { getSpreadsheetRangeData } from '$lib/shared/google/gsheet';
 
 const SpreadsheetId = '1XL4WQfdRTIBIGRJ2051Lt02cRSF99gIVTRwMX35Ym2c' as const;
 const Range = 'A11:AC18' as const;

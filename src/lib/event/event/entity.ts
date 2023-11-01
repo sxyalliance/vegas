@@ -1,8 +1,10 @@
-import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import dayjs from 'dayjs';
 import { date, identifier, object, serializable } from 'serializr';
+
 import { Category } from '$lib/event/category/entity';
 import { Member } from '$lib/member/member/entity';
-import dayjs from 'dayjs';
+
+import type { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export class Event {
 	public blocks: BlockObjectResponse[] = [];

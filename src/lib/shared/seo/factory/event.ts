@@ -1,9 +1,10 @@
 import { SeoFactory } from '$lib/shared/seo/factory/base';
-import type { MetaTagsProps } from 'svelte-meta-tags';
-import type { Event } from 'schema-dts';
-import type { default as eventsQuery } from '../../../../routes/events/query';
 import { valueOrNothing } from '$lib/shared/shared/utils';
+
 import type { default as eventQuery } from '../../../../routes/events/[id=integer]/[[slug]]/query';
+import type { default as eventsQuery } from '../../../../routes/events/query';
+import type { Event } from 'schema-dts';
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
 export class EventListSeoFactory extends SeoFactory {
 	constructor(private readonly events: Awaited<ReturnType<typeof eventsQuery>>) {

@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { createLinkPreview, melt } from '@melt-ui/svelte';
 	import Img from '@zerodevx/svelte-img';
-	import { createLinkPreview } from '@melt-ui/svelte';
-	import { melt } from '@melt-ui/svelte';
 	import { fly } from 'svelte/transition';
+
 	import Badge from '$lib/vgui/badge/Badge.svelte';
 
 	export let avatar: unknown;

@@ -1,8 +1,9 @@
 <script>
-	import { _ } from '$lib/shared/i18n';
 	import { FxParallax as Img } from '@zerodevx/svelte-img';
 
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
+	import { _ } from '$lib/shared/i18n';
+
 	import Button from '$lib/vgui/button/Button.svelte';
 </script>
 

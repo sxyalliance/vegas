@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Select from '$lib/vgui/select/Select.svelte';
 	import { availableLanguageTags } from '@inlang/paraglide-js/vegas';
-	import { _, localePreference } from '$lib/shared/i18n/index';
 	import { parse } from 'bcp-47';
+
+	import { _, localePreference } from '$lib/shared/i18n/index';
+	import Select from '$lib/vgui/select/Select.svelte';
 
 	let clazz = '';
 	export { clazz as class };

@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { PureNavItem } from '../types';
 	import { _ } from '$lib/shared/i18n';
+
+	import type { PureNavItem } from '../types';
 
 	export let item: PureNavItem;
 </script>

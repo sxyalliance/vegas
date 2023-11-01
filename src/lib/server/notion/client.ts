@@ -1,4 +1,5 @@
 import { Client as NotionClient } from '@notionhq/client';
+
 import type { PostPropertiesExtractor } from '$lib/server/notion/types';
 
 export type ClientConfig = {

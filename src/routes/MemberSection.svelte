@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { all } from '$lib/shared/discord';
+	import { _ } from '$lib/shared/i18n';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	const people = all;

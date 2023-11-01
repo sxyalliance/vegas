@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
-	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
 	import { paramCase } from 'change-case';
+	import dayjs from 'dayjs';
+
+	import { _ } from '$lib/shared/i18n';
+
 	import type query from './query';
 
 	export let event: Awaited<ReturnType<typeof query>>[number];

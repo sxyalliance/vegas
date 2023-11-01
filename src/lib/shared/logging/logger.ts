@@ -1,4 +1,5 @@
 import { Roarr } from 'roarr';
+
 import type { JsonObject } from 'roarr/dist/types';
 
 export const SuperLogger = Roarr.child({});

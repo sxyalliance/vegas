@@ -1,12 +1,13 @@
-import type { Repository } from '$lib/shared/shared/repository';
+import { error } from '@sveltejs/kit';
+
+import type { Phrase } from '$lib/dictionary/phrase/phrase';
+import { getAllPosts, getPostByCriteria } from '$lib/server/notion';
 import type { Client } from '$lib/server/notion/client';
 import { constructClient } from '$lib/server/notion/client';
 import type { PostPropertiesExtractor } from '$lib/server/notion/types';
 import { makeNotNullable, mapPropertyToPrimitive } from '$lib/server/notion/utils';
-import type { Phrase } from '$lib/dictionary/phrase/phrase';
 
-import { getAllPosts, getPostByCriteria } from '$lib/server/notion';
-import { error } from '@sveltejs/kit';
+import type { Repository } from '$lib/shared/shared/repository';
 
 export interface PhraseRepository extends Repository<string, Phrase> {}
 

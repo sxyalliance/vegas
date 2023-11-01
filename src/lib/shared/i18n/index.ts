@@ -1,5 +1,4 @@
-import { persistCookie } from '@macfja/svelte-persistent-store';
-import { get, writable } from 'svelte/store';
+import { browser, dev } from '$app/environment';
 import {
 	setLanguageTag,
 	type AvailableLanguageTag,
@@ -7,8 +6,10 @@ import {
 	availableLanguageTags
 } from '@inlang/paraglide-js/vegas';
 import * as m from '@inlang/paraglide-js/vegas/messages';
-import { browser, dev } from '$app/environment';
+import { persistCookie } from '@macfja/svelte-persistent-store';
+import { get, writable } from 'svelte/store';
 import { preferredLanguages } from 'svelte-legos';
+
 import { getLogger } from '$lib/shared/logging/logger';
 
 const logger = getLogger('i18n');

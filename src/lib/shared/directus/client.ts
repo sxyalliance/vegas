@@ -1,6 +1,7 @@
-import type { CustomDirectusTypes } from './types';
-import { createDirectus, rest } from '@directus/sdk';
 import { dev } from '$app/environment';
+import { createDirectus, rest } from '@directus/sdk';
+
+import type { CustomDirectusTypes } from './types';
 
 export type ConstructedDirectusClient = ReturnType<typeof constructDirectus>;
 

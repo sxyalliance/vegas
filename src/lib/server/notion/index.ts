@@ -1,13 +1,15 @@
+import { err, ok } from 'neverthrow';
+
 import { getBlocks, getDatabaseById, getPageByCriteria, getPageById } from '$lib/server/notion/api';
 import type { PageQueryCriteria } from '$lib/server/notion/api';
+import type { Client } from '$lib/server/notion/client';
+import type { PostPropertiesExtractor } from '$lib/server/notion/types';
+import type { StandardResult } from '$lib/shared/shared/result';
+
 import type {
 	BlockObjectResponse,
 	PageObjectResponse
 } from '@notionhq/client/build/src/api-endpoints';
-import type { PostPropertiesExtractor } from '$lib/server/notion/types';
-import { err, ok } from 'neverthrow';
-import type { StandardResult } from '$lib/shared/shared/result';
-import type { Client } from '$lib/server/notion/client';
 
 export const getAllPosts = async <T>(client: Client): Promise<StandardResult<T[]>> => {
 	const res = await getDatabaseById(client);

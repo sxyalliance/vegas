@@ -1,9 +1,11 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import type { FlyoutNavItem, FlyoutDefinition } from '../types';
 	import { createCollapsible, melt } from '@melt-ui/svelte';
 	import { slide } from 'svelte/transition';
+
 	import { _ } from '$lib/shared/i18n';
+
+	import type { FlyoutNavItem, FlyoutDefinition } from '../types';
 
 	export let item: FlyoutNavItem;
 

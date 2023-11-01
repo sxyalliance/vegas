@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
 	import { browser } from '$app/environment';
-	import Select from '$lib/vgui/select/Select.svelte';
+
 	import { _ } from '$lib/shared/i18n';
+	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
+
+	import Select from '$lib/vgui/select/Select.svelte';
 
 	let clazz = '';
 	export { clazz as class };

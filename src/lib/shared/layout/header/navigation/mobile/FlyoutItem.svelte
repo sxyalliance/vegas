@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { FlyoutItem } from '../types';
 	import { _ } from '$lib/shared/i18n';
+
+	import type { FlyoutItem } from '../types';
 
 	export let item: FlyoutItem;
 </script>

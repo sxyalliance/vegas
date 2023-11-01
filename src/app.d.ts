@@ -3,6 +3,7 @@
 // noinspection ES6ConvertVarToLetConst
 
 import type { ConstructedDirectusClient } from '$lib/shared/directus/client';
+
 import type { LoggerType } from 'roarr';
 
 declare global {

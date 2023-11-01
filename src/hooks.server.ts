@@ -1,14 +1,18 @@
 import { sequence } from '@sveltejs/kit/hooks';
+
 // import * as Sentry from '@sentry/sveltekit';
-import type { Handle } from '@sveltejs/kit';
+import { sitemapHook } from 'sveltekit-sitemap';
+import { createTRPCHandle } from 'trpc-sveltekit';
+
 import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
-import { sitemapHook } from 'sveltekit-sitemap';
-import { sitemap } from './sitemap';
 import * as seoSites from '$lib/shared/seo/sites';
-import { createTRPCHandle } from 'trpc-sveltekit';
 import { createContext } from '$lib/trpc/context';
 import { router } from '$lib/trpc/router';
+
+import { sitemap } from './sitemap';
+
+import type { Handle } from '@sveltejs/kit';
 
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({

@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { ImageBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 	import { Image } from '@unpic/svelte';
+
+	import type { ImageBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 	export let block: ImageBlockObjectResponse;
 </script>

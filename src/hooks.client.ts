@@ -1,6 +1,7 @@
+import { dev } from '$app/environment';
 import { handleErrorWithSentry, Replay } from '@sentry/sveltekit';
 import * as Sentry from '@sentry/sveltekit';
-import { dev } from '$app/environment';
+
 import { Release } from '$lib/shared/shared/release';
 
 if (!dev) {
@@ -24,6 +25,7 @@ if (!dev) {
 		beforeSend(event) {
 			// Check if it is an exception, and if so, show the report dialog
 			if (event.exception) {
+				// eslint-disable-next-line import/namespace -- false positive
 				Sentry.showReportDialog({ eventId: event.event_id });
 			}
 			return event;

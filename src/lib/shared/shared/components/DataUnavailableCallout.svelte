@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Callout from '$lib/vgui/callout/Callout.svelte';
 	import { _ } from '$lib/shared/i18n';
+	import Callout from '$lib/vgui/callout/Callout.svelte';
 </script>
 
 <Callout type="danger">

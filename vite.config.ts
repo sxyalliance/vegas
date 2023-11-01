@@ -1,14 +1,16 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+
+import { sentrySvelteKit } from '@sentry/sveltekit';
+import { sveltekit } from '@sveltejs/kit/vite';
 import { imagetools } from '@zerodevx/svelte-img/vite';
 
 // get project name from package.json
-import { name } from './package.json';
-import { watch } from 'vite-plugin-watch';
-import { sentrySvelteKit } from '@sentry/sveltekit';
 import { sitemapPlugin } from 'sveltekit-sitemap/dist/plugin';
+import { watch } from 'vite-plugin-watch';
+import { defineConfig } from 'vitest/config';
+
+import { name } from './package.json';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);

@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { Hst } from '@histoire/plugin-svelte';
 	import Badge from '$lib/vgui/badge/Badge.svelte';
+
+	import type { Hst } from '@histoire/plugin-svelte';
 
 	// eslint-disable-next-line no-import-assign
 	export let Hst: Hst;

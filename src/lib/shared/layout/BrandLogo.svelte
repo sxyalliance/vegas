@@ -1,10 +1,10 @@
 <script>
-	import { _ } from '$lib/shared/i18n';
 	import Img from '@zerodevx/svelte-img';
-	import { theme } from '$lib/shared/theme/store';
 
-	import logoLight from '$lib/assets/logo-light.png?w=128&as=run:0';
 	import logoDark from '$lib/assets/logo-dark.png?w=128&as=run:0';
+	import logoLight from '$lib/assets/logo-light.png?w=128&as=run:0';
+	import { _ } from '$lib/shared/i18n';
+	import { theme } from '$lib/shared/theme/store';
 
 	$: logo = $theme === 'dark' ? logoDark : logoLight;
 

@@ -1,6 +1,7 @@
+import { err, ok } from 'neverthrow';
+
 import { createRequester } from '$lib/shared/request';
 import type { StandardResult } from '$lib/shared/shared/result';
-import { err, ok } from 'neverthrow';
 
 const acc = '58055b1d371c096daff3498f0f455e9d';
 const tkn = 'NBVwvnsWSP3Ano8R12d80F3LPx3EBAQOUmXjxSNY';
