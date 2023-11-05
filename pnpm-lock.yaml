@@ -252,6 +252,9 @@ devDependencies:
   sveltekit-sitemap:
     specifier: ^1.0.21
     version: 1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe)
+  sveltekit-superforms:
+    specifier: ^1.9.0
+    version: 1.9.0(@sveltejs/kit@1.27.2)(svelte@4.2.2)(zod@3.22.4)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5(ts-node@10.9.1)
@@ -291,6 +294,9 @@ devDependencies:
   wretch:
     specifier: ^2.7.0
     version: 2.7.0
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 packages:
 
@@ -8422,6 +8428,18 @@ packages:
     dev: true
     patched: true
 
+  /sveltekit-superforms@1.9.0(@sveltejs/kit@1.27.2)(svelte@4.2.2)(zod@3.22.4):
+    resolution: {integrity: sha512-gd8/1umhc8yCtrt3TtzFOt51JvRCJPlsL5/0ElalwOF/Q0YjIm+gVOAdT0/xfvloMGfDQ7tBMaz8Y70zYD9s3w==}
+    peerDependencies:
+      '@sveltejs/kit': 1.x
+      svelte: 3.x || 4.x
+      zod: 3.x
+    dependencies:
+      '@sveltejs/kit': 1.27.2(svelte@4.2.2)(vite@4.5.0)
+      svelte: 4.2.2
+      zod: 3.22.4
+    dev: true
+
   /symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
     dev: true
@@ -9541,4 +9559,8 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+    dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
