@@ -1,9 +1,14 @@
 import { sequence } from '@sveltejs/kit/hooks';
 
 // import * as Sentry from '@sentry/sveltekit';
+import SuperTokensError from 'supertokens-node/lib/build/error';
+import SuperTokens from 'supertokens-node/lib/build/supertokens';
+import EmailPassword from 'supertokens-node/recipe/emailpassword';
+import Session from 'supertokens-node/recipe/session';
 import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
+import { authCookieNames } from '$lib/server/supertokens/cookie';
 import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
 import * as seoSites from '$lib/shared/seo/sites';
@@ -14,11 +19,47 @@ import { sitemap } from './sitemap';
 
 import type { Handle } from '@sveltejs/kit';
 
+
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({
 // 	dsn: 'https://d0d7d2be65f2a949deeacc88600dca80@o4506100443119616.ingest.sentry.io/4506100444692480',
 // 	tracesSampleRate: 1
 // });
+
+SuperTokens.init({
+	supertokens: {
+		connectionURI: 'https://try.supertokens.com',
+		apiKey: ''
+	},
+	appInfo: {
+		appName: 'Vegas',
+		websiteDomain: 'http://localhost:5173',
+		apiDomain: 'http://localhost:5173',
+		apiBasePath: '/auth'
+	},
+	recipeList: [EmailPassword.init(), Session.init()]
+});
+
+const handleSuperTokens = (async ({ event, resolve }) => {
+	try {
+		const accessToken = event.cookies.get(authCookieNames.access) ?? '';
+		const antiCsrfToken = event.cookies.get(authCookieNames.csrf);
+		const session = await Session.getSessionWithoutRequestResponse(accessToken, antiCsrfToken);
+		const userId = session.getUserId();
+
+		event.locals.user = { id: userId };
+		return resolve(event);
+	} catch (error) {
+		if (!SuperTokensError.isErrorFromSuperTokens(error)) {
+			return new Response('An unexpected error occurred', { status: 500 });
+		}
+
+		const userNeedsSessionRefresh = error.type === Session.Error.TRY_REFRESH_TOKEN;
+
+		event.locals.user = {};
+		return resolve(event);
+	}
+}) satisfies Handle;
 
 export const handle: Handle = sequence(
 	/*Sentry.sentryHandle(),*/
@@ -34,6 +75,7 @@ export const handle: Handle = sequence(
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
 		});
 	},
+	handleSuperTokens,
 	createTRPCHandle({ router, createContext }),
 	sitemapHook(sitemap, {
 		getRobots: seoSites.getRobots,

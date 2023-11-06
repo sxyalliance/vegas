@@ -13,6 +13,7 @@ declare global {
 		// }
 		interface Locals {
 			directus: ConstructedDirectusClient;
+			user: { id?: string };
 		}
 		// interface PageData {}
 		// interface Platform {}

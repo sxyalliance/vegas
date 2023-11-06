@@ -92,6 +92,7 @@
 		"schema-dts": "^1.1.2",
 		"semantic-release": "^22.0.5",
 		"serializr": "^3.0.2",
+		"supertokens-node": "^16.4.0",
 		"svelte": "^4.2.2",
 		"svelte-check": "^3.5.2",
 		"svelte-legos": "^0.2.2",

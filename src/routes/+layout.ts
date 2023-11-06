@@ -10,7 +10,7 @@ import { detectAndApplyLocale } from '$lib/shared/i18n';
 
 import type { LayoutLoad } from './$types';
 
-export const load: LayoutLoad = async () => {
+export const load: LayoutLoad = async ({ data }) => {
 	// locale detection
 	detectAndApplyLocale();
 
@@ -23,5 +23,8 @@ export const load: LayoutLoad = async () => {
 		}
 	});
 
-	return { queryClient };
+	return {
+		queryClient,
+		user: data.user
+	};
 };
