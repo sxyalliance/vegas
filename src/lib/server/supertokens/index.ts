@@ -20,7 +20,7 @@ type TokensForRefresh = { refreshToken: string; antiCsrfToken?: string };
 type ResetPasswordStatus = Awaited<
 	ReturnType<(typeof EmailPassword)['resetPasswordUsingToken']>
 >['status'];
-const recipeId = 'emailpassword';
+const recipeId = 'emailpassword' as const;
 
 const SuperTokensHelpers = {
 	async signin(email: string, password: string): Promise<SignInResult> {

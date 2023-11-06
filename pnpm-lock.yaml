@@ -105,6 +105,9 @@ devDependencies:
   '@types/canvas-confetti':
     specifier: ^1.6.2
     version: 1.6.2
+  '@types/convict':
+    specifier: ^6.1.5
+    version: 6.1.5
   '@types/roarr':
     specifier: ^2.14.5
     version: 2.14.5
@@ -150,6 +153,9 @@ devDependencies:
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0(typescript@5.2.2)
+  convict:
+    specifier: ^6.2.4
+    version: 6.2.4
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -2074,6 +2080,12 @@ packages:
     resolution: {integrity: sha512-69TtiDzu0bcmKQv3yg1Zx409/Kd7r0b5F1PfpYJfSHzLGtB53547V4u+9iqKYsTu/O2ai6KTb0TInNpvuQ3qmg==}
     dev: true
 
+  /@types/convict@6.1.5:
+    resolution: {integrity: sha512-3tsoWY0lxXLDps6RRYwPb+0zOnzDv/cXAruPGngR2mvItsoxdfaX+mAxp3x2xAaEue1bLXa+Jd0JaLOM7YjXKQ==}
+    dependencies:
+      '@types/node': 20.8.10
+    dev: true
+
   /@types/cookie@0.5.3:
     resolution: {integrity: sha512-SLg07AS9z1Ab2LU+QxzU8RCmzsja80ywjf/t5oqw+4NSH20gIGlhLOrBDm1L3PBWzPa4+wkgFQVZAjE6Ioj2ug==}
 
@@ -3514,6 +3526,14 @@ packages:
       is-text-path: 2.0.0
       meow: 12.1.1
       split2: 4.2.0
+    dev: true
+
+  /convict@6.2.4:
+    resolution: {integrity: sha512-qN60BAwdMVdofckX7AlohVJ2x9UvjTNoKVXCL2LxFk1l7757EJqf1nySdMkPQer0bt8kQ5lQiyZ9/2NvrFBuwQ==}
+    engines: {node: '>=6'}
+    dependencies:
+      lodash.clonedeep: 4.5.0
+      yargs-parser: 20.2.9
     dev: true
 
   /cookie@0.4.0:
@@ -6105,6 +6125,10 @@ packages:
 
   /lodash.castarray@4.4.0:
     resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: true
+
+  /lodash.clonedeep@4.5.0:
+    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
     dev: true
 
   /lodash.escaperegexp@4.1.2:

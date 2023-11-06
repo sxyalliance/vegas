@@ -8,6 +8,7 @@ import Session from 'supertokens-node/recipe/session';
 import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
+import config from '$lib/server/config';
 import { authCookieNames } from '$lib/server/supertokens/cookie';
 import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
@@ -19,7 +20,6 @@ import { sitemap } from './sitemap';
 
 import type { Handle } from '@sveltejs/kit';
 
-
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({
 // 	dsn: 'https://d0d7d2be65f2a949deeacc88600dca80@o4506100443119616.ingest.sentry.io/4506100444692480',
@@ -28,13 +28,13 @@ import type { Handle } from '@sveltejs/kit';
 
 SuperTokens.init({
 	supertokens: {
-		connectionURI: 'https://try.supertokens.com',
-		apiKey: ''
+		connectionURI: config.get('auth.supertokens.url'),
+		apiKey: config.get('auth.supertokens.apiKey')
 	},
 	appInfo: {
 		appName: 'Vegas',
-		websiteDomain: 'http://localhost:5173',
-		apiDomain: 'http://localhost:5173',
+		websiteDomain: config.get('app.url'),
+		apiDomain: config.get('app.url'),
 		apiBasePath: '/auth'
 	},
 	recipeList: [EmailPassword.init(), Session.init()]
