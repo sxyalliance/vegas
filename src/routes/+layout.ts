@@ -7,7 +7,6 @@ import { browser } from '$app/environment';
 import { combineChunks, createBrowserClient, isBrowser, parse } from '@supabase/ssr';
 import { QueryClient } from '@tanstack/svelte-query';
 
-
 import { detectAndApplyLocale } from '$lib/shared/i18n';
 
 import type { LayoutLoad } from './$types';
