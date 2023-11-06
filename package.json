@@ -25,6 +25,9 @@
 		"i18n:compile": "node i18n/merge.js && paraglide-js compile --namespace vegas"
 	},
 	"devDependencies": {
+		"@auth/core": "^0.18.0",
+		"@auth/supabase-adapter": "^0.1.6",
+		"@auth/sveltekit": "^0.3.11",
 		"@beyonk/gdpr-cookie-consent-banner": "^11.0.0",
 		"@cloudflare/ai": "^1.0.22",
 		"@commitlint/cli": "^17.8.1",
@@ -42,6 +45,8 @@
 		"@playwright/test": "^1.39.0",
 		"@radix-ui/colors": "^3.0.0",
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
+		"@supabase/ssr": "^0.0.9",
+		"@supabase/supabase-js": "^2.38.4",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@sveltejs/kit": "^1.27.1",

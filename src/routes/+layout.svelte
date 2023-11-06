@@ -41,8 +41,6 @@
 			}
 		}
 	}
-
-	$: console.log(data);
 </script>
 
 <ParaglideJsSvelteKitProviderCsr>

@@ -1,15 +1,10 @@
+import { createServerClient } from '@supabase/ssr';
 import { sequence } from '@sveltejs/kit/hooks';
 
 // import * as Sentry from '@sentry/sveltekit';
-import SuperTokensError from 'supertokens-node/lib/build/error';
-import SuperTokens from 'supertokens-node/lib/build/supertokens';
-import EmailPassword from 'supertokens-node/recipe/emailpassword';
-import Session from 'supertokens-node/recipe/session';
 import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
-import config from '$lib/server/config';
-import { authCookieNames } from '$lib/server/supertokens/cookie';
 import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
 import * as seoSites from '$lib/shared/seo/sites';
@@ -20,46 +15,41 @@ import { sitemap } from './sitemap';
 
 import type { Handle } from '@sveltejs/kit';
 
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
+
 // Blocked by: https://github.com/getsentry/sentry-javascript/issues/8291
 // Sentry.init({
 // 	dsn: 'https://d0d7d2be65f2a949deeacc88600dca80@o4506100443119616.ingest.sentry.io/4506100444692480',
 // 	tracesSampleRate: 1
 // });
 
-SuperTokens.init({
-	supertokens: {
-		connectionURI: config.get('auth.supertokens.url'),
-		apiKey: config.get('auth.supertokens.apiKey')
-	},
-	appInfo: {
-		appName: 'Vegas',
-		websiteDomain: config.get('app.url'),
-		apiDomain: config.get('app.url'),
-		apiBasePath: '/auth'
-	},
-	recipeList: [EmailPassword.init(), Session.init()]
-});
-
-const handleSuperTokens = (async ({ event, resolve }) => {
-	try {
-		const accessToken = event.cookies.get(authCookieNames.access) ?? '';
-		const antiCsrfToken = event.cookies.get(authCookieNames.csrf);
-		const session = await Session.getSessionWithoutRequestResponse(accessToken, antiCsrfToken);
-		const userId = session.getUserId();
-
-		event.locals.user = { id: userId };
-		return resolve(event);
-	} catch (error) {
-		if (!SuperTokensError.isErrorFromSuperTokens(error)) {
-			return new Response('An unexpected error occurred', { status: 500 });
+const handleSupabase = async ({ event, resolve }) => {
+	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+		cookies: {
+			get: (key) => event.cookies.get(key),
+			set: (key, value, options) => {
+				event.cookies.set(key, value, options);
+			},
+			remove: (key, options) => {
+				event.cookies.delete(key, options);
+			}
 		}
+	});
 
-		const userNeedsSessionRefresh = error.type === Session.Error.TRY_REFRESH_TOKEN;
+	/**
+	 * a little helper that is written for convenience so that instead
+	 * of calling `const { data: { session } } = await supabase.auth.getSession()`
+	 * you just call this `await getSession()`
+	 */
+	event.locals.getSession = async () => {
+		const {
+			data: { session }
+		} = await event.locals.supabase.auth.getSession();
+		return session;
+	};
 
-		event.locals.user = {};
-		return resolve(event);
-	}
-}) satisfies Handle;
+	return resolve(event);
+};
 
 export const handle: Handle = sequence(
 	/*Sentry.sentryHandle(),*/
@@ -75,7 +65,7 @@ export const handle: Handle = sequence(
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
 		});
 	},
-	handleSuperTokens,
+	handleSupabase,
 	createTRPCHandle({ router, createContext }),
 	sitemapHook(sitemap, {
 		getRobots: seoSites.getRobots,
