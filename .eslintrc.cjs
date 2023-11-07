@@ -17,7 +17,8 @@ module.exports = {
 				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
 				pathGroups: [
 					{ pattern: '$lib/**', group: 'internal' },
-					{ pattern: '$app/**', group: 'external' }
+					{ pattern: '$app/**', group: 'external' },
+					{ pattern: '$env/**', group: 'external' }
 				],
 				'newlines-between': 'always-and-inside-groups',
 				alphabetize: { order: 'asc', caseInsensitive: true }

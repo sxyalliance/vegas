@@ -4,14 +4,13 @@ import '$lib/shared/logging/init';
 import '$lib/shared/shared/dayjs';
 
 import { browser } from '$app/environment';
-import { combineChunks, createBrowserClient, isBrowser, parse } from '@supabase/ssr';
 import { QueryClient } from '@tanstack/svelte-query';
 
 import { detectAndApplyLocale } from '$lib/shared/i18n';
 
-import type { LayoutLoad } from './$types';
+import { createBrowserClient } from '$lib/shared/supabase/client';
 
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
+import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 	// locale detection
@@ -28,32 +27,11 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 
 	depends('supabase:auth');
 
-	const supabase = createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-		global: {
-			fetch
-		},
-		cookies: {
-			get(key) {
-				if (!isBrowser()) {
-					return JSON.stringify(data.session);
-				}
-
-				const cookie = combineChunks(key, (name) => {
-					const cookies = parse(document.cookie);
-					return cookies[name];
-				});
-				return cookie;
-			}
-		}
-	});
-
-	const {
-		data: { session }
-	} = await supabase.auth.getSession();
+	const supabase = createBrowserClient(fetch, data.session);
 
 	return {
 		queryClient,
 		supabase,
-		session
+		session: data.session
 	};
 };

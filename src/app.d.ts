@@ -4,6 +4,9 @@
 
 import type { ConstructedDirectusClient } from '$lib/shared/directus/client';
 
+import type { SupabaseBrowserClient } from '$lib/shared/supabase/client';
+
+import type { Session } from '@supabase/supabase-js';
 import type { LoggerType } from 'roarr';
 
 declare global {
@@ -13,6 +16,9 @@ declare global {
 		// }
 		interface Locals {
 			directus: ConstructedDirectusClient;
+
+			supabase: SupabaseBrowserClient;
+			getSession: () => Promise<Session | null>;
 		}
 		// interface PageData {}
 		// interface Platform {}

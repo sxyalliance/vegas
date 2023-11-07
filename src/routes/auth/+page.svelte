@@ -5,14 +5,12 @@
 		await $page.data.supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: `http://localhost:5173/auth/callback`
+				redirectTo: `http://localhost:5173/auth/callback?next=/auth`
 			}
 		});
 	};
 
-	console.log($page.data.supabase);
-
-	const session = $page.data.supabase.auth.getSession();
+	const session = $page.data.session;
 </script>
 
 <div class="mt-20" />
