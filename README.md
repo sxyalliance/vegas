@@ -1,6 +1,6 @@
 <h1 align="center">
-  <a href="https://github.com/sunxyw/vegas">
-    <img src="src/lib/assets/logo-dark.png" alt="Logo">
+  <a href="https://github.com/sxyalliance/vegas">
+    <img src="src/lib/assets/logo-dark.png" alt="Logo" width="100" height="100">
   </a>
 </h1>
 
@@ -10,19 +10,19 @@
   <a href="#about"><strong>Explore the screenshots »</strong></a>
   <br />
   <br />
-  <a href="https://github.com/sunxyw/vegas/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
+  <a href="https://github.com/sxyalliance/vegas/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   ·
-  <a href="https://github.com/sunxyw/vegas/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
+  <a href="https://github.com/sxyalliance/vegas/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
   .
-  <a href="https://github.com/sunxyw/vegas/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
+  <a href="https://github.com/sxyalliance/vegas/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
 </div>
 
 <div align="center">
 <br />
 
-[![Project license](https://img.shields.io/github/license/sunxyw/vegas.svg?style=flat-square)](LICENSE)
+[![Project license](https://img.shields.io/github/license/sxyalliance/vegas.svg?style=flat-square)](LICENSE)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/sunxyw/vegas/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/sxyalliance/vegas/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![code with love by sunxyw](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-sunxyw-ff1414.svg?style=flat-square)](https://github.com/sunxyw)
 
 </div>
@@ -51,13 +51,6 @@
 
 ## About
 
-> **[?]**
-> Provide general information about your project here.
-> What problem does it (intend to) solve?
-> What is the purpose of your project?
-> Why did you undertake it?
-> You don't have to answer all the questions -- just the ones relevant to your project.
-
 <details>
 <summary>Screenshots</summary>
 <br>
@@ -73,50 +66,69 @@
 
 ### Built With
 
-> **[?]**
-> Please provide the technologies that are used in the project.
+- [SvelteKit](https://kit.svelte.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vitejs.dev)
+- [Radix Colors](https://www.radix-ui.com/colors)
+- [Iconify](https://iconify.design)
+- [Melt UI](https://www.melt-ui.com)
+- [tRPC](https://trpc.io)
+- [Tanstack Query](https://tanstack.com/query)
 
 ## Getting Started
 
 ### Prerequisites
 
-> **[?]**
-> What are the project requirements/dependencies?
+- Node.js 21.1.0 or later
+- pnpm 8.9.2 or later
+- Linux preferred
 
 ### Installation
 
-> **[?]**
-> Describe how to install and get started with the project.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/sxyalliance/vegas.git && cd vegas
+   ```
+2. Install dependencies
+   ```sh
+    pnpm install
+   ```
+3. Setup environment variables
+   ```sh
+   cp .env.example .env
+   ```
+   Then edit `.env` to set your environment variables.
+4. Start the development server
+   ```sh
+   pnpm run dev
+   ```
+5. Open [localhost:5173](http://localhost:5173) to see the app.
 
-## Usage
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
+Please refer to [Contributing](#contributing) for more information.
 
 ## Roadmap
 
-See the [open issues](https://github.com/sunxyw/vegas/issues) for a list of proposed features (and known issues).
+Refer to [SXYA Development Backlog](https://github.com/orgs/sxyalliance/projects/3) for our development roadmap.
 
-- [Top Feature Requests](https://github.com/sunxyw/vegas/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/sunxyw/vegas/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/sunxyw/vegas/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+See the [open issues](https://github.com/sxyalliance/vegas/issues) for a list of proposed features (and known issues).
+
+- [Top Feature Requests](https://github.com/sxyalliance/vegas/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/sxyalliance/vegas/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Newest Bugs](https://github.com/sxyalliance/vegas/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
 
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
 Reach out to the maintainer at one of the following places:
 
-- [GitHub issues](https://github.com/sunxyw/vegas/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
+- [GitHub issues](https://github.com/sxyalliance/vegas/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 - Contact options listed on [this GitHub profile](https://github.com/sunxyw)
 
 ## Project assistance
 
 If you want to say **thank you** or/and support active development of Vegas:
 
-- Add a [GitHub Star](https://github.com/sunxyw/vegas) to the project.
+- Add a [GitHub Star](https://github.com/sxyalliance/vegas) to the project.
 - Tweet about the Vegas.
 - Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your personal blog.
 
@@ -130,9 +142,9 @@ Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you f
 
 ## Authors & contributors
 
-The original setup of this repository is by [Sunxyw](https://github.com/sunxyw).
+The original setup of this repository is by [Sunxyw](https://github.com/sunxyw), and then maintained by the [SXYA Press Department](https://github.com/sxyalliance).
 
-For a full list of all authors and contributors, see [the contributors page](https://github.com/sunxyw/vegas/contributors).
+For a full list of all authors and contributors, see [the contributors page](https://github.com/sxyalliance/vegas/contributors).
 
 ## Security
 

@@ -5,23 +5,34 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 
 ## Development environment setup
 
-> **[?]**
-> Proceed to describe how to setup local development environment.
-> e.g:
+Please first ensure you have all prerequisites installed as described in the [README](../README.md#prerequisites).
+
+We do not enforce a specific IDE or editor. You can use any editor you like, as long as your code fit our code style, which enforced by [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
 
 To set up a development environment, please follow these steps:
 
 1. Clone the repo
-
    ```sh
-   git clone https://github.com/sunxyw/vegas
+   git clone https://github.com/sxyalliance/vegas.git && cd vegas
    ```
-
-2. TODO
+2. Install dependencies
+   ```sh
+    pnpm install
+   ```
+3. Setup environment variables
+   ```sh
+   cp .env.example .env
+   ```
+   Then edit `.env` to set your environment variables.
+4. Start the development server
+   ```sh
+   pnpm run dev
+   ```
+5. Open [localhost:5173](http://localhost:5173) to see the app.
 
 ## Issues and feature requests
 
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/sunxyw/vegas/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
+You've found a bug in the source code, a mistake in the documentation, or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/sunxyw/vegas/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
 
 Please try to create bug reports that are:
 
