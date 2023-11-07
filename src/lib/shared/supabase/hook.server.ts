@@ -10,7 +10,7 @@ import {
 import type { Handle } from '@sveltejs/kit';
 
 export default (async ({ event, resolve }) => {
-	console.log(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY);
+	console.log({PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY});
 	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		cookies: {
 			get: (key) => combineChunks(key, (name) => event.cookies.get(name)),
