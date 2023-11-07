@@ -1,3 +1,8 @@
+import { browser } from '$app/environment';
+import { page } from '$app/stores';
+import { error } from '@sveltejs/kit';
+import { get } from 'svelte/store';
+
 import type { GoTrueClient } from '@supabase/supabase-js';
 
 export enum AuthnSocialProvider {
@@ -10,6 +15,12 @@ export const signIn = async (
 	provider: AuthnSocialProvider,
 	returnUrl: string | null = null
 ) => {
+	if (!browser) {
+		throw error(401, 'Sign in request should not initiate on server side.');
+	}
+
+	const origin = get(page).url.origin;
+
 	returnUrl = returnUrl || '/';
 	if (!returnUrl.startsWith('/')) {
 		returnUrl = '/' + returnUrl;
@@ -18,7 +29,7 @@ export const signIn = async (
 	await authClient.signInWithOAuth({
 		provider,
 		options: {
-			redirectTo: `http://localhost:5173/auth/callback?next=${encodeURIComponent(returnUrl)}`
+			redirectTo: `${origin}/auth/callback?next=${returnUrl}`
 		}
 	});
 };
