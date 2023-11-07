@@ -106,7 +106,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/policies/cookies" class="hover:text-high-contrast">
+								<a href="/policies/cookie" class="hover:text-high-contrast">
 									{_('footer_policies_cookie_policy')}
 								</a>
 							</li>
