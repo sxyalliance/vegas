@@ -1,6 +1,6 @@
 # Cookie Policy for SXYA
 
-**Last updated October 07, 2023**
+**Last updated November 07, 2023**
 
 This is the Cookie Policy for **SXYA**, accessible from our main website and any other sites, products, or services that link to this policy.
 
