@@ -1,7 +1,7 @@
 <script>
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 
-	import Content from './cookie_content.md';
+	import Content from './content.md';
 </script>
 
 <SeoHandler
