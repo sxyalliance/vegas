@@ -1,4 +1,8 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
+import * as spb from '$env/static/public';
+import * as spv from '$env/static/private';
+import * as dpb from '$env/dynamic/public';
+import * as dpv from '$env/dynamic/private';
 import {
 	combineChunks,
 	createChunks,
@@ -10,7 +14,7 @@ import {
 import type { Handle } from '@sveltejs/kit';
 
 export default (async ({ event, resolve }) => {
-	console.log({PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY});
+	console.log({spb, spv, dpb, dpv})
 	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		cookies: {
 			get: (key) => combineChunks(key, (name) => event.cookies.get(name)),
