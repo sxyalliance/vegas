@@ -20,6 +20,7 @@ export const signIn = async (
 	}
 
 	const origin = get(page).url.origin;
+	console.log('using origin', origin);
 
 	returnUrl = returnUrl || '/';
 	if (!returnUrl.startsWith('/')) {
