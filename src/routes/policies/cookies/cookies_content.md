@@ -1,8 +1,12 @@
 # Cookie Policy for SXYA
 
-**Last updated November 11, 2023**
+**Last updated October 07, 2023**
 
-This is the Cookie Policy for **SXYA**, accessible from https://sxya.org/policies/privacy
+This is the Cookie Policy for **SXYA**, accessible from our main website and any other sites, products, or services that link to this policy.
+
+We use cookies and similar technologies across our websites to improve their performance and enhance your user experience. This policy explains how we do that.
+
+For further information on how we handle user data, please refer to our [Privacy Policy](https://www.sxya.org/privacy-policy).
 
 **What Are Cookies**
 
