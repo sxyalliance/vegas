@@ -1,4 +1,4 @@
-import { CLOUDFLARE_ACCOUNT, CLOUDFLARE_TOKEN } from '$env/dynamic/private';
+import { CLOUDFLARE_ACCOUNT, CLOUDFLARE_AI_TOKEN_VALUE } from '$env/static/private';
 import { err, ok } from 'neverthrow';
 
 import { createRequester } from '$lib/shared/request';
@@ -6,7 +6,7 @@ import { createRequester } from '$lib/shared/request';
 import type { StandardResult } from '$lib/shared/shared/result';
 
 const acc = CLOUDFLARE_ACCOUNT;
-const tkn = CLOUDFLARE_TOKEN;
+const tkn = CLOUDFLARE_AI_TOKEN_VALUE;
 
 const api = `https://api.cloudflare.com/client/v4/accounts/${acc}/ai/run`;
 
