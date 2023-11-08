@@ -4,9 +4,8 @@ import { promisify } from 'util';
 import { sentrySvelteKit } from '@sentry/sveltekit';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { imagetools } from '@zerodevx/svelte-img/vite';
-
-// get project name from package.json
 import { sitemapPlugin } from 'sveltekit-sitemap/dist/plugin';
+import { plugin as mdPlugin, Mode as mdMode } from 'vite-plugin-markdown';
 import { watch } from 'vite-plugin-watch';
 import { defineConfig } from 'vitest/config';
 
@@ -38,6 +37,7 @@ export default defineConfig(({ command }) => ({
 		}),
 		sveltekit(),
 		imagetools(),
+		mdPlugin({ mode: [mdMode.HTML, mdMode.TOC] }),
 		command === 'build' && sitemapPlugin(),
 
 		watch({

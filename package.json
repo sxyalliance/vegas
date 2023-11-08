@@ -120,6 +120,7 @@
 		"unocss-preset-autoprefixer": "^0.0.6",
 		"unocss-preset-radix": "^2.5.5",
 		"vite": "^4.5.0",
+		"vite-plugin-markdown": "^2.1.0",
 		"vite-plugin-watch": "^0.2.0",
 		"vitest": "^0.34.6",
 		"windy-radix-palette": "2.0.0-beta.0",
