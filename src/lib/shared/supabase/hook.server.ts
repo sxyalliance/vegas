@@ -1,27 +1,32 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { combineChunks, createChunks, createServerClient, deleteChunks } from '@supabase/ssr';
 
+import type { Database } from './database.types';
 import type { Handle } from '@sveltejs/kit';
 
 export default (async ({ event, resolve }) => {
-	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-		cookies: {
-			get: (key) => combineChunks(key, (name) => event.cookies.get(name)),
-			set: (key, value, options) => {
-				const chunks = createChunks(key, value, 2048);
-				for (const chunk of chunks) {
-					event.cookies.set(chunk.name, chunk.value, options);
+	event.locals.supabase = createServerClient<Database>(
+		PUBLIC_SUPABASE_URL,
+		PUBLIC_SUPABASE_ANON_KEY,
+		{
+			cookies: {
+				get: (key) => combineChunks(key, (name) => event.cookies.get(name)),
+				set: (key, value, options) => {
+					const chunks = createChunks(key, value, 2048);
+					for (const chunk of chunks) {
+						event.cookies.set(chunk.name, chunk.value, options);
+					}
+				},
+				remove: (key, options) => {
+					deleteChunks(
+						key,
+						(name) => event.cookies.get(name),
+						(name) => event.cookies.set(name, '', options)
+					);
 				}
-			},
-			remove: (key, options) => {
-				deleteChunks(
-					key,
-					(name) => event.cookies.get(name),
-					(name) => event.cookies.set(name, '', options)
-				);
 			}
 		}
-	});
+	);
 
 	/**
 	 * a little helper that is written for convenience so that instead

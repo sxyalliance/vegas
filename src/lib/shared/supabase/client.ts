@@ -1,10 +1,12 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { combineChunks, createBrowserClient as iCBC, isBrowser, parse } from '@supabase/ssr';
 
+import type { Database } from './database.types';
+
 export type SupabaseBrowserClient = ReturnType<typeof createBrowserClient>;
 
 export const createBrowserClient = (customFetch: typeof window.fetch = fetch, session: unknown) => {
-	return iCBC(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+	return iCBC<Database>(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		global: {
 			fetch: customFetch
 		},
