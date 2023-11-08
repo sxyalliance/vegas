@@ -12,8 +12,7 @@
 	const meetingDay = dayjs(event.meeting_time);
 	const today = dayjs();
 
-	const category = event.category as NonNullable<typeof event.category>;
-	const proposer = event.proposer as NonNullable<typeof event.proposer>;
+	const category = event.event_categories as NonNullable<typeof event.event_categories>;
 </script>
 
 <a href={`/events/${event.id}/${event.slug}`}>
@@ -33,7 +32,7 @@
 					Event
 				</span>
 				<h2 class="mt-1 text-2xl font-semibold leading-6">
-					{_(`event_status_${event.status}_label`)}
+					{_(`event_status_finished_label`)}
 					{meetingDay.fromNow()}
 				</h2>
 			</div>
@@ -65,7 +64,7 @@
 					<span class="font-semibold text-high-contrast">
 						{_('event_property_proposer')}
 					</span>
-					<p class="w-[12ch] truncate text-sm text-low-contrast">{proposer.first_name}</p>
+					<p class="w-[12ch] truncate text-sm text-low-contrast">Anonymous</p>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { createQuery } from '@tanstack/svelte-query';
 
 	import { _ } from '$lib/shared/i18n';
@@ -15,7 +16,7 @@
 
 	const events = createQuery({
 		queryKey: ['events'],
-		queryFn: () => query()
+		queryFn: () => query($page.data.supabase)
 	});
 </script>
 
