@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
-	import { paramCase } from 'change-case';
+	import { kebabCase } from 'change-case';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
 	import Card from '$lib/vgui/card/Card.svelte';
@@ -59,7 +59,7 @@
 														<Card variant="surface" class="h-full w-full overflow-hidden">
 															<div class="px-2 py-3 sm:p-4">
 																<Icon
-																	icon={`material-symbols:${paramCase(String(category.icon))}`}
+																	icon={`material-symbols:${kebabCase(String(category.icon))}`}
 																	class="mb-4 h-12 w-12 text-{category.color}"
 																/>
 

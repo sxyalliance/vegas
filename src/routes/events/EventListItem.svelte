@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { paramCase } from 'change-case';
+	import { kebabCase } from 'change-case';
 	import dayjs from 'dayjs';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
@@ -81,7 +81,7 @@
 		<div class="hidden flex-none lg:block">
 			<div class="rounded-lg bg-neutralA-2 p-4">
 				<Icon
-					icon={`material-symbols:${paramCase(String(category.icon))}`}
+					icon={`material-symbols:${kebabCase(String(category.icon))}`}
 					class="h-full w-26 text-{category.color}"
 				/>
 			</div>
