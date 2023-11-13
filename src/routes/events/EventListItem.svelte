@@ -12,7 +12,7 @@
 	const meetingDay = dayjs(event.meeting_time);
 	const today = dayjs();
 
-	const category = event.event_categories as NonNullable<typeof event.event_categories>;
+	const category = event.category as NonNullable<typeof event.category>;
 </script>
 
 <a href={`/events/${event.id}/${event.slug}`}>
@@ -64,7 +64,7 @@
 					<span class="font-semibold text-high-contrast">
 						{_('event_property_proposer')}
 					</span>
-					<p class="w-[12ch] truncate text-sm text-low-contrast">Anonymous</p>
+					<p class="w-[12ch] truncate text-sm text-low-contrast">{event.proposer.nickname}</p>
 				</div>
 			</div>
 		</div>

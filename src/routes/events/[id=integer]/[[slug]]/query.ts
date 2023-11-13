@@ -6,10 +6,11 @@ export default async function query(id: number, client: SupabaseBrowserClient) {
 		.select(
 			`
 			*,
-			category:event_categories(key, icon, color),
-			proposer:members(id, email, nickname)
+			category: event_categories(key, icon, color),
+			proposer: profiles(id, nickname, avatar_url)
 		`
 		)
+		.eq('id', id)
 		.single();
 	if (error) {
 		throw error;

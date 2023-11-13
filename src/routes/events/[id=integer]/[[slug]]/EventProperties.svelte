@@ -48,7 +48,7 @@
 		{
 			type: 'text',
 			label: 'event_property_proposer',
-			text: proposer.first_name,
+			text: proposer.nickname,
 			icon: 'tabler:user-edit'
 		},
 		{

@@ -56,7 +56,7 @@ export interface Database {
 					name: string;
 					outbound_time?: string | null;
 					outbound_transport?: string | null;
-					proposer_id?: string;
+					proposer_id: string;
 					related_personnel: number;
 					slug: string;
 				};
@@ -88,14 +88,7 @@ export interface Database {
 						foreignKeyName: 'events_proposer_id_fkey';
 						columns: ['proposer_id'];
 						isOneToOne: false;
-						referencedRelation: 'members_view';
-						referencedColumns: ['id'];
-					},
-					{
-						foreignKeyName: 'events_proposer_id_fkey';
-						columns: ['proposer_id'];
-						isOneToOne: false;
-						referencedRelation: 'users';
+						referencedRelation: 'profiles';
 						referencedColumns: ['id'];
 					}
 				];
@@ -159,32 +152,28 @@ export interface Database {
 			};
 			profiles: {
 				Row: {
-					id: number;
+					avatar_url: string;
+					email: string;
+					id: string;
 					nickname: string;
-					user_id: string;
 				};
 				Insert: {
-					id?: number;
+					avatar_url: string;
+					email: string;
+					id: string;
 					nickname: string;
-					user_id: string;
 				};
 				Update: {
-					id?: number;
+					avatar_url?: string;
+					email?: string;
+					id?: string;
 					nickname?: string;
-					user_id?: string;
 				};
 				Relationships: [
 					{
-						foreignKeyName: 'profiles_user_id_fkey';
-						columns: ['user_id'];
-						isOneToOne: false;
-						referencedRelation: 'members_view';
-						referencedColumns: ['id'];
-					},
-					{
-						foreignKeyName: 'profiles_user_id_fkey';
-						columns: ['user_id'];
-						isOneToOne: false;
+						foreignKeyName: 'profiles_id_fkey';
+						columns: ['id'];
+						isOneToOne: true;
 						referencedRelation: 'users';
 						referencedColumns: ['id'];
 					}
@@ -192,14 +181,7 @@ export interface Database {
 			};
 		};
 		Views: {
-			members_view: {
-				Row: {
-					email: string | null;
-					id: string | null;
-					nickname: string | null;
-				};
-				Relationships: [];
-			};
+			[_ in never]: never;
 		};
 		Functions: {
 			get_random_phrases: {
