@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
@@ -54,9 +53,9 @@
 				</h2>
 				<dl class="mt-2 space-y-6 divide-y divide-neutral-6">
 					{#each section.questions as question}
-						<Disclosure as="div" class="pt-4" let:open>
+						<div class="pt-4">
 							<dt>
-								<DisclosureButton
+								<button
 									class="flex w-full items-start justify-between text-left text-high-contrast"
 								>
 									<span class="text-base font-semibold leading-7">{question.question}</span>
@@ -67,12 +66,12 @@
 											<Icon icon="tabler:minus" class="h-6 w-6" aria-hidden="true" />
 										{/if}
 									</span>
-								</DisclosureButton>
+								</button>
 							</dt>
-							<DisclosurePanel as="dd" class="mt-2 pr-12">
+							<dd class="mt-2 pr-12">
 								<p class="text-base leading-7 text-low-contrast">{question.answer}</p>
-							</DisclosurePanel>
-						</Disclosure>
+							</dd>
+						</div>
 					{/each}
 				</dl>
 			</div>
