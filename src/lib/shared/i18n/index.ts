@@ -47,6 +47,7 @@ const isValidMessageId = (id: string): id is MessageId => {
 
 export function _(id: MessageId | string, strict: boolean = true): string {
 	if (isValidMessageId(id)) {
+		// eslint-disable-next-line import/namespace
 		return m[id]();
 	}
 
