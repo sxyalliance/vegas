@@ -1,11 +1,18 @@
-import { readItem } from '@directus/sdk';
+import type { SupabaseBrowserClient } from '$lib/shared/supabase/client';
 
-import { constructDirectus } from '$lib/shared/directus/client';
-
-export default async function query(id: number, customFetch = fetch) {
-	return constructDirectus(customFetch).request(
-		readItem('events', id, {
-			fields: ['*', { category: ['key', 'icon', 'color'] }, { proposer: ['id', 'first_name'] }]
-		})
-	);
+export default async function query(id: number, client: SupabaseBrowserClient) {
+	const { data, error } = await client
+		.from('events')
+		.select(
+			`
+			*,
+			category:event_categories(key, icon, color),
+			proposer:members(id, email, nickname)
+		`
+		)
+		.single();
+	if (error) {
+		throw error;
+	}
+	return data;
 }

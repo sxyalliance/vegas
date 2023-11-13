@@ -16,7 +16,7 @@ export interface Database {
 					icon: string;
 					id?: number;
 					key: string;
-					sort: number;
+					sort?: number;
 				};
 				Update: {
 					color?: string;
@@ -56,7 +56,7 @@ export interface Database {
 					name: string;
 					outbound_time?: string | null;
 					outbound_transport?: string | null;
-					proposer_id: string;
+					proposer_id?: string;
 					related_personnel: number;
 					slug: string;
 				};
@@ -83,6 +83,13 @@ export interface Database {
 						isOneToOne: false;
 						referencedRelation: 'event_categories';
 						referencedColumns: ['key'];
+					},
+					{
+						foreignKeyName: 'events_proposer_id_fkey';
+						columns: ['proposer_id'];
+						isOneToOne: false;
+						referencedRelation: 'members_view';
+						referencedColumns: ['id'];
 					},
 					{
 						foreignKeyName: 'events_proposer_id_fkey';
@@ -134,25 +141,65 @@ export interface Database {
 					defined_at: string;
 					definition: string;
 					id: number;
-					phrases: string;
+					phrase: string;
 				};
 				Insert: {
-					defined_at: string;
+					defined_at?: string;
 					definition: string;
 					id?: number;
-					phrases: string;
+					phrase: string;
 				};
 				Update: {
 					defined_at?: string;
 					definition?: string;
 					id?: number;
-					phrases?: string;
+					phrase?: string;
 				};
 				Relationships: [];
 			};
+			profiles: {
+				Row: {
+					id: number;
+					nickname: string;
+					user_id: string;
+				};
+				Insert: {
+					id?: number;
+					nickname: string;
+					user_id: string;
+				};
+				Update: {
+					id?: number;
+					nickname?: string;
+					user_id?: string;
+				};
+				Relationships: [
+					{
+						foreignKeyName: 'profiles_user_id_fkey';
+						columns: ['user_id'];
+						isOneToOne: false;
+						referencedRelation: 'members_view';
+						referencedColumns: ['id'];
+					},
+					{
+						foreignKeyName: 'profiles_user_id_fkey';
+						columns: ['user_id'];
+						isOneToOne: false;
+						referencedRelation: 'users';
+						referencedColumns: ['id'];
+					}
+				];
+			};
 		};
 		Views: {
-			[_ in never]: never;
+			members_view: {
+				Row: {
+					email: string | null;
+					id: string | null;
+					nickname: string | null;
+				};
+				Relationships: [];
+			};
 		};
 		Functions: {
 			[_ in never]: never;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { paramCase } from 'change-case';
@@ -10,7 +11,7 @@
 
 	const categories = createQuery({
 		queryKey: ['categories'],
-		queryFn: () => queryCategories()
+		queryFn: () => queryCategories($page.data.supabase)
 	});
 
 	type GridItem = Awaited<ReturnType<typeof queryCategories>>[number] & {

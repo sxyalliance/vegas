@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 
-	import type { CustomDirectusTypes } from '$lib/shared/directus/types';
 	import { _ } from '$lib/shared/i18n';
 
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
@@ -20,14 +20,8 @@
 
 	const event = createQuery({
 		queryKey: ['event', data.id],
-		queryFn: () => query(data.id)
+		queryFn: () => query(data.id, $page.data.supabase)
 	});
-
-	const getCategory = (
-		event: Awaited<ReturnType<typeof query>>
-	): NonNullable<Partial<CustomDirectusTypes['event_categories'][number]>> => {
-		return event.category as NonNullable<typeof event.category>;
-	};
 
 	$: if ($event.isSuccess) {
 		// change slug if it incorrect or not exists
@@ -43,7 +37,7 @@
 
 		<article class="text-base leading-7">
 			<p class="text-base font-semibold leading-7 text-accent-11">
-				{_(`event_category_${getCategory($event.data).key}_name`)}
+				{_(`event_category_${$event.data.category_key}_name`)}
 				#{$event.data.id}
 			</p>
 			<h1 class="mt-2 text-3xl font-bold tracking-tight text-high-contrast sm:text-4xl">

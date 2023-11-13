@@ -12,6 +12,6 @@ export const load: PageLoad = async ({ parent, fetch }) => {
 
 	await queryClient.prefetchQuery({
 		queryKey: ['categories'],
-		queryFn: () => queryCategories(fetch)
+		queryFn: () => queryCategories(supabase)
 	});
 };

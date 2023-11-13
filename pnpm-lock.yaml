@@ -49,8 +49,8 @@ devDependencies:
     specifier: ^3.1.4
     version: 3.1.4(svelte@4.2.2)
   '@inlang/paraglide-js':
-    specifier: 1.0.0-prerelease.0
-    version: 1.0.0-prerelease.0
+    specifier: 1.0.0-prerelease.9
+    version: 1.0.0-prerelease.9
   '@macfja/svelte-persistent-store':
     specifier: ^2.4.1
     version: 2.4.1(svelte@4.2.2)
@@ -1043,6 +1043,12 @@ packages:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
 
+  /@inlang/detect-json-formatting@1.0.0:
+    resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
+    dependencies:
+      guess-json-indent: 2.0.0
+    dev: true
+
   /@inlang/json-types@1.1.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-n6vS6AqETsCFbV4TdBvR/EH57waVXzKsMqeUQ+eH2Q6NUATfKhfLabgNms2A+QV3aedH/hLtb1pRmjl2ykBVZg==}
     peerDependencies:
@@ -1091,15 +1097,16 @@ packages:
       '@sinclair/typebox': 0.31.21
     dev: true
 
-  /@inlang/paraglide-js@1.0.0-prerelease.0:
-    resolution: {integrity: sha512-x7rN9BvJFQdmyinPjaibJr3ljpSOgL4ZdN1yM4B3HdmDRJYlo/eDfgMhYew67E9e1GyRLuY3GxvhzmKfZr9aPw==}
+  /@inlang/paraglide-js@1.0.0-prerelease.9:
+    resolution: {integrity: sha512-jxBtl0W9PTX2HM+d1tOoZ87uJX5I0g21XYESOfoO1uYU79omDhP0ajW3pcPOVNQhhh386mhsMoxJ7ivVYNHc7Q==}
     hasBin: true
     dependencies:
+      '@inlang/detect-json-formatting': 1.0.0
       '@inlang/sdk': 0.16.0
       commander: 11.1.0
       consola: 3.2.3
       dedent: 1.5.1
-      typescript: 5.2.2
+      json5: 2.2.3
     transitivePeerDependencies:
       - babel-plugin-macros
     dev: true
@@ -4715,6 +4722,11 @@ packages:
       strip-bom-string: 1.0.0
     dev: true
 
+  /guess-json-indent@2.0.0:
+    resolution: {integrity: sha512-3Tm6R43KhtZWEVSHZnFmYMV9+gf3Vu0HXNNYtPVk2s7o8eGwYlJPHrjLtYw/7HBc10YxV+bfzKMuOf24z5qFng==}
+    engines: {node: '>=16.17.0'}
+    dev: true
+
   /handlebars@4.7.8:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
     engines: {node: '>=0.4.7'}
@@ -5498,6 +5510,12 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.8
+    dev: true
+
+  /json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
     dev: true
 
   /jsonc-parser@3.2.0:
