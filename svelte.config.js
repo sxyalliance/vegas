@@ -24,7 +24,8 @@ const config = {
 					'content-sheets.googleapis.com',
 					'*.sxya.org',
 					'*.sentry.io',
-					'sentry.io'
+					'sentry.io',
+					'ypjziegygvrjgxiylgxb.supabase.co'
 				]
 			}
 		}

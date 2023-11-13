@@ -54,9 +54,6 @@ export default defineConfig(({ command }) => ({
 			}
 		}
 	],
-	optimizeDeps: {
-		exclude: ['@inlang/paraglide-js']
-	},
 	server: {
 		proxy: {
 			'/apid': {

@@ -30,7 +30,7 @@ export const handle: Handle = sequence(
 			localePreference.set(resolveFirstAvailableLocale(langs));
 		}
 
-		event.locals.directus = constructDirectus(event.fetch);
+		// event.locals.directus = constructDirectus(event.fetch);
 
 		return resolve(event, {
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')

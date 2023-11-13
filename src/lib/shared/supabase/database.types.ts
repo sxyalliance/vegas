@@ -202,7 +202,15 @@ export interface Database {
 			};
 		};
 		Functions: {
-			[_ in never]: never;
+			get_random_phrases: {
+				Args: Record<PropertyKey, never>;
+				Returns: {
+					defined_at: string;
+					definition: string;
+					id: number;
+					phrase: string;
+				}[];
+			};
 		};
 		Enums: {
 			[_ in never]: never;

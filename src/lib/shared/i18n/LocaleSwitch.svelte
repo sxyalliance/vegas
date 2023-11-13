@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { availableLanguageTags } from '@inlang/paraglide-js/vegas';
 	import { parse } from 'bcp-47';
 
 	import { _, localePreference } from '$lib/shared/i18n/index';
 	import Select from '$lib/vgui/select/Select.svelte';
+
+	import { availableLanguageTags } from './compiled/runtime';
 
 	let clazz = '';
 	export { clazz as class };

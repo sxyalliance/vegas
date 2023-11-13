@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { createQuery, useQueryClient } from '@tanstack/svelte-query';
 
 	import { _ } from '$lib/shared/i18n';
@@ -12,7 +13,7 @@
 
 	const phrases = createQuery({
 		queryKey: ['phrases', 'random'],
-		queryFn: () => query()
+		queryFn: () => query($page.data.supabase)
 	});
 
 	const client = useQueryClient();
