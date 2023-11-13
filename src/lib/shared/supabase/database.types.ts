@@ -43,6 +43,7 @@ export interface Database {
 					proposer_id: string;
 					related_personnel: number;
 					slug: string;
+					status: Database['public']['Enums']['activity_status'];
 				};
 				Insert: {
 					category_key: string;
@@ -59,6 +60,7 @@ export interface Database {
 					proposer_id: string;
 					related_personnel: number;
 					slug: string;
+					status?: Database['public']['Enums']['activity_status'];
 				};
 				Update: {
 					category_key?: string;
@@ -75,6 +77,7 @@ export interface Database {
 					proposer_id?: string;
 					related_personnel?: number;
 					slug?: string;
+					status?: Database['public']['Enums']['activity_status'];
 				};
 				Relationships: [
 					{
@@ -195,7 +198,7 @@ export interface Database {
 			};
 		};
 		Enums: {
-			[_ in never]: never;
+			activity_status: 'upcoming' | 'finished' | 'ongoing';
 		};
 		CompositeTypes: {
 			[_ in never]: never;

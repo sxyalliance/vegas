@@ -22,9 +22,9 @@
 		<div class="flex-none">
 			<div class="group relative mb-6 max-w-xl text-high-contrast">
 				<span class="text-xl">
-					{#if meetingDay.isSame(today, 'day')}
+					{#if event.status === 'ongoing'}
 						{_('event_status_ongoing_label')}
-					{:else if meetingDay.isBefore(today, 'day')}
+					{:else if event.status === 'finished'}
 						{_('event_status_finished_label')}
 					{:else}
 						{_('event_status_upcoming_label')}

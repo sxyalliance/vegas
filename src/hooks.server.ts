@@ -1,11 +1,9 @@
-import { createServerClient } from '@supabase/ssr';
 import { sequence } from '@sveltejs/kit/hooks';
 
 // import * as Sentry from '@sentry/sveltekit';
 import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
-import { constructDirectus } from '$lib/shared/directus/client';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
 import * as seoSites from '$lib/shared/seo/sites';
 import supabaseHook from '$lib/shared/supabase/hook.server';
@@ -29,8 +27,6 @@ export const handle: Handle = sequence(
 		if (langs) {
 			localePreference.set(resolveFirstAvailableLocale(langs));
 		}
-
-		// event.locals.directus = constructDirectus(event.fetch);
 
 		return resolve(event, {
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')

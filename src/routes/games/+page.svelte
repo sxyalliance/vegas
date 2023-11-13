@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 	import { superForm } from 'sveltekit-superforms/client';
@@ -8,8 +9,6 @@
 	import Badge from '$lib/vgui/badge/Badge.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
-
-	import TextField from '$lib/vgui/textfield/TextField.svelte';
 
 	import query from './query';
 
@@ -21,7 +20,7 @@
 
 	const games = createQuery({
 		queryKey: ['games'],
-		queryFn: () => query()
+		queryFn: () => query($page.data.supabase)
 	});
 
 	$: console.log($games);
