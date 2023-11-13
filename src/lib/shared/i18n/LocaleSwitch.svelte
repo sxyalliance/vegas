@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { parse } from 'bcp-47';
 
-	import { _, localePreference } from '$lib/shared/i18n/index';
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import { localePreference } from '$lib/shared/i18n/index';
 	import Select from '$lib/vgui/select/Select.svelte';
 
 	import { availableLanguageTags } from './compiled/runtime';
@@ -29,4 +30,4 @@
 	}));
 </script>
 
-<Select class={clazz} bind:value={$localePreference} label={_('locale_switch_label')} {options} />
+<Select class={clazz} bind:value={$localePreference} label={m.locale_switch_label()} {options} />

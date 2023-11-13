@@ -14,18 +14,13 @@ fs.mkdirSync(outputDir, { recursive: true });
 
 const mergeNamespaces = (directory) => {
 	const files = fs.readdirSync(directory);
-	return files.reduce((merged, file) => {
+	const namespaced = files.map((file) => {
 		const namespace = file.split('.')[0];
 		const content = JSON.parse(fs.readFileSync(path.join(directory, file), 'utf8'));
 
-		if (merged.startsWith('{')) {
-			const parsedMerged = JSON.parse(merged);
-			parsedMerged[namespace] = content;
-			return JSON.stringify(parsedMerged);
-		}
-
-		return JSON.stringify({ [namespace]: content });
+		return { [namespace]: content };
 	});
+	return Object.assign({}, ...namespaced);
 };
 
 const flattenNestedKey = (obj, separator, prefix) => {
@@ -51,7 +46,7 @@ for (const directory of fs.readdirSync(inputDirectory)) {
 	if (directoryPath === outputDir) continue;
 
 	const output = path.join(outputDir, directory + '.json');
-	const merged = JSON.parse(mergeNamespaces(directoryPath));
+	const merged = mergeNamespaces(directoryPath);
 	const flattened = flattenNestedKey(merged, '_');
 
 	fs.writeFileSync(output, JSON.stringify(flattened, null, 4));

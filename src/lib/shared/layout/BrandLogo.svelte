@@ -3,7 +3,7 @@
 
 	import logoDark from '$lib/assets/logo-dark.png?w=128&as=run:0';
 	import logoLight from '$lib/assets/logo-light.png?w=128&as=run:0';
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { theme } from '$lib/shared/theme/store';
 
 	$: logo = $theme === 'dark' ? logoDark : logoLight;
@@ -12,4 +12,4 @@
 	export { clazz as class };
 </script>
 
-<Img src={logo} class={clazz} alt={_('common_brand_name')} loading="eager" />
+<Img src={logo} class={clazz} alt={m.common_brand_name()} loading="eager" />

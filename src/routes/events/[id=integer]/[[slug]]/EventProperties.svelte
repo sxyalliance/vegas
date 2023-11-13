@@ -2,7 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
 
-	import { _, type MessageId } from '$lib/shared/i18n';
+	import type { MessageId } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import Badge from '$lib/vgui/badge/Badge.svelte';
 	import Card from '$lib/vgui/card/Card.svelte';
 
@@ -83,7 +84,7 @@
 		<dl class="flex flex-wrap">
 			<div class="flex-auto">
 				<dt class="text-sm font-semibold leading-6 text-high-contrast">
-					{_('event_property_related_personnel')}
+					{m.event_property_related_personnel()}
 				</dt>
 				<dd class="mt-1 text-base font-semibold leading-6 text-high-contrast">
 					{properties.related_personnel}
@@ -91,19 +92,19 @@
 			</div>
 			<div class="flex-none self-end pt-4">
 				<dt class="sr-only">
-					{_('event_property_status')}
+					{m.event_property_status()}
 				</dt>
 				{#if properties.status === 'upcoming'}
 					<dd>
-						<Badge color="teal" variant="soft">{_('event_status_upcoming_label')}</Badge>
+						<Badge color="teal" variant="soft">{m.event_status_upcoming_label()}</Badge>
 					</dd>
 				{:else if properties.status === 'finished'}
 					<dd>
-						<Badge color="slate" variant="soft">{_('event_status_finished_label')}</Badge>
+						<Badge color="slate" variant="soft">{m.event_status_finished_label()}</Badge>
 					</dd>
 				{:else if properties.status === 'ongoing'}
 					<dd>
-						<Badge color="amber" variant="soft">{_('event_status_ongoing_label')}</Badge>
+						<Badge color="amber" variant="soft">{m.event_status_ongoing_label()}</Badge>
 					</dd>
 				{/if}
 			</div>
@@ -114,7 +115,7 @@
 				{#each list as property, i (property.label)}
 					<div class="flex w-full flex-none gap-x-4">
 						<dt class="flex-none">
-							<span class="sr-only">{_(property.label)}</span>
+							<span class="sr-only">{m[property.label]()}</span>
 							<Icon
 								icon={property.icon}
 								class="h-6 w-5 {i < 2 ? 'text-neutral-10' : 'text-neutral-9'}"

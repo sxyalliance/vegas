@@ -4,7 +4,7 @@
 	import { writable } from 'svelte/store';
 	import { fly } from 'svelte/transition';
 
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
@@ -34,11 +34,11 @@
 		>
 			<div class="flex items-center justify-between">
 				<a href="/" class="-m-1.5 p-1.5">
-					<span class="sr-only">{_('common_brand_name')}</span>
+					<span class="sr-only">{m.common_brand_name()}</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
 				<button type="button" class="-m-2.5 rounded-md p-2.5 text-neutral-9" use:melt={$close}>
-					<span class="sr-only">{_('navigation_close')}</span>
+					<span class="sr-only">{m.navigation_close()}</span>
 					<Icon icon="tabler:x" class="h-6 w-6" aria-hidden="true" />
 				</button>
 			</div>

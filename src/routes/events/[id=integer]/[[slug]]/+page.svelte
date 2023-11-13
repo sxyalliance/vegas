@@ -5,7 +5,7 @@
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
@@ -37,7 +37,7 @@
 
 		<article class="text-base leading-7">
 			<p class="text-base font-semibold leading-7 text-accent-11">
-				{_(`event_category_${$event.data.category_key}_name`)}
+				{m[`event_category_${$event.data.category_key}_name`]()}
 				#{$event.data.id}
 			</p>
 			<h1 class="mt-2 text-3xl font-bold tracking-tight text-high-contrast sm:text-4xl">

@@ -3,7 +3,7 @@
 	import { paramCase } from 'change-case';
 	import dayjs from 'dayjs';
 
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 
 	import type query from './query';
 
@@ -23,16 +23,16 @@
 			<div class="group relative mb-6 max-w-xl text-high-contrast">
 				<span class="text-xl">
 					{#if event.status === 'ongoing'}
-						{_('event_status_ongoing_label')}
+						{m.event_status_ongoing_label()}
 					{:else if event.status === 'finished'}
-						{_('event_status_finished_label')}
+						{m.event_status_finished_label()}
 					{:else}
-						{_('event_status_upcoming_label')}
+						{m.event_status_upcoming_label()}
 					{/if}
 					Event
 				</span>
 				<h2 class="mt-1 text-2xl font-semibold leading-6">
-					{_(`event_status_finished_label`)}
+					{m[`event_status_finished_label`]()}
 					{meetingDay.fromNow()}
 				</h2>
 			</div>
@@ -62,7 +62,7 @@
 				<!-- Entity Name & Proposer -->
 				<div class="-ml-8">
 					<span class="font-semibold text-high-contrast">
-						{_('event_property_proposer')}
+						{m.event_property_proposer()}
 					</span>
 					<p class="w-[12ch] truncate text-sm text-low-contrast">{event.proposer.nickname}</p>
 				</div>

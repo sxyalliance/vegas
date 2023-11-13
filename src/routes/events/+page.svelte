@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { createQuery } from '@tanstack/svelte-query';
 
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { EventListSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
@@ -24,7 +24,7 @@
 
 <Section>
 	<Callout class="mb-12">
-		<p>{_('event_information_language_restriction')}</p>
+		<p>{m.event_information_language_restriction()}</p>
 	</Callout>
 
 	{#if $events.isSuccess}

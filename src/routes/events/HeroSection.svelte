@@ -4,7 +4,7 @@
 	import { createQuery } from '@tanstack/svelte-query';
 	import { paramCase } from 'change-case';
 
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import Card from '$lib/vgui/card/Card.svelte';
 
 	import { queryCategories } from './query';
@@ -32,10 +32,10 @@
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
 				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
-					{_('event_list_hero_title')}
+					{m.event_list_hero_title()}
 				</h1>
 				<p class="mt-4 text-xl text-low-contrast">
-					{_('event_list_hero_text')}
+					{m.event_list_hero_text()}
 				</p>
 			</div>
 			<div class="hidden lg:block">
@@ -64,10 +64,10 @@
 																/>
 
 																<h2 class="text-lg font-medium leading-6 text-high-contrast">
-																	{_(`event_category_${category.key}_name`)}
+																	{m[`event_category_${category.key}_name`]()}
 																</h2>
 																<p class="mt-2 text-base text-low-contrast">
-																	{_(`event_category_${category.key}_description`)}
+																	{m[`event_category_${category.key}_description`]()}
 																</p>
 															</div>
 														</Card>

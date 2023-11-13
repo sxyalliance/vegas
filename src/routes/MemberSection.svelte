@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { all } from '$lib/shared/discord';
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	const people = all;
@@ -11,10 +11,10 @@
 	<div class="space-y-8 text-center sm:space-y-12">
 		<div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-3xl">
 			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
-				{_('home_member_title')}
+				{m.home_member_title()}
 			</h2>
 			<p class="text-xl text-low-contrast">
-				{_('home_member_text')}
+				{m.member_hero_text()}
 			</p>
 		</div>
 		<ul
@@ -34,7 +34,7 @@
 		</ul>
 
 		<div class="text-xs text-low-contrast">
-			<p>{_('home_member_note')}</p>
+			<p>{m.home_member_note()}</p>
 		</div>
 	</div>
 </Section>
