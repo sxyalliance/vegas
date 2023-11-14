@@ -180,6 +180,9 @@ devDependencies:
   husky:
     specifier: ^8.0.3
     version: 8.0.3
+  iconify-icon:
+    specifier: ^1.0.8
+    version: 1.0.8
   inquirer:
     specifier: 9.2.12
     version: 9.2.12
@@ -192,6 +195,9 @@ devDependencies:
   maskdata:
     specifier: ^1.2.6
     version: 1.2.6
+  mode-watcher:
+    specifier: ^0.0.7
+    version: 0.0.7(svelte@4.2.3)
   network-information-types:
     specifier: ^0.1.1
     version: 0.1.1(typescript@5.2.2)
@@ -4922,6 +4928,12 @@ packages:
     hasBin: true
     dev: true
 
+  /iconify-icon@1.0.8:
+    resolution: {integrity: sha512-jvbUKHXf8EnGGArmhlP2IG8VqQLFFyTvTqb9LVL2TKTh7/eCCD1o2HHE9thpbJJb6B8hzhcFb6rOKhvo7reNKA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -6115,6 +6127,15 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       ufo: 1.3.1
+    dev: true
+
+  /mode-watcher@0.0.7(svelte@4.2.3):
+    resolution: {integrity: sha512-3/RXHKzg9TjhkYo8YTx++Ai7a2Qd7BkYS3RFWaIhj0NPonXAF5JNegiZ3CTk1Q/k0wyhPQUlsWW0Y5ByCp6Y1g==}
+    peerDependencies:
+      svelte: ^4.0.0
+    dependencies:
+      svelte: 4.2.3
+      svelte-persisted-store: 0.7.0(svelte@4.2.3)
     dev: true
 
   /moo@0.5.2:
@@ -8105,6 +8126,15 @@ packages:
     resolution: {integrity: sha512-b1Ylnyv9O6b7VYeWGJVToaVU2lw7GtErVwiEdojyfnOuZcrhNlQ5eDqbTrL3xyKz8j2VTy/QiGUl1lm/6SnQ2A==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.3
+    dev: true
+
+  /svelte-persisted-store@0.7.0(svelte@4.2.3):
+    resolution: {integrity: sha512-PczYS60ysScQ0DmTCPXQm5rwt8FfQzSlx0lCbljbE6hTCKqXaw2bP8KH1+B7QTPmuiy/QbAk4pjYpNCmZhjyRw==}
+    engines: {node: '>=0.14'}
+    peerDependencies:
+      svelte: ^3.48.0 || >4.0.0
     dependencies:
       svelte: 4.2.3
     dev: true
