@@ -8,7 +8,7 @@
 
 <a
 	href={item.href}
-	class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-high-contrast"
+	class="text-high-contrast -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
 >
 	{m[item.name]()}
 </a>

@@ -30,14 +30,14 @@
 		<div
 			use:melt={$content}
 			transition:fly
-			class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-neutral-2 px-6 py-6 sm:max-w-sm"
+			class="bg-neutral-2 fixed inset-y-0 right-0 z-40 w-full overflow-y-auto px-6 py-6 sm:max-w-sm"
 		>
 			<div class="flex items-center justify-between">
 				<a href="/" class="-m-1.5 p-1.5">
 					<span class="sr-only">{m.common_brand_name()}</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
-				<button type="button" class="-m-2.5 rounded-md p-2.5 text-neutral-9" use:melt={$close}>
+				<button type="button" class="text-neutral-9 -m-2.5 rounded-md p-2.5" use:melt={$close}>
 					<span class="sr-only">{m.navigation_close()}</span>
 					<Icon icon="tabler:x" class="h-6 w-6" aria-hidden="true" />
 				</button>

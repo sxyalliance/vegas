@@ -3,21 +3,12 @@
 	export { clazz as class };
 
 	/**
-	 * Uses an alternate background color.
-	 */
-	export let alternate: boolean = false;
-
-	/**
 	 * Sets a different width for the content.
 	 */
 	export let width: 'xl' | '3xl' | '4xl' | '7xl' = '7xl';
 </script>
 
-<section
-	class="px-6 py-12 sm:py-20 lg:px-8 {clazz}"
-	class:bg-neutral-1={!alternate}
-	class:bg-neutral-2={alternate}
->
+<section class="px-6 py-12 sm:py-20 lg:px-8 {clazz}">
 	<div class="mx-auto {`section-width-${width}`}">
 		<slot />
 	</div>

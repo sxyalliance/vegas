@@ -17,10 +17,10 @@
 
 <a href={`/events/${event.id}/${event.slug}`}>
 	<article
-		class="relative isolate flex flex-col justify-between gap-10 bg-neutral-3 p-6 lg:flex-row"
+		class="bg-neutral-3 relative isolate flex flex-col justify-between gap-10 p-6 lg:flex-row"
 	>
 		<div class="flex-none">
-			<div class="group relative mb-6 max-w-xl text-high-contrast">
+			<div class="text-high-contrast group relative mb-6 max-w-xl">
 				<span class="text-xl">
 					{#if event.status === 'ongoing'}
 						{m.event_status_ongoing_label()}
@@ -43,7 +43,7 @@
 					class="text-accent-fg relative -left-10 top-0 p-2 pl-2 pr-4 font-bold bg-{category.color}"
 				>
 					<div
-						class="absolute left-0 top-17 border-8 border-b-transparent border-l-transparent border-{category.color}"
+						class="top-17 absolute left-0 border-8 border-b-transparent border-l-transparent border-{category.color}"
 					/>
 					<time class="sr-only" datetime={meetingDay.format()}>{meetingDay.format('l')}</time>
 					<div class="flex" aria-hidden="true">
@@ -61,28 +61,28 @@
 
 				<!-- Entity Name & Proposer -->
 				<div class="-ml-8">
-					<span class="font-semibold text-high-contrast">
+					<span class="text-high-contrast font-semibold">
 						{m.event_property_proposer()}
 					</span>
-					<p class="w-[12ch] truncate text-sm text-low-contrast">{event.proposer.nickname}</p>
+					<p class="text-low-contrast w-[12ch] truncate text-sm">{event.proposer.nickname}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="mr-auto lg:flex lg:flex-col lg:place-content-center">
-			<div class="text-5xl font-bold text-high-contrast">
+			<div class="text-high-contrast text-5xl font-bold">
 				{event.name}
 			</div>
-			<p class="mt-2 line-clamp-3 text-low-contrast">
+			<p class="text-low-contrast mt-2 line-clamp-3">
 				{event.description}
 			</p>
 		</div>
 
 		<div class="hidden flex-none lg:block">
-			<div class="rounded-lg bg-neutralA-2 p-4">
+			<div class="bg-neutralA-2 rounded-lg p-4">
 				<Icon
 					icon={`material-symbols:${kebabCase(String(category.icon))}`}
-					class="h-full w-26 text-{category.color}"
+					class="w-26 h-full text-{category.color}"
 				/>
 			</div>
 		</div>

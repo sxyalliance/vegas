@@ -31,7 +31,7 @@
 <div class="relative">
 	<button
 		use:melt={$trigger}
-		class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-high-contrast"
+		class="text-high-contrast inline-flex items-center gap-x-1 text-sm font-semibold leading-6"
 	>
 		<span>{m[item.name]()}</span>
 		<Icon icon="tabler:chevron-down" class="text-neutral-9" aria-hidden="true" />
@@ -44,7 +44,7 @@
 			out:fade={{ duration: 150 }}
 			class="z-30 mt-5 flex px-4"
 		>
-			<div class="flex-auto overflow-hidden rounded-3xl bg-neutral-2 text-sm leading-6 shadow-lg">
+			<div class="bg-neutral-2 flex-auto overflow-hidden rounded-3xl text-sm leading-6 shadow-lg">
 				<div class="p-4">
 					{#each items as sub_item (sub_item.name)}
 						<div use:itemE>

@@ -36,14 +36,14 @@
 		<SeoHandler factory={new EventSeoFactory($event.data)} />
 
 		<article class="text-base leading-7">
-			<p class="text-base font-semibold leading-7 text-accent-11">
+			<p class="text-accent-11 text-base font-semibold leading-7">
 				{m[`event_category_${$event.data.category_key}_name`]()}
 				#{$event.data.id}
 			</p>
-			<h1 class="mt-2 text-3xl font-bold tracking-tight text-high-contrast sm:text-4xl">
+			<h1 class="text-high-contrast mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
 				{$event.data.name}
 			</h1>
-			<p class="my-4 text-xl leading-8 text-low-contrast">
+			<p class="text-low-contrast my-4 text-xl leading-8">
 				{$event.data.description}
 			</p>
 
@@ -55,10 +55,10 @@
 
 			<div class="relative my-6">
 				<div class="absolute inset-0 flex items-center" aria-hidden="true">
-					<div class="w-full border-t border-neutral-6" />
+					<div class="border-neutral-6 w-full border-t" />
 				</div>
 				<div class="relative flex justify-center">
-					<span class="bg-neutral-1 px-2 text-neutral-9">
+					<span class="bg-neutral-1 text-neutral-9 px-2">
 						<Icon icon="tabler:lego" class="h-5 w-5" />
 					</span>
 				</div>

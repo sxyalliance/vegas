@@ -1,42 +1,64 @@
-import { createPlugin } from 'windy-radix-palette';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
-const colors = createPlugin();
-
-/** @type {import("tailwindcss").Config} */
-export default {
-	darkMode: 'class',
+/** @type {import('tailwindcss').Config} */
+const config = {
+	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	safelist: ['dark', { pattern: /(text|bg|border)-(.+)-9/ }],
+	safelist: ['dark'],
 	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px'
+			}
+		},
 		extend: {
 			colors: {
-				// Brand
-				accent: colors.alias('purple'),
-				accentA: colors.alias('purpleA'),
-
-				// Semantic
-				success: colors.alias('green'),
-				successA: colors.alias('greenA'),
-				warning: colors.alias('yellow'),
-				warningA: colors.alias('yellowA'),
-				danger: colors.alias('red'),
-				dangerA: colors.alias('redA'),
-				info: colors.alias('blue'),
-				infoA: colors.alias('blueA'),
-
-				// Grayscale
-				neutral: colors.alias('mauve'),
-				neutralA: colors.alias('mauveA'),
-
-				// Text
-				'high-contrast': colors.alias('mauve', 12),
-				'low-contrast': colors.alias('mauve', 11)
+				border: 'hsl(var(--border) / <alpha-value>)',
+				input: 'hsl(var(--input) / <alpha-value>)',
+				ring: 'hsl(var(--ring) / <alpha-value>)',
+				background: 'hsl(var(--background) / <alpha-value>)',
+				foreground: 'hsl(var(--foreground) / <alpha-value>)',
+				primary: {
+					DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+					foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+					foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)'
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+					foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+					foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+					foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+					foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
+				},
+				card: {
+					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
+				}
 			},
-			spacing: {
-				17: '4.25rem',
-				26: '6.5rem'
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				sans: [...fontFamily.sans]
 			}
 		}
-	},
-	plugins: [colors.plugin, require('@tailwindcss/typography'), require('@tailwindcss/forms')]
+	}
 };
+
+export default config;

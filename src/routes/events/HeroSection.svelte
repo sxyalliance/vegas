@@ -27,14 +27,14 @@
 	};
 </script>
 
-<div class="lg:h-hero relative isolate overflow-hidden bg-neutral-2 lg:mt-0">
+<div class="lg:h-hero bg-neutral-2 relative isolate overflow-hidden lg:mt-0">
 	<div class="pb-12 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
-				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
+				<h1 class="font text-high-contrast text-4xl font-extrabold tracking-tight sm:text-6xl">
 					{m.event_list_hero_title()}
 				</h1>
-				<p class="mt-4 text-xl text-low-contrast">
+				<p class="text-low-contrast mt-4 text-xl">
 					{m.event_list_hero_text()}
 				</p>
 			</div>
@@ -63,10 +63,10 @@
 																	class="mb-4 h-12 w-12 text-{category.color}"
 																/>
 
-																<h2 class="text-lg font-medium leading-6 text-high-contrast">
+																<h2 class="text-high-contrast text-lg font-medium leading-6">
 																	{m[`event_category_${category.key}_name`]()}
 																</h2>
-																<p class="mt-2 text-base text-low-contrast">
+																<p class="text-low-contrast mt-2 text-base">
 																	{m[`event_category_${category.key}_description`]()}
 																</p>
 															</div>
