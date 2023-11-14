@@ -6,13 +6,13 @@
 	export let item: FlyoutItem;
 </script>
 
-<div class="hover:bg-neutral-3 relative rounded-lg p-4">
-	<a href={item.href} class="text-high-contrast block text-sm font-semibold leading-6">
+<div class="relative rounded-lg p-4">
+	<a href={item.href} class="block text-sm font-semibold leading-6">
 		{m[item.name]()}
 		<span class="absolute inset-0" />
 	</a>
 	{#if item.description}
-		<p class="text-low-contrast mt-1 text-sm leading-6">
+		<p class="mt-1 text-sm leading-6 text-muted-foreground">
 			{m[item.description]()}
 		</p>
 	{/if}

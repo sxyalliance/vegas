@@ -14,6 +14,7 @@
 	import type { LayoutData } from './$types';
 	import '$lib/assets/app.css';
 	import '$lib/assets/rainbow.css';
+	import 'iconify-icon';
 
 	export let data: LayoutData;
 
