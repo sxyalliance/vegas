@@ -83,10 +83,10 @@
 	<Card class="">
 		<dl class="flex flex-wrap">
 			<div class="flex-auto">
-				<dt class="text-sm font-semibold leading-6 text-high-contrast">
+				<dt class="text-high-contrast text-sm font-semibold leading-6">
 					{m.event_property_related_personnel()}
 				</dt>
-				<dd class="mt-1 text-base font-semibold leading-6 text-high-contrast">
+				<dd class="text-high-contrast mt-1 text-base font-semibold leading-6">
 					{properties.related_personnel}
 				</dd>
 			</div>
@@ -110,7 +110,7 @@
 			</div>
 			<div
 				id="properties-list"
-				class="mt-6 grid w-full grid-cols-1 gap-y-4 border-t border-neutral-6 pt-6 lg:grid-cols-2"
+				class="border-neutral-6 mt-6 grid w-full grid-cols-1 gap-y-4 border-t pt-6 lg:grid-cols-2"
 			>
 				{#each list as property, i (property.label)}
 					<div class="flex w-full flex-none gap-x-4">

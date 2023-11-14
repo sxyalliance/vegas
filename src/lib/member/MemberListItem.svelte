@@ -24,20 +24,20 @@
 <li use:melt={$trigger}>
 	<Img src={avatar} alt={'Avatar of ' + name} class="mx-auto h-24 w-24 rounded-full" />
 	<h3
-		class="mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-base font-semibold leading-7 tracking-tight text-high-contrast"
+		class="text-high-contrast mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-base font-semibold leading-7 tracking-tight"
 	>
 		{name}
 	</h3>
-	<p class="text-sm leading-6 text-low-contrast">{role}</p>
+	<p class="text-low-contrast text-sm leading-6">{role}</p>
 </li>
 
 {#if $open}
 	<div
 		use:melt={$content}
 		transition:fly={{ y: -5, duration: 100 }}
-		class="z-10 rounded-md bg-neutral-3 shadow-sm"
+		class="bg-neutral-3 z-10 rounded-md shadow-sm"
 	>
-		<div class="w-[300px] rounded-md bg-neutral-3 p-5 shadow-sm">
+		<div class="bg-neutral-3 w-[300px] rounded-md p-5 shadow-sm">
 			<div class="flex flex-col gap-2">
 				<Img
 					src={avatar}
@@ -46,11 +46,11 @@
 				/>
 				<div class="flex flex-col gap-4">
 					<div>
-						<div class="font-bold text-high-contrast">{name}</div>
+						<div class="text-high-contrast font-bold">{name}</div>
 						<div class="text-low-contrast">{username}</div>
 					</div>
 				</div>
-				<div class="m-0 text-low-contrast">
+				<div class="text-low-contrast m-0">
 					{#each tags as tag}
 						<Badge variant="surface" class="mx-0.5 my-0.5">{tag}</Badge>
 					{/each}

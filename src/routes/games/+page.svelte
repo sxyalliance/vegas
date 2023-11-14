@@ -32,25 +32,25 @@
 	<div role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 		{#if $games.isSuccess}
 			{#each $games.data as game}
-				<Card variant="classic" class="col-span-1 flex flex-col divide-y divide-neutralA-6">
+				<Card variant="classic" class="divide-neutralA-6 col-span-1 flex flex-col divide-y">
 					<div class="flex flex-1 flex-col">
 						<div class="-m-6 mb-0 flex-shrink-0">
 							<img class="h-32 w-full rounded-md" src={game.image_url} alt="" />
 						</div>
 						<div class="mt-4 flex justify-between">
-							<h3 class="text-lg font-medium text-high-contrast">{game.name}</h3>
+							<h3 class="text-high-contrast text-lg font-medium">{game.name}</h3>
 							<Badge variant="soft" class="capitalize">
 								{game.provider}#{game.provider_identifier}
 							</Badge>
 						</div>
-						<p class="mt-2 line-clamp-5 text-sm text-low-contrast">{game.description}</p>
+						<p class="text-low-contrast mt-2 line-clamp-5 text-sm">{game.description}</p>
 					</div>
 
 					<div class="-m-6 mt-4">
-						<div class="-mt-px flex divide-x divide-neutralA-6">
+						<div class="divide-neutralA-6 -mt-px flex divide-x">
 							<div class="-mr-px flex flex-1">
 								<button
-									class="relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold text-success-10"
+									class="text-success-10 relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold"
 								>
 									<Icon icon="tabler:thumb-up" class="h-5 w-5" />
 									Upvote
@@ -58,7 +58,7 @@
 							</div>
 							<div class="-ml-px flex flex-1">
 								<button
-									class="relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold text-danger-10"
+									class="text-danger-10 relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold"
 								>
 									<Icon icon="tabler:thumb-down" class="h-5 w-5" />
 									Downvote

@@ -30,15 +30,15 @@
 	$: detail = getDetailByMessage(message);
 </script>
 
-<main class="h-screen w-full bg-neutral-1">
+<main class="bg-neutral-1 h-screen w-full">
 	<div class="mx-auto flex max-w-7xl flex-auto flex-col justify-center px-6 py-24 sm:py-64 lg:px-8">
-		<p class="text-base font-semibold leading-8 text-accent-11">
+		<p class="text-accent-11 text-base font-semibold leading-8">
 			{statusCode}
 		</p>
-		<h1 class="mt-4 text-3xl font-bold tracking-tight text-high-contrast sm:text-5xl">
+		<h1 class="text-high-contrast mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
 			{message}
 		</h1>
-		<p class="mt-6 text-base leading-7 text-low-contrast">
+		<p class="text-low-contrast mt-6 text-base leading-7">
 			{detail}
 		</p>
 		<div class="mt-10">

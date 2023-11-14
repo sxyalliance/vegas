@@ -85,7 +85,7 @@
 
 <div class="select {clazz}">
 	<button
-		class="relative w-full cursor-pointer rounded-md bg-neutral-2 py-1.5 pl-3 pr-10 text-left text-high-contrast shadow-sm ring-1 ring-inset ring-neutral-8 sm:text-sm sm:leading-6"
+		class="bg-neutral-2 text-high-contrast ring-neutral-8 relative w-full cursor-pointer rounded-md py-1.5 pl-3 pr-10 text-left shadow-sm ring-1 ring-inset sm:text-sm sm:leading-6"
 		use:melt={$trigger}
 		aria-label={label}
 	>
@@ -96,12 +96,12 @@
 			<span class="ml-3 block truncate capitalize">{$selectedOption.label}</span>
 		</span>
 		<span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-			<Icon icon="tabler:selector" class="h-5 w-5 text-neutral-9" />
+			<Icon icon="tabler:selector" class="text-neutral-9 h-5 w-5" />
 		</span>
 	</button>
 	{#if $open}
 		<div
-			class="absolute z-40 mt-1 max-h-56 w-auto overflow-auto rounded-md bg-neutral-2 py-1 text-base shadow-lg ring-1 ring-neutral-6 focus:outline-none sm:text-sm"
+			class="bg-neutral-2 ring-neutral-6 absolute z-40 mt-1 max-h-56 w-auto overflow-auto rounded-md py-1 text-base shadow-lg ring-1 focus:outline-none sm:text-sm"
 			use:melt={$menu}
 			transition:fade={{ duration: 150 }}
 		>
@@ -109,16 +109,16 @@
 				{#each Object.entries(groupedOptions) as [key, arr]}
 					<div use:melt={$group(key)}>
 						<div
-							class="py-1 pl-4 pr-4 font-semibold capitalize text-high-contrast"
+							class="text-high-contrast py-1 pl-4 pr-4 font-semibold capitalize"
 							use:melt={$groupLabel(key)}
 						>
 							{key}
 						</div>
 						{#each arr as item}
 							<div
-								class="data-[highlighted]:text-accent-fg data-[selected]:text-accent-fg relative cursor-pointer select-none py-2 pl-3
-            pr-9 text-low-contrast
-            data-[highlighted]:bg-accent-9 data-[selected]:bg-accent-9"
+								class="data-[highlighted]:text-accent-fg data-[selected]:text-accent-fg text-low-contrast data-[highlighted]:bg-accent-9 data-[selected]:bg-accent-9 relative cursor-pointer
+            select-none py-2
+            pl-3 pr-9"
 								use:melt={$option({ value: item, label: item.label })}
 							>
 								<div class="mr-2 flex items-center">
@@ -148,9 +148,9 @@
 			{:else}
 				{#each flatOptions as item}
 					<div
-						class="data-[highlighted]:text-accent-fg data-[selected]:text-accent-fg relative cursor-pointer select-none py-2 pl-3
-            pr-9 text-high-contrast
-            data-[highlighted]:bg-accent-9 data-[selected]:bg-accent-9"
+						class="data-[highlighted]:text-accent-fg data-[selected]:text-accent-fg text-high-contrast data-[highlighted]:bg-accent-9 data-[selected]:bg-accent-9 relative cursor-pointer
+            select-none py-2
+            pl-3 pr-9"
 						use:melt={$option({ value: item, label: item.label })}
 					>
 						<div class="mr-2 flex items-center">

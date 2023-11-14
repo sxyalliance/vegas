@@ -31,7 +31,7 @@
 <div class="relative">
 	<button
 		use:melt={$trigger}
-		class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-high-contrast"
+		class="text-high-contrast flex items-center gap-x-1 text-sm font-semibold leading-6"
 	>
 		{m[item.name]()}
 		<Icon icon="tabler:chevron-down" class="text-neutral-9" aria-hidden="true" />
@@ -42,7 +42,7 @@
 			use:melt={$menu}
 			in:fade={{ duration: 200 }}
 			out:fade={{ duration: 150 }}
-			class="z-30 mt-3 w-96 rounded-3xl bg-neutral-2 p-4 shadow-lg"
+			class="bg-neutral-2 z-30 mt-3 w-96 rounded-3xl p-4 shadow-lg"
 		>
 			{#each items as sub_item (sub_item.name)}
 				<div use:itemE>

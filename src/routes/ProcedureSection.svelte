@@ -6,13 +6,13 @@
 <Section {...$$restProps}>
 	<div class="lg:grid lg:grid-cols-3 lg:gap-x-8">
 		<div>
-			<h2 class="text-base font-semibold uppercase tracking-wide text-accent-11">
+			<h2 class="text-base font-semibold uppercase tracking-wide text-primary">
 				{m.home_procedure_subtitle()}
 			</h2>
-			<p class="mt-2 text-3xl font-extrabold text-high-contrast">
+			<p class="mt-2 text-3xl font-extrabold">
 				{m.home_procedure_title()}
 			</p>
-			<p class="mt-4 text-lg text-low-contrast">
+			<p class="mt-4 text-lg text-muted-foreground">
 				{m.home_procedure_text()}
 			</p>
 		</div>
@@ -23,12 +23,12 @@
 				{#each [...Array(6).keys()] as i}
 					<div class="relative">
 						<dt>
-							<span class="absolute text-2xl text-accent-11">{i + 1}</span>
-							<p class="ml-9 text-lg font-medium leading-6 text-high-contrast">
+							<span class="absolute text-2xl text-primary">{i + 1}</span>
+							<p class="ml-9 text-lg font-medium leading-6">
 								{m[`home_procedure_steps_${i + 1}_name`]()}
 							</p>
 						</dt>
-						<dd class="ml-9 mt-2 text-base text-low-contrast">
+						<dd class="ml-9 mt-2 text-base text-muted-foreground">
 							{m[`home_procedure_steps_${i + 1}_description`]()}
 						</dd>
 					</div>

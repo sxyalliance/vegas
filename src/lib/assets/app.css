@@ -1,12 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-}
-
-@layer components {
-}
+@import '../vgui/global/global.pcss';
 
 @layer utilities {
 	.prose-here {

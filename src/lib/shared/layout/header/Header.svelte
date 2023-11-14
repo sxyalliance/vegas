@@ -12,7 +12,7 @@
 	let mobileMenuOpen = false;
 </script>
 
-<header class="border-rainbow z-30 border-b-2 bg-neutral-2">
+<header class="border-rainbow bg-neutral-2 z-30 border-b-2">
 	<div id="head-banner-holder" />
 	<nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Navbar">
 		<div class="flex items-center gap-x-12">
@@ -28,7 +28,7 @@
 			<div class="flex lg:hidden">
 				<button
 					type="button"
-					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-9"
+					class="text-neutral-9 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
 					on:click={() => (mobileMenuOpen = true)}
 				>
 					<span class="sr-only">{m.navigation_open()}</span>
