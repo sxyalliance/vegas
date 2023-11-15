@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { Menu } from 'lucide-svelte';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
 
-	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import DesktopNavigation from '$lib/shared/layout/header/DesktopNavigation.svelte';
 	import MobileNavigation from '$lib/shared/layout/header/MobileNavigation.svelte';
-	import PreferencesSheet from '$lib/shared/layout/header/PreferencesSheet.svelte';
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
+	import PreferencesSheet from '$lib/shared/layout/preferences/PreferencesSheet.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
 
 	let mobileMenuOpen = false;
+	let preferencesOpen = false;
+	let preferencesSide: 'right' | 'bottom' = 'right';
+	$: preferencesSide = mobileMenuOpen ? 'bottom' : 'right';
 </script>
 
 <header class="border-rainbow z-30 border-b-2 bg-background shadow-md">
@@ -40,10 +40,12 @@
 			</div>
 		{/if}
 		<div class="hidden gap-x-4 lg:flex">
-			<!--			<LocaleSwitch class="w-46" />-->
-			<!--			<ThemeSwitch />-->
-			<PreferencesSheet />
+			<Button variant="outline" size="icon" on:click={() => (preferencesOpen = true)}>
+				<Icon icon="lucide:settings-2" class="h-5 w-5" />
+			</Button>
 		</div>
 	</nav>
-	<MobileNavigation bind:mobileMenuOpen />
+	<MobileNavigation bind:mobileMenuOpen bind:preferencesOpen />
 </header>
+
+<PreferencesSheet side={preferencesSide} bind:open={preferencesOpen} />

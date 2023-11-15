@@ -1,20 +1,19 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { melt, createDialog } from '@melt-ui/svelte';
-	import { Menu } from 'lucide-svelte';
 	import { writable } from 'svelte/store';
 	import { fly } from 'svelte/transition';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
-	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
 
 	import { Button } from '$lib/vgui/components/ui/button';
 
 	import * as Nav from './navigation';
 
 	export let mobileMenuOpen = false;
+
+	export let preferencesOpen = false;
 
 	const store = writable(mobileMenuOpen);
 	$: store.set(mobileMenuOpen);
@@ -59,8 +58,15 @@
 					</div>
 
 					<div class="space-y-4">
-						<LocaleSwitch class="w-full" />
-						<ThemeSwitch class="w-full" />
+						<Button
+							variant="outline"
+							size="lg"
+							class="w-full"
+							on:click={() => (preferencesOpen = true)}
+						>
+							<Icon icon="lucide:settings-2" class="mr-2 h-5 w-5" />
+							Open Preferences
+						</Button>
 					</div>
 				</div>
 			</div>
