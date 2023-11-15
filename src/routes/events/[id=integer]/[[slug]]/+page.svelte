@@ -36,33 +36,18 @@
 		<SeoHandler factory={new EventSeoFactory($event.data)} />
 
 		<article class="text-base leading-7">
-			<p class="text-accent-11 text-base font-semibold leading-7">
+			<p class="text-base font-semibold leading-7 text-primary">
 				{m[`event_category_${$event.data.category_key}_name`]()}
 				#{$event.data.id}
 			</p>
-			<h1 class="text-high-contrast mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+			<h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
 				{$event.data.name}
 			</h1>
-			<p class="text-low-contrast my-4 text-xl leading-8">
+			<p class="my-4 text-xl leading-8 text-muted-foreground">
 				{$event.data.description}
 			</p>
 
-			<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-				<div class="/*col-span-2*/ col-span-3 lg:order-last">
-					<EventProperties properties={$event.data} />
-				</div>
-			</div>
-
-			<div class="relative my-6">
-				<div class="absolute inset-0 flex items-center" aria-hidden="true">
-					<div class="border-neutral-6 w-full border-t" />
-				</div>
-				<div class="relative flex justify-center">
-					<span class="bg-neutral-1 text-neutral-9 px-2">
-						<Icon icon="tabler:lego" class="h-5 w-5" />
-					</span>
-				</div>
-			</div>
+			<EventProperties properties={$event.data} />
 		</article>
 	{/if}
 </Section>

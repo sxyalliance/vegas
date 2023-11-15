@@ -16,11 +16,9 @@
 </script>
 
 <a href={`/events/${event.id}/${event.slug}`}>
-	<article
-		class="bg-neutral-3 relative isolate flex flex-col justify-between gap-10 p-6 lg:flex-row"
-	>
+	<article class="relative isolate flex flex-col justify-between gap-10 bg-muted p-6 lg:flex-row">
 		<div class="flex-none">
-			<div class="text-high-contrast group relative mb-6 max-w-xl">
+			<div class="group relative mb-6 max-w-xl">
 				<span class="text-xl">
 					{#if event.status === 'ongoing'}
 						{m.event_status_ongoing_label()}
@@ -40,10 +38,10 @@
 			<div class="relative flex items-center justify-between gap-x-4 lg:absolute lg:bottom-4">
 				<!-- Meeting Time (Bookmark effect) -->
 				<div
-					class="text-accent-fg relative -left-10 top-0 p-2 pl-2 pr-4 font-bold bg-{category.color}"
+					class="relative -left-10 top-0 p-2 pl-2 pr-4 font-bold text-primary-foreground bg-{category.color}"
 				>
 					<div
-						class="top-17 absolute left-0 border-8 border-b-transparent border-l-transparent border-{category.color}"
+						class="absolute left-0 top-17 border-8 border-b-transparent border-l-transparent border-{category.color}"
 					/>
 					<time class="sr-only" datetime={meetingDay.format()}>{meetingDay.format('l')}</time>
 					<div class="flex" aria-hidden="true">
@@ -61,28 +59,28 @@
 
 				<!-- Entity Name & Proposer -->
 				<div class="-ml-8">
-					<span class="text-high-contrast font-semibold">
+					<span class="font-semibold">
 						{m.event_property_proposer()}
 					</span>
-					<p class="text-low-contrast w-[12ch] truncate text-sm">{event.proposer.nickname}</p>
+					<p class="w-[12ch] truncate text-sm text-muted-foreground">{event.proposer.nickname}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="mr-auto lg:flex lg:flex-col lg:place-content-center">
-			<div class="text-high-contrast text-5xl font-bold">
+			<div class="text-5xl font-bold">
 				{event.name}
 			</div>
-			<p class="text-low-contrast mt-2 line-clamp-3">
+			<p class="mt-2 line-clamp-3 text-muted-foreground">
 				{event.description}
 			</p>
 		</div>
 
 		<div class="hidden flex-none lg:block">
-			<div class="bg-neutralA-2 rounded-lg p-4">
+			<div class="rounded-lg bg-muted-foreground/5 p-4">
 				<Icon
 					icon={`material-symbols:${kebabCase(String(category.icon))}`}
-					class="w-26 h-full text-{category.color}"
+					class="h-full w-26 text-{category.color}"
 				/>
 			</div>
 		</div>
