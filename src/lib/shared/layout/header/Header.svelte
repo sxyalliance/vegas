@@ -8,6 +8,7 @@
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import DesktopNavigation from '$lib/shared/layout/header/DesktopNavigation.svelte';
 	import MobileNavigation from '$lib/shared/layout/header/MobileNavigation.svelte';
+	import PreferencesSheet from '$lib/shared/layout/header/PreferencesSheet.svelte';
 	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
 
@@ -39,8 +40,9 @@
 			</div>
 		{/if}
 		<div class="hidden gap-x-4 lg:flex">
-			<LocaleSwitch class="w-46" />
-			<ThemeSwitch />
+			<!--			<LocaleSwitch class="w-46" />-->
+			<!--			<ThemeSwitch />-->
+			<PreferencesSheet />
 		</div>
 	</nav>
 	<MobileNavigation bind:mobileMenuOpen />

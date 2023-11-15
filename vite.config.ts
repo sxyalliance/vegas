@@ -41,7 +41,7 @@ export default defineConfig(({ command }) => ({
 		command === 'build' && sitemapPlugin(),
 
 		watch({
-			pattern: 'i18n/*.json',
+			pattern: 'i18n/**/*.json',
 			command: 'pnpm run i18n:compile'
 		}),
 
