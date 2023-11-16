@@ -1,6 +1,25 @@
 <script lang="ts">
 	import * as m from '$lib/shared/i18n/compiled/messages';
+	import type { mMapRecord } from '$lib/shared/i18n/map';
 	import Section from '$lib/vgui/section/Section.svelte';
+
+	const mHomeProcedureStepsName: mMapRecord = {
+		1: m.home_procedure_steps_1_name,
+		2: m.home_procedure_steps_2_name,
+		3: m.home_procedure_steps_3_name,
+		4: m.home_procedure_steps_4_name,
+		5: m.home_procedure_steps_5_name,
+		6: m.home_procedure_steps_6_name
+	};
+
+	const mHomeProcedureStepsDescription: mMapRecord = {
+		1: m.home_procedure_steps_1_description,
+		2: m.home_procedure_steps_2_description,
+		3: m.home_procedure_steps_3_description,
+		4: m.home_procedure_steps_4_description,
+		5: m.home_procedure_steps_5_description,
+		6: m.home_procedure_steps_6_description
+	};
 </script>
 
 <Section {...$$restProps}>
@@ -25,11 +44,11 @@
 						<dt>
 							<span class="absolute text-2xl text-primary">{i + 1}</span>
 							<p class="ml-9 text-lg font-medium leading-6">
-								{m[`home_procedure_steps_${i + 1}_name`]()}
+								{mHomeProcedureStepsName[i + 1]()}
 							</p>
 						</dt>
 						<dd class="ml-9 mt-2 text-base text-muted-foreground">
-							{m[`home_procedure_steps_${i + 1}_description`]()}
+							{mHomeProcedureStepsDescription[i + 1]()}
 						</dd>
 					</div>
 				{/each}

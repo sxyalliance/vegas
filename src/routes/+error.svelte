@@ -25,7 +25,7 @@
 		message: 'Unrecognized Error'
 	};
 
-	$: statusCode = error.status || getStatusByMessage(error.message);
+	$: statusCode = 'status' in error ? error.status : getStatusByMessage(error.message);
 	$: message = error.message || 'Unknown Error';
 	$: detail = getDetailByMessage(message);
 </script>

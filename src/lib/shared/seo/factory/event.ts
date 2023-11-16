@@ -29,7 +29,7 @@ export class EventListSeoFactory extends SeoFactory {
 				location: valueOrNothing(event.event_point),
 				organizer: {
 					'@type': 'Person',
-					name: valueOrNothing(event.proposer?.first_name)
+					name: valueOrNothing(event.proposer?.nickname)
 				}
 			});
 		});
@@ -58,7 +58,7 @@ export class EventSeoFactory extends SeoFactory {
 			location: valueOrNothing(this.event.event_point),
 			organizer: {
 				'@type': 'Person',
-				name: valueOrNothing(this.event.proposer?.first_name)
+				name: valueOrNothing(this.event.proposer?.nickname)
 			}
 		};
 	}

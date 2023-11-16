@@ -5,6 +5,7 @@
 	import { kebabCase } from 'change-case';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
+	import { mEventCategoryDescription, mEventCategoryName } from '$lib/shared/i18n/map';
 	import * as Card from '$lib/vgui/components/ui/card';
 
 	import { queryCategories } from './query';
@@ -63,11 +64,11 @@
 																	class="mb-2 h-12 w-12 text-{category.color}"
 																/>
 																<h3 class="text-lg font-medium leading-6">
-																	{m[`event_category_${category.key}_name`]()}
+																	{mEventCategoryName[category.key]()}
 																</h3>
 															</Card.Title>
 															<Card.Description>
-																{m[`event_category_${category.key}_description`]()}
+																{mEventCategoryDescription[category.key]()}
 															</Card.Description>
 														</Card.Header>
 													</Card.Root>

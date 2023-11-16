@@ -11,6 +11,7 @@ export default async function query(client: SupabaseBrowserClient) {
 			description,
 			meeting_time,
 			event_point,
+			status,
 			category: event_categories(key, icon, color),
 			proposer: profiles(id, nickname, avatar_url)
 		`
