@@ -6,9 +6,14 @@
 	 * Sets a different width for the content.
 	 */
 	export let width: 'xl' | '3xl' | '4xl' | '7xl' = '7xl';
+
+	/**
+	 * Uses an alternate background color.
+	 */
+	export let alternate: boolean = false;
 </script>
 
-<section class="px-6 py-12 sm:py-20 lg:px-8 {clazz}">
+<section class="px-6 py-12 sm:py-20 lg:px-8 {clazz}" data-alternate={alternate}>
 	<div class="mx-auto {`section-width-${width}`}">
 		<slot />
 	</div>

@@ -7,6 +7,7 @@
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
 
+	import { mEventCategoryName } from '$lib/shared/i18n/map';
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
@@ -37,7 +38,7 @@
 
 		<article class="text-base leading-7">
 			<p class="text-base font-semibold leading-7 text-primary">
-				{m[`event_category_${$event.data.category_key}_name`]()}
+				{mEventCategoryName[$event.data.category_key]()}
 				#{$event.data.id}
 			</p>
 			<h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">

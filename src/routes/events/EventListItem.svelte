@@ -10,9 +10,6 @@
 	export let event: Awaited<ReturnType<typeof query>>[number];
 
 	const meetingDay = dayjs(event.meeting_time);
-	const today = dayjs();
-
-	const category = event.category as NonNullable<typeof event.category>;
 </script>
 
 <a href={`/events/${event.id}/${event.slug}`}>
@@ -38,10 +35,12 @@
 			<div class="relative flex items-center justify-between gap-x-4 lg:absolute lg:bottom-4">
 				<!-- Meeting Time (Bookmark effect) -->
 				<div
-					class="relative -left-10 top-0 p-2 pl-2 pr-4 font-bold text-primary-foreground bg-{category.color}"
+					class="relative -left-10 top-0 p-2 pl-2 pr-4 font-bold text-primary-foreground bg-{event
+						.category?.color}"
 				>
 					<div
-						class="absolute left-0 top-17 border-8 border-b-transparent border-l-transparent border-{category.color}"
+						class="absolute left-0 top-17 border-8 border-b-transparent border-l-transparent border-{event
+							.category?.color}"
 					/>
 					<time class="sr-only" datetime={meetingDay.format()}>{meetingDay.format('l')}</time>
 					<div class="flex" aria-hidden="true">
@@ -62,7 +61,7 @@
 					<span class="font-semibold">
 						{m.event_property_proposer()}
 					</span>
-					<p class="w-[12ch] truncate text-sm text-muted-foreground">{event.proposer.nickname}</p>
+					<p class="w-[12ch] truncate text-sm text-muted-foreground">{event.proposer?.nickname}</p>
 				</div>
 			</div>
 		</div>
@@ -79,8 +78,8 @@
 		<div class="hidden flex-none lg:block">
 			<div class="rounded-lg bg-muted-foreground/5 p-4">
 				<Icon
-					icon={`material-symbols:${kebabCase(String(category.icon))}`}
-					class="h-full w-26 text-{category.color}"
+					icon={`material-symbols:${kebabCase(String(event.category?.icon))}`}
+					class="h-full w-26 text-{event.category?.color}"
 				/>
 			</div>
 		</div>

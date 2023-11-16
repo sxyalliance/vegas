@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
-	import { superForm } from 'sveltekit-superforms/client';
 
 	import SectionHeading from '$lib/shared/shared/components/SectionHeading.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
@@ -13,10 +12,6 @@
 	import query from './query';
 
 	import type { PageData } from './$types';
-
-	export let data: PageData;
-
-	const { form } = superForm(data.form);
 
 	const games = createQuery({
 		queryKey: ['games'],
