@@ -7,7 +7,7 @@ import type { Metric } from 'web-vitals';
 const logger = getLogger('analytics', 'vercel', 'vitals');
 
 type AnalyticsOptions = {
-	params: { [s: string]: never } | ArrayLike<never>;
+	params: Record<string, string>;
 	path: string;
 	debug: boolean;
 };

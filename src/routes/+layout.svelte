@@ -20,7 +20,8 @@
 	$: if (browser) {
 		webVitals({
 			path: $page.url.pathname,
-			params: $page.params
+			params: $page.params,
+			debug: false
 		});
 	}
 

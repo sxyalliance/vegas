@@ -5,13 +5,13 @@
 
 	import SectionHeading from '$lib/shared/shared/components/SectionHeading.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
-	import Badge from '$lib/vgui/badge/Badge.svelte';
-	import Card from '$lib/vgui/card/Card.svelte';
+	import { Badge } from '$lib/vgui/components/ui/badge';
+	import { Button } from '$lib/vgui/components/ui/button';
+	import * as Card from '$lib/vgui/components/ui/card';
+	import { Separator } from '$lib/vgui/components/ui/separator';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	import query from './query';
-
-	import type { PageData } from './$types';
 
 	const games = createQuery({
 		queryKey: ['games'],
@@ -27,41 +27,34 @@
 	<div role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 		{#if $games.isSuccess}
 			{#each $games.data as game}
-				<Card variant="classic" class="divide-neutralA-6 col-span-1 flex flex-col divide-y">
-					<div class="flex flex-1 flex-col">
-						<div class="-m-6 mb-0 flex-shrink-0">
+				<Card.Root>
+					<Card.Header class="pb-0">
+						<div class="-m-6 mb-0">
 							<img class="h-32 w-full rounded-md" src={game.image_url} alt="" />
 						</div>
-						<div class="mt-4 flex justify-between">
-							<h3 class="text-high-contrast text-lg font-medium">{game.name}</h3>
-							<Badge variant="soft" class="capitalize">
-								{game.provider}#{game.provider_identifier}
-							</Badge>
-						</div>
-						<p class="text-low-contrast mt-2 line-clamp-5 text-sm">{game.description}</p>
-					</div>
+						<Card.Title class="pt-2">
+							<div class="flex justify-between">
+								<h3 class="text-lg font-medium">{game.name}</h3>
+								<Badge variant="outline" class="capitalize">
+									{game.provider}#{game.provider_identifier}
+								</Badge>
+							</div>
+						</Card.Title>
+						<Card.Description class="line-clamp-5">{game.description}</Card.Description>
+					</Card.Header>
 
-					<div class="-m-6 mt-4">
-						<div class="divide-neutralA-6 -mt-px flex divide-x">
-							<div class="-mr-px flex flex-1">
-								<button
-									class="text-success-10 relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold"
-								>
-									<Icon icon="tabler:thumb-up" class="h-5 w-5" />
-									Upvote
-								</button>
-							</div>
-							<div class="-ml-px flex flex-1">
-								<button
-									class="text-danger-10 relative inline-flex flex-1 items-center justify-center gap-x-1 py-3 text-sm font-semibold"
-								>
-									<Icon icon="tabler:thumb-down" class="h-5 w-5" />
-									Downvote
-								</button>
-							</div>
-						</div>
-					</div>
-				</Card>
+					<Card.Footer class="flex justify-between py-2">
+						<Button variant="link" class="-ml-2 px-6 text-primary hover:text-primary">
+							<Icon icon="tabler:thumb-up" class="mr-2 h-5 w-5" />
+							Upvote
+						</Button>
+						<Separator orientation="vertical" decorative />
+						<Button variant="link" class="-mr-2 px-6 text-destructive hover:text-destructive">
+							<Icon icon="tabler:thumb-down" class="mr-2 h-5 w-5" />
+							Downvote
+						</Button>
+					</Card.Footer>
+				</Card.Root>
 			{/each}
 		{/if}
 	</div>
