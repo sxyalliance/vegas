@@ -1,0 +1,20 @@
+{
+	"preferences": "Theme Preferences",
+	"mode": {
+		"label": "Theme Mode",
+		"single": {
+			"label": "Single",
+			"description": "Always the same theme"
+		},
+		"auto": {
+			"label": "Auto",
+			"description": "Follow your system theme"
+		}
+	},
+	"day_theme": "Day Theme",
+	"night_theme": "Night Theme",
+	"theme": {
+		"light": "Light",
+		"dark": "Dark"
+	}
+}
