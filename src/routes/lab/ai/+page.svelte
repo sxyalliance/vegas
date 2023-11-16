@@ -3,10 +3,10 @@
 
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import { trpc } from '$lib/trpc/client';
-	import Button from '$lib/vgui/button/Button.svelte';
-	import Card from '$lib/vgui/card/Card.svelte';
+	import { Button } from '$lib/vgui/components/ui/button';
+	import * as Card from '$lib/vgui/components/ui/card';
+	import { Textarea } from '$lib/vgui/components/ui/textarea';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import TextArea from '$lib/vgui/textarea/TextArea.svelte';
 
 	let prompt = '';
 	const mutation = trpc($page).ask.createMutation();
@@ -26,21 +26,23 @@
 </SimpleHeroSection>
 
 <Section width="xl">
-	<TextArea bind:value={prompt} name="prompt" placeholder="Ask AI something?" required />
+	<Textarea bind:value={prompt} placeholder="Ask AI something?" />
 
 	<div class="flex justify-end">
 		<Button on:click={ask} class="my-4">Ask</Button>
 	</div>
 
-	<Card class="text-low-contrast">
-		{#if $mutation.isLoading}
-			Thinking 🤔
-		{:else if $mutation.isError}
-			Oh no, my mind is blank 😵
-		{:else if $mutation.isSuccess}
-			{$mutation.data}
-		{:else}
-			Ask me something!
-		{/if}
-	</Card>
+	<Card.Root>
+		<Card.Content>
+			{#if $mutation.isLoading}
+				Thinking 🤔
+			{:else if $mutation.isError}
+				Oh no, my mind is blank 😵
+			{:else if $mutation.isSuccess}
+				{$mutation.data}
+			{:else}
+				Ask me something!
+			{/if}
+		</Card.Content>
+	</Card.Root>
 </Section>
