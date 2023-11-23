@@ -1,14 +1,15 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { imagetools } from '@zerodevx/svelte-img/vite';
 
-// get project name from package.json
-import { name } from './package.json';
-import { watch } from 'vite-plugin-watch';
 import { sentrySvelteKit } from '@sentry/sveltekit';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { imagetools } from '@zerodevx/svelte-img/vite';
 import { sitemapPlugin } from 'sveltekit-sitemap/dist/plugin';
+import { plugin as mdPlugin, Mode as mdMode } from 'vite-plugin-markdown';
+import { watch } from 'vite-plugin-watch';
+import { defineConfig } from 'vitest/config';
+
+import { name } from './package.json';
 
 // get current tag/commit and last commit date from git
 const pexec = promisify(exec);
@@ -36,6 +37,7 @@ export default defineConfig(({ command }) => ({
 		}),
 		sveltekit(),
 		imagetools(),
+		mdPlugin({ mode: [mdMode.HTML, mdMode.TOC] }),
 		command === 'build' && sitemapPlugin(),
 
 		watch({
@@ -52,9 +54,6 @@ export default defineConfig(({ command }) => ({
 			}
 		}
 	],
-	optimizeDeps: {
-		exclude: ['@inlang/paraglide-js']
-	},
 	server: {
 		proxy: {
 			'/apid': {

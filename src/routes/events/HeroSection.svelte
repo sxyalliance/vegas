@@ -1,14 +1,17 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	import { _ } from '$lib/shared/i18n';
-	import Card from '$lib/vgui/card/Card.svelte';
 	import { createQuery } from '@tanstack/svelte-query';
+	import { kebabCase } from 'change-case';
+
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import Card from '$lib/vgui/card/Card.svelte';
+
 	import { queryCategories } from './query';
-	import { paramCase } from 'change-case';
 
 	const categories = createQuery({
 		queryKey: ['categories'],
-		queryFn: () => queryCategories()
+		queryFn: () => queryCategories($page.data.supabase)
 	});
 
 	type GridItem = Awaited<ReturnType<typeof queryCategories>>[number] & {
@@ -29,10 +32,10 @@
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
 				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
-					{_('event_list_hero_title')}
+					{m.event_list_hero_title()}
 				</h1>
 				<p class="mt-4 text-xl text-low-contrast">
-					{_('event_list_hero_text')}
+					{m.event_list_hero_text()}
 				</p>
 			</div>
 			<div class="hidden lg:block">
@@ -56,15 +59,15 @@
 														<Card variant="surface" class="h-full w-full overflow-hidden">
 															<div class="px-2 py-3 sm:p-4">
 																<Icon
-																	icon={`material-symbols:${paramCase(String(category.icon))}`}
+																	icon={`material-symbols:${kebabCase(String(category.icon))}`}
 																	class="mb-4 h-12 w-12 text-{category.color}"
 																/>
 
 																<h2 class="text-lg font-medium leading-6 text-high-contrast">
-																	{_(`event_category_${category.key}_name`)}
+																	{m[`event_category_${category.key}_name`]()}
 																</h2>
 																<p class="mt-2 text-base text-low-contrast">
-																	{_(`event_category_${category.key}_description`)}
+																	{m[`event_category_${category.key}_description`]()}
 																</p>
 															</div>
 														</Card>

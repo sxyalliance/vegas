@@ -1,5 +1,5 @@
-import { getUserAgentRegex, getUserAgentRegexes } from 'browserslist-useragent-regexp';
 import browserslist from 'browserslist';
+import { getUserAgentRegex, getUserAgentRegexes } from 'browserslist-useragent-regexp';
 
 export const supportedBrowsers = browserslist();
 

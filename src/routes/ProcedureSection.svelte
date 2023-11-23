@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
+	import * as m from '$lib/shared/i18n/compiled/messages';
 	import Section from '$lib/vgui/section/Section.svelte';
 </script>
 
@@ -7,13 +7,13 @@
 	<div class="lg:grid lg:grid-cols-3 lg:gap-x-8">
 		<div>
 			<h2 class="text-base font-semibold uppercase tracking-wide text-accent-11">
-				{_('home_procedure_subtitle')}
+				{m.home_procedure_subtitle()}
 			</h2>
 			<p class="mt-2 text-3xl font-extrabold text-high-contrast">
-				{_('home_procedure_title')}
+				{m.home_procedure_title()}
 			</p>
 			<p class="mt-4 text-lg text-low-contrast">
-				{_('home_procedure_text')}
+				{m.home_procedure_text()}
 			</p>
 		</div>
 		<div class="mt-12 lg:col-span-2 lg:mt-0">
@@ -25,11 +25,11 @@
 						<dt>
 							<span class="absolute text-2xl text-accent-11">{i + 1}</span>
 							<p class="ml-9 text-lg font-medium leading-6 text-high-contrast">
-								{_(`home_procedure_steps_${i + 1}_name`)}
+								{m[`home_procedure_steps_${i + 1}_name`]()}
 							</p>
 						</dt>
 						<dd class="ml-9 mt-2 text-base text-low-contrast">
-							{_(`home_procedure_steps_${i + 1}_description`)}
+							{m[`home_procedure_steps_${i + 1}_description`]()}
 						</dd>
 					</div>
 				{/each}

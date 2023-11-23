@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
 	import Icon from '@iconify/svelte';
 
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
-	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
+	import * as m from '$lib/shared/i18n/compiled/messages';
+
 	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
+	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import DesktopNavigation from '$lib/shared/layout/header/DesktopNavigation.svelte';
 	import MobileNavigation from '$lib/shared/layout/header/MobileNavigation.svelte';
+	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
 
 	let mobileMenuOpen = false;
 </script>
@@ -17,7 +18,7 @@
 		<div class="flex items-center gap-x-12">
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">
-					{_('common_brand_name')}
+					{m.common_brand_name()}
 				</span>
 				<BrandLogo class="h-8 w-auto" />
 			</a>
@@ -30,7 +31,7 @@
 					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-9"
 					on:click={() => (mobileMenuOpen = true)}
 				>
-					<span class="sr-only">{_('navigation_open')}</span>
+					<span class="sr-only">{m.navigation_open()}</span>
 					<Icon icon="tabler:menu-2" class="h-6 w-6" aria-hidden="true" />
 				</button>
 			</div>

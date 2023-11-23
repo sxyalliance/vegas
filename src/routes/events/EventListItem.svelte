@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
-	import dayjs from 'dayjs';
 	import Icon from '@iconify/svelte';
-	import { paramCase } from 'change-case';
+	import { kebabCase } from 'change-case';
+	import dayjs from 'dayjs';
+
+	import * as m from '$lib/shared/i18n/compiled/messages';
+
 	import type query from './query';
 
 	export let event: Awaited<ReturnType<typeof query>>[number];
@@ -11,7 +13,6 @@
 	const today = dayjs();
 
 	const category = event.category as NonNullable<typeof event.category>;
-	const proposer = event.proposer as NonNullable<typeof event.proposer>;
 </script>
 
 <a href={`/events/${event.id}/${event.slug}`}>
@@ -21,17 +22,17 @@
 		<div class="flex-none">
 			<div class="group relative mb-6 max-w-xl text-high-contrast">
 				<span class="text-xl">
-					{#if meetingDay.isSame(today, 'day')}
-						{_('event_status_ongoing_label')}
-					{:else if meetingDay.isBefore(today, 'day')}
-						{_('event_status_finished_label')}
+					{#if event.status === 'ongoing'}
+						{m.event_status_ongoing_label()}
+					{:else if event.status === 'finished'}
+						{m.event_status_finished_label()}
 					{:else}
-						{_('event_status_upcoming_label')}
+						{m.event_status_upcoming_label()}
 					{/if}
 					Event
 				</span>
 				<h2 class="mt-1 text-2xl font-semibold leading-6">
-					{_(`event_status_${event.status}_label`)}
+					{m[`event_status_finished_label`]()}
 					{meetingDay.fromNow()}
 				</h2>
 			</div>
@@ -61,9 +62,9 @@
 				<!-- Entity Name & Proposer -->
 				<div class="-ml-8">
 					<span class="font-semibold text-high-contrast">
-						{_('event_property_proposer')}
+						{m.event_property_proposer()}
 					</span>
-					<p class="w-[12ch] truncate text-sm text-low-contrast">{proposer.first_name}</p>
+					<p class="w-[12ch] truncate text-sm text-low-contrast">{event.proposer.nickname}</p>
 				</div>
 			</div>
 		</div>
@@ -80,7 +81,7 @@
 		<div class="hidden flex-none lg:block">
 			<div class="rounded-lg bg-neutralA-2 p-4">
 				<Icon
-					icon={`material-symbols:${paramCase(String(category.icon))}`}
+					icon={`material-symbols:${kebabCase(String(category.icon))}`}
 					class="h-full w-26 text-{category.color}"
 				/>
 			</div>

@@ -1,10 +1,11 @@
 <script lang="ts">
+	import * as m from '$lib/shared/i18n/compiled/messages';
+
 	import type { PureNavItem } from './types';
-	import { _ } from '$lib/shared/i18n';
 
 	export let item: PureNavItem;
 </script>
 
 <a href={item.href} class="text-sm font-semibold leading-6 text-high-contrast">
-	{_(item.name)}
+	{m[item.name]()}
 </a>

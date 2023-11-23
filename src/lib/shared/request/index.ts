@@ -1,6 +1,7 @@
+import { err, ok } from 'neverthrow';
 import wretch from 'wretch';
 import QueryStringAddon from 'wretch/addons/queryString';
-import { err, ok } from 'neverthrow';
+
 import type { ErrorResult, StandardResult } from '$lib/shared/shared/result';
 
 const setupRequester = (customFetch: typeof window.fetch) => {

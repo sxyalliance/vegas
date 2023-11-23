@@ -1,14 +1,18 @@
-import type { LayoutLoad } from './$types';
-
 // logger for debugging
 import '$lib/shared/logging/init';
 
 import '$lib/shared/shared/dayjs';
-import { QueryClient } from '@tanstack/svelte-query';
+
 import { browser } from '$app/environment';
+import { QueryClient } from '@tanstack/svelte-query';
+
 import { detectAndApplyLocale } from '$lib/shared/i18n';
 
-export const load: LayoutLoad = async () => {
+import { createBrowserClient } from '$lib/shared/supabase/client';
+
+import type { LayoutLoad } from './$types';
+
+export const load: LayoutLoad = async ({ fetch, data, depends }) => {
 	// locale detection
 	detectAndApplyLocale();
 
@@ -21,5 +25,13 @@ export const load: LayoutLoad = async () => {
 		}
 	});
 
-	return { queryClient };
+	depends('supabase:auth');
+
+	const supabase = createBrowserClient(fetch, data.session);
+
+	return {
+		queryClient,
+		supabase,
+		session: data.session
+	};
 };

@@ -1,9 +1,12 @@
-import { createRequester } from '$lib/shared/request';
-import type { StandardResult } from '$lib/shared/shared/result';
+import { CLOUDFLARE_ACCOUNT, CLOUDFLARE_AI_TOKEN_VALUE } from '$env/static/private';
 import { err, ok } from 'neverthrow';
 
-const acc = '58055b1d371c096daff3498f0f455e9d';
-const tkn = 'NBVwvnsWSP3Ano8R12d80F3LPx3EBAQOUmXjxSNY';
+import { createRequester } from '$lib/shared/request';
+
+import type { StandardResult } from '$lib/shared/shared/result';
+
+const acc = CLOUDFLARE_ACCOUNT;
+const tkn = CLOUDFLARE_AI_TOKEN_VALUE;
 
 const api = `https://api.cloudflare.com/client/v4/accounts/${acc}/ai/run`;
 

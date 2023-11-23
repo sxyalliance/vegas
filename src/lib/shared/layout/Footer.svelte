@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
-	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
-	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
+
 	import { all as allMembers } from '$lib/shared/discord';
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { Release } from '$lib/shared/shared/release';
 
 	let statistics = {
@@ -46,13 +47,13 @@
 	});
 </script>
 
-<footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={_('footer_title')}>
+<footer class="bg-neutral-2" aria-labelledby="footer-heading" aria-label={m.footer_title()}>
 	<div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 			<div class="space-y-4">
 				<BrandLogo class="h-24 w-auto" />
 				<p class="text-sm leading-6 text-low-contrast">
-					{_('footer_slogan')}
+					{m.footer_slogan()}
 				</p>
 				<div class="flex space-x-6">
 					{#each socials as social (social.name)}
@@ -71,22 +72,22 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
-							{_('footer_helpful_resources_heading')}
+							{m.footer_helpful_resources_heading()}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<a href="/about" class="hover:text-high-contrast">
-									{_('footer_helpful_resources_about_us')}
+									{m.footer_helpful_resources_about_us()}
 								</a>
 							</li>
 							<li>
 								<a href="/about/faq" class="hover:text-high-contrast">
-									{_('footer_helpful_resources_support_center')}
+									{m.footer_helpful_resources_support_center()}
 								</a>
 							</li>
 							<li>
 								<a href="/about/contact" class="hover:text-high-contrast">
-									{_('footer_helpful_resources_contact_us')}
+									{m.home_hero_contact_us()}
 								</a>
 							</li>
 						</ul>
@@ -96,31 +97,31 @@
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
-							{_('footer_policies_heading')}
+							{m.footer_policies_heading()}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<a href="/policies/privacy" class="hover:text-high-contrast">
-									{_('footer_policies_privacy_policy')}
+									{m.footer_policies_privacy_policy()}
 								</a>
 							</li>
 							<li>
-								<a href="/policies/cookies" class="hover:text-high-contrast">
-									{_('footer_policies_cookie_policy')}
+								<a href="/policies/cookie" class="hover:text-high-contrast">
+									{m.footer_policies_cookie_policy()}
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
 						<h3 class="text-sm font-semibold leading-6 text-high-contrast">
-							{_('footer_statistics_heading')}
+							{m.footer_statistics_heading()}
 						</h3>
 						<ul role="list" class="mt-6 space-y-4 text-sm leading-6 text-low-contrast">
 							<li>
 								<div
 									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
-									{_('footer_statistics_online_members')}
+									{m.footer_statistics_online_members()}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.online_members}
 									</span>
@@ -135,7 +136,7 @@
 								</div>
 							</li>
 							<li>
-								{_('footer_statistics_total_members')}
+								{m.footer_statistics_total_members()}
 								<span class="float-right inline text-low-contrast">
 									{statistics.total_members}
 								</span>
@@ -144,7 +145,7 @@
 								<div
 									class="relative -m-1 -mx-2 rounded-md bg-neutral-3 p-1 px-2 shadow hover:shadow-md"
 								>
-									{_('footer_statistics_ongoing_events')}
+									{m.footer_statistics_ongoing_events()}
 									<span class="float-right inline pl-2 text-low-contrast">
 										{statistics.ongoing_events}
 									</span>
@@ -159,13 +160,13 @@
 								</div>
 							</li>
 							<li>
-								{_('footer_statistics_total_events')}
+								{m.footer_statistics_total_events()}
 								<span class="float-right inline text-low-contrast">
 									{statistics.total_events}
 								</span>
 							</li>
 							<li>
-								{_('footer_statistics_founded_days')}
+								{m.footer_statistics_founded_days()}
 								<span class="float-right inline text-low-contrast">
 									{statistics.founded_days}
 								</span>
@@ -177,7 +178,7 @@
 		</div>
 		<div class="mt-16 border-t border-neutral-6 pt-8 sm:mt-20 lg:mt-24">
 			<p class="text-xs leading-5 text-low-contrast">
-				{_('footer_legal')}
+				{m.footer_legal()}
 			</p>
 		</div>
 	</div>

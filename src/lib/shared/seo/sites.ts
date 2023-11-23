@@ -1,7 +1,7 @@
-import type { SitemapParams } from 'sveltekit-sitemap';
+import { createBrowserClient } from '$lib/shared/supabase/client';
+
 import type { sitemap } from '../../../sitemap';
-import { constructDirectus } from '$lib/shared/directus/client';
-import { readItems } from '@directus/sdk';
+import type { SitemapParams } from 'sveltekit-sitemap';
 
 export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () => {
 	return {
@@ -22,17 +22,15 @@ export const getRoutes: SitemapParams<typeof sitemap>['getRoutes'] = async () =>
 };
 
 const getEventRoutes = async () => {
-	const events = constructDirectus().request(
-		readItems('events', {
-			fields: ['id', 'slug']
-		})
-	);
+	const { data, error } = await createBrowserClient(fetch, null).from('events').select('id, slug');
 
-	return await events.then((res) => {
-		return res.map((event) => {
-			return {
-				path: `/events/${event.id}/${event.slug}`
-			};
-		});
+	if (error) {
+		throw error;
+	}
+
+	return data.map((event) => {
+		return {
+			path: `/events/${event.id}/${event.slug}`
+		};
 	});
 };
