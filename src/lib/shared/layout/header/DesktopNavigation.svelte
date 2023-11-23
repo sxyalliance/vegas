@@ -1,7 +1,7 @@
 <script>
+	import { createMenubar, melt } from '@melt-ui/svelte';
+
 	import * as Nav from './navigation';
-	import { createMenubar } from '@melt-ui/svelte';
-	import { melt } from '@melt-ui/svelte';
 
 	const {
 		elements: { menubar },

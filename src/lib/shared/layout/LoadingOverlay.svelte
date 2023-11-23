@@ -112,10 +112,6 @@
 		transform: skew(-15deg, 0);
 	}
 
-	.pause-animation .plane {
-		animation-play-state: paused;
-	}
-
 	@keyframes trans1 {
 		from {
 			transform: translate3d(53px, 0, 0);

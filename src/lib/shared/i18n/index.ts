@@ -1,15 +1,18 @@
+import { browser, dev } from '$app/environment';
+
 import { persistCookie } from '@macfja/svelte-persistent-store';
 import { get, writable } from 'svelte/store';
+import { preferredLanguages } from 'svelte-legos';
+
+import { getLogger } from '$lib/shared/logging/logger';
+
+import * as m from './compiled/messages';
 import {
 	setLanguageTag,
 	type AvailableLanguageTag,
 	sourceLanguageTag,
 	availableLanguageTags
-} from '@inlang/paraglide-js/vegas';
-import * as m from '@inlang/paraglide-js/vegas/messages';
-import { browser, dev } from '$app/environment';
-import { preferredLanguages } from 'svelte-legos';
-import { getLogger } from '$lib/shared/logging/logger';
+} from './compiled/runtime';
 
 const logger = getLogger('i18n');
 
@@ -44,6 +47,7 @@ const isValidMessageId = (id: string): id is MessageId => {
 
 export function _(id: MessageId | string, strict: boolean = true): string {
 	if (isValidMessageId(id)) {
+		// eslint-disable-next-line import/namespace
 		return m[id]();
 	}
 

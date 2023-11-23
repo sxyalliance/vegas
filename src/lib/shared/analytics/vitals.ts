@@ -1,5 +1,7 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
+
 import { getLogger, normalizeForLog } from '$lib/shared/logging/logger';
+
 import type { Metric } from 'web-vitals';
 
 const logger = getLogger('analytics', 'vercel', 'vitals');

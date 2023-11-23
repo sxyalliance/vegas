@@ -1,8 +1,9 @@
-<script>
-	import { _ } from '$lib/shared/i18n';
+<script lang="ts">
 	import { FxParallax as Img } from '@zerodevx/svelte-img';
 
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
+	import * as m from '$lib/shared/i18n/compiled/messages';
+
 	import Button from '$lib/vgui/button/Button.svelte';
 </script>
 
@@ -24,32 +25,32 @@
 					<div
 						class="relative rounded-full px-3 py-1 text-sm leading-6 text-low-contrast ring-1 ring-neutral-7 hover:ring-neutral-8"
 					>
-						{_('home_hero_build_better_internet')}
+						{m.home_hero_build_better_internet()}
 						<a
 							href="https://www.mozilla.org/en-US/about/manifesto"
 							target="_blank"
 							class="whitespace-nowrap font-semibold text-accent-11"
 						>
 							<span class="absolute inset-0" aria-hidden="true" />
-							{_('home_hero_build_better_internet_learn_more')}
+							{m.home_hero_build_better_internet_learn_more()}
 							<span aria-hidden="true">&rarr;</span>
 						</a>
 					</div>
 				</div>
 				<h1 class="mt-10 text-4xl font-bold tracking-tight text-high-contrast sm:text-6xl">
 					<span class="bg-rainbow bg-clip-text text-transparent">
-						{_('home_hero_title')}
+						{m.home_hero_title()}
 					</span>
 				</h1>
 				<p class="mt-6 text-lg leading-8 text-low-contrast">
-					{_('home_hero_text')}
+					{m.home_hero_text()}
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
 					<Button size="large" href="/about/contact">
-						{_('home_hero_contact_us')}
+						{m.home_hero_contact_us()}
 					</Button>
 					<a href="/events" class="text-sm font-semibold leading-6 text-high-contrast">
-						{_('home_hero_check_events')}
+						{m.home_hero_check_events()}
 						<span aria-hidden="true">→</span>
 					</a>
 				</div>

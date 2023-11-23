@@ -1,5 +1,6 @@
-import { createLogWriter } from '@roarr/browser-log-writer';
 import { browser, dev } from '$app/environment';
+import { createLogWriter } from '@roarr/browser-log-writer';
+
 import { SuperLogger } from '$lib/shared/logging/logger';
 import { Release } from '$lib/shared/shared/release';
 

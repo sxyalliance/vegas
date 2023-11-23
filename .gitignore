@@ -36,7 +36,7 @@ vite.config.ts.timestamp-*
 .sentryclirc
 
 # Inlang
-static/messages.json
+i18n/merged/*.json
 
 # Sitemap Generation
 src/sitemap.ts

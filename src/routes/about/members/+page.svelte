@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { _ } from '$lib/shared/i18n';
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
-	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 </script>
 
 <SeoHandler
@@ -13,17 +13,17 @@
 	}}
 />
 
-<SimpleHeroSection title={_('member_hero_title')}>
-	{_('member_hero_text')}
+<SimpleHeroSection title={m.member_hero_title()}>
+	{m.member_hero_text()}
 </SimpleHeroSection>
 
 <Section>
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
 			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
-				{_('member_level_core_title')}
+				{m.member_level_core_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{_('member_level_core_description')}</p>
+			<p class="text-xl text-low-contrast">{m.member_level_core_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -47,9 +47,9 @@
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
 			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
-				{_('member_level_official_title')}
+				{m.member_level_official_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{_('member_level_official_description')}</p>
+			<p class="text-xl text-low-contrast">{m.member_level_official_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -73,9 +73,9 @@
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
 			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
-				{_('member_level_verified_title')}
+				{m.member_level_verified_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{_('member_level_verified_description')}</p>
+			<p class="text-xl text-low-contrast">{m.member_level_verified_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -95,9 +95,9 @@
 
 		<div class="text-xs text-low-contrast">
 			<p class="text-center">
-				{_('member_source_disclaimer')}<br />
-				{_('member_opt_out_guide')}<br />
-				{_('member_hierarchy_disclaimer')}
+				{m.member_source_disclaimer()}<br />
+				{m.member_opt_out_guide()}<br />
+				{m.member_hierarchy_disclaimer()}
 			</p>
 		</div>
 	</div>

@@ -1,8 +1,9 @@
-import { derived, get, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import { persistBrowserLocal } from '@macfja/svelte-persistent-store';
-import { getLogger } from '$lib/shared/logging/logger';
+import { derived, get, writable } from 'svelte/store';
 import { preferredDark } from 'svelte-legos';
+
+import { getLogger } from '$lib/shared/logging/logger';
 
 export const AvailableThemes: readonly string[] = ['light', 'dark'] as const;
 export const AvailablePreferences: readonly string[] = ['system', ...AvailableThemes] as const;

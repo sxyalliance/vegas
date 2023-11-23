@@ -1,5 +1,5 @@
-import { t } from '$lib/trpc/t';
 import { cfAi } from '$lib/server/cloudflare';
+import { t } from '$lib/trpc/t';
 
 export default {
 	ask: t.procedure

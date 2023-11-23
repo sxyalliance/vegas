@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
 	import { browser } from '$app/environment';
+
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import { AvailablePreferences, themePreference, theme } from '$lib/shared/theme/store';
+
 	import Select from '$lib/vgui/select/Select.svelte';
-	import { _ } from '$lib/shared/i18n';
 
 	let clazz = '';
 	export { clazz as class };
@@ -16,7 +18,7 @@
 	const options = AvailablePreferences.map((preference: string) => {
 		return {
 			value: preference,
-			label: _(`theme_switch_${preference}`),
+			label: m[`theme_switch_${preference}`](),
 			icon: themeIcons[preference]
 		};
 	});
@@ -42,4 +44,4 @@
 	});
 </script>
 
-<Select class={clazz} bind:value={$themePreference} label={_('theme_switch_label')} {options} />
+<Select class={clazz} bind:value={$themePreference} label={m.theme_switch_label()} {options} />

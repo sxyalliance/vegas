@@ -7,11 +7,11 @@
 </script>
 
 <script lang="ts">
-	import { createSelect, melt } from '@melt-ui/svelte';
-	import { fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import { derived } from 'svelte/store';
+	import { createSelect, melt } from '@melt-ui/svelte';
 	import { createEventDispatcher } from 'svelte';
+	import { derived } from 'svelte/store';
+	import { fade } from 'svelte/transition';
 
 	type Options = Option[];
 

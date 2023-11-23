@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { JsonLd, type JsonLdProps, MetaTags, type MetaTagsProps } from 'svelte-meta-tags';
+
 	import type { SeoDataProvider } from '$lib/shared/seo/factory/base';
 
 	export let factory: SeoDataProvider | undefined = undefined;

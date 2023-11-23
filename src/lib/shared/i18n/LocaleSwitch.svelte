@@ -1,8 +1,11 @@
 <script lang="ts">
-	import Select from '$lib/vgui/select/Select.svelte';
-	import { availableLanguageTags } from '@inlang/paraglide-js/vegas';
-	import { _, localePreference } from '$lib/shared/i18n/index';
 	import { parse } from 'bcp-47';
+
+	import * as m from '$lib/shared/i18n/compiled/messages';
+	import { localePreference } from '$lib/shared/i18n/index';
+	import Select from '$lib/vgui/select/Select.svelte';
+
+	import { availableLanguageTags } from './compiled/runtime';
 
 	let clazz = '';
 	export { clazz as class };
@@ -27,4 +30,4 @@
 	}));
 </script>
 
-<Select class={clazz} bind:value={$localePreference} label={_('locale_switch_label')} {options} />
+<Select class={clazz} bind:value={$localePreference} label={m.locale_switch_label()} {options} />

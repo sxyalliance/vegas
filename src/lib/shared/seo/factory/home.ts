@@ -1,7 +1,8 @@
-import { SeoFactory } from '$lib/shared/seo/factory/base';
 import LogoLight from '$lib/assets/logo-light.png';
-import type { MetaTagsProps } from 'svelte-meta-tags';
+import { SeoFactory } from '$lib/shared/seo/factory/base';
+
 import type { NGO } from 'schema-dts';
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
 export class HomeSeoFactory extends SeoFactory {
 	protected metaTags(): MetaTagsProps {
