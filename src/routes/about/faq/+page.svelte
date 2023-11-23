@@ -47,16 +47,16 @@
 <Section>
 	<div class="space-y-10">
 		{#each faq as section}
-			<div class="mx-auto max-w-4xl divide-y divide-neutral-6" id={section.key}>
-				<h2 class="text-2xl font-bold leading-10 tracking-tight text-high-contrast">
+			<div class="divide-neutral-6 mx-auto max-w-4xl divide-y" id={section.key}>
+				<h2 class="text-high-contrast text-2xl font-bold leading-10 tracking-tight">
 					{section.key}
 				</h2>
-				<dl class="mt-2 space-y-6 divide-y divide-neutral-6">
+				<dl class="divide-neutral-6 mt-2 space-y-6 divide-y">
 					{#each section.questions as question}
 						<div class="pt-4">
 							<dt>
 								<button
-									class="flex w-full items-start justify-between text-left text-high-contrast"
+									class="text-high-contrast flex w-full items-start justify-between text-left"
 								>
 									<span class="text-base font-semibold leading-7">{question.question}</span>
 									<span class="ml-6 flex h-7 items-center">
@@ -69,7 +69,7 @@
 								</button>
 							</dt>
 							<dd class="mt-2 pr-12">
-								<p class="text-base leading-7 text-low-contrast">{question.answer}</p>
+								<p class="text-low-contrast text-base leading-7">{question.answer}</p>
 							</dd>
 						</div>
 					{/each}

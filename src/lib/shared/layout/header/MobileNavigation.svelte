@@ -5,13 +5,15 @@
 	import { fly } from 'svelte/transition';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
-	import LocaleSwitch from '$lib/shared/i18n/LocaleSwitch.svelte';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
-	import ThemeSwitch from '$lib/shared/theme/ThemeSwitch.svelte';
+
+	import { Button } from '$lib/vgui/components/ui/button';
 
 	import * as Nav from './navigation';
 
 	export let mobileMenuOpen = false;
+
+	export let preferencesOpen = false;
 
 	const store = writable(mobileMenuOpen);
 	$: store.set(mobileMenuOpen);
@@ -30,17 +32,18 @@
 		<div
 			use:melt={$content}
 			transition:fly
-			class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-neutral-2 px-6 py-6 sm:max-w-sm"
+			class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-popover px-6 py-6 text-popover-foreground sm:max-w-sm"
 		>
 			<div class="flex items-center justify-between">
 				<a href="/" class="-m-1.5 p-1.5">
 					<span class="sr-only">{m.common_brand_name()}</span>
 					<BrandLogo class="h-8 w-auto" />
 				</a>
-				<button type="button" class="-m-2.5 rounded-md p-2.5 text-neutral-9" use:melt={$close}>
-					<span class="sr-only">{m.navigation_close()}</span>
-					<Icon icon="tabler:x" class="h-6 w-6" aria-hidden="true" />
-				</button>
+				<div use:melt={$close}>
+					<Button variant="outline" size="icon" aria-label={m.navigation_close()}>
+						<Icon icon="lucide:x" class="h-6 w-6" />
+					</Button>
+				</div>
 			</div>
 			<div class="mt-8 flow-root">
 				<div class="-my-6">
@@ -55,8 +58,15 @@
 					</div>
 
 					<div class="space-y-4">
-						<LocaleSwitch class="w-full" />
-						<ThemeSwitch class="w-full" />
+						<Button
+							variant="outline"
+							size="lg"
+							class="w-full"
+							on:click={() => (preferencesOpen = true)}
+						>
+							<Icon icon="lucide:settings-2" class="mr-2 h-5 w-5" />
+							Open Preferences
+						</Button>
 					</div>
 				</div>
 			</div>

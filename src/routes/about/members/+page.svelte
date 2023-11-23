@@ -20,10 +20,10 @@
 <Section>
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
+			<h2 class="text-high-contrast text-3xl font-extrabold tracking-tight sm:text-4xl">
 				{m.member_level_core_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{m.member_level_core_description()}</p>
+			<p class="text-low-contrast text-xl">{m.member_level_core_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -46,10 +46,10 @@
 <Section alternate>
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
+			<h2 class="text-high-contrast text-3xl font-extrabold tracking-tight sm:text-4xl">
 				{m.member_level_official_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{m.member_level_official_description()}</p>
+			<p class="text-low-contrast text-xl">{m.member_level_official_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -72,10 +72,10 @@
 <Section>
 	<div class="space-y-8 sm:space-y-12">
 		<div class="space-y-5 text-left sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
+			<h2 class="text-high-contrast text-3xl font-extrabold tracking-tight sm:text-4xl">
 				{m.member_level_verified_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">{m.member_level_verified_description()}</p>
+			<p class="text-low-contrast text-xl">{m.member_level_verified_description()}</p>
 		</div>
 		<ul
 			role="list"
@@ -93,7 +93,7 @@
 			{/each}
 		</ul>
 
-		<div class="text-xs text-low-contrast">
+		<div class="text-low-contrast text-xs">
 			<p class="text-center">
 				{m.member_source_disclaimer()}<br />
 				{m.member_opt_out_guide()}<br />

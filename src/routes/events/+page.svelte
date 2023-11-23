@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { EventListSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
-	import Callout from '$lib/vgui/callout/Callout.svelte';
-
+	import * as Alert from '$lib/vgui/components/ui/alert';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	import EventListItem from './EventListItem.svelte';
@@ -23,9 +23,10 @@
 <HeroSection />
 
 <Section>
-	<Callout class="mb-12">
-		<p>{m.event_information_language_restriction()}</p>
-	</Callout>
+	<Alert.Root class="mb-12">
+		<Icon icon="lucide:info" class="h-4 w-4" />
+		<Alert.Description>{m.event_information_language_restriction()}</Alert.Description>
+	</Alert.Root>
 
 	{#if $events.isSuccess}
 		<SeoHandler factory={new EventListSeoFactory($events.data)} />

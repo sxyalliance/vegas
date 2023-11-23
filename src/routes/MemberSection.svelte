@@ -10,10 +10,10 @@
 <Section {...$$restProps}>
 	<div class="space-y-8 text-center sm:space-y-12">
 		<div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-3xl">
-			<h2 class="text-3xl font-extrabold tracking-tight text-high-contrast sm:text-4xl">
+			<h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
 				{m.home_member_title()}
 			</h2>
-			<p class="text-xl text-low-contrast">
+			<p class="text-xl text-muted-foreground">
 				{m.member_hero_text()}
 			</p>
 		</div>
@@ -33,7 +33,7 @@
 			{/each}
 		</ul>
 
-		<div class="text-xs text-low-contrast">
+		<div class="text-xs text-muted-foreground">
 			<p>{m.home_member_note()}</p>
 		</div>
 	</div>

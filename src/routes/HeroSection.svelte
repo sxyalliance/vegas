@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { FxParallax as Img } from '@zerodevx/svelte-img';
 
+	import { MoveRight } from 'lucide-svelte';
+
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
 	import * as m from '$lib/shared/i18n/compiled/messages';
-
-	import Button from '$lib/vgui/button/Button.svelte';
+	import { Button } from '$lib/vgui/components/ui/button';
 </script>
 
 <!-- Hero section -->
-<div class="h-hero relative isolate overflow-hidden bg-neutral-1">
+<div class="h-hero relative isolate overflow-hidden">
 	<div
 		class="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-40"
 		aria-hidden="true"
@@ -21,38 +22,22 @@
 	<div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
 		<div class="px-6 pb-12 pt-10 sm:pb-32 lg:col-span-6 lg:px-0 lg:pb-56 lg:pt-44 xl:col-span-5">
 			<div class="mx-auto max-w-2xl lg:mx-0">
-				<div class="hidden sm:flex">
-					<div
-						class="relative rounded-full px-3 py-1 text-sm leading-6 text-low-contrast ring-1 ring-neutral-7 hover:ring-neutral-8"
-					>
-						{m.home_hero_build_better_internet()}
-						<a
-							href="https://www.mozilla.org/en-US/about/manifesto"
-							target="_blank"
-							class="whitespace-nowrap font-semibold text-accent-11"
-						>
-							<span class="absolute inset-0" aria-hidden="true" />
-							{m.home_hero_build_better_internet_learn_more()}
-							<span aria-hidden="true">&rarr;</span>
-						</a>
-					</div>
-				</div>
-				<h1 class="mt-10 text-4xl font-bold tracking-tight text-high-contrast sm:text-6xl">
+				<h1 class="mt-10 text-4xl font-bold tracking-tight sm:text-6xl">
 					<span class="bg-rainbow bg-clip-text text-transparent">
 						{m.home_hero_title()}
 					</span>
 				</h1>
-				<p class="mt-6 text-lg leading-8 text-low-contrast">
+				<p class="mt-6 text-lg leading-8 text-muted-foreground">
 					{m.home_hero_text()}
 				</p>
-				<div class="mt-10 flex items-center gap-x-6">
-					<Button size="large" href="/about/contact">
+				<div class="mt-10 flex items-center gap-x-2">
+					<Button size="lg" href="/about/contact">
 						{m.home_hero_contact_us()}
 					</Button>
-					<a href="/events" class="text-sm font-semibold leading-6 text-high-contrast">
+					<Button variant="ghost" size="lg" href="/events">
 						{m.home_hero_check_events()}
-						<span aria-hidden="true">→</span>
-					</a>
+						<MoveRight class="ml-2 h-4 w-4" />
+					</Button>
 				</div>
 			</div>
 		</div>

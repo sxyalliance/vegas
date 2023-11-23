@@ -16,14 +16,14 @@
 <div class="bg-neutral-2 px-6 py-12 sm:py-20 lg:px-8 {clazz}">
 	<div class="mx-auto max-w-2xl text-center">
 		{#if tagline}
-			<p class="text-base font-semibold leading-7 text-accent-11">
+			<p class="text-accent-11 text-base font-semibold leading-7">
 				{tagline}
 			</p>
 		{/if}
-		<h2 class="text-4xl font-bold tracking-tight text-high-contrast sm:text-6xl">
+		<h2 class="text-high-contrast text-4xl font-bold tracking-tight sm:text-6xl">
 			{title}
 		</h2>
-		<p class="mt-6 text-lg leading-8 text-low-contrast">
+		<p class="text-low-contrast mt-6 text-lg leading-8">
 			<slot />
 		</p>
 	</div>

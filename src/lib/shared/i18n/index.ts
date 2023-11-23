@@ -18,16 +18,13 @@ const logger = getLogger('i18n');
 
 function createLocalePreference() {
 	const { subscribe, set } = persistCookie(
-		writable<AvailableLanguageTag | undefined>(sourceLanguageTag),
+		writable<AvailableLanguageTag>(sourceLanguageTag),
 		'i18n-locale'
 	);
 
 	subscribe((v) => {
 		if (v) {
 			setLanguageTag(v);
-		}
-		if (v === undefined) {
-			setLanguageTag(sourceLanguageTag);
 		}
 	});
 

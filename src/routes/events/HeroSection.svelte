@@ -5,7 +5,8 @@
 	import { kebabCase } from 'change-case';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
-	import Card from '$lib/vgui/card/Card.svelte';
+	import { mEventCategoryDescription, mEventCategoryName } from '$lib/shared/i18n/map';
+	import * as Card from '$lib/vgui/components/ui/card';
 
 	import { queryCategories } from './query';
 
@@ -27,14 +28,14 @@
 	};
 </script>
 
-<div class="lg:h-hero relative isolate overflow-hidden bg-neutral-2 lg:mt-0">
+<div class="lg:h-hero relative isolate overflow-hidden lg:mt-0">
 	<div class="pb-12 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
 		<div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 			<div class="sm:max-w-lg">
-				<h1 class="font text-4xl font-extrabold tracking-tight text-high-contrast sm:text-6xl">
+				<h1 class="font text-4xl font-extrabold tracking-tight sm:text-6xl">
 					{m.event_list_hero_title()}
 				</h1>
-				<p class="mt-4 text-xl text-low-contrast">
+				<p class="mt-4 text-xl text-muted-foreground">
 					{m.event_list_hero_text()}
 				</p>
 			</div>
@@ -47,31 +48,30 @@
 						<div
 							class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:translate-x-8"
 						>
-							<div class="flex items-center space-x-6 lg:space-x-8">
+							<div class="mt-40 flex items-center space-x-6 lg:space-x-8">
 								{#if $categories.isSuccess}
 									{#each groupCategories($categories.data) as grid}
 										<div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 											{#each grid as category, i (i)}
 												{#if category.display === false}
-													<div class="h-56 w-44 overflow-hidden rounded-lg" />
+													<div class="w-44 overflow-hidden" />
 												{:else}
-													<div class="h-56 w-44 overflow-hidden rounded-lg shadow">
-														<Card variant="surface" class="h-full w-full overflow-hidden">
-															<div class="px-2 py-3 sm:p-4">
+													<Card.Root class="w-44 overflow-hidden">
+														<Card.Header>
+															<Card.Title>
 																<Icon
 																	icon={`material-symbols:${kebabCase(String(category.icon))}`}
-																	class="mb-4 h-12 w-12 text-{category.color}"
+																	class="mb-2 h-12 w-12 text-{category.color}"
 																/>
-
-																<h2 class="text-lg font-medium leading-6 text-high-contrast">
-																	{m[`event_category_${category.key}_name`]()}
-																</h2>
-																<p class="mt-2 text-base text-low-contrast">
-																	{m[`event_category_${category.key}_description`]()}
-																</p>
-															</div>
-														</Card>
-													</div>
+																<h3 class="text-lg font-medium leading-6">
+																	{mEventCategoryName[category.key]()}
+																</h3>
+															</Card.Title>
+															<Card.Description>
+																{mEventCategoryDescription[category.key]()}
+															</Card.Description>
+														</Card.Header>
+													</Card.Root>
 												{/if}
 											{/each}
 										</div>

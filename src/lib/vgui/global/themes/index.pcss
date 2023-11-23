@@ -1,0 +1,22 @@
+@import './light.pcss';
+@import './dark.pcss';
+
+@layer base {
+	[data-theme='light'] {
+		@apply theme-light;
+	}
+
+	[data-theme='dark'] {
+		@apply theme-dark;
+	}
+
+	[data-theme='auto'] {
+		@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+			@apply theme-light;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			@apply theme-dark;
+		}
+	}
+}
