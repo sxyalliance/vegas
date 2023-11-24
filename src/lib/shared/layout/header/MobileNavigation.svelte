@@ -7,6 +7,7 @@
 	import * as m from '$lib/shared/i18n/compiled/messages';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 
+	import UserClip from '$lib/shared/layout/header/UserClip.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
 
 	import * as Nav from './navigation';
@@ -58,6 +59,8 @@
 					</div>
 
 					<div class="space-y-4">
+						<UserClip class="w-full" />
+
 						<Button
 							variant="outline"
 							size="lg"

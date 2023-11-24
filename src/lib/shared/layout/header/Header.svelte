@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
@@ -7,6 +8,7 @@
 	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';
 	import DesktopNavigation from '$lib/shared/layout/header/DesktopNavigation.svelte';
 	import MobileNavigation from '$lib/shared/layout/header/MobileNavigation.svelte';
+	import UserClip from '$lib/shared/layout/header/UserClip.svelte';
 	import PreferencesSheet from '$lib/shared/layout/preferences/PreferencesSheet.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
 
@@ -42,6 +44,7 @@
 			</div>
 		{/if}
 		<div class="hidden gap-x-4 lg:flex">
+			<UserClip />
 			<Button variant="outline" size="icon" on:click={() => (preferencesOpen = true)}>
 				<Icon icon="lucide:settings-2" class="h-5 w-5" />
 			</Button>
