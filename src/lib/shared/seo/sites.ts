@@ -1,9 +1,21 @@
+import { DOPPLER_ENVIRONMENT } from '$env/static/private';
+
 import { createBrowserClient } from '$lib/shared/supabase/client';
 
 import type { sitemap } from '../../../sitemap';
 import type { SitemapParams } from 'sveltekit-sitemap';
 
 export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () => {
+	// we dont want staging to be indexed
+	if (DOPPLER_ENVIRONMENT === 'stg') {
+		return {
+			userAgent: '*',
+			paths: {
+				'/': false
+			}
+		};
+	}
+
 	return {
 		userAgent: '*',
 		paths: {

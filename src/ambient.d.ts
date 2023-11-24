@@ -25,6 +25,8 @@ declare module '$env/static/public' {
 }
 
 declare module '$env/static/private' {
+	export const DOPPLER_ENVIRONMENT: 'dev' | 'stg' | 'prd';
+
 	export const CLOUDFLARE_ACCOUNT: string;
 	export const CLOUDFLARE_AI_TOKEN_VALUE: string;
 }
