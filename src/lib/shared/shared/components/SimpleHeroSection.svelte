@@ -26,5 +26,10 @@
 		<p class="mt-6 text-lg leading-8 text-muted-foreground">
 			<slot />
 		</p>
+		{#if $$slots.cta}
+			<div class="mt-8">
+				<slot name="cta" />
+			</div>
+		{/if}
 	</div>
 </div>

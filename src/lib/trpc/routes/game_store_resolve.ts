@@ -29,7 +29,7 @@ export default {
 			return {
 				name: data.name,
 				provider: 'steam',
-				provider_identifier: data.steam_appid,
+				provider_identifier: data.steam_appid.toString(),
 				image_url: data.header_image,
 				description: data.short_description
 			};

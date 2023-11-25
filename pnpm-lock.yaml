@@ -246,6 +246,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.6.0
     version: 3.6.0(postcss@8.4.31)(svelte@4.2.3)
+  svelte-french-toast:
+    specifier: ^1.2.0
+    version: 1.2.0(svelte@4.2.3)
   svelte-legos:
     specifier: ^0.2.2
     version: 0.2.2(svelte@4.2.3)
@@ -261,6 +264,9 @@ devDependencies:
   sveltekit-embed:
     specifier: ^0.0.12
     version: 0.0.12
+  sveltekit-flash-message:
+    specifier: ^2.2.2
+    version: 2.2.2(@sveltejs/kit@1.27.5)(svelte@4.2.3)
   sveltekit-sitemap:
     specifier: ^1.0.21
     version: 1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe)
@@ -8107,6 +8113,15 @@ packages:
       svelte: 4.2.3
     dev: true
 
+  /svelte-french-toast@1.2.0(svelte@4.2.3):
+    resolution: {integrity: sha512-5PW+6RFX3xQPbR44CngYAP1Sd9oCq9P2FOox4FZffzJuZI2mHOB7q5gJBVnOiLF5y3moVGZ7u2bYt7+yPAgcEQ==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.3
+      svelte-writable-derived: 3.1.0(svelte@4.2.3)
+    dev: true
+
   /svelte-hmr@0.15.3(svelte@4.2.3):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -8210,6 +8225,14 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /svelte-writable-derived@3.1.0(svelte@4.2.3):
+    resolution: {integrity: sha512-cTvaVFNIJ036vSDIyPxJYivKC7ZLtcFOPm1Iq6qWBDo1fOHzfk6ZSbwaKrxhjgy52Rbl5IHzRcWgos6Zqn9/rg==}
+    peerDependencies:
+      svelte: ^3.2.1 || ^4.0.0-next.1
+    dependencies:
+      svelte: 4.2.3
+    dev: true
+
   /svelte@3.59.2:
     resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
     engines: {node: '>= 8'}
@@ -8235,6 +8258,16 @@ packages:
 
   /sveltekit-embed@0.0.12:
     resolution: {integrity: sha512-77GiPxkn4ZyF5tcq+YuosYjiFTrjYwA+sOMUiWoN+8sTCM0vJVi9sxHpIHWK6Cvmn0fAeaHagV//2i+tFmELkA==}
+    dev: true
+
+  /sveltekit-flash-message@2.2.2(@sveltejs/kit@1.27.5)(svelte@4.2.3):
+    resolution: {integrity: sha512-5xaQbkbEfzIMT2VfyJNtXl/20ugaBLc/9BzeQ+l4rHr+IoWC81qRANKAFlfZqZ2eCGPq1pzIhVeuxaPk74dAgA==}
+    peerDependencies:
+      '@sveltejs/kit': 1.x
+      svelte: 3.x || 4.x
+    dependencies:
+      '@sveltejs/kit': 1.27.5(svelte@4.2.3)(vite@4.5.0)
+      svelte: 4.2.3
     dev: true
 
   /sveltekit-sitemap@1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe):

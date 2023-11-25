@@ -4,6 +4,7 @@ import { sequence } from '@sveltejs/kit/hooks';
 import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
+import authHook from '$lib/auth/hook.server';
 import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
 import * as seoSites from '$lib/shared/seo/sites';
 import supabaseHook from '$lib/shared/supabase/hook.server';
@@ -33,6 +34,7 @@ export const handle: Handle = sequence(
 		});
 	},
 	supabaseHook,
+	authHook,
 	createTRPCHandle({ router, createContext }),
 	sitemapHook(sitemap, {
 		getRobots: seoSites.getRobots,

@@ -4,6 +4,9 @@
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import { onMount } from 'svelte';
 
+	import toast, { Toaster } from 'svelte-french-toast';
+	import { getFlash } from 'sveltekit-flash-message';
+
 	import { webVitals } from '$lib/shared/analytics/vitals';
 	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
 	import Footer from '$lib/shared/layout/Footer.svelte';
@@ -42,6 +45,23 @@
 			}
 		}
 	}
+
+	const flash = getFlash(page);
+
+	flash.subscribe((v) => {
+		if (!v) {
+			return;
+		}
+
+		if (v.type === 'success') {
+			toast.success(v.message);
+		} else if (v.type === 'error') {
+			toast.error(v.message);
+		} else {
+			toast(v.message);
+		}
+		flash.set(undefined);
+	});
 </script>
 
 <ParaglideJsSvelteKitProviderCsr>
@@ -56,5 +76,7 @@
 		<slot />
 
 		<Footer />
+
+		<Toaster />
 	</QueryClientProvider>
 </ParaglideJsSvelteKitProviderCsr>

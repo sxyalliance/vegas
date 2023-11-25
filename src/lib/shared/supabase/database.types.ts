@@ -96,6 +96,49 @@ export interface Database {
 					}
 				];
 			};
+			game_votes: {
+				Row: {
+					created_at: string;
+					game_id: number;
+					is_upvote: boolean;
+					voter_id: string;
+				};
+				Insert: {
+					created_at?: string;
+					game_id: number;
+					is_upvote: boolean;
+					voter_id: string;
+				};
+				Update: {
+					created_at?: string;
+					game_id?: number;
+					is_upvote?: boolean;
+					voter_id?: string;
+				};
+				Relationships: [
+					{
+						foreignKeyName: 'game_votes_game_id_fkey';
+						columns: ['game_id'];
+						isOneToOne: false;
+						referencedRelation: 'games';
+						referencedColumns: ['id'];
+					},
+					{
+						foreignKeyName: 'game_votes_game_id_fkey';
+						columns: ['game_id'];
+						isOneToOne: false;
+						referencedRelation: 'games_with_votes';
+						referencedColumns: ['id'];
+					},
+					{
+						foreignKeyName: 'game_votes_voter_id_fkey';
+						columns: ['voter_id'];
+						isOneToOne: false;
+						referencedRelation: 'profiles';
+						referencedColumns: ['id'];
+					}
+				];
+			};
 			games: {
 				Row: {
 					created_at: string;
@@ -105,7 +148,7 @@ export interface Database {
 					image_url: string;
 					name: string;
 					on_sale: boolean;
-					provider: number;
+					provider: Database['public']['Enums']['game_providers'];
 					provider_identifier: string;
 				};
 				Insert: {
@@ -116,7 +159,7 @@ export interface Database {
 					image_url: string;
 					name: string;
 					on_sale?: boolean;
-					provider: number;
+					provider: Database['public']['Enums']['game_providers'];
 					provider_identifier: string;
 				};
 				Update: {
@@ -127,7 +170,7 @@ export interface Database {
 					image_url?: string;
 					name?: string;
 					on_sale?: boolean;
-					provider?: number;
+					provider?: Database['public']['Enums']['game_providers'];
 					provider_identifier?: string;
 				};
 				Relationships: [];
@@ -184,7 +227,22 @@ export interface Database {
 			};
 		};
 		Views: {
-			[_ in never]: never;
+			games_with_votes: {
+				Row: {
+					created_at: string | null;
+					description: string | null;
+					downvote_count: number | null;
+					formatted_price: number | null;
+					id: number | null;
+					image_url: string | null;
+					name: string | null;
+					on_sale: boolean | null;
+					provider: Database['public']['Enums']['game_providers'] | null;
+					provider_identifier: string | null;
+					upvote_count: number | null;
+				};
+				Relationships: [];
+			};
 		};
 		Functions: {
 			get_random_phrases: {
@@ -199,6 +257,7 @@ export interface Database {
 		};
 		Enums: {
 			activity_status: 'upcoming' | 'finished' | 'ongoing';
+			game_providers: 'steam' | 'xbox' | 'other';
 		};
 		CompositeTypes: {
 			[_ in never]: never;

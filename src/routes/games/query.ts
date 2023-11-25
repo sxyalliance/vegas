@@ -1,7 +1,7 @@
 import type { SupabaseBrowserClient } from '$lib/shared/supabase/client';
 
 export default async function query(client: SupabaseBrowserClient) {
-	const { data, error } = await client.from('games').select(
+	const { data, error } = await client.from('games_with_votes').select(
 		`
 			id,
 			provider,
@@ -9,7 +9,9 @@ export default async function query(client: SupabaseBrowserClient) {
 			name,
 			image_url,
 			formatted_price,
-			description
+			description,
+			upvote_count,
+			downvote_count
 			`
 	);
 

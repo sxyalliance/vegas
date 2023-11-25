@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
@@ -18,10 +19,33 @@
 		queryFn: () => query($page.data.supabase)
 	});
 
-	$: console.log($games);
+	const getStoreLink = (provider: string, provider_identifier: string) => {
+		switch (provider) {
+			case 'steam':
+				return `https://store.steampowered.com/app/${provider_identifier}`;
+			case 'epic':
+				return `https://www.epicgames.com/store/en-US/p/${provider_identifier}`;
+			case 'gog':
+				return `https://www.gog.com/game/${provider_identifier}`;
+			case 'origin':
+				return `https://www.origin.com/irl/en-us/store/${provider_identifier}`;
+			case 'uplay':
+				return `https://store.ubi.com/${provider_identifier}`;
+			case 'xbox':
+				return `https://www.microsoft.com/en-us/p/${provider_identifier}`;
+			case 'playstation':
+				return `https://store.playstation.com/en-us/product/${provider_identifier}`;
+			case 'nintendo':
+				return `https://www.nintendo.com/games/detail/${provider_identifier}`;
+			default:
+				return '#';
+		}
+	};
 </script>
 
-<SimpleHeroSection title="Gaming Votes" tagline="Vote your favours games to play" />
+<SimpleHeroSection title="Gaming Votes" tagline="Vote your favours games to play">
+	<Button slot="cta" href="/games/proposals">Make Proposal</Button>
+</SimpleHeroSection>
 
 <Section>
 	<div role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -29,13 +53,23 @@
 			{#each $games.data as game}
 				<Card.Root>
 					<Card.Header class="pb-0">
-						<div class="-m-6 mb-0">
+						<div class="relative -m-6 mb-0">
 							<img class="h-32 w-full rounded-md" src={game.image_url} alt="" />
+							<span
+								class="absolute right-0 top-0 rounded-bl-lg rounded-tr-md bg-accent/70 px-3 py-1 text-lg text-accent-foreground"
+							>
+								{game.upvote_count - game.downvote_count}
+							</span>
 						</div>
 						<Card.Title class="pt-2">
 							<div class="flex justify-between">
 								<h3 class="text-lg font-medium">{game.name}</h3>
-								<Badge variant="outline" class="capitalize">
+								<Badge
+									variant="outline"
+									class="capitalize"
+									href={getStoreLink(game.provider, game.provider_identifier)}
+									target="_blank"
+								>
 									{game.provider}#{game.provider_identifier}
 								</Badge>
 							</div>
@@ -43,27 +77,35 @@
 						<Card.Description class="line-clamp-5">{game.description}</Card.Description>
 					</Card.Header>
 
-					<Card.Footer class="flex justify-between py-2">
-						<Button variant="link" class="-ml-2 px-6 text-primary hover:text-primary">
-							<Icon icon="tabler:thumb-up" class="mr-2 h-5 w-5" />
-							Upvote
-						</Button>
-						<Separator orientation="vertical" decorative />
-						<Button variant="link" class="-mr-2 px-6 text-destructive hover:text-destructive">
-							<Icon icon="tabler:thumb-down" class="mr-2 h-5 w-5" />
-							Downvote
-						</Button>
-					</Card.Footer>
+					<form method="POST" use:enhance>
+						<Card.Footer class="flex justify-between py-2">
+							<input type="hidden" name="game_id" value={game.id} />
+
+							<Button
+								variant="link"
+								class="-ml-2 px-6 text-primary hover:text-primary"
+								type="submit"
+								name="vote"
+								value="upvote"
+							>
+								<Icon icon="tabler:thumb-up" class="mr-2 h-5 w-5" />
+								Upvote
+							</Button>
+							<Separator orientation="vertical" decorative />
+							<Button
+								variant="link"
+								class="-mr-2 px-6 text-destructive hover:text-destructive"
+								type="submit"
+								name="vote"
+								value="downvote"
+							>
+								<Icon icon="tabler:thumb-down" class="mr-2 h-5 w-5" />
+								Downvote
+							</Button>
+						</Card.Footer>
+					</form>
 				</Card.Root>
 			{/each}
 		{/if}
 	</div>
-</Section>
-
-<Section alternate>
-	<SectionHeading title="Propose a game">
-		We do not support proposing games from the website yet, but you can submit the proposal to the
-		Press Department on Discord directly.
-		<br /><br /> This feature will be available soon.
-	</SectionHeading>
 </Section>

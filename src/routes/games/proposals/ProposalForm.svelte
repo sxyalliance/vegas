@@ -4,6 +4,8 @@
 	import { page } from '$app/stores';
 	import { getForm } from 'formsnap';
 
+	import { superForm } from 'sveltekit-superforms/client';
+
 	import { trpc } from '$lib/trpc/client';
 	import { Button } from '$lib/vgui/components/ui/button';
 	import * as Form from '$lib/vgui/components/ui/form';
@@ -15,6 +17,11 @@
 	import type { SuperValidated } from 'sveltekit-superforms';
 
 	export let form: SuperValidated<FormSchema>;
+
+	const superFrm = superForm(form, {
+		validators: formSchema,
+		taintedMessage: null
+	});
 
 	let store_url = '';
 
@@ -31,32 +38,16 @@
 	$: {
 		if ($resolve.isSuccess) {
 			const { data } = $resolve;
-
-			// convert to url query
-			const query = new URLSearchParams();
-			query.set('name', data.name);
-			query.set('provider', data.provider);
-			query.set('provider_identifier', data.provider_identifier);
-			query.set('image_url', data.image_url);
-			query.set('description', data.description);
-
-			// update url
-			location.hash = query.toString();
-			location.reload();
-		}
-	}
-
-	// decode url query
-	if (browser) {
-		const query = location.hash
-			? new URLSearchParams(location.hash.slice(1))
-			: new URLSearchParams();
-		if (query.has('name')) {
-			form.data.name = query.get('name') ?? '';
-			form.data.provider = (query.get('provider') as 'steam' | 'xbox') ?? 'steam';
-			form.data.provider_identifier = query.get('provider_identifier') ?? '';
-			form.data.image_url = query.get('image_url') ?? '';
-			form.data.description = query.get('description') ?? '';
+			superFrm.form.update((current) => {
+				return {
+					...current,
+					name: data.name,
+					provider: data.provider,
+					provider_identifier: data.provider_identifier,
+					image_url: data.image_url,
+					description: data.description
+				};
+			});
 		}
 	}
 </script>
@@ -72,7 +63,7 @@
 
 <Separator class="my-8" />
 
-<Form.Root method="POST" {form} schema={formSchema} let:config>
+<Form.Root method="POST" form={superFrm} schema={formSchema} let:config controlled>
 	<Form.Field {config} name="name">
 		<Form.Item>
 			<Form.Label>Game Name</Form.Label>
