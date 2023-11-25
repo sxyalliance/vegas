@@ -10,7 +10,9 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const inputDirectory = __dirname;
 const outputDir = path.join(__dirname, 'merged');
 
-fs.mkdirSync(outputDir, { recursive: true });
+if (!fs.existsSync(outputDir)) {
+	fs.mkdirSync(outputDir, { recursive: true });
+}
 
 const mergeNamespaces = (directory) => {
 	const files = fs.readdirSync(directory);
