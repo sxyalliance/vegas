@@ -52,28 +52,28 @@ export const definition: NavigationDefinition = [
 			items: [
 				{
 					name: 'navigation_universal_rules',
-					href: '#',
+					href: '/rules/universal',
 					icon: 'tabler:ruler',
 					highlight: 'text-green10',
 					description: 'navigation_universal_rules_desc'
 				},
 				{
 					name: 'navigation_meeting_planning_white_paper',
-					href: '#',
+					href: '/rules/meeting-planning',
 					icon: 'tabler:school',
 					highlight: 'text-orange10',
 					description: 'navigation_meeting_planning_white_paper_desc'
 				},
 				{
 					name: 'navigation_late_handling_reference',
-					href: '#',
+					href: '/rules/late-handling',
 					icon: 'tabler:flag',
 					highlight: 'text-blue10',
 					description: 'navigation_late_handling_reference_desc'
 				},
 				{
 					name: 'navigation_talk_shit_definition_white_paper',
-					href: '#',
+					href: '/rules/talk-shit',
 					icon: 'tabler:message-report',
 					highlight: 'text-purple10',
 					description: 'navigation_talk_shit_definition_white_paper_desc'

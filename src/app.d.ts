@@ -11,9 +11,9 @@ import type { LoggerType } from 'roarr';
 
 declare global {
 	namespace App {
-		// interface Error {
-		// 	status: number;
-		// }
+		interface Error {
+			status?: number;
+		}
 		interface Locals {
 			directus: ConstructedDirectusClient;
 

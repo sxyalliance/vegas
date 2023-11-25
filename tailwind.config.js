@@ -4,6 +4,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 const config = {
 	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 	safelist: ['dark', { pattern: /(text|bg|border)-(.+)-600/ }],
 	theme: {
 		container: {
