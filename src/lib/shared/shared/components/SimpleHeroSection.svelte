@@ -13,17 +13,17 @@
 	export let tagline: string | null = null;
 </script>
 
-<div class="bg-neutral-2 px-6 py-12 sm:py-20 lg:px-8 {clazz}">
+<div class="bg-muted px-6 py-12 sm:py-20 lg:px-8 {clazz}">
 	<div class="mx-auto max-w-2xl text-center">
 		{#if tagline}
-			<p class="text-accent-11 text-base font-semibold leading-7">
+			<p class="text-base font-semibold leading-7 text-primary">
 				{tagline}
 			</p>
 		{/if}
-		<h2 class="text-high-contrast text-4xl font-bold tracking-tight sm:text-6xl">
+		<h2 class="text-4xl font-bold tracking-tight sm:text-6xl">
 			{title}
 		</h2>
-		<p class="text-low-contrast mt-6 text-lg leading-8">
+		<p class="mt-6 text-lg leading-8 text-muted-foreground">
 			<slot />
 		</p>
 	</div>
