@@ -5,7 +5,7 @@
 	import type { MessageId } from '$lib/shared/i18n';
 	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { Badge } from '$lib/vgui/components/ui/badge';
-	import * as Card from '$lib/vgui/components/ui/card';
+	import { Card, CardTitle, CardHeader, CardContent } from '$lib/vgui/components/ui/card';
 
 	import type query from './query';
 
@@ -80,12 +80,12 @@
 </script>
 
 <div class="lg:col-start-3 lg:row-end-1">
-	<Card.Root>
-		<Card.Header>
-			<Card.Title>Information</Card.Title>
-		</Card.Header>
+	<Card>
+		<CardHeader>
+			<CardTitle>Information</CardTitle>
+		</CardHeader>
 
-		<Card.Content>
+		<CardContent>
 			<dl class="flex flex-wrap">
 				<div id="properties-list" class="grid w-full grid-cols-1 gap-y-4 lg:grid-cols-2">
 					<div class="flex w-full flex-none gap-x-4">
@@ -138,6 +138,6 @@
 					{/each}
 				</div>
 			</dl>
-		</Card.Content>
-	</Card.Root>
+		</CardContent>
+	</Card>
 </div>

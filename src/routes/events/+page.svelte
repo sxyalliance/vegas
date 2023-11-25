@@ -7,7 +7,7 @@
 	import { EventListSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
-	import * as Alert from '$lib/vgui/components/ui/alert';
+	import { Alert, AlertDescription } from '$lib/vgui/components/ui/alert';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	import EventListItem from './EventListItem.svelte';
@@ -23,10 +23,10 @@
 <HeroSection />
 
 <Section>
-	<Alert.Root class="mb-12">
+	<Alert class="mb-12">
 		<Icon icon="lucide:info" class="h-4 w-4" />
-		<Alert.Description>{m.event_information_language_restriction()}</Alert.Description>
-	</Alert.Root>
+		<AlertDescription>{m.event_information_language_restriction()}</AlertDescription>
+	</Alert>
 
 	{#if $events.isSuccess}
 		<SeoHandler factory={new EventListSeoFactory($events.data)} />

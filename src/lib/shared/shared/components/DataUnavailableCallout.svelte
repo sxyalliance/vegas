@@ -1,7 +1,9 @@
 <script lang="ts">
 	import * as m from '$lib/shared/i18n/compiled/messages';
+
+	import { Alert, AlertDescription } from '$lib/vgui/components/ui/alert';
 </script>
 
-<!--<Callout type="danger">-->
-<!--	<p>{m.common_data_unavailable()}</p>-->
-<!--</Callout>-->
+<Alert variant="destructive">
+	<AlertDescription>{m.common_data_unavailable()}</AlertDescription>
+</Alert>

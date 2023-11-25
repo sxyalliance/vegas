@@ -2,10 +2,7 @@
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import Icon from '@iconify/svelte';
 	import { createQuery } from '@tanstack/svelte-query';
-
-	import * as m from '$lib/shared/i18n/compiled/messages';
 
 	import { mEventCategoryName } from '$lib/shared/i18n/map';
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';

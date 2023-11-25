@@ -5,7 +5,7 @@
 	import { AuthnSocialProvider, signIn } from '$lib/auth';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
-	import * as Card from '$lib/vgui/components/ui/card';
+	import { Card, CardContent } from '$lib/vgui/components/ui/card';
 
 	const socials = [
 		{
@@ -34,8 +34,8 @@
 	</div>
 
 	<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[360px]">
-		<Card.Root>
-			<Card.Content>
+		<Card>
+			<CardContent>
 				<div class="flex justify-center font-medium">
 					<span>Continue with</span>
 				</div>
@@ -52,7 +52,7 @@
 						</Button>
 					{/each}
 				</div>
-			</Card.Content>
-		</Card.Root>
+			</CardContent>
+		</Card>
 	</div>
 </div>

@@ -6,7 +6,7 @@
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { mEventCategoryDescription, mEventCategoryName } from '$lib/shared/i18n/map';
-	import * as Card from '$lib/vgui/components/ui/card';
+	import { Card, CardHeader, CardDescription, CardTitle } from '$lib/vgui/components/ui/card';
 
 	import { queryCategories } from './query';
 
@@ -56,9 +56,9 @@
 												{#if category.display === false}
 													<div class="w-44 overflow-hidden" />
 												{:else}
-													<Card.Root class="w-44 overflow-hidden">
-														<Card.Header>
-															<Card.Title>
+													<Card class="w-44 overflow-hidden">
+														<CardHeader>
+															<CardTitle>
 																<Icon
 																	icon={`material-symbols:${kebabCase(String(category.icon))}`}
 																	class="mb-2 h-12 w-12 text-{category.color}"
@@ -66,12 +66,12 @@
 																<h3 class="text-lg font-medium leading-6">
 																	{mEventCategoryName[category.key]()}
 																</h3>
-															</Card.Title>
-															<Card.Description>
+															</CardTitle>
+															<CardDescription>
 																{mEventCategoryDescription[category.key]()}
-															</Card.Description>
-														</Card.Header>
-													</Card.Root>
+															</CardDescription>
+														</CardHeader>
+													</Card>
 												{/if}
 											{/each}
 										</div>
