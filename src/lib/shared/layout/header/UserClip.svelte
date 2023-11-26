@@ -27,6 +27,8 @@
 			}
 			return profile.data;
 		});
+
+	$: loginLink = '/auth?redirect=' + encodeURIComponent($page.url.pathname);
 </script>
 
 {#await userFunc}
@@ -40,5 +42,5 @@
 		{user.nickname}
 	</Button>
 {:catch error}
-	<Button variant="outline" class={clazz} href="/auth">Login</Button>
+	<Button variant="outline" class={clazz} href={loginLink}>Login</Button>
 {/await}

@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect } from 'sveltekit-flash-message/server';
 
 import type { RequestHandler } from './$types';
 
@@ -11,13 +11,17 @@ export const GET: RequestHandler = async (event) => {
 	const next = url.searchParams.get('next') ?? '/';
 
 	if (!code) {
-		throw redirect(303, '/auth/auth-code-missing');
+		throw redirect('/auth', { type: 'error', message: 'No auth code provided.' }, event);
 	}
 
 	const { error } = await supabase.auth.exchangeCodeForSession(code);
 	if (error) {
-		throw redirect(303, '/auth/auth-code-error');
+		throw redirect('/auth', { type: 'error', message: 'Failed to validate auth code.' }, event);
 	}
 
-	throw redirect(303, `/${next.slice(1)}?auth=success`);
+	throw redirect(
+		`/${next.slice(1)}`,
+		{ type: 'success', message: 'You are now logged in!' },
+		event
+	);
 };

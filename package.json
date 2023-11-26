@@ -56,6 +56,7 @@
 		"@typescript-eslint/parser": "^6.10.0",
 		"@unpic/svelte": "^0.0.38",
 		"@zerodevx/svelte-img": "^2.1.0",
+		"async-wait-until": "^2.0.12",
 		"autoprefixer": "^10.4.16",
 		"bcp-47": "^2.1.0",
 		"browserslist": "^4.22.1",

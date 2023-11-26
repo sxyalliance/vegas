@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { navigating, page } from '$app/stores';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
+	import { waitUntil } from 'async-wait-until';
 	import { onMount } from 'svelte';
 
 	import toast, { Toaster } from 'svelte-french-toast';
@@ -46,20 +47,25 @@
 		}
 	}
 
+	const showFlashToast = async (flash: { type: 'success' | 'error'; message: string }) => {
+		await waitUntil(() => !loading);
+
+		if (flash.type === 'success') {
+			toast.success(flash.message);
+		} else if (flash.type === 'error') {
+			toast.error(flash.message);
+		} else {
+			toast(flash.message);
+		}
+	};
+
 	const flash = getFlash(page);
 
-	flash.subscribe((v) => {
+	flash.subscribe(async (v) => {
 		if (!v) {
 			return;
 		}
-
-		if (v.type === 'success') {
-			toast.success(v.message);
-		} else if (v.type === 'error') {
-			toast.error(v.message);
-		} else {
-			toast(v.message);
-		}
+		await showFlashToast(v);
 		flash.set(undefined);
 	});
 </script>

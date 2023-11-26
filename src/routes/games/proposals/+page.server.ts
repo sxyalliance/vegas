@@ -1,6 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { redirect, setFlash } from 'sveltekit-flash-message/server';
-import { message, setError, superValidate } from 'sveltekit-superforms/server';
+import { superValidate } from 'sveltekit-superforms/server';
 
 import { formSchema } from './schema';
 
@@ -20,7 +20,6 @@ export const actions: Actions = {
 		}
 
 		const { error } = await event.locals.supabase.from('games').insert(form.data);
-		console.log(error);
 
 		if (error) {
 			setFlash({ type: 'error', message: 'There was an error saving your game proposal.' }, event);
@@ -28,7 +27,6 @@ export const actions: Actions = {
 		}
 
 		throw redirect(
-			303,
 			'/games',
 			{ type: 'success', message: 'Your game proposal has been recorded.' },
 			event

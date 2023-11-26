@@ -21,7 +21,7 @@
 	];
 
 	const handleSocialLogin = async (provider: AuthnSocialProvider) => {
-		await signIn($page.data.supabase.auth, provider);
+		await signIn($page.data.supabase.auth, provider, $page.url.searchParams.get('redirect'));
 	};
 </script>
 
