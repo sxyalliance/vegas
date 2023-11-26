@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
 	import * as m from '$lib/shared/i18n/compiled/messages';
@@ -16,6 +16,11 @@
 	let preferencesOpen = false;
 	let preferencesSide: 'right' | 'bottom' = 'right';
 	$: preferencesSide = mobileMenuOpen ? 'bottom' : 'right';
+
+	afterNavigate(() => {
+		mobileMenuOpen = false;
+		preferencesOpen = false;
+	});
 </script>
 
 <header class="border-rainbow z-30 border-b-2 bg-background shadow-md">
