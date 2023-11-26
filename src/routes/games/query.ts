@@ -1,8 +1,10 @@
 import type { SupabaseBrowserClient } from '$lib/shared/supabase/client';
 
 export default async function query(client: SupabaseBrowserClient) {
-	const { data, error } = await client.from('games_with_votes').select(
-		`
+	const { data, error } = await client
+		.from('games')
+		.select(
+			`
 			id,
 			provider,
 			provider_identifier,
@@ -13,7 +15,8 @@ export default async function query(client: SupabaseBrowserClient) {
 			upvote_count,
 			downvote_count
 			`
-	);
+		)
+		.order('upvote_count', { ascending: false });
 
 	if (error) {
 		throw error;

@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	import { createQuery } from '@tanstack/svelte-query';
+	import { createQuery, useQueryClient } from '@tanstack/svelte-query';
 
 	import SectionHeading from '$lib/shared/shared/components/SectionHeading.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
@@ -41,6 +41,11 @@
 				return '#';
 		}
 	};
+
+	export let form;
+	$: if (form) {
+		useQueryClient().invalidateQueries(['games']);
+	}
 </script>
 
 <SimpleHeroSection title="Gaming Votes" tagline="Vote your favours games to play">
@@ -56,9 +61,14 @@
 						<div class="relative -m-6 mb-0">
 							<img class="h-32 w-full rounded-md" src={game.image_url} alt="" />
 							<span
-								class="absolute right-0 top-0 rounded-bl-lg rounded-tr-md bg-accent/70 px-3 py-1 text-lg text-accent-foreground"
+								class="absolute right-0 top-0 flex items-center rounded-bl-lg rounded-tr-md bg-accent/70 px-3 py-1 text-lg text-accent-foreground"
 							>
-								{game.upvote_count - game.downvote_count}
+								{#if game.upvote_count > game.downvote_count}
+									<Icon icon="lucide:plus" class="inline h-3 w-3" />
+								{:else if game.upvote_count < game.downvote_count}
+									<Icon icon="lucide:minus" class="mr-0.5 inline h-3 w-2.5" />
+								{/if}
+								{Math.abs(game.upvote_count - game.downvote_count)}
 							</span>
 						</div>
 						<Card.Title class="pt-2">
@@ -74,7 +84,7 @@
 								</Badge>
 							</div>
 						</Card.Title>
-						<Card.Description class="line-clamp-5">{game.description}</Card.Description>
+						<Card.Description class="line-clamp-5 h-25">{game.description}</Card.Description>
 					</Card.Header>
 
 					<form method="POST" use:enhance>

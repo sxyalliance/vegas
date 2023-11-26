@@ -40,5 +40,6 @@ export const actions: Actions = {
 		}
 
 		setFlash({ type: 'success', message: 'Your vote has been noted.' }, event);
+		return { form };
 	}
 };

@@ -124,13 +124,6 @@ export interface Database {
 						referencedColumns: ['id'];
 					},
 					{
-						foreignKeyName: 'game_votes_game_id_fkey';
-						columns: ['game_id'];
-						isOneToOne: false;
-						referencedRelation: 'games_with_votes';
-						referencedColumns: ['id'];
-					},
-					{
 						foreignKeyName: 'game_votes_voter_id_fkey';
 						columns: ['voter_id'];
 						isOneToOne: false;
@@ -143,6 +136,7 @@ export interface Database {
 				Row: {
 					created_at: string;
 					description: string | null;
+					downvote_count: number;
 					formatted_price: number;
 					id: number;
 					image_url: string;
@@ -150,10 +144,12 @@ export interface Database {
 					on_sale: boolean;
 					provider: Database['public']['Enums']['game_providers'];
 					provider_identifier: string;
+					upvote_count: number;
 				};
 				Insert: {
 					created_at?: string;
 					description?: string | null;
+					downvote_count?: number;
 					formatted_price: number;
 					id?: number;
 					image_url: string;
@@ -161,10 +157,12 @@ export interface Database {
 					on_sale?: boolean;
 					provider: Database['public']['Enums']['game_providers'];
 					provider_identifier: string;
+					upvote_count?: number;
 				};
 				Update: {
 					created_at?: string;
 					description?: string | null;
+					downvote_count?: number;
 					formatted_price?: number;
 					id?: number;
 					image_url?: string;
@@ -172,6 +170,7 @@ export interface Database {
 					on_sale?: boolean;
 					provider?: Database['public']['Enums']['game_providers'];
 					provider_identifier?: string;
+					upvote_count?: number;
 				};
 				Relationships: [];
 			};
@@ -227,22 +226,7 @@ export interface Database {
 			};
 		};
 		Views: {
-			games_with_votes: {
-				Row: {
-					created_at: string | null;
-					description: string | null;
-					downvote_count: number | null;
-					formatted_price: number | null;
-					id: number | null;
-					image_url: string | null;
-					name: string | null;
-					on_sale: boolean | null;
-					provider: Database['public']['Enums']['game_providers'] | null;
-					provider_identifier: string | null;
-					upvote_count: number | null;
-				};
-				Relationships: [];
-			};
+			[_ in never]: never;
 		};
 		Functions: {
 			get_random_phrases: {
