@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';
@@ -9,6 +10,12 @@
 
 	export let data: PageData;
 </script>
+
+<SeoHandler
+	metaTags={{
+		title: 'Game Proposal'
+	}}
+/>
 
 <SimpleHeroSection title="Proposal a Game to Play" tagline="Let's play my game!!" />
 

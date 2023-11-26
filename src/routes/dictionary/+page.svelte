@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { createQuery } from '@tanstack/svelte-query';
 
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import { Card, CardHeader, CardTitle, CardDescription } from '$lib/vgui/components/ui/card';
@@ -28,6 +29,12 @@
 		return $phrases.data;
 	};
 </script>
+
+<SeoHandler
+	metaTags={{
+		title: 'Dictionary'
+	}}
+/>
 
 <SimpleHeroSection title="Dictionary" tagline="Part of our memory palace">
 	They are the building blocks of our language. Behind every phrase there is a story, a history, a

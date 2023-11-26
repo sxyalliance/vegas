@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import ComingSoonOverlay from '$lib/shared/shared/components/ComingSoonOverlay.svelte';
 	import * as Form from '$lib/vgui/components/ui/form';
 
@@ -10,6 +11,12 @@
 
 	export let data: PageData;
 </script>
+
+<SeoHandler
+	metaTags={{
+		title: 'Contact Us'
+	}}
+/>
 
 <div class="h-hero relative isolate">
 	<div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">

@@ -4,6 +4,7 @@
 	import Icon from '@iconify/svelte';
 	import { createQuery, useQueryClient } from '@tanstack/svelte-query';
 
+	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import SectionHeading from '$lib/shared/shared/components/SectionHeading.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import { Badge } from '$lib/vgui/components/ui/badge';
@@ -47,6 +48,12 @@
 		useQueryClient().invalidateQueries(['games']);
 	}
 </script>
+
+<SeoHandler
+	metaTags={{
+		title: 'Gaming Votes'
+	}}
+/>
 
 <SimpleHeroSection title="Gaming Votes" tagline="Vote your favours games to play">
 	<Button slot="cta" href="/games/proposals">Make Proposal</Button>
