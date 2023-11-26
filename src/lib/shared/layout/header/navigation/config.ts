@@ -17,6 +17,10 @@ export const definition: NavigationDefinition = [
 					href: '/about/members'
 				},
 				{
+					name: 'navigation_contacts',
+					href: '/about/contacts'
+				},
+				{
 					name: 'navigation_chronicle',
 					href: '/about/chronicle'
 				}

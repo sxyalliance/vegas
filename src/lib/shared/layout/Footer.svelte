@@ -32,7 +32,7 @@
 	const socials = [
 		{
 			name: 'discord',
-			url: '/about/contact#discord'
+			url: '/about/contacts'
 		},
 		{
 			name: 'github',
@@ -93,7 +93,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/about/contact" class="hover:text-foreground">
+								<a href="/about/contacts" class="hover:text-foreground">
 									{m.home_hero_contact_us()}
 								</a>
 							</li>
