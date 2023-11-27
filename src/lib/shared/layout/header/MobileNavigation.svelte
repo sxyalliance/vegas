@@ -4,7 +4,7 @@
 	import { writable } from 'svelte/store';
 	import { fly } from 'svelte/transition';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 
 	import UserClip from '$lib/shared/layout/header/UserClip.svelte';

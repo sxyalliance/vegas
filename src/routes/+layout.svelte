@@ -9,10 +9,11 @@
 	import { getFlash } from 'sveltekit-flash-message';
 
 	import { webVitals } from '$lib/shared/analytics/vitals';
-	import ParaglideJsSvelteKitProviderCsr from '$lib/shared/i18n/ParaglideJsSvelteKitProviderCsr.svelte';
 	import Footer from '$lib/shared/layout/Footer.svelte';
 	import Header from '$lib/shared/layout/header/Header.svelte';
 	import LoadingOverlay2 from '$lib/shared/layout/LoadingOverlay2.svelte';
+
+	import ParaglideSvelteKitProvider from './ParaglideSvelteKitProvider.svelte';
 
 	import type { LayoutData } from './$types';
 	import '$lib/assets/app.css';
@@ -70,7 +71,7 @@
 	});
 </script>
 
-<ParaglideJsSvelteKitProviderCsr>
+<ParaglideSvelteKitProvider>
 	<QueryClientProvider client={data.queryClient}>
 		{#if loading}
 			<!--	<LoadingOverlay />-->
@@ -85,4 +86,4 @@
 
 		<Toaster />
 	</QueryClientProvider>
-</ParaglideJsSvelteKitProviderCsr>
+</ParaglideSvelteKitProvider>

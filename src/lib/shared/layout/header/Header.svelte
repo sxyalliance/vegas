@@ -2,7 +2,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import BrowserSupportNotice from '$lib/shared/layout/header/BrowserSupportNotice.svelte';

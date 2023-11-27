@@ -1,7 +1,7 @@
 <script lang="ts">
+	import * as m from '$i18n/messages';
 	import MemberListItem from '$lib/member/MemberListItem.svelte';
 	import { core, officialExcludingCore, verified } from '$lib/shared/discord';
-	import * as m from '$lib/shared/i18n/compiled/messages';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
 	import SimpleHeroSection from '$lib/shared/shared/components/SimpleHeroSection.svelte';
 	import Section from '$lib/vgui/section/Section.svelte';

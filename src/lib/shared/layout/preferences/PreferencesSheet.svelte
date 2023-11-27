@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 	import LocalePreferencesSection from '$lib/shared/layout/preferences/LocalePreferencesSection.svelte';
 	import ThemePreferencesSection from '$lib/shared/layout/preferences/ThemePreferencesSection.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';

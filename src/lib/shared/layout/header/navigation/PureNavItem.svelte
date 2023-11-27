@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 
 	import type { PureNavItem } from './types';
 

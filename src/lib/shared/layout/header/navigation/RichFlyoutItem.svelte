@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 
 	import type { RichFlyoutItem } from './types';
 

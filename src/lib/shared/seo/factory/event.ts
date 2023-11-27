@@ -1,8 +1,8 @@
 import { SeoFactory } from '$lib/shared/seo/factory/base';
 import { valueOrNothing } from '$lib/shared/shared/utils';
 
-import type { default as eventQuery } from '../../../../routes/events/[id=integer]/[[slug]]/query';
-import type { default as eventsQuery } from '../../../../routes/events/query';
+import type { default as eventQuery } from '../../../../routes/[[lang]]/events/[id=integer]/[[slug]]/query';
+import type { default as eventsQuery } from '../../../../routes/[[lang]]/events/query';
 import type { Event } from 'schema-dts';
 import type { MetaTagsProps } from 'svelte-meta-tags';
 

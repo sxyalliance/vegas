@@ -2,8 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
 
-	import type { MessageId } from '$lib/shared/i18n';
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
+	import type { MessageId } from '$lib/shared/shared/i18n_utils';
 	import { Badge } from '$lib/vgui/components/ui/badge';
 	import { Card, CardTitle, CardHeader, CardContent } from '$lib/vgui/components/ui/card';
 

@@ -1,4 +1,13 @@
-import * as m from './compiled/messages';
+import * as m from '$i18n/messages';
+import { languageTag, sourceLanguageTag } from '$i18n/runtime';
+
+export const tPath = (href: string) => {
+	return languageTag()
+		? `/${languageTag() == sourceLanguageTag ? '' : languageTag()}${href}`
+		: href;
+};
+
+export type MessageId = keyof typeof m;
 
 export type mMapRecord = {
 	[key: string]: () => string;

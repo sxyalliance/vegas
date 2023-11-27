@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as m from '$lib/shared/i18n/compiled/messages';
-	import type { mMapRecord } from '$lib/shared/i18n/map';
+	import * as m from '$i18n/messages';
+	import type { mMapRecord } from '$lib/shared/shared/i18n_utils';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	const mHomeProcedureStepsName: mMapRecord = {

@@ -5,7 +5,6 @@ import { sitemapHook } from 'sveltekit-sitemap';
 import { createTRPCHandle } from 'trpc-sveltekit';
 
 import authHook from '$lib/auth/hook.server';
-import { localePreference, resolveFirstAvailableLocale } from '$lib/shared/i18n';
 import * as seoSites from '$lib/shared/seo/sites';
 import supabaseHook from '$lib/shared/supabase/hook.server';
 import { createContext } from '$lib/trpc/context';
@@ -24,11 +23,6 @@ import type { Handle } from '@sveltejs/kit';
 export const handle: Handle = sequence(
 	/*Sentry.sentryHandle(),*/
 	async ({ event, resolve }) => {
-		const langs = event.request.headers.get('accept-language')?.split(',');
-		if (langs) {
-			localePreference.set(resolveFirstAvailableLocale(langs));
-		}
-
 		return resolve(event, {
 			filterSerializedResponseHeaders: (name) => !name.startsWith('x-')
 		});

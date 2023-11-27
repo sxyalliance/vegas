@@ -9,7 +9,7 @@ overrides:
 
 patchedDependencies:
   sveltekit-sitemap@1.0.21:
-    hash: ve7jnqku6464myxxb7ugrrjtwe
+    hash: 64a6ma2nno7omzr33s5wjzm5km
     path: patches/sveltekit-sitemap@1.0.21.patch
 
 dependencies:
@@ -66,6 +66,9 @@ devDependencies:
   '@iconify/svelte':
     specifier: ^3.1.4
     version: 3.1.4(svelte@4.2.3)
+  '@inlang/paraglide-js-adapter-vite':
+    specifier: 1.0.0-prerelease.1
+    version: 1.0.0-prerelease.1
   '@macfja/svelte-persistent-store':
     specifier: ^2.4.1
     version: 2.4.1(svelte@4.2.3)
@@ -272,7 +275,7 @@ devDependencies:
     version: 2.2.2(@sveltejs/kit@1.27.5)(svelte@4.2.3)
   sveltekit-sitemap:
     specifier: ^1.0.21
-    version: 1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe)
+    version: 1.0.21(patch_hash=64a6ma2nno7omzr33s5wjzm5km)
   sveltekit-superforms:
     specifier: ^1.10.1
     version: 1.10.1(@sveltejs/kit@1.27.5)(svelte@4.2.3)(zod@3.22.4)
@@ -1026,7 +1029,6 @@ packages:
     resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
     dependencies:
       guess-json-indent: 2.0.0
-    dev: false
 
   /@inlang/json-types@1.1.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-n6vS6AqETsCFbV4TdBvR/EH57waVXzKsMqeUQ+eH2Q6NUATfKhfLabgNms2A+QV3aedH/hLtb1pRmjl2ykBVZg==}
@@ -1034,7 +1036,6 @@ packages:
       '@sinclair/typebox': ^0.31.0
     dependencies:
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/language-tag@1.2.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-AwKNPYPgJrhM9ebEYQvcG5PGM4v79jMPlsv2bUYEhEZzMpwIJKQo4t7P7EekMhO086sXOmeTu410Lm8abX/2Yw==}
@@ -1042,7 +1043,6 @@ packages:
       '@sinclair/typebox': ^0.31.0
     dependencies:
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/message-lint-rule@1.4.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-imOvpxKFP2ESaWTI5W5aQiW1ukvXMvGa4KhVknssfA1ZkCkVu2EDM4aGxw11U5Rli4QQ70bxztUvfLVhd3J84A==}
@@ -1055,7 +1055,6 @@ packages:
       '@inlang/project-settings': 2.2.0(@sinclair/typebox@0.31.21)
       '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.21)
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/message@2.0.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-RPFcbega2Cnxi78d08O7SbuXyuhEqsB819QjgloNTXWtlBFwVDkF87xAMIZN37hpM6JZzMaYv2O1ipyncU3Ccg==}
@@ -1064,7 +1063,6 @@ packages:
     dependencies:
       '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.21)
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/module@1.2.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-Z91zJUgliX+ddfRK+Ce4aZYlMjeNwZJOMmJ2dEUgg2cfqIFRB+gDsC5gLEY5LTkZspf/XUHoECTpK8ErVVYF5w==}
@@ -1074,7 +1072,38 @@ packages:
       '@inlang/message-lint-rule': 1.4.0(@sinclair/typebox@0.31.21)
       '@inlang/plugin': 2.2.0(@sinclair/typebox@0.31.21)
       '@sinclair/typebox': 0.31.21
-    dev: false
+
+  /@inlang/paraglide-js-adapter-unplugin@1.0.0-prerelease.1:
+    resolution: {integrity: sha512-wrttqhTfP10pW3L9O726TdvQ4ODYkTSd8jdMGm3jhLDSD9V50G1v6MXTmcCXPHofUvaiR9fscTHC/pI/J4QfuA==}
+    dependencies:
+      '@inlang/paraglide-js': 1.0.0-prerelease.11
+      '@inlang/sdk': 0.18.0
+      unplugin: 1.5.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
+  /@inlang/paraglide-js-adapter-vite@1.0.0-prerelease.1:
+    resolution: {integrity: sha512-oOBTFma+3tJwuidHrazkmHD6HJVUH/csshxmfsUPg2uoQf1cPxmi35wUyawl7D3Io1OXphm1W+td2Og9LZ7x8Q==}
+    dependencies:
+      '@inlang/paraglide-js-adapter-unplugin': 1.0.0-prerelease.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
+  /@inlang/paraglide-js@1.0.0-prerelease.11:
+    resolution: {integrity: sha512-xaELYHxmgt6IUUjV52XIBmdsjE1I8gcNSenGUaqd/N2AruGTB7lfcZyOOcr54UtqfHMNSAnMngbEqWKUQ1SNUg==}
+    hasBin: true
+    dependencies:
+      '@inlang/detect-json-formatting': 1.0.0
+      '@inlang/sdk': 0.18.0
+      commander: 11.1.0
+      consola: 3.2.3
+      dedent: 1.5.1
+      json5: 2.2.3
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
 
   /@inlang/paraglide-js@1.0.0-prerelease.9:
     resolution: {integrity: sha512-jxBtl0W9PTX2HM+d1tOoZ87uJX5I0g21XYESOfoO1uYU79omDhP0ajW3pcPOVNQhhh386mhsMoxJ7ivVYNHc7Q==}
@@ -1102,7 +1131,6 @@ packages:
       '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.21)
       '@lix-js/fs': 0.3.0
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/project-settings@2.2.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-M1D150KYiYoyiHhQp627zhvo/w/M1B11ROEu2u7Jn9005mKEWZS1DDlEOsLuNRl5doHSPHfkGa9qItMtrqr0dA==}
@@ -1112,11 +1140,9 @@ packages:
       '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.21)
       '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.21)
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@inlang/result@1.1.0:
     resolution: {integrity: sha512-zLGroi9EUiHuOjUOaglUVTFO7EWdo2OARMJLBO1Q5Ga/xJmSQb6XS1lhqEXBFAjgFarfEMX5YEJWWALogYV3wA==}
-    dev: false
 
   /@inlang/sdk@0.16.0:
     resolution: {integrity: sha512-JAbc7Eo9t9XEfuPuHxXa8H+9FludhydaISlxLc/rJq/PQh075h4MR8Ul0OF/TKqiuOpO08KFDmqVK01mOwbkeQ==}
@@ -1141,6 +1167,29 @@ packages:
       - babel-plugin-macros
     dev: false
 
+  /@inlang/sdk@0.18.0:
+    resolution: {integrity: sha512-HLZhR+w3gxoSs5sTUFIaSVjX7XPkTCzOzd1/QzdMVlRXucSTXViztJ6UJZ3aULAkuixfnkMSS1WfjE9TA1SOeA==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      '@inlang/json-types': 1.1.0(@sinclair/typebox@0.31.21)
+      '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.21)
+      '@inlang/message': 2.0.0(@sinclair/typebox@0.31.21)
+      '@inlang/message-lint-rule': 1.4.0(@sinclair/typebox@0.31.21)
+      '@inlang/module': 1.2.0(@sinclair/typebox@0.31.21)
+      '@inlang/plugin': 2.2.0(@sinclair/typebox@0.31.21)
+      '@inlang/project-settings': 2.2.0(@sinclair/typebox@0.31.21)
+      '@inlang/result': 1.1.0
+      '@inlang/translatable': 1.2.0(@sinclair/typebox@0.31.21)
+      '@lix-js/fs': 0.3.0
+      '@sinclair/typebox': 0.31.21
+      dedent: 1.5.1
+      deepmerge-ts: 5.1.0
+      solid-js: 1.6.12
+      throttle-debounce: 5.0.0
+    transitivePeerDependencies:
+      - babel-plugin-macros
+    dev: true
+
   /@inlang/translatable@1.2.0(@sinclair/typebox@0.31.21):
     resolution: {integrity: sha512-Od/nBm3qigfSpYJKu/Isg0rb34ohZApNk+fOtmZ0vBZXsTBzKaYFW0SeBVqwociRCr1tj40N659Ky+RoyLcv8A==}
     peerDependencies:
@@ -1148,7 +1197,6 @@ packages:
     dependencies:
       '@inlang/language-tag': 1.2.0(@sinclair/typebox@0.31.21)
       '@sinclair/typebox': 0.31.21
-    dev: false
 
   /@internationalized/date@3.5.0:
     resolution: {integrity: sha512-nw0Q+oRkizBWMioseI8+2TeUPEyopJVz5YxoYVzR0W1v+2YytiYah7s/ot35F149q/xAg4F1gT/6eTd+tsUpFQ==}
@@ -1214,7 +1262,6 @@ packages:
     resolution: {integrity: sha512-OKXfToFZXSZ6eiGue/6RZC29UdOTAabObF1trAHX2QXg1WCp8iLfi8IbWCSclqWK108tn0hRShgjof0aHvtjqw==}
     dependencies:
       js-base64: 3.7.5
-    dev: false
 
   /@ljharb/through@2.3.11:
     resolution: {integrity: sha512-ccfcIDlogiXNq5KcbAwbaO7lMh3Tm1i3khMPYpxlK8hH/W53zN81KM9coerRLOnTGu3nfXIniAmQbRI9OxbC0w==}
@@ -1799,7 +1846,6 @@ packages:
 
   /@sinclair/typebox@0.31.21:
     resolution: {integrity: sha512-Wtq/K44EMkREaXytK+2c5DrygtYsH7ZxT0StQL8HMJz2BoOM7NZ/xfrUFBVuZxDrhJCoXf5Im282P2CCz5DHwQ==}
-    dev: false
 
   /@sindresorhus/is@3.1.2:
     resolution: {integrity: sha512-JiX9vxoKMmu8Y3Zr2RVathBL1Cdu4Nt4MuNWemt1Nc06A0RAin9c5FArkhGsyMBWfCu4zj+9b+GxtjAnE4qqLQ==}
@@ -3095,7 +3141,6 @@ packages:
   /commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
-    dev: false
 
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -3164,7 +3209,6 @@ packages:
   /consola@3.2.3:
     resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
-    dev: false
 
   /constant-case@3.0.4:
     resolution: {integrity: sha512-I2hSBi7Vvs7BEuJDr5dDHfzb/Ruj3FyvFyh7KLilAjNQw3Be+xgqUBA2W6scVEcL0hL1dwPRtIqEPVUCKkSsyQ==}
@@ -3324,7 +3368,6 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: false
 
   /cz-conventional-changelog@3.3.0(typescript@5.2.2):
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
@@ -3440,7 +3483,6 @@ packages:
     peerDependenciesMeta:
       babel-plugin-macros:
         optional: true
-    dev: false
 
   /deep-eql@4.1.3:
     resolution: {integrity: sha512-WaEtAOpRA1MQ0eohqZjpGD8zdI0Ovsm8mmFhaDN8dvDZzyoUMcYDnf5Y6iu7HTXxf8JDS23qWa4a+hKCDyOPzw==}
@@ -3461,7 +3503,6 @@ packages:
   /deepmerge-ts@5.1.0:
     resolution: {integrity: sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==}
     engines: {node: '>=16.0.0'}
-    dev: false
 
   /deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
@@ -4737,7 +4778,6 @@ packages:
   /guess-json-indent@2.0.0:
     resolution: {integrity: sha512-3Tm6R43KhtZWEVSHZnFmYMV9+gf3Vu0HXNNYtPVk2s7o8eGwYlJPHrjLtYw/7HBc10YxV+bfzKMuOf24z5qFng==}
     engines: {node: '>=16.17.0'}
-    dev: false
 
   /handlebars@4.7.8:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
@@ -5429,7 +5469,6 @@ packages:
 
   /js-base64@3.7.5:
     resolution: {integrity: sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA==}
-    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -5536,7 +5575,6 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: false
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
@@ -7800,7 +7838,6 @@ packages:
     resolution: {integrity: sha512-JFqRobfG3q5r1l4RYVOAukk6+FWtHpXGIjgh/GEsHKweN/kK+iHOtzUALE6+P5t/jIcSNeGiVitX8gmJg+cYvQ==}
     dependencies:
       csstype: 3.1.2
-    dev: false
 
   /sorcery@0.11.0:
     resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
@@ -8278,7 +8315,7 @@ packages:
       svelte: 4.2.3
     dev: true
 
-  /sveltekit-sitemap@1.0.21(patch_hash=ve7jnqku6464myxxb7ugrrjtwe):
+  /sveltekit-sitemap@1.0.21(patch_hash=64a6ma2nno7omzr33s5wjzm5km):
     resolution: {integrity: sha512-Pc8hJFqTdP9vvJfpHfzMm0oSoWVp2I/vOgReTT0lM//ZUCnfdPjAqTc/PA11CFITCCksKOrtun/o3F8ZvMAldA==}
     dev: true
     patched: true
@@ -8442,7 +8479,6 @@ packages:
   /throttle-debounce@5.0.0:
     resolution: {integrity: sha512-2iQTSgkkc1Zyk0MeVrt/3BvuOXYPl/R8Z0U2xxo9rjwNciaHDG3R+Lm6dh4EeUci49DanvBnuqI6jshoQQRGEg==}
     engines: {node: '>=12.22'}
-    dev: false
 
   /through2@2.0.5:
     resolution: {integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==}
@@ -8797,6 +8833,15 @@ packages:
       webpack-virtual-modules: 0.5.0
     dev: false
 
+  /unplugin@1.5.1:
+    resolution: {integrity: sha512-0QkvG13z6RD+1L1FoibQqnvTwVBXvS4XSPwAyinVgoOCl2jAgwzdUKmEj05o4Lt8xwQI85Hb6mSyYkcAGwZPew==}
+    dependencies:
+      acorn: 8.11.2
+      chokidar: 3.5.3
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.1
+    dev: true
+
   /update-browserslist-db@1.0.13(browserslist@4.22.1):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
     hasBin: true
@@ -9138,11 +9183,14 @@ packages:
   /webpack-sources@3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
-    dev: false
 
   /webpack-virtual-modules@0.5.0:
     resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
     dev: false
+
+  /webpack-virtual-modules@0.6.1:
+    resolution: {integrity: sha512-poXpCylU7ExuvZK8z+On3kX+S8o/2dQ/SVYueKA0D4WEMXROXgY8Ez50/bQEUmvoSMMrWcrJqCHuhAbsiwg7Dg==}
+    dev: true
 
   /websocket@1.0.34:
     resolution: {integrity: sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==}

@@ -2,12 +2,9 @@
 	import Icon from '@iconify/svelte';
 	import { parse } from 'bcp-47';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
-	import { availableLanguageTags } from '$lib/shared/i18n/compiled/runtime';
-	import { type AvailableLanguageTag, languageTag } from '$lib/shared/i18n/compiled/runtime';
-	import { localePreference } from '$lib/shared/i18n/index';
-	import { availableThemeModes, availableThemes } from '$lib/shared/theme/options';
-	import { ThemeMode, themeMode } from '$lib/shared/theme/preferences';
+	import * as m from '$i18n/messages';
+	import { setLanguageTag, languageTag, availableLanguageTags } from '$i18n/runtime';
+	import type { AvailableLanguageTag } from '$i18n/runtime';
 	import { Label } from '$lib/vgui/components/ui/label';
 	import * as Select from '$lib/vgui/components/ui/select';
 
@@ -28,7 +25,7 @@
 
 	const handleLanguageSelectedChange = (v: SelectOption<unknown> | undefined) => {
 		if (v) {
-			localePreference.set(v.value as AvailableLanguageTag);
+			setLanguageTag(v.value as AvailableLanguageTag);
 		}
 	};
 </script>
@@ -39,7 +36,7 @@
 		<Select.Root
 			portal={null}
 			onSelectedChange={handleLanguageSelectedChange}
-			selected={{ value: $localePreference, label: getLanguageName(languageTag()) }}
+			selected={{ value: languageTag(), label: getLanguageName(languageTag()) }}
 		>
 			<Select.Trigger>
 				<Select.Value asChild>

@@ -2,8 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
+	import * as m from '$i18n/messages';
 	import { all as allMembers } from '$lib/shared/discord';
-	import * as m from '$lib/shared/i18n/compiled/messages';
 	import BrandLogo from '$lib/shared/layout/BrandLogo.svelte';
 	import { Release } from '$lib/shared/shared/release';
 	import { Button } from '$lib/vgui/components/ui/button';

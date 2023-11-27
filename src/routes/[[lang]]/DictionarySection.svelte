@@ -4,7 +4,7 @@
 
 	import { Loader2 } from 'lucide-svelte';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 	import DataUnavailableCallout from '$lib/shared/shared/components/DataUnavailableCallout.svelte';
 	import { Button } from '$lib/vgui/components/ui/button';
 	import * as Card from '$lib/vgui/components/ui/card';

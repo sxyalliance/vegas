@@ -17,6 +17,7 @@ module.exports = {
 				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
 				pathGroups: [
 					{ pattern: '$lib/**', group: 'internal' },
+					{ pattern: '$i18n/**', group: 'internal' },
 					{ pattern: '$app/**', group: 'external' },
 					{ pattern: '$env/**', group: 'external' }
 				],

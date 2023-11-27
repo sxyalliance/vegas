@@ -4,9 +4,9 @@
 	import { page } from '$app/stores';
 	import { createQuery } from '@tanstack/svelte-query';
 
-	import { mEventCategoryName } from '$lib/shared/i18n/map';
 	import { EventSeoFactory } from '$lib/shared/seo/factory/event';
 	import SeoHandler from '$lib/shared/seo/SeoHandler.svelte';
+	import { mEventCategoryName } from '$lib/shared/shared/i18n_utils';
 	import Section from '$lib/vgui/section/Section.svelte';
 
 	import EventProperties from './EventProperties.svelte';

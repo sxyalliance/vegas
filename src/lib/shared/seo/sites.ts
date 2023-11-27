@@ -4,10 +4,7 @@ import { definition } from '$lib/shared/layout/header/navigation';
 import type { FlyoutNavItem } from '$lib/shared/layout/header/navigation/types';
 import { createBrowserClient } from '$lib/shared/supabase/client';
 
-import type { sitemap } from '../../../sitemap';
-import type { SitemapParams } from 'sveltekit-sitemap';
-
-export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () => {
+export const getRobots = async () => {
 	// we dont want staging to be indexed
 	if (DOPPLER_ENVIRONMENT === 'stg') {
 		return {
@@ -29,10 +26,10 @@ export const getRobots: SitemapParams<typeof sitemap>['getRobots'] = async () =>
 	};
 };
 
-export const getRoutes: SitemapParams<typeof sitemap>['getRoutes'] = async () => {
+export const getRoutes = async () => {
 	return {
-		'/events/[id=integer]/[[slug]]': await getEventRoutes(),
-		'/rules/[name]': await getRuleRoutes()
+		'/[[lang]]/events/[id=integer]/[[slug]]': await getEventRoutes(),
+		'/[[lang]]/rules/[name]': await getRuleRoutes()
 	};
 };
 

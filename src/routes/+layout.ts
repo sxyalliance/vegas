@@ -6,16 +6,11 @@ import '$lib/shared/shared/dayjs';
 import { browser } from '$app/environment';
 import { QueryClient } from '@tanstack/svelte-query';
 
-import { detectAndApplyLocale } from '$lib/shared/i18n';
-
 import { createBrowserClient } from '$lib/shared/supabase/client';
 
 import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = async ({ fetch, data, depends }) => {
-	// locale detection
-	detectAndApplyLocale();
-
 	const queryClient = new QueryClient({
 		defaultOptions: {
 			queries: {

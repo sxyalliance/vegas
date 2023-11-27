@@ -4,8 +4,8 @@
 	import { createQuery } from '@tanstack/svelte-query';
 	import { kebabCase } from 'change-case';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
-	import { mEventCategoryDescription, mEventCategoryName } from '$lib/shared/i18n/map';
+	import * as m from '$i18n/messages';
+	import { mEventCategoryDescription, mEventCategoryName } from '$lib/shared/shared/i18n_utils';
 	import { Card, CardHeader, CardDescription, CardTitle } from '$lib/vgui/components/ui/card';
 
 	import { queryCategories } from './query';

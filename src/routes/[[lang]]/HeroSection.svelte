@@ -3,8 +3,8 @@
 
 	import { MoveRight } from 'lucide-svelte';
 
+	import * as m from '$i18n/messages';
 	import cover from '$lib/assets/home_hero_cover-e.png?as=run:48&blur=30';
-	import * as m from '$lib/shared/i18n/compiled/messages';
 	import { Button } from '$lib/vgui/components/ui/button';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 	import { availableThemeModes, availableThemes } from '$lib/shared/theme/options';
 	import { dayTheme, nightTheme, Theme, ThemeMode, themeMode } from '$lib/shared/theme/preferences';
 	import { Label } from '$lib/vgui/components/ui/label';

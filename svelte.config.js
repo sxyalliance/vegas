@@ -28,6 +28,9 @@ const config = {
 					'ypjziegygvrjgxiylgxb.supabase.co'
 				]
 			}
+		},
+		alias: {
+			$i18n: './src/i18n'
 		}
 	}
 };

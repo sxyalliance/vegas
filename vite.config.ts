@@ -1,6 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
+import { paraglide } from '@inlang/paraglide-js-adapter-vite';
 import { sentrySvelteKit } from '@sentry/sveltekit';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { imagetools } from '@zerodevx/svelte-img/vite';
@@ -39,20 +40,10 @@ export default defineConfig(({ command }) => ({
 		imagetools(),
 		mdPlugin({ mode: [mdMode.HTML, mdMode.TOC] }),
 		command === 'build' && sitemapPlugin(),
-
-		watch({
-			pattern: 'i18n/**/*.json',
-			command: 'pnpm run i18n:compile'
-		}),
-
-		{
-			name: 'compile-i18n',
-			async buildStart() {
-				if (command === 'build') {
-					await pexec('pnpm run i18n:compile');
-				}
-			}
-		}
+		paraglide({
+			project: './project.inlang.json',
+			outdir: './src/i18n'
+		})
 	],
 	server: {
 		proxy: {

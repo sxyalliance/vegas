@@ -3,7 +3,7 @@
 	import { melt } from '@melt-ui/svelte';
 	import { fade } from 'svelte/transition';
 
-	import * as m from '$lib/shared/i18n/compiled/messages';
+	import * as m from '$i18n/messages';
 
 	import RichFlyoutItem from './RichFlyoutItem.svelte';
 

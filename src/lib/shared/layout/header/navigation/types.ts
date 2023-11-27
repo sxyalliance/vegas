@@ -1,4 +1,4 @@
-import type { MessageId } from '$lib/shared/i18n';
+import type { MessageId } from '$lib/shared/shared/i18n_utils';
 
 export type NavigationDefinition = NavigationItem[];
 
